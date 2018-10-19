@@ -357,13 +357,13 @@ $$ \frac{n}{2}\left(\frac{2e(G)}{n} - 1\right)^2 \leq \binom{n}{2},$$
 we obtain $e(G) = O(n^{3/2})$ finishing the proof.
 \end{proof}
 
-Let $A = \{a_1,...,a_t\} (contido) [n]$ be such that $a_ia_j (diferente) h a_ka_l$ unless $\{i,j\} = \{k,l\}$. How big can be $A$ with these properties?
-To show a easy lower bound it is necessary only a example that fits the problem, for this problem we can use the number of primes in $[n], \pi (n)$. But is it close to the maximum possible size?
+Let $A = \{a_1,...,a_t\} \subset [n]$ be such that $a_ia_j \neq a_ka_l$ unless $\{i,j\} = \{k,l\}$. How big can be $A$ with these properties?
+To show a easy lower bound it is necessary only a example that fits the problem, for this problem we can use the number of primes in $[n]$ which is $\pi (n)$. But is it close to the maximum possible size?
 
 Erdos used theorem \ref{theorem: Erdos,1938} to answer this question.
 
-\begin{corollary}(Erd\H{o}ss, 1938). Let $A$ (contido) $[n]$ be a multiplicative Sidon set. Then,
-$$ |A| \leq \pi(n) + )(n^{3/4}). $$
+\begin{corollary}(Erd\H{o}ss, 1938). Let $A\subseteq [n]$ be a multiplicative Sidon set. Then,
+$$ |A| \leq \pi(n) + O(n^{3/4}). $$
 
 \end{corollary}
 
@@ -391,13 +391,13 @@ for some $p =p(n) \in (0,1)$ and a sufficiently large $n$.
 
 First of all, we need some definitions,
 \begin{definition}
-$g(G) =$ girth of $G$ which is the length of the shortest cycle in $G$. 
+$g(G)$ is the girth of $G$ which is the length of the shortest cycle in $G$. 
 \end{definition}
 \begin{definition}
 $\alpha(G) =$ max$\{|A|: A$ is a independent set$\}$.
 \end{definition}
 \begin{definition}
-$\mathbb{X}(G) =$ the amount of colors used in a minimum coloring of G.
+$\mathbb{X}(G)$ is the minimum number of colors used in a proper coloring of G.
 \end{definition}
 Assuming $\mathbb{X}(G(n,p)) = r$ we have a $\{V_1,V_2,...,V_r\}$ partition of $V(G(n,p))$ on $r$ independent sets illustrated at figure \ref{fig:r-partition}
 
@@ -429,17 +429,17 @@ since we know that $\left(\frac{n}{m}\right)^m \leq \binom{n}{m} \leq \left(\fra
 
 $$\mathbb{E}[X_m] \leq \left(\frac{en}{m}\right)^m  e^{(-pm^2)} = \left(\frac{en}{m} e^{(-pm)}\right)^m,$$
 
-$$\mathbb{E}[X_m] \leq \left(\frac{en}{m} e^{(-pm)}\right)^m = \left(\frac{en}{m}\frac{1}{e^{(pm)}}\right)^m  << 1 \text{ if } e^{pm} >> n ,$$ 
+$$\mathbb{E}[X_m] \leq \left(\frac{en}{m} e^{(-pm)}\right)^m = \left(\frac{en}{m}\frac{1}{e^{(pm)}}\right)^m  \ll 1 \text{ if } e^{pm} \gg n ,$$ 
 
 as $m =\frac{n}{k}$,
 
-$$ pn/k >> \log n \Rightarrow p >> \frac{k\log n}{n},$$
+$$ pn/k \gg \log n \Rightarrow p \gg \frac{k\log n}{n},$$
  
  By Markov's inequality,
  
  $$ \mathbb{P}(X_m \geq 1) \leq \mathbb{E}[X_m] ,$$
  
-and if $p >> \frac{k \log n}{n},$
+and if $p \gg \frac{k \log n}{n},$
  
  $$ \mathbb{P}(X_m \geq 1) \leq \mathbb{E}[X_m] \leq \frac{1}{100}  \Rightarrow \mathbb{P}(\alpha (G(n,p)) < \frac{n}{k}) \geq \frac{99}{100} \Rightarrow $$
 
@@ -453,7 +453,8 @@ $$ g(G(n,p)) \geq k \iff X_k \geq 1,$$
 
 onde $X_k = |B|: $ todo $ C_k$ in $G(n,p) \in B$,
 
-$$\mathbb{E}[X_k] = \sum_{\forall C_k \subset G(n,p)} \mathbb{P}(C_k)$$
+$$\mathbb{E}[X_k] = \sum_{\forall C_k \subset G(n,p)} \mathbb{P}(C_k),$$
+
 \end{proof}
 
 \chapter{Schedule}
