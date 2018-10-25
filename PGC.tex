@@ -15,6 +15,7 @@
 \usepackage{indentfirst}
 \usepackage{graphicx} % Gerencia imagens incluidas
 
+
 \hypersetup{
 	colorlinks,
     linkcolor={red!60!black},
@@ -198,6 +199,8 @@ Santo André, Agosto de 2018
 \end{center}
 
 \tableofcontents
+\listoffigures
+%\listoftables
 
 \chapter{Introduction}
 Computer Science is truly fundamental for the fast development of Science in the last century, also being fundamental for its validation and communication. It is really hard to think about actual Science without the use of computers or strong science communities connected and accessible by the internet. Computer Science is also essential for the business. All multinational company is also a software company since the way of production, operating and delivering products are managed by software and these aspects are determinants for the success level of any company in the world, it is also not uncommon that one of the most valuable assets of a company can be connected to data, software and algorithms. In this scenario, graphs are also very interesting due its importance to Computer Science.
@@ -431,34 +434,42 @@ $$ ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$
 
 \chapter{Random Graphs}
 \section{The Probabilistic Method}
-This method is very powerful and has incredible simple applications, when this method begun to being used it created many shocking proofs, but not all applications of the method are so simple or easy to understand. A central fact for the probabilistic method is ``a object with property $ A$ exists $\iff  \mathbb{P}(A)>0$''
+This method is very powerful and has incredible simple applications, when this method begun to being used it created many shocking proofs, but not all applications of the method are so simple or easy to understand. A central fact for the probabilistic method is ``a object with property $ A$ exists $\iff  \mathbb{P}(\text{ object has property }A)>0$''
 
-It is necessary to introduce the Erd\H{o}s-Rényi random graph $G(n,p)$ which although the name is not a graph. $G(n,p)$ is a probability distribution on graphs, more informally, it is a edge distribution on n vertices with probability p and with the existence of edges being independent events,
+It is necessary to introduce the Erd\H{o}s-Rényi random graph $G(n,p)$ which although the name is not a graph. $G(n,p)$ is a probability distribution on graphs, more informally, it is a edge distribution on n vertices with probability p and with the existence of edges being independent events.
 
-$$\mathbb{P}(e \in E(G(n,p)))=p ,$$
-and
-$$ 1-p=\mathbb{P}(e \notin E(G(n,p))),$$
+\begin{definition}\label{def:randomgraph}
+The (Er\H{o}s-Rényi) random graph, $G(n,p)$, is the graph on $n$ vertices obtained by choosing each edge independently at random with probability $p$. In other words, we assume that we have a probability space $\Omega$ and independent random variables $I_{vw}$ for each $vw \in \binom{[n]}{2}$, such that
+$$\mathbb{P}(I_{vw} = 1) = 1 - \mathbb{P}(I_{vw} = 0),$$ 
+and let $G$ be the graph with vertex set $[n]$ and edge set $\{vw \in \binom{[n]}{2}: I_{vw} = 1\}$. 
+
+\end{definition}
+
+%$$\mathbb{P}(e \in E(G(n,p)))=p ,$$ \\and\\$$ 1-p=\mathbb{P}(e \notin E(G(n,p))),$$
 
 {\bf Question:} What is the probability of $G(n,p) = H$, with $H$ being a fixed graph?
-Intuitively we can guess there exists a really small chance that this event occurs and the intuition in this case is true, let's see this probability:
-$$\mathbb{P}(G(n,p)=H) = p^{e(H)}\times (1-p)^{\binom{n}{2}-e(H)}.$$
+Intuitively we can guess there exists a really small chance that this event occurs and the intuition in this case is true, let's see this probability below,
+$$\mathbb{P}(G(n,p)=H) = p^{e(H)}(1-p)^{\binom{n}{2}-e(H)}.$$
 
 \begin{theorem}(Erd\H{o}s, 1959) There exist graphs whose girth and chromatic number are both arbitrarily large.
 \end{theorem}
-\begin{proof}
+
+For this theorem will be presented two different proofs, the second one is a little smaller.
+
+\begin{proof} First proof.
 In other words, we need to prove:
 
-$$\mathbb{P}\binom{\chi{X}(G(n,p)) \geq k \text{ and }} {g(G(n,p)) \geq k} > 0 ,$$
+$$\mathbb{P}\binom{\chi(G(n,p)) \geq k \text{ and }} {g(G(n,p)) \geq k} > 0 ,$$
 for some $p =p(n) \in (0,1)$ and a sufficiently large $n$.
 
 First of all, we need some definitions,
-\begin{definition}
+\begin{definition}\label{def:girth}
 $g(G)$ is the girth of $G$ which is the length of the shortest cycle in $G$. 
 \end{definition}
-\begin{definition}
+\begin{definition}\label{def:independencenumber}
 $\alpha(G) =$ max$\{|A|: A$ is a independent set$\}$.
 \end{definition}
-\begin{definition}
+\begin{definition}\label{def:chromaticnumber}
 $\chi(G)$ is the minimum number of colors used in a proper coloring of G.
 \end{definition}
 Assuming $\chi(G(n,p)) = r$ we have a $\{V_1,V_2,...,V_r\}$ partition of $V(G(n,p))$ on $r$ independent sets illustrated at figure \ref{fig:r-partition}
@@ -466,7 +477,7 @@ Assuming $\chi(G(n,p)) = r$ we have a $\{V_1,V_2,...,V_r\}$ partition of $V(G(n,
 \begin{figure}[!htb]
      \centering
      \includegraphics[scale=1]{Figuras/r-partion.jpg}
-     \caption{r-coloring partition. }
+     \caption{r-coloring Partition. }
      \label{fig:r-partition}
 \end{figure}
 
@@ -485,8 +496,6 @@ with
 %$X_m = \{|[A]|: S \in A$ if $S$ is a independent set with at least $m$ elements in $G(n,p)\}$,
 $X_m = \big|\{S\in V(G(n,p))\colon \text{$S$ is a independent set with exactly $m$ vertices in $G(n,p)$}\}\big|$,
 and follows $m = \frac{n}{k}$. 
-
-Being $S$ a independent set in $G(n,p)$ and $|S| = \frac{n}{k}$,
 
 \begin{align*}
 \mathbb{E}[X_m]&=\sum_{\substack{S \in V(G) \\ |S| = m}} \mathbb{P}(S\text{ is independent })\\
@@ -537,6 +546,61 @@ $$\frac{k\log k}{n} \ll p \leq n^{1 + \frac{1}{2k}}.$$
 
 And we can remove a edge of each cycle with length $<k$, so we have $g(G) \geq k$. Note removing a cycle's edge doesn't make $\alpha(G)$ bigger and consequently doesn't make $\chi(G)$ smaller, maintaining all our previous calculations valid.
 \end{proof}
+
+\begin{proof}
+Second Proof. Using the same definitions of the first proof for girth \ref{def:girth}, independence number \ref{def:independencenumber} and chromatic number \ref{def:chromaticnumber} we have,
+
+$$ |G| = \sum_{i=1}^{\chi(G)} |S_i| \leq \chi(G)max|S_i| \leq \chi(G) \alpha (G) .$$
+
+Note that if $\alpha(G) \leq |G|/k$, then $\chi(G) \geq $k. \\
+Let $\epsilon > 0$ be sufficiently small ($\epsilon < 1/k$) and $p = n^{\epsilon - 1}$. As we have already been introduced to $G(n,p)$ in definition \ref{def:randomgraph} let $G = G(n,p) -$\{one vertex of each cycle $C_l \text{ with } l\leq k\}$.
+
+Now we need two claims to reach the result. We claim that, with high probability, $G$ has at most $n/2$ cycles of length $\leq k$ and has no independent set  of size $n/2k$ then, consequently $\chi(G) \geq k$ and $girth(G) \geq k$.
+
+First claim. $V(G) > n/2$ . First of all we need some variables to count the cycles,
+$$X_l = \# C_l \subset G(n,p)$$
+$$X = \# \text{ short cycles } = \sum_{l=3}^k X_l$$
+\begin{align*}
+\mathbb{E}[X] &= \sum_{l=3}^k \mathbb{E}[X_l] \\
+	       &= \sum_{l=3}^k \sum_{C_l \in K_n} \mathbb{P}(C_l \subset G(n,p))\\
+	       &\leq \sum_{l=3}^k n^l p^l \\
+	       &= \sum_{l=3}^k n^{\epsilon l}\\
+	       &\leq 2n^{\epsilon k} \\
+	       &= o(n).
+\end{align*}
+Note that since we are removing a vertex of each cycle $V(G) \geq n-X$. Now we show the general case for this important inequality for the probabilistic method. The Markov's inequality holds for any random variable which takes non-negative valuers and for $a>0$,
+
+$$\mathbb{P}(X>a) \leq \frac{\mathbb{E}(X)}{a}.$$
+
+Using it and replacing $\mathbb{E}[X]$ by its upper bound we have,
+
+\begin{align*}
+\mathbb{P}(X\geq n/2) &\leq \mathbb{E}[X]/(n/2)\\
+		& = o(n)/n\\
+		& = o(1)
+\end{align*}
+Then, we proved that, with high probability, we don't have more than $n/2 -1$ cycles with length at most $k$ and consequently we have $V(G) > n/2$ .\\
+\\
+Second claim. $\alpha(G) \leq \alpha (G(n,p)) < n/2k$.\\
+We need to count the independent sets,
+$$Y_l = \# \text{ independents sets with length $l$. }$$
+
+\begin{align*}
+\mathbb{E}[Y_l] &= \sum_{\substack{|S| = l \\ e(S) = 0 }} (1-p)^{\binom{l}{2}}\\
+	       &= (1-p)^{\binom{l}{2} \binom{n}{l}} \\
+	       &\leq \left(\frac{en}{l}\right)^l e^{-p\binom{l}{2}}\\
+	       &\rightarrow 0  \text{ if } l = n/2k.
+\end{align*}
+
+Thus both claims,
+
+$$\frac{\mathbb{E}[|\{C_l \subset G : l\leq k \}|]}{n/2} + \mathbb{E} [|\{ S:|S| \geq n/2k, e(S) = 0\}|] \rightarrow 0$$
+as $n \rightarrow \infty $. So $G$ has the desired properties with high probability and the prove is finished.
+\end{proof}
+
+Realize that the key point in both proofs was the fact we could choose the most comfortable probability distribution, what gives us a huge flexibility to construct proofs.
+
+\section{Subgraphs of the Random Graph}
 
 \chapter{Schedule}
 
