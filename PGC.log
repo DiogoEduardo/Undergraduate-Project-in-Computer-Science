@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.5.20)  22 OCT 2018 13:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.5.20)  29 OCT 2018 13:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -995,7 +995,7 @@ Package graphics Info: Driver file: pdftex.def on input line 96.
 \Gin@req@height=\dimen127
 \Gin@req@width=\dimen128
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 23.
+Package hyperref Info: Option `colorlinks' set `true' on input line 24.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2016/05/16 v1.25 PDF bookmarks (HO)
@@ -1174,26 +1174,26 @@ LaTeX Info: Redefining \\ on input line 3056.
 ) (./PGC.aux)
 \openout1 = `PGC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 174.
-LaTeX Font Info:    ... okay on input line 174.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 174.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 175.
+LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 175.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 174.
+LaTeX Info: Redefining \microtypecontext on input line 175.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1224,7 +1224,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 \everyMPtoPDFconversion=\toks39
 )
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring ON on input line 174.
+Package hyperref Info: Link coloring ON on input line 175.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1233,9 +1233,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count172
 )
-LaTeX Info: Redefining \ref on input line 174.
-LaTeX Info: Redefining \pageref on input line 174.
-LaTeX Info: Redefining \nameref on input line 174.
+LaTeX Info: Redefining \ref on input line 175.
+LaTeX Info: Redefining \pageref on input line 175.
+LaTeX Info: Redefining \nameref on input line 175.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1349,87 +1349,134 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
  [3] [4
 
 ]
-Chapter 1.
+No file PGC.lof.
+\tf@lof=\write5
+\openout5 = `PGC.lof'.
+
 [5] [6
 
 ]
-Chapter 2.
+Chapter 1.
 [7] [8
 
 ]
+Chapter 2.
+[9] [10
+
+]
 Chapter 3.
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 
  []
 
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
-[11] [12
+[13] [14
 
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--296
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 
  []
 
-[14]
+[16] [17]
+
+LaTeX Warning: Reference `fig:generalizedcherry' on page 18 undefined on input 
+line 389.
+
+<Figuras/generalized-cherry.jpg, id=128, 247.6452pt x 72.7518pt>
+File: Figuras/generalized-cherry.jpg Graphic file (type jpg)
+
+<use Figuras/generalized-cherry.jpg>
+Package pdftex.def Info: Figuras/generalized-cherry.jpg used on input line 393.
+
+(pdftex.def)             Requested size: 247.64458pt x 72.7516pt.
+ [18 <./Figuras/generalized-cherry.jpg>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 372.
+(hyperref)                removing `\H' on input line 422.
 
-[15] [16]
+[19] [20
+
+]
 Chapter 5.
-[17
-
-] <Figuras/r-partion.jpg, id=131, 247.8861pt x 240.9pt>
+[21] <Figuras/r-partion.jpg, id=156, 247.8861pt x 240.9pt>
 File: Figuras/r-partion.jpg Graphic file (type jpg)
 
 <use Figuras/r-partion.jpg>
-Package pdftex.def Info: Figuras/r-partion.jpg used on input line 420.
+Package pdftex.def Info: Figuras/r-partion.jpg used on input line 479.
 (pdftex.def)             Requested size: 247.88547pt x 240.8994pt.
-
-Overfull \hbox (12.96074pt too wide) in paragraph at lines 435--440
+ [22 <./Figuras/r-partion.jpg>]
+Overfull \hbox (12.96074pt too wide) in paragraph at lines 494--499
 \T1/lmr/m/n/12 (-20) with $\OML/lmm/m/it/12 X[] \U/matha/m/n/12 ^^P []t\OML/lmm
 /m/it/12 S \U/matha/m/n/12 P \OML/lmm/m/it/12 V\U/matha/m/n/12 p\OML/lmm/m/it/1
 2 G\U/matha/m/n/12 p\OML/lmm/m/it/12 n; p\U/matha/m/n/12 qq [] [] []u[]$\T1/lmr
 /m/n/12 (-20) ,
  []
 
-[18 <./Figuras/r-partion.jpg>] [19] [20
+[23]
+
+LaTeX Warning: Reference `def:girth' on page 24 undefined on input line 551.
+
+
+LaTeX Warning: Reference `def:independencenumber' on page 24 undefined on input
+ line 551.
+
+
+LaTeX Warning: Reference `def:chromaticnumber' on page 24 undefined on input li
+ne 551.
+
+
+LaTeX Warning: Reference `def:randomgraph' on page 24 undefined on input line 5
+56.
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 581--586
+
+ []
+
+[25] [26]
+Chapter 6.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 630.
+[27
 
 ]
-Chapter 6.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 511.
-[21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 511.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 630.
  (./PGC.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 511.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 511.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 511.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 630.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 630.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 630.
  ) 
 Here is how much of TeX's memory you used:
- 13617 strings out of 493014
- 198627 string characters out of 6133351
+ 13662 strings out of 493014
+ 199229 string characters out of 6133351
  355334 words of memory out of 5000000
- 16723 multiletter control sequences out of 15000+600000
- 71412 words of font info for 114 fonts, out of 8000000 for 9000
+ 16733 multiletter control sequences out of 15000+600000
+ 72473 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,8n,51p,1004b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,13n,51p,1004b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
 texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
 16/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2016/texmf-dist/
@@ -1447,10 +1494,10 @@ lic/mathabx-type1/matha8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
 blic/mathabx-type1/mathb12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
 public/mathabx-type1/mathx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PGC.pdf (21 pages, 546287 bytes).
+Output written on PGC.pdf (27 pages, 618764 bytes).
 PDF statistics:
- 252 PDF objects out of 1000 (max. 8388607)
- 210 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
- 14422 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 290 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 14435 words of extra memory for PDF output out of 17280 (max. 10000000)
 
