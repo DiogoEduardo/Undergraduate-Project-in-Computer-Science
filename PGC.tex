@@ -14,7 +14,7 @@
 \usepackage{mathtools}
 \usepackage{indentfirst}
 \usepackage{graphicx} % Gerencia imagens incluidas
-
+\usepackage{float} 
 
 \hypersetup{
 	colorlinks,
@@ -297,8 +297,53 @@ $$\binom{n}{k}\frac{1}{2} ^{\binom{k}{2}-1} \leq 2 \left( \frac{en}{k} \left( \f
 it follows if $n<(1/e\sqrt{2})k2^{k/2}$. Once the expected value for $X$ is less than $1$, then there must exist a colouring in which $X=0.$
 \end{proof}
 
-\begin{theorem} (Van der Waerden, 1927). Every two-coloring of $\mathbb{N}$ contains arbitrarily long monochromatic arithmetic progressions.
+\begin{theorem} (Van der Waerden, 1927). For every $\mathbb{N}$ colouring with any $r$ colours it contains arbitrarily long monochromatic arithmetic progressions. 
 \end{theorem}
+
+\begin{proof}To prove this theorem we need the following definition,
+
+\begin{definition}
+$W(r,k) =$ min $\{n \colon \forall c \colon [n] \rightarrow \{1,...,r\}$ exists a monochromatic arithmetic  progression of length $k$ for all $r$ and $k$ in $\mathbb{N}\}$.
+\end{definition}
+
+We claim that $W(r,k)$ exists and we prove it by double induction, so assume that $W(r, k-1)$ exists. Note if $k \leq 2$ the result is trivial.
+
+First denote the arithmetic progression $\{a, a + d, a +2d, ..., a+(k-1)d\}$ by AP$(a,d,k)$ such that it has common difference  $d$ and length $k$.
+
+We say arithmetic progressions of length $k$ are focused at $z$ if:
+$$ a_i +  (k-1)d_i = a_j  + (k-1) d_j = z $$
+
+for every $i, j \in [r]$, and they are colour-focused if they are all monochromatic in different colours.
+
+Being $s$ the number of colour-focused arithmetic progressions, if $s=1$ it is trivial because we just need $n \geq r+1$ and pigeonhole principle to prove it holds.
+
+Claim we need to prove: For all $s \leq r$, there exists $n$ such that whenever [n] is $r$-coloured, there exists either a monochromatic arithmetic progression of length $k$, or $s$ colour-focused arithmetic progressions of length $k-1$.
+
+We will do an induction on s. Let $s > 1$ and suppose $n=W(r,k-1)$ is sufficient for $s-1$; we will prove that $N=2n W(r^{2n},k-1)$ is sufficient for $s$.
+
+Partition $[N]$ into blocks of length $2n$, in each block we have a monochromatic arithmetic progression of length k or $s-1$ colour-focused arithmetic progressions of length $k-1$. 
+
+Note that the $r$-colouring of $[N]$ induces $r^{2n}$ different ways of colouring the blocks and by definition of $N$ there exists an arithmetic progression \{B(x), B(x+y), ... , B(x+(k-2)y)\} of blocks, such that these blocks are coloured identically.
+
+Let $A_j = AP(a_j, d_j, k-1)$ for $1 \leq j \leq s-1$ be the $s-1$ colour-focused APs in $B(x)$, let $z$ be their focus, and observe that the following $s$ APs of length $k-1$ are colour-focused at $z+ 2yn(k-1) \colon$
+
+$$ A'_j \coloneqq AP(a_j, d_j + 2yn, k-1) , $$
+
+for $1 \leq j \leq s-1$, and AP$(z, 2yn, k-1)$ as at Figure \ref{fig:VanderWaerdenBlocks}. Then the claim is proved.
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[scale=1.8]{Figuras/Van-der-Waerden-Blocks.jpg}
+     \caption{s APs in the $W(r^{2n},k-1)$ blocks}
+     \label{fig:VanderWaerdenBlocks}
+\end{figure}
+
+The theorem follows from the claim by setting $s=r$ because if we have $s$  APs colour focused at $z$ there is no other different colour to use in $z$, by the fact all AP has length $k-1$  independent the colour we choose for $z$ we will have a AP with length $k$.
+
+\end{proof}
+
+
+
 \chapter{Extremal Graph Theory}
 In this chapter, the problems and theorems extend previous chapter. Instead of working only in questions based on sets' cardinality it embraces questions about the maximum size of graphs and graphs' substructures.
 \section{Turán's Theorem}
