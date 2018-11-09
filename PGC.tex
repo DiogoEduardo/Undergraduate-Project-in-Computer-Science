@@ -323,7 +323,7 @@ We will do an induction on s. Let $s > 1$ and suppose $n=W(r,k-1)$ is sufficient
 
 Partition $[N]$ into blocks of length $2n$, in each block we have a monochromatic arithmetic progression of length k or $s-1$ colour-focused arithmetic progressions of length $k-1$. 
 
-Note that the $r$-colouring of $[N]$ induces $r^{2n}$ different ways of colouring the blocks and by definition of $N$ there exists an arithmetic progression \{B(x), B(x+y), ... , B(x+(k-2)y)\} of blocks, such that these blocks are coloured identically.
+Note that the $r$-colouring of $[N]$ induces $r^{2n}$ different ways of colouring the blocks and by definition of $N$ there exists an arithmetic progression $\{B(x), B(x+y), ... , B(x+(k-2)y)\}$ of blocks, such that these blocks are coloured identically.
 
 Let $A_j = AP(a_j, d_j, k-1)$ for $1 \leq j \leq s-1$ be the $s-1$ colour-focused APs in $B(x)$, let $z$ be their focus, and observe that the following $s$ APs of length $k-1$ are colour-focused at $z+ 2yn(k-1) \colon$
 
@@ -334,7 +334,7 @@ for $1 \leq j \leq s-1$, and AP$(z, 2yn, k-1)$ as at Figure \ref{fig:VanderWaerd
 \begin{figure}[H]
      \centering
      \includegraphics[scale=1.8]{Figuras/Van-der-Waerden-Blocks.jpg}
-     \caption{s APs in the $W(r^{2n},k-1)$ blocks}
+     \caption{s APs in the $W(r^{2n},k-1)$ blocks.}
      \label{fig:VanderWaerdenBlocks}
 \end{figure}
 
@@ -363,18 +363,51 @@ e(G-\{\{u\},\{v\}\}) &\leq (\left\lfloor \frac{n}{2} \right\rfloor -1)(\left\lce
 When we add the $n-1$ edges removed from $G$ we confirm the induction hypothesis. 
 \end{proof}
 
-Turán generalized its result in 1941. It uses $T_r(n)$ which is a complete $r$-partite graph with $n$ vertices and $\lceil \frac{n}{r} \rceil$ or $\lfloor \frac{n}{r} \rfloor$ vertices on each part.
+Turán generalized its result in 1941. We will need following definitions: 
+\begin{definition}$T_r(n)$ is the complete $r$-partite graph with $n$ vertices and $\left\lceil \frac{n}{r} \right\rceil$ or $\left\lfloor \frac{n}{r} \right\rfloor$ vertices on each part and it is called the Turán's graph.
+\end{definition}
 
-\begin{theorem} \label{theorem:turan1941}(Turán, 1941). $ex(n, k_{r+1}) = t_r(n)$.
+\begin{definition}
+$t_r(n)$ is the number of edges in the Turán's graph, then $e(T_r(n)) = t_r(n)$ and it is called Turán's number.
+\end{definition}
+
+\begin{theorem} \label{theorem:turan1941}(Turán, 1941). $ex(n, k_{r+1}) = t_r(n)$ and $T_r(n)$ is the only extremal graph.
 \end{theorem}
+
 \begin{proof}
-This is a proof by induction on $n$. Let $G$ be maximum without a $K_{r+1}$. Construct a graph $G'$ removing a $K_r$ from $G$, so:
+This is a proof by induction on $n$. Note $d(v) \approx n-(n/r)$ with $v \in V(G)$ and $G$ being the complete $r$-partite graph. Now using the fact $\sum_{v\in V(G)} d(v) = 2 e(G)$ follows:
+
+$$ t_r(n) \approx \frac{n}{2}\left(n-\frac{n}{r}\right) \approx \left(1-\frac{1}{r}\right) \binom{n}{2}.$$
+
+
+ Let $G$ be maximum without a $K_{r+1}$. Construct a graph $G'$ removing a $K_r$ from $G$ as Figure \ref{fig:G'andKr}. Note that each vertex in $G'$ could be neighbour of at most $r-1$ vertices in $K_r$, otherwise $G$ would have a $K_{r+1}$, then we have $(r-1)(n-r)$ vertices between $G'$ and $K_r$.
+ 
+ \begin{figure}[H]
+     \centering
+     \includegraphics[scale=1]{Figuras/Kr+1-livre-prova-turan.jpg}
+     \caption{$G'$ and $K_r$.}
+     \label{fig:G'andKr}
+\end{figure}
+
+Note inside the $K_r$ there exists $\binom{r}{2}$ edges and by induction hypothesis we have $e(G') \leq t_r(n-r)$, then follows:
+
 \begin{align*}
 e(G) &\leq e(G') + (r-1)(n-r) + \binom{r}{2}\\
-&\leq e(T_r(n-r)) +(r-1)(n-r) + \binom{r}{2}\\
-&= e(T_r(n)).
+&\leq t_r(n-r) +(r-1)(n-r) + \binom{r}{2}\\
+&= t_r(n).
 \end{align*}
+
+The last line comes from the fact $t_r(n) - t_r(n-r) = \binom{r}{2} + (r-1)(n-r)$ as we can see at Figure \ref{fig:t(n)-and-t(n-r)} removing a vertex of each part we remove $\binom{r}{2}$ edges between the $r$ vertices removed and $(r-1)(n-r)$ edges  bacause every vertex in $T_r(n)$ is connected exactly with $r-1$ vertices of the $r$ vertices removed.   
+
+ \begin{figure}[H]
+     \centering
+     \includegraphics[scale=1]{Figuras/t(n)-and-t(n-r)}
+     \caption{$T(n)$ and $T(n-r)$.}
+     \label{fig:t(n)-and-t(n-r)}
+\end{figure}
+Then the proof is finished.
 \end{proof}
+
 \begin{theorem}\label{theorem:erdos1970} (Erd\H{o}s, 1970). There is an $ r$-partite graph $H$ with $V(H) = V(G)$, with $d_H(v) \geq d_G(v)$ for every $v \in V(G)$.\\
 \end{theorem}
 
@@ -480,10 +513,13 @@ $$\chi(G) = \text{ min}\{r: \exists c : V(G) \rightarrow [r] \text{ such that } 
 
 Note $\chi(G)$ is related to $r$-partite graphs, a graph $G$ is $r$-partite if and only if $\chi(G) \leq r$.
 
+
 \begin{theorem}
 (Erd\H{o}s and Stone, 1946). Let H be an arbitrary graph. Then
 $$ ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$ 
 \end{theorem}
+
+\newpage
 
 \chapter{Random Graphs}
 \section{The Probabilistic Method}
@@ -582,12 +618,12 @@ and if $p \gg \frac{k \log n}{n}$ we have,
 
 Since the proof for $\chi(G) \geq k$ is finished we will prove $g(G(n,p))\geq k$,
 
-$$ g(G(n,p)) \geq k \iff X_k \geq 1,$$
+$$ g(G(n,p)) \leq k \iff X_k \geq 1,$$
 
 
-onde $X_k = |B|: $ todo $ C_k$ in $K_n \in B$,
+where $X_k = \#  C_k$ in $G(n,p)$,
 
-$$\mathbb{E}[X_k] = \sum_{C_k \in K_n} \mathbb{P}(C_k) \leq n^kp^k,$$
+$$\mathbb{E}[X_k] = \sum_{C_k \subset K_n} \mathbb{P}(C_k \subset G(n,p) ) \leq n^kp^k,$$
 
 now we need to limit our short cycles by $\sqrt{n}$ in order to show with high probability we will have few short cycles so we can destroy then without changing anything,
 
@@ -597,7 +633,7 @@ then getting together with our previous result,
 
 $$\frac{k\log k}{n} \ll p \leq n^{-1 + \frac{1}{2k}}.$$
 
-And we can remove a edge of each cycle with length $<k$, so we have $g(G) \geq k$. Note removing a cycle's edge doesn't make $\alpha(G)$ bigger and consequently doesn't make $\chi(G)$ smaller, maintaining all our previous calculations valid.
+And we can remove a vertex of each cycle with length $<k$, so we have $g(G) \geq k$. Note removing a cycle's vertex doesn't make $\alpha(G)$ bigger and consequently doesn't make $\chi(G)$ smaller, maintaining all our previous calculations valid.
 \end{proof}
 
 \begin{proof}
