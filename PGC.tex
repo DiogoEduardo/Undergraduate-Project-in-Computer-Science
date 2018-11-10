@@ -231,7 +231,11 @@ Extremal Graph Theory studies graphs' size, as the number interval of edges and 
 
 
 
-\chapter{Ramsey's Theory}
+\chapter{Ramsey Theory}
+
+Ramsey Theory is specially philosophic among the others components of extremal combinatorics. Ramsey wanted to find order in chaos, that is, he was motivated by the thought that complete chaos or complete order is impossible to achieve.
+
+\section{Ramsey's Theorem}
 Consider the following question:
 ``Given a group of 6 people, are there 3 people that are mutual friends or 3 people are mutual strangers?''
 
@@ -243,7 +247,7 @@ The minimum $n$ such that any $2$-colouring on $K_n$ induces a complete subgraph
 
 The $K_5$ can be constructed without a monochromatic triangle as Figure \ref{fig:K5}, this shows that Ramsey number cannot be less than 6, what can be written as  R(3,3) = 6.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
      \centering
      \includegraphics[scale=1]{Figuras/K5-sem-triangulo.jpg}
      \caption{$K_5$ without monochromatic triangle.}
@@ -262,6 +266,8 @@ Imagine we have a finite number of parts to divide $\mathbb{N}$ whose elements a
 
 Given a colouring $c\colon\dbinom{\mathbb{N}}{2}$ $\rightarrow$ $[r]$, being $i$ a colour and  $v$ a vertex $\in \mathbb{N}$, define $N_i(v) =\{ w: c(vw)=i\}$ , can be read as the colour $i$ neighbourhood of $v$.
 
+\section{Schur's Theorem}
+
 \begin{theorem}\label{thm:Schur'sTheorem}
 (Schur's Theorem, 1916). Considering any colouring $c\colon \mathbb{N} \rightarrow [r]$, it implies a monochromatic $x,y,z$ with the property $x+y=z$.
 \end{theorem}
@@ -275,6 +281,8 @@ $$c'({y,z}) = i = c(|z-y|)$$
 From that, $c(|y-x|) = c(|z-x|) = c(|z-y|)$, and $(z-y)+(y-x)=(z-x)$ forms a monochromatic $x,y,z$ such that $x+y=z$, as required.\\
 \end{proof}
 
+\section{Finite Ramsey's Theorem}
+
 \begin{theorem}\label{thm:ErdosandS}
 (Erd\H{o}s and Szekeres, 1935; Erd\H{o}s, 1947).\\
 $$(\sqrt{2})^k \ll R(k) \ll 4^k.$$
@@ -283,19 +291,38 @@ $$(\sqrt{2})^k \ll R(k) \ll 4^k.$$
 $$R(k,\ell ) \leq R(k-1,\ell )+R(k,\ell-1).$$\\
 Choose $n \geq R(k-1,\ell) + R(k, \ell-1)$ and pick any vertex $v$ from $[n]$. Using Pigeonhole principle we realize $v$ has either at least $R(k-1,\ell)$ red neighbours, or at least $R(k,\ell-1)$ blue neighbours, for simplicity assume that $v$ has at least $R(k-1,\ell)$ red neighbours. By definition we have on the red neighbors of $v$ a red $K_{k-1}$ or a blue $K_{\ell}$, if it is a $K_{\ell}$ we are done and if it is a $K_{k-1}$ we can add $v$, forming a $K_k$. We just proved we always have a $K_k$ red or a $K_{\ell}$ blue with such $n$ and it is a upper bound for equation $R(k,\ell) \leq R(k-1,\ell)+R(k,\ell-1)$ because it doesn't prove this $n$ is the minimum one, only shows that for this specific $n$ it is true.\\
 By induction hypothesis:
-$$R(k,\ell) \leq \binom{k+\ell}{k}.$$
-So,
-$$R(k-1,\ell)\leq \binom{k-1+\ell}{k-1}.$$ and $$R(k,\ell-1)\leq \binom{k+\ell-1}{\ell-1}.$$
-That implies on:
-$$R(k,\ell)\leq \binom{k-1+\ell}{k-1} + \binom{k+\ell-1}{\ell-1} = \binom{k+ \ell}{k}.$$
+$$R(k,\ell) \leq \binom{k+\ell - 2}{k - 1}.$$
+This implies on:
+$$R(k-1,\ell)\leq \binom{k+\ell -3}{k-2},$$ and $$R(k,\ell-1)\leq \binom{k+\ell-3}{\ell-1}.$$
+By Pascal's rule $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$ we have:
+
+$$R(k,\ell)\leq \binom{k-1+\ell}{k-1} + \binom{k+\ell-1}{\ell-1} = \binom{k+ \ell -2}{k-1}.$$
+Confirming our induction hypothesis. Now let $k = \ell$ and using Stirling's approximation for binomial coefficient $\binom{2n}{n} \approx (2^{2n}/\sqrt{\pi n})$, assuming $n$ is sufficiently large follows:
+
+\begin{align*}
+R(k) &\leq \binom{2k -2}{k-1}\\
+& \approx \frac{2^{2k-2}}{\sqrt{\pi (k-1)}}\\
+& \ll 4^k.
+\end{align*}
+
+Finishing the upper bound proof.\\
 
 It is hard to find colourings whose subgraphs are not big and not monochromatic, this is counter-intuitive but is really hard to construct this type of graph. However, in 1947 Erd\H{o}s made a important contribution for combinatorics showing a simple proof of an exponential lower bound on $R(k)$.
 
-Now we proceed by proving the lower bound. Given a random coloring $c\colon \binom{n}{2} \rightarrow \{0,1\}$ let $1/2$ be the probability of a red $c(i)(j)$ for any edge $ij$ $ in e(K_n)$.\\ 
-Define X as the number of monochromatics cliques in $K_n$. The expected value for $X$ is $\binom{n}{k}$ times the probability of a given clique be monochromatic, so:
+Now we proceed by proving the lower bound. Given a random coloring $c\colon \binom{n}{2} \rightarrow \{0,1\}$ let $1/2$ be the probability of a red $c(i)(j)$ for any edge $ij$ in $e(K_n)$.\\ 
+Define X as the number of monochromatics cliques in $K_n$. The expected value for $X$ is $\binom{n}{k}$ times the probability of a given clique be monochromatic, then:
 $$\binom{n}{k}\frac{1}{2} ^{\binom{k}{2}-1} \leq 2 \left( \frac{en}{k} \left( \frac{1}{\sqrt{2}} \right)^{k-1} \right)^{k} \ll 1.$$ 
-it follows if $n<(1/e\sqrt{2})k2^{k/2}$. Once the expected value for $X$ is less than $1$, then there must exist a colouring in which $X=0.$
+This holds if: 
+\begin{align*}
+n &<\frac{1}{e\sqrt{2}}k2^{k/2} \\
+& = \frac{(\sqrt{2})^{k+1}}{e\sqrt{2}}\\
+& \gg (\sqrt{2})^k.
+\end{align*}
+
+Since the expected value for $X$ is less than $1$, then there must exist a colouring in which $X=0$, thus the proof is finished.
 \end{proof}
+
+\section{Van der Waerden's Theorem}
 
 \begin{theorem} (Van der Waerden, 1927). For every $\mathbb{N}$ colouring with any $r$ colours it contains arbitrarily long monochromatic arithmetic progressions. 
 \end{theorem}
@@ -519,7 +546,11 @@ Note $\chi(G)$ is related to $r$-partite graphs, a graph $G$ is $r$-partite if a
 $$ ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$ 
 \end{theorem}
 
-\newpage
+\begin{proof}
+
+Here will be the proof.
+
+\end{proof}
 
 \chapter{Random Graphs}
 \section{The Probabilistic Method}
