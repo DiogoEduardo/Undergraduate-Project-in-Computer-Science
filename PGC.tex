@@ -215,6 +215,7 @@ Ramsey Theory is the study of finding order in chaos and, in general, solves mat
 
 Extremal Graph Theory studies graphs' size, as the number interval of edges and vertices, since a specific substructure is forbidden inside the main graph.
 
+The Probabilistic Method is a very useful tool for solving problems in many areas, because it is flexible and uses a random graph which is simple to use and work with the probabilities that makes possible prove statements with high or not null probability.
 
 %\chapter{Justification}
 %ME INTERESSEI PELO TEMA, APENAS!
@@ -233,7 +234,7 @@ Extremal Graph Theory studies graphs' size, as the number interval of edges and 
 
 \chapter{Ramsey Theory}
 
-Ramsey Theory is specially philosophic among the others components of extremal combinatorics. Ramsey wanted to find order in chaos, that is, he was motivated by the thought that complete chaos or complete order is impossible to achieve.
+Ramsey's theory is especially philosophical among the components of the extremal combinatorics. Ramsey's theory wants to find order in chaos, that is, it is motivated by the thought that complete chaos or complete order is impossible to achieve, then we can always have a piece of information independent of the complexity or particular characteristics of any graph.
 
 \section{Ramsey's Theorem}
 Consider the following question:
@@ -402,7 +403,7 @@ $t_r(n)$ is the number of edges in the Turán's graph, then $e(T_r(n)) = t_r(n)$
 \end{theorem}
 
 \begin{proof}
-This is a proof by induction on $n$. Note $d(v) \approx n-(n/r)$ with $v \in V(G)$ and $G$ being the complete $r$-partite graph. Now using the fact $\sum_{v\in V(G)} d(v) = 2 e(G)$ follows:
+This is a proof by induction on $n$. Note $d(v) \approx n-(n/r)$ with $v \in V(G)$ and $G$ being the complete $r$-partite graph. Now, using the fact $\sum_{v\in V(G)} d(v) = 2 e(G)$ follows:
 
 $$ t_r(n) \approx \frac{n}{2}\left(n-\frac{n}{r}\right) \approx \left(1-\frac{1}{r}\right) \binom{n}{2}.$$
 
@@ -720,7 +721,40 @@ as $n \rightarrow \infty $. So $G$ has the desired properties with high probabil
 
 Realize that the key point in both proofs was the fact we could choose the most comfortable probability distribution, what gives us a huge flexibility to construct proofs.
 
-\section{Subgraphs of the Random Graph}
+\section{The Janson and FKG Inequalities}
+
+At this section we will focus on the occurrence of  bad events, asking questions as the form ``Could we count the number of bad events?'' or ``What is the probability that none of the bad events occurs?''. The Janson and FKG inequalities give us tools to answer this type of question.
+
+\subsection{The FKG inequality}
+
+\begin{definition}
+Monotone Increasing. Let $\mathcal{A}$ be a collection of graphs on $n$ vertices, $\mathcal{A}$ is monotone increasing if $G \in \mathcal{A}$ and $e(G) \subset e(H)$ implies $H \in \mathcal{A}$, so if $G \in \mathcal{A}$ this means adding edges doesn't make $G$ loose the characteristics that makes it be in $\mathcal{A}$ and it is called monotone decreasing otherwise.     
+\end{definition}
+
+\begin{example}
+``$G$ contains a triangle'' is monotone increasing because it is impossible to destroy a triangle adding edges and ``$G$ is planar'' is monotone decreasing because the more edges $G$ has more difficult to be planar.
+\end{example}
+
+\begin{theorem} (FKG inequality).
+ Let $\mathcal{A}$ and $\mathcal{B}$ be monotone increasing and let $\mathcal{C}$ be monotone decreasing, then:
+
+$$ \mathbb{P}((G_{n,p} \in \mathcal{A}) \wedge (G_{n,p} \in \mathcal{B})) \geq \mathbb{P}(G_{n,p} \in \mathcal{A})\mathbb{P}(G_{n,p} \in \mathcal{B}),$$
+and
+$$ \mathbb{P}((G_{n,p} \in \mathcal{A}) \wedge (G_{n,p} \in \mathcal{C})) \leq \mathbb{P}(G_{n,p} \in \mathcal{A})\mathbb{P}(G_{n,p} \in \mathcal{C}).$$
+\end{theorem}
+
+\subsection{Janson's Inequality}
+
+\subsection{Nameless Section}
+\begin{theorem}
+Let $c$ be a constant and $p = \frac{c}{n}$. Then
+
+$$ \limsup_{n \rightarrow \infty}\mathbb{P}(G_{n,p}\text{ contains a triangle }) = 1 - e^{\frac{-c^3}{6}}.$$
+\end{theorem}
+
+%\section{Subgraphs of the Random Graph}
+
+\chapter{Regularity}
 
 \chapter{Schedule}
 
@@ -731,7 +765,6 @@ Realize that the key point in both proofs was the fact we could choose the most 
 \hline
 Task & Month&Year \\ 
 \hline                               
-Introduction, Methodology, Justification & August & 2018 \\
 Chapter 1& September & 2018 \\
 Chapter 2 &October & 2018 \\
 Chapter 3&November & 2018 \\
