@@ -16,6 +16,7 @@
 \usepackage{graphicx} % Gerencia imagens incluidas
 \usepackage{float} 
 
+
 \hypersetup{
 	colorlinks,
     linkcolor={red!60!black},
@@ -726,6 +727,7 @@ Realize that the key point in both proofs was the fact we could choose the most 
 At this section we will focus on the occurrence of  bad events, asking questions as the form ``Could we count the number of bad events?'' or ``What is the probability that none of the bad events occurs?''. The Janson and FKG inequalities give us tools to answer this type of question.
 
 \subsection{The FKG inequality}
+In this subsection we shall use FKG inequality to acquire an upper bound for Theorem \ref{theo:FKG}, but first we introduce some concepts and present the FKG inequality.
 
 \begin{definition}
 Monotone Increasing. Let $\mathcal{A}$ be a collection of graphs on $n$ vertices, $\mathcal{A}$ is monotone increasing if $G \in \mathcal{A}$ and $e(G) \subset e(H)$ implies $H \in \mathcal{A}$, so if $G \in \mathcal{A}$ this means adding edges doesn't make $G$ loose the characteristics that makes it be in $\mathcal{A}$ and it is called monotone decreasing otherwise.     
@@ -743,16 +745,93 @@ and
 $$ \mathbb{P}((G_{n,p} \in \mathcal{A}) \wedge (G_{n,p} \in \mathcal{C})) \leq \mathbb{P}(G_{n,p} \in \mathcal{A})\mathbb{P}(G_{n,p} \in \mathcal{C}).$$
 \end{theorem}
 
-\subsection{Janson's Inequality}
-
-\subsection{Nameless Section}
-\begin{theorem}
+FKG inequality presented follows the theorem we want to prove.
+\begin{theorem} \label{theo:FKG}
 Let $c$ be a constant and $p = \frac{c}{n}$. Then
 
 $$ \limsup_{n \rightarrow \infty}\mathbb{P}(G_{n,p}\text{ contains a triangle }) = 1 - e^{\frac{-c^3}{6}}.$$
 \end{theorem}
+\begin{proof}
 
-%\section{Subgraphs of the Random Graph}
+We start using FKG inequality to prove the upper bound.\\
+Let $X$ be a triple in $[n]$ and $B_X$ be the event that this triple forms a triangle in $G_n,p$. Note that the events $\overline{B_X}$ are monotone decreasing and have probability $(1-p)^3$.
+
+\begin{align*}
+\mathbb{P}(G_{n,p} \text{ has no triangles }) &= \mathbb{P}\left( \bigwedge_{X \in \binom{[n]}{3}} \overline{B_X}\right) \\
+& \geq \prod_{X \in \binom{[n]}{3}} \mathbb{P}(\overline{B_X})\\
+& = (1-p^3)^{\binom{n}{3}}\\
+& \rightarrow e^{-\mathbb{E}[X]}\\
+& = e^{-c^3/6},
+\end{align*}
+
+as $n \rightarrow \infty$ finishing the upper bound proof.
+
+\end{proof}
+
+\subsection{Janson's Inequality}
+
+In this subsection we shall use Janson's inequalities to prove the bound given by the FKG inequality is sharp under certain circumstances.\\
+
+Let $A_1, ... , A_m$ be subsets of [N] and $Y$ be a set in $[N]$ whose elements are chosen independently, with $\mathbb{P}(j \in Y) = p$ for each $j$. 
+
+$$ B_j = \{A_j \colon A_j \subset Y\},$$
+note that the events are monotone increasing and that $B_i$ and $B_j$ are independent $\iff A_i \cap A_j \neq \emptyset$. 
+
+Define $\mu = \sum_j \mathbb{P}(B_j)$ denoting the expected number of bad events and let
+
+$$ \Delta = \sum_{i\sim j} \mathbb{P}(B_i \wedge B_j), $$
+where the sum is over ordered pairs $(i,j)$ such that $A_i$ and $A_j$ intersect. Follows the Janson inequalities.
+
+\begin{theorem}
+(Janson, 1987). Let $A_1,...,A_m \subset [n]$ and let $B_1,...,B_m$ be the events defined above. Then
+
+$$ \mathbb{P}\left(\bigwedge_{j=1}^m \overline{B_j}\right) \leq e^{-\mu + \Delta/2}. $$
+
+And if $\Delta \geq \mu$, then
+
+$$ \mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) \leq e^{-\mu ^2 /2\Delta}.$$
+\end{theorem}
+By FKG inequality we have,
+
+$$ \mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) \geq \prod_j (1-\mathbb{P}(B_j)) \approx e^{-\mu}, $$
+
+if $\mathbb{P}(B_j) \ll 1$ for each $j$, so the Janson inequalities are close to being sharp.We shall prove the first inequality.
+
+\begin{proof}
+We claim that, for each $j \in [m]$,
+
+$$\mathbb{P} \left( B_j | \bigwedge_{i=1}^{j-1} \overline{B_i} \right) \geq \mathbb{P}(B_j) - \sum_{i\sim j, i<j} \mathbb{P}(B_i \wedge B_j). $$
+
+In order to prove the claim we need to divide the event $\bigwedge^{j-1}_ {i=1} \overline{B_i}$ into two parts, $E$ and $F$. Let $E$ denote the event $\bigwedge_{i \in I} \overline{B_i}$, where
+
+$$ I = \{ i \in [j-1]: i \sim j \},$$
+(i.e., the set of indices $i$ such that $A_i \cap A_j$ is non-empty), and let $F$ denote the event $\bigwedge_{i \in J} \overline{B_i}$, where $J=[j-1]\backslash I$. Note that the event $B_j$ is independent of the event $E$, and that $E$ and $F$ are both monotone decreasing. By the FKG inequality,
+
+\begin{align*}
+\mathbb{P}(B_j | E \cap F) & \geq \mathbb{P}(B_j \wedge E | F)\\
+& = \mathbb{P}(B_j | F) \mathbb{P}(E | B_j \wedge F)\\
+& \geq \mathbb{P}(B_j)\mathbb{P}(E|B_j)\\
+& \geq \mathbb{P}(B_j) - \mathbb{P}(B_j) \mathbb{P}(\overline{E} | B_j)\\
+& = \mathbb{P}(B_j) - \sum_{i \sim j, i < j} \mathbb{P}(B_i | B_j).
+\end{align*}
+
+\vspace{3cm}
+
+Since the claim is proved, note that, from $\mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B|A)$ we have,
+
+\begin{align*}
+\mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) &= \prod_{j=1}^m \mathbb{P}\left( \overline{B_j} | \bigwedge_{i = 1}^{j-1} \overline{B_i}\right)\\
+& = \prod_{j=1}^m \left( 1 - \mathbb{P}\left(B_j | \bigwedge_{i = 1}^{j-1} \overline{B_i}\right)\right)\\
+& \leq exp\left(- \sum_{j=1}^m \mathbb{P}(B_j | \bigwedge_{i=1}^{j-1} \overline{B_i}\right),
+\end{align*}
+using the claim we just proved,
+\begin{align*}
+\mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) &\leq  exp\left(- \sum_{j=1}^m \mathbb{P}(B_j) + \sum_{i \sim j, i< j} \mathbb{P}(B_i \wedge B_j)\right)\\
+& = exp( - \mu + \Delta /2).
+\end{align*}
+
+Then we finish the proof of the first inequality.
+\end{proof}
 
 \chapter{Regularity}
 
