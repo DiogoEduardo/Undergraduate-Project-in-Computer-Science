@@ -759,27 +759,36 @@ Let $X$ be a triple in $[n]$ and $B_X$ be the event that this triple forms a tri
 \begin{align*}
 \mathbb{P}(G_{n,p} \text{ has no triangles }) &= \mathbb{P}\left( \bigwedge_{X \in \binom{[n]}{3}} \overline{B_X}\right) \\
 & \geq \prod_{X \in \binom{[n]}{3}} \mathbb{P}(\overline{B_X})\\
-& = (1-p^3)^{\binom{n}{3}}\\
+& \geq (1-p^3)^{\binom{n}{3}}\\
 & \rightarrow e^{-\mathbb{E}[X]}\\
 & = e^{-c^3/6},
 \end{align*}
+as $n \rightarrow \infty$ finishing the upper bound proof. For the lower bound proof we shall use same definition of $X$ and $B_X$ used before. Thus we have a set of $\binom{n}{3}$ events $B_X$ of the form $A_X \subset E(G_{n,p}) \subset \binom{n}{2}$.
+Note that 
+$$\mu = \sum_X \mathbb{P} (B_X) = p^3\binom {n}{3},$$
+and
+$$\Delta = \sum_{X\sim Y} \mathbb{P}(B_X \wedge B_Y) = O(n^4 p^5) \ll 1.$$
 
-as $n \rightarrow \infty$ finishing the upper bound proof.
+Then using the Janson's inequality 
 
+$$ \mathbb{P}\left(\bigwedge_{j=1}^m \overline{B_j}\right) \leq e^{-\mu + \Delta/2}, $$
+which we shall prove next we have the following 
+$$ \mathbb{P}(G_{n,p}\text{ has no triangles }) \leq e^{-\mu + \Delta/2} \rightarrow e^{-c^3/6}$$
+as $n \rightarrow \infty$, finishing the proof.
 \end{proof}
 
 \subsection{Janson's Inequality}
 
 In this subsection we shall use Janson's inequalities to prove the bound given by the FKG inequality is sharp under certain circumstances.\\
 
-Let $A_1, ... , A_m$ be subsets of [N] and $Y$ be a set in $[N]$ whose elements are chosen independently, with $\mathbb{P}(j \in Y) = p$ for each $j$. 
+Let $A_1, ... , A_m$ be subsets of $[N]$ and $Y$ be a set in $[N]$ whose elements are chosen independently, with $\mathbb{P}(j \in Y) = p$ for each $j$ and $N=\binom{n}{2}$. 
 
 $$ B_j = \{A_j \colon A_j \subset Y\},$$
 note that the events are monotone increasing and that $B_i$ and $B_j$ are independent $\iff A_i \cap A_j \neq \emptyset$. 
 
 Define $\mu = \sum_j \mathbb{P}(B_j)$ denoting the expected number of bad events and let
 
-$$ \Delta = \sum_{i\sim j} \mathbb{P}(B_i \wedge B_j), $$
+$$ \Delta = \sum_{\substack{i\sim j\\ (i,j) \in [N]^2}} \mathbb{P}(B_i \wedge B_j), $$
 where the sum is over ordered pairs $(i,j)$ such that $A_i$ and $A_j$ intersect. Follows the Janson inequalities.
 
 \begin{theorem}
@@ -812,7 +821,7 @@ $$ I = \{ i \in [j-1]: i \sim j \},$$
 & = \mathbb{P}(B_j | F) \mathbb{P}(E | B_j \wedge F)\\
 & \geq \mathbb{P}(B_j)\mathbb{P}(E|B_j)\\
 & \geq \mathbb{P}(B_j) - \mathbb{P}(B_j) \mathbb{P}(\overline{E} | B_j)\\
-& = \mathbb{P}(B_j) - \sum_{i \sim j, i < j} \mathbb{P}(B_i | B_j).
+& \geq \mathbb{P}(B_j) - \sum_{i \sim j, i < j}\mathbb{P}(B_j) \mathbb{P}(B_i | B_j).
 \end{align*}
 
 \vspace{3cm}
@@ -830,8 +839,38 @@ using the claim we just proved,
 & = exp( - \mu + \Delta /2).
 \end{align*}
 
-Then we finish the proof of the first inequality.
+Then we finish the proof of the first inequality. Now we proceed with the proof of the second inequality, with $\Delta \geq \mu$.
+
+$$\mathbb{P}(\bigwedge_{j=1}^m \overline{B_j}) \leq \mathbb{P}(\bigwedge_{j \in T} \overline{B_j}),$$
+for all $T$ in $\binom{n}{2}$ with $T$ chosen randomly. We define $\mathbb{P}(j \in T) = q$ for all $j$ independently, then we have,
+
+$$ \mathbb{P}(\bigwedge_{j \in T} \overline{B_j}) \leq e^{- \mu(T) + \Delta(T)/2},$$
+with
+ $$\mu(T) = \sum_{j \in T} \mathbb{P}(B_j),$$
+ and
+ \begin{align*}
+ \mathbb{E} [\mu(T)] &= \sum^m_{j=1} \mathbb{P}(j\in T) \mathbb{P} (B_j)\\
+& = q\mu .
+ \end{align*}
+ and we have
+ $$ \mathbb{E}[\Delta(T)] = q^2\Delta.$$
+ 
+ Then,
+ $$\mathbb{E}[\mu(T) - \Delta(T)/2] = q\mu - q^2 \Delta/2,$$
+ which by the fact $\mathbb{E}[X] \geq a \Rightarrow \mathbb{P}(X\geq a) > 0$,
+ $$\Rightarrow \mathbb{P}(\mu(T) - \Delta(T)/2 \geq q\mu - q^2 \Delta / 2) > 0$$
+ $$\Rightarrow \exists T \subset \binom{n}{2}\text{ such that } \mu(T) - \Delta(T)/2 \geq q\mu - q^2 \Delta / 2 .$$
+ 
+Now maximizing $q = \mu / \Delta \leq 1$ we have
+
+ $$ \mu(T) - \Delta(T)/2 \geq \frac{\mu^2}{\Delta} - \frac{\mu^2}{2\Delta}$$
+ $$\Rightarrow -\mu(T) + \frac{\Delta(T)}{2} \leq -\frac{\mu^2}{2\Delta}.$$
+ 
+ Then we finish the proof.
+ 
 \end{proof}
+
+\section{Connectedness}
 
 \chapter{Regularity}
 
