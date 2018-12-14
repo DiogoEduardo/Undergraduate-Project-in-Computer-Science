@@ -871,7 +871,60 @@ Now maximizing $q = \mu / \Delta \leq 1$ we have
 \end{proof}
 
 \section{Connectedness}
+At this section we will answer the question ``For which $p$ is $G_{n,p}$ likely to be connected?'' Observe this property is monotone, because it is not possible to disconnect a graph by adding edges. The following theorem gives a threshold for this property.
 
+\begin{theorem}
+For every $\epsilon > 0$,
+
+$$\mathbb{P}(G_{n,p}\text{ is connected}) \rightarrow \Bigg	 \{ 0\text{ if }p \leq \frac{(1 - \epsilon) \log n}{n} , 1 \text{ if } p \geq \frac{(1 + \epsilon) \log n}{n}$$
+
+as $n \rightarrow \infty$.
+\end{theorem}
+\begin{proof}
+We start proving what happens when $p \leq \frac{(1 - \epsilon) \log n}{n}$. In order to have a connected $G\colon G \in G_{n,p}$ we need to avoid isolated vertices. Let $X=X(G)$ denote the number of isolated vertices in $G$ and let $p\leq((1-\epsilon) \log n) /n$. Then using the fact $1-x > e^{-x-x^2}$,
+
+$$ \mathbb{E}[X(G)] = n(1-p)^{n-1} > ne^{-pn-p^2n} \gg n^{\epsilon/2},$$
+for sufficiently large $n$. Now we can bound the variance of $X(G)$ as below,
+
+\begin{align*}
+Var(X) &= \mathbb{E}[X^2 ] - \mathbb{E}[X]^2\\
+&= \sum_{x,y} \mathbb{P}(d_x = d_y =0) - \left( \sum_x \mathbb{P}(d_x = 0\right)^2\\
+& = 2\binom{n}{2} (1-p)^{2n-3} + n(1-p)^{n-1} - n^2(1-p)^{2n-2}\\
+& = (n^2 - n)(1-p)^{2n-3} + n(1-p)^{n-1} - n^2(1-p)^{2n-2}\\
+& = n^2(1-p)^{2n-3}\left( \frac{n-1}{n} - (1-p) \right) + n(1-p)^{n-1}\\
+& = n^2(1-p)^{2n-3}\left( -\frac{1}{n} + p \right) + n(1-p)^{n-1}\\
+& = pn^2 (1-p)^{2n-3} + n(1-p)^{n-1} - n(1-p)^{2n-3}\\
+& \ll n^2 (1-p)^{2n-2}\\
+& = \mathbb{E}[X]^2.
+\end{align*}
+
+Then we just showed $Var(X) \ll \mathbb{E}[X]^2$ and now we can use Chebychev  inequality,
+
+$$\mathbb{P}(X=0) \leq \mathbb{P} (X-\mathbb{E}(X) \geq \mathbb{E}(X)) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \rightarrow 0.$$
+
+We can conclude $\mathbb{P}(G\text{ is connected}) \rightarrow 0$ as $n \rightarrow \infty$ finishing the prove of the first part.\\
+
+To prove the second part, we define the random variable $Y_k(G)$, which counts the number of components of size $k$ in $G$. Bounding the expected number we have
+
+\begin{align*}
+\mathbb{E}[Y_k (G)]  & \leq \sum_{\substack{S\subset V(G) \\ |S| = k}} \mathbb{P}(S\text{ is a component})\\
+&\leq \binom{n}{k}(1-p)^{k(n-k)}\\
+&\leq \left( \frac{en}{k} \right) ^k e^{-pk(n-k)}\\
+& = \left( \frac{en}{k} e^{-p(n-k)} \right)^k.
+\end{align*}
+Note that if $G$ is not connected, there must exist a component of size at most $ n/2$ then $1 \leq k \leq n/2$. Since the function $\left( \frac{en}{k} e^{-p(n-k)} \right)$ is convex the highest value of it occurs in one of its extremal points thus we have
+$$\mathbb{E}[Y_k (G)] \leq (max\{ene^{-p(n-1)}, 2ee^{-pn/2}\})^k .$$
+
+Note that, \\
+for $ene^{-p(n-1)}$ and $p \geq \frac{(1 + \epsilon) \log n}{n}$ we have $\mathbb{E}[Y_k (G)] \rightarrow 0$\\
+and for $2ee^{-pn/2}$ and $p \geq 4/n$ we have $\mathbb{E}[Y_k (G)] \rightarrow 0$\\
+
+Using the maximum one we have $p \geq \frac{(1 + \epsilon) \log n}{n}$  and by Markov's inequality
+
+ $$\mathbb{P}(Y_k \geq 1) \leq \mathbb{E}[Y_k] \rightarrow 0,$$
+ which implies $\mathbb{P}(\text{G is connected}) \rightarrow 1$, finishing the proof.
+
+\end{proof}
 \chapter{Regularity}
 
 \chapter{Schedule}
