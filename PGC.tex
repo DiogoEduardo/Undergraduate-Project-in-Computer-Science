@@ -15,7 +15,7 @@
 \usepackage{indentfirst}
 \usepackage{graphicx} % Gerencia imagens incluidas
 \usepackage{float} 
-
+\usepackage{bbm}
 
 \hypersetup{
 	colorlinks,
@@ -722,11 +722,57 @@ as $n \rightarrow \infty $. So $G$ has the desired properties with high probabil
 
 Realize that the key point in both proofs was the fact we could choose the most comfortable probability distribution, what gives us a huge flexibility to construct proofs.
 
+\section{Subgraphs of the Random Graph}
+
+At this section we will see the value of $p$ that implies a specific property be or not present in the random graph $G_{n,p}$. Being more specific we shall prove the threshold for the property ``containing a triangle'' in $G_{n,p}$.  We will need the Chebychev inequality presented below.
+
+\begin{theorem}(Chebychev's inequality).\\
+$$\mathbb{P}(|X-\mu| \geq a) \leq \sigma^2/a^2.$$
+\end{theorem} 
+
+Using $a = \mu$, we have the following very useful inequality,
+
+$$\mathbb{P}(X=0) \leq \mathbb{P}(|X-\mu | \geq \mu) \leq \sigma^2/\mu^2,$$
+which gives us a superior bound for $\mathbb{P}(X=0)$. We shall use it to prove the following result.\\
+
+\begin{theorem}
+$$ \mathbb{P}(G_{n,p}\text{ contains a triangle}) \rightarrow \big\{ 0 \text{ if } p \ll 1/n, 1 \text{ if } p \gg 1/n $$
+\end{theorem}
+
+\begin{proof}
+Note that it is a monotone property, i. e., it is not possible to destroy triangles by adding edges. In the first part we need the random variable and  Markov's inequality as follows,
+$$ X = \text{ the number of triangles in } G_{n,p}.$$
+\begin{align*}
+\mathbb{P}(G_{n,p}\text{ contains a triangle }) &\leq \mathbb{E}(X)\\
+& \leq \binom{n}{3}p^3 \\
+& \ll 1,
+\end{align*}
+if $ p \ll 1/n$, finishing the first part of the proof. To prove the second part we need to bound the variance of the random variable.
+
+\begin{align*}
+Var(X) &= \mathbb{E}(X^2) - \mathbb{E}(X)^2\\
+& = \mathbb{E} \left( \sum_{(u, v)} \mathbbm{1}[u]\mathbbm{1}[v] \right) - \left( \sum_u \mathbb{P}(u) \right) ^2\\
+& = \sum_{u,v} \left(\mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right),
+\end{align*}
+where $v$ and $u$ denote the events that specific triangle occurs and the $\mathbbm{1}$ denotes the indicator function, assuming value $1$ if the event occurs and $0$ otherwise. Note that the pairs $u,v$ which are independent appear in both terms as follows
+
+\begin{align*}
+Var(X) &= \sum_{u,v} \left(\mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right)\\
+%& = \sum_{|u \cap v| = 0}\left( \mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right)\\ &+ \sum_{|u \cap v| = 1}\left( \mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right)\\ &+ \sum_{|u \cap v| = 2}\left( \mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right)\\ &+ \sum_{|u \cap v| = 3}\left( \mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right)\\
+& \leq \sum_{|u \cap v| = 2}\mathbb{P}(u \wedge v) + \sum_{|u \cap v| = 3}\mathbb{P}(u \wedge v)\\
+&\leq n^4 p^5 + n^3 p^3,
+\end{align*}
+%$$ \sum_{|u \cap v| = 1}\mathbb{P}(u \wedge v)   = n^5p^5$$
+and using Chebychev's inequality,
+$$\mathbb{P}(G_{n,p} \text{ contains no triangles}) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \leq \frac{n^4p^5 + n^3p^3 }{n^6p^6} \ll 1,$$
+if $p \gg 1/n$, finishing the proof.
+ \end{proof}
+
 \section{The Janson and FKG Inequalities}
 
 At this section we will focus on the occurrence of  bad events, asking questions as the form ``Could we count the number of bad events?'' or ``What is the probability that none of the bad events occurs?''. The Janson and FKG inequalities give us tools to answer this type of question.
 
-\subsection{The FKG inequality}
+\subsection{The FKG Inequality}
 In this subsection we shall use FKG inequality to acquire an upper bound for Theorem \ref{theo:FKG}, but first we introduce some concepts and present the FKG inequality.
 
 \begin{definition}
@@ -823,8 +869,6 @@ $$ I = \{ i \in [j-1]: i \sim j \},$$
 & \geq \mathbb{P}(B_j) - \mathbb{P}(B_j) \mathbb{P}(\overline{E} | B_j)\\
 & \geq \mathbb{P}(B_j) - \sum_{i \sim j, i < j}\mathbb{P}(B_j) \mathbb{P}(B_i | B_j).
 \end{align*}
-
-\vspace{3cm}
 
 Since the claim is proved, note that, from $\mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B|A)$ we have,
 
