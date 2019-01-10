@@ -970,9 +970,81 @@ Using the maximum one we have $p \geq \frac{(1 + \epsilon) \log n}{n}$  and by M
 
 \end{proof}
 \chapter{Regularity}
+In this chapter will be presented the Szemerédi's Regularity Lemma which is a really powerful tool in Combinatorics,  perhaps the most one. It give us a method to approximate any arbitrary graph to a random graph which means any arbitrary graph can be transformed in order to share useful properties with random graphs and to illustrate the huge importance of it see the example below,
+
+\begin{example}
+With at least how many edges can we say a graph $G$ has a triangle?
+
+For arbitrary graphs:
+$$ e(G) > \frac{n^2}{4} \Rightarrow G \text{ has a triangle. }$$
+
+For random graphs:
+$$ e(G) \gg n \Rightarrow G\text{ has a triangle w.h.p. } $$
+
+As we can see random graphs, in general, are easier to deal with and it shows the importance of this lemma.
+\end{example}
+
+Informally, the method says that if you partition a given graph enough then the partition pairs look random-like. Before showing the formal form we need to define $\epsilon$-regular and to show the properties that make it looks random-like.
+
+\begin{definition}
+The graph $G$ partition $(A,B)$ is $\epsilon$-regular if
+$$\text{ For every } X \subset A \text{ and every } Y \subset B,\text{ with } |X| \geq \epsilon|A| \text{ and } |Y| \geq \epsilon |B|,$$
+we have:
+$$ \left| \frac{e(X,Y)}{|X||Y|} - \frac{e(A,B)}{|A||B|} \right| \leq \epsilon  .$$
+\end{definition}
+
+
+A property shared between random graphs and $\epsilon$-regular pairs is that most vertices have roughly the same number of neighbours. See below the proof for $\epsilon$-regular pairs,
+
+\begin{fact}\label{fact:503}
+Let $(A,B)$ be a $\epsilon$-regular pair of density at least $\delta$ in a graph $G$. Then only $2 \epsilon |A| $ vertices of $A$ have a degree out of the interval $(\delta - \epsilon)|B| \leq d(v): v \in A \leq (\delta + \epsilon)|B|$ in $G[A,B].$
+\end{fact}
+\begin{proof}
+Let $X \subset A$ as follows,
+$$ X = \{v \in A \colon | N_G(v) \cap B | < (\delta-\epsilon)|B|\}, $$ 
+and let $Y=B$. Then note the density of the pair $(X,Y)$ is less than  $\delta - \epsilon$ which implies $|X| < \epsilon |A|$, otherwise it would contradict the  $\epsilon$-regular definition. By symmetry, the same holds for $Z = \{ v \in A \colon |N_G(v) \cap B| > (\delta+\epsilon)|B|\}$, then summing both we have at most $2 \epsilon |A| $ vertices of $A$ that do not have roughly the same number of neighbours.
+
+Alternatively, we can note from the $\epsilon$-regular definition, with $|X| \geq \epsilon|A|, |Y|\geq \epsilon|A|$ and $ (e(A,B))/|A||B| \geq \delta $, we have
+
+$$ \frac{e(X,Y)}{|X||Y|} \geq \frac{e(A,B)}{|A||B|} - \epsilon \geq \delta - \epsilon,$$
+let $Y = B$ then
+$$ \frac{e(X,B)}{|X|} \geq (\delta - \epsilon)|B|,$$
+which corresponds to average degree of $v \in X$, confirming the result above.
+\end{proof}
+
+Now we show the embedding lemma which is what makes the regularity so useful to solve problems. It says that for the purpose of finding small subgraphs in graph $G$, dense $\epsilon$-regular pair can be treated as complete bipartite graphs and it is surprisingly not hard to prove.
+
+\begin{definition}
+$\mathcal{G}(H,m,\epsilon,\delta)$ denotes the family of graphs $G$ such that $V(G) = V(H(m))$, $G\subset H(m)$, and $G[A_i,A_j]$ is $\epsilon$-regular and has density at least $\delta$ whenever $ij \in E(H)$.
+\end{definition}
+
+\begin{lemma}
+The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\epsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\epsilon,\delta)$, then $H \subset G$. 
+\end{lemma} 
+
+\begin{proof}
+We prove for $H=K_3$. Let $G \in \mathcal{G}(H, m,\epsilon,\delta)$ and let $A$, $B$ and $C$ be $\epsilon$-regular and at least $\delta$-dense partitions of $G$, with $|A|=|B|=|C|=n$ as in the figure \ref{fig:embeddinglemma}. Note that if we don't consider the sets of vertices $\{w\in A \colon d_B(w) < (\delta - \epsilon)|B| \}$  and $\{u\in A \colon d_C(u) < (\delta - \epsilon)|C| \}$ then we have $(1-2\epsilon)|A|$ vertices in $A$ such that $N(v) \cap B \geq \epsilon |B|$ and $N(v) \cap C \geq \epsilon |C|$ by Fact \ref{fact:503}. Then let $X = N(v) \cap B$ and $Y =N(v) \cap C$ so there must be a edge between $X$ and $Y$ (note that any edge between $X$ and $Y$ forms a triangle). To be more precise we have $|X| \geq (\delta - \epsilon)|B|$ and $|Y| \geq (\delta - \epsilon)|C|$, as follows
+
+\begin{align*}
+e(X,Y) &\geq (\delta - \epsilon)|X||Y|\\
+& \geq (\delta - \epsilon)  (\delta - \epsilon)|B|  (\delta - \epsilon)|C|\\
+& =  (\delta - \epsilon)^3 n^2.
+\end{align*}
+
+Then we have at least $ (\delta - \epsilon)^3 n^2$ triangles for each $v$ then follows we have at least $(1-2\epsilon) (\delta-\epsilon)^3 n^3$ triangles in $G$. 
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[scale=1]{Figuras/embedding-lemma.jpg}
+     \caption{Triangles in a $\epsilon$-regular partition.}
+     \label{fig:embeddinglemma}
+\end{figure}
+
+\end{proof}
+
 
 \chapter{Conclusion}
-Essential classical results and methods in Extremal Combinatorics were presented in this project, although it is not a complete cover of literature it gives us a good background of this fruitful area of study and makes easier to expand knowledge and results throughout the whole area of Extremal Combinatorics. We focus our efforts in the methods and results we consider most important and useful for who is interested in continuing studying the area in postgraduate courses and contributing for the area expansion in future.
+Essential classical results and methods in Extremal Combinatorics were presented in this project, although it is not a complete cover of literature it gives us a good background of this fruitful area of study and makes easier to expand knowledge and results throughout the whole area of Extremal Combinatorics. We focus our efforts in the methods and results we consider most important and useful for who is interested in continuing studying the area in postgraduate courses and contributing for the area expansion in the future.
 
 It were used as a base text and initial point of study the Robert Morris and Roberto Imbuziero book [reference here] which cover more topics of study and is much more simplified and summarized. Completing the gaps and trying to make a self-contained text with detailed explanations for initial students of the area was a great effort by itself.
 
