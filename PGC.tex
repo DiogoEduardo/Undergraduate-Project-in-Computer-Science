@@ -218,6 +218,8 @@ Extremal Graph Theory studies graphs' size, as the number interval of edges and 
 
 The Probabilistic Method is a very useful tool for solving problems in many areas, because it is flexible and uses a random graph which is simple to use and work with the probabilities that makes possible prove statements with high or not null probability.
 
+Finally the regularity lemma is approached, one of the most important tools in Combinatorics, informally it is about acquired from any graph a real good approximation with random-like subgraphs which give us a huge flexibility to prove many statements.
+
 %\chapter{Justification}
 %ME INTERESSEI PELO TEMA, APENAS!
 
@@ -984,7 +986,9 @@ $$ e(G) \gg n \Rightarrow G\text{ has a triangle w.h.p. } $$
 As we can see random graphs, in general, are easier to deal with and it shows the importance of this lemma.
 \end{example}
 
-Informally, the method says that if you partition a given graph enough then the partition pairs look random-like. Before showing the formal form we need to define $\epsilon$-regular and to show the properties that make it looks random-like.
+\section{The Regularity Lemma}
+
+Informally, the lemma says that if you partition a given graph enough then the partition pairs look random-like. Before showing the formal form we need to define $\epsilon$-regular and to show the properties that make it looks random-like.
 
 \begin{definition}
 The graph $G$ partition $(A,B)$ is $\epsilon$-regular if
@@ -1042,6 +1046,20 @@ Then we have at least $ (\delta - \epsilon)^3 n^2$ triangles for each $v$ then f
 
 \end{proof}
 
+\begin{theorem}
+(The Szemerédi Regularity Lemma, 1975). Let $\epsilon > 0$, and let $m \in  \mathbb{N}$. There exists a constant $M=M(m, \epsilon)$ such that the following holds.\\
+For any graph $G$, there exists a partition $V(G) = A_0 \cup ... \cup A_k$ of the vertex set into $m\leq k \leq M$ parts, such that
+
+$|A_1| = ... =|A_k|$,
+
+$|A_0| \leq \epsilon |V(G)|$,
+
+all but $\epsilon k^2$ of the pairs $(A_i, A_j)$ are $\epsilon$-regular. 
+\end{theorem}
+
+Note the lemma holds for all graphs, but it is useful only for graphs with large $n$ and with a minimum density. Indeed, if $|V(G)| < M(m, \epsilon)$ then each part has at most one vertex and if $e(G) = on^2$ (see as a sparse graph) then $G$ is well-approximated by the empty graph, in both the lemma is vacuous and not so useful.  
+
+\section{Applications}
 
 \chapter{Conclusion}
 Essential classical results and methods in Extremal Combinatorics were presented in this project, although it is not a complete cover of literature it gives us a good background of this fruitful area of study and makes easier to expand knowledge and results throughout the whole area of Extremal Combinatorics. We focus our efforts in the methods and results we consider most important and useful for who is interested in continuing studying the area in postgraduate courses and contributing for the area expansion in the future.
