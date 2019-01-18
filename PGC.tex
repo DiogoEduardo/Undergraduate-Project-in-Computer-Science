@@ -1022,7 +1022,7 @@ Now we show the embedding lemma which is what makes the regularity so useful to 
 $\mathcal{G}(H,m,\epsilon,\delta)$ denotes the family of graphs $G$ such that $V(G) = V(H(m))$, $G\subset H(m)$, and $G[A_i,A_j]$ is $\epsilon$-regular and has density at least $\delta$ whenever $ij \in E(H)$.
 \end{definition}
 
-\begin{lemma}
+\begin{lemma}\label{lemma:embeddinglemma}
 The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\epsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\epsilon,\delta)$, then $H \subset G$. 
 \end{lemma} 
 
@@ -1060,6 +1060,75 @@ all but $\epsilon k^2$ of the pairs $(A_i, A_j)$ are $\epsilon$-regular.
 Note the lemma holds for all graphs, but it is useful only for graphs with large $n$ and with a minimum density. Indeed, if $|V(G)| < M(m, \epsilon)$ then each part has at most one vertex and if $e(G) = on^2$ (see as a sparse graph) then $G$ is well-approximated by the empty graph, in both the lemma is vacuous and not so useful.  
 
 \section{Applications}
+Applying the SzRL, in general, has more convincing power of its use than the definitions or the proof of the lemma, then in this section we will show some classical applications. In order to apply the lemma we need to follow a standard process as can be seen below.
+
+1. Apply the Szemerédi Regularity Lemma in order to acquire a partition $ \{ A_0, ... A_k \} $ as defined in the lemma.
+
+2. Remove a few edges (edges inside the partitions, between irregular pairs and sparse pairs). There at most $O(\epsilon n^2)$ such edges.
+
+3. Define a graph $R$ such that $V(R) \rightarrow [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\epsilon$-regular.
+
+4. Apply a classical result from Graph Theory (e.g. Turán's Theorem) to R.
+
+5. Apply the Embedding Lemma to find a copy of the desired subgraph $H$ in $G$.
+\subsection{Erd\H{o}s-Stone Theorem}
+
+\begin{theorem}
+(Erd\H{o}s and Stone, 1946). Let H be an arbitrary graph. Then
+$$ ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$ 
+\end{theorem}
+
+\begin{proof}
+
+
+Assume $e(G) \geq (1 - 1/(\chi(H) - 1) + \delta)\binom{n}{2}$ and follow the steps above.
+
+1. Apply SzRL with $\epsilon$ enough small and we have the partitions $\{V_1, ... , V_k\}$.
+
+2. Remove edges inside the partitions, between irregular pairs and sparse pairs obtaining $G'$ as in Figure \ref{fig:graph-G-and-G'}.
+Note:\\
+
+|edges inside the parts| $\leq k\binom{n/k}{2} \leq k(n/k)^2 \leq \epsilon n^2$ (remember $1/\epsilon \leq k$).\\
+
+|edges between not $\epsilon$-regular pairs| $\leq \epsilon k^2 (n/k)^2 = \epsilon n^2$.\\
+
+|edges between not $\delta$-dense pairs| $\leq \binom{k}{2}(\delta/4) (n/k)^2 \leq (\delta /4)n^2$.\\ 
+
+Thus all edges removed are at most $(2\epsilon + \delta/4)n^2$ , 
+
+$$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{2 \delta}{3}\right) \binom{n}{2}.$$
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[scale=1.5]{Figuras/graph-G-and-G'.jpg}
+     \caption{Graph G and G'.}
+     \label{fig:graph-G-and-G'}
+\end{figure}
+
+3. Define $R$ with $V(R) = [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\epsilon$-regular as in Figure \ref{fig:graph-G'-and-R}
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[scale=1.5]{Figuras/graph-G'-and-R.jpg}
+     \caption{Graph G' and R.}
+     \label{fig:graph-G'-and-R}
+\end{figure}
+
+Note 
+$$e(R) \geq \frac{G'}{\left(\frac{n}{k}\right)^2}.$$
+
+4. Thus,
+$$e(R) > \frac{\left(1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{2}\right) \binom{n}{2}}{\left(\frac{n}{k}\right)^2} \approx \left( 1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{2}\right) \binom{k}{2}> t_r(k),$$
+we can apply the Turán's Theorem \ref{theorem:turan1941} that implies $K_{\chi (H)} \subset R$.
+
+5. Now applying the Embedding Lemma \ref{lemma:embeddinglemma} with $n$ large enough follows that $H \subset G$ as required.
+
+\end{proof}
+
+\subsection{The Triangle Removal Lemma}
+
+\subsection{Roth's Theorem}
+
 
 \chapter{Conclusion}
 Essential classical results and methods in Extremal Combinatorics were presented in this project, although it is not a complete cover of literature it gives us a good background of this fruitful area of study and makes easier to expand knowledge and results throughout the whole area of Extremal Combinatorics. We focus our efforts in the methods and results we consider most important and useful for who is interested in continuing studying the area in postgraduate courses and contributing for the area expansion in the future.
