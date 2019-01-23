@@ -1018,24 +1018,28 @@ which corresponds to average degree of $v \in X$, confirming the result above.
 
 Now we show the embedding lemma which is what makes the regularity so useful to solve problems. It says that for the purpose of finding small subgraphs in graph $G$, dense $\epsilon$-regular pair can be treated as complete bipartite graphs and it is surprisingly not hard to prove.
 
-\begin{definition}
-$\mathcal{G}(H,m,\epsilon,\delta)$ denotes the family of graphs $G$ such that $V(G) = V(H(m))$, $G\subset H(m)$, and $G[A_i,A_j]$ is $\epsilon$-regular and has density at least $\delta$ whenever $ij \in E(H)$.
-\end{definition}
+%\begin{definition}
+%$\mathcal{G}(H,m,\epsilon,\delta)$ denotes the family of graphs $G$ such that $V(G) = V(H(m))$, $G\subset H(m)$, and $G[A_i,A_j]$ is $\epsilon$-regular and has density at least $\delta$ whenever $ij \in E(H)$.
+%\end{definition}
 
 \begin{lemma}\label{lemma:embeddinglemma}
-The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\epsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\epsilon,\delta)$, then $H \subset G$. 
+%The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\epsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\epsilon,\delta)$, then $H \subset G$.
+
+
+The Embedding Lemma. Let $H$ be a graph, and let $\epsilon >0$. There exists $\delta >\epsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and $G$ $\epsilon$-partitioned in $\{V_1, ..., V_k\}$, then if there exists a partition $\{V_1, ..., V_H\}$ with all pairs $\epsilon$-regular and $\delta$- dense, then $H \subset G$. 
 \end{lemma} 
 
 \begin{proof}
-We prove for $H=K_3$. Let $G \in \mathcal{G}(H, m,\epsilon,\delta)$ and let $A$, $B$ and $C$ be $\epsilon$-regular and at least $\delta$-dense partitions of $G$, with $|A|=|B|=|C|=n$ as in the figure \ref{fig:embeddinglemma}. Note that if we don't consider the sets of vertices $\{w\in A \colon d_B(w) < (\delta - \epsilon)|B| \}$  and $\{u\in A \colon d_C(u) < (\delta - \epsilon)|C| \}$ then we have $(1-2\epsilon)|A|$ vertices in $A$ such that $N(v) \cap B \geq \epsilon |B|$ and $N(v) \cap C \geq \epsilon |C|$ by Fact \ref{fact:503}. Then let $X = N(v) \cap B$ and $Y =N(v) \cap C$ so there must be a edge between $X$ and $Y$ (note that any edge between $X$ and $Y$ forms a triangle). To be more precise we have $|X| \geq (\delta - \epsilon)|B|$ and $|Y| \geq (\delta - \epsilon)|C|$, as follows
+We prove for $H=K_3$. Let %$G \in \mathcal{G}(H, m,\epsilon,\delta)$ and let
+ $A$, $B$ and $C$ be $\epsilon$-regular and at least $\delta$-dense partitions of $G$, with $|A|=|B|=|C|=m$ as in the figure \ref{fig:embeddinglemma}. Note that if we don't consider the sets of vertices $\{w\in A \colon d_B(w) < (\delta - \epsilon)|B| \}$  and $\{u\in A \colon d_C(u) < (\delta - \epsilon)|C| \}$ then we have $(1-2\epsilon)|A|$ vertices in $A$ such that $N(v) \cap B \geq \epsilon |B|$ and $N(v) \cap C \geq \epsilon |C|$ by Fact \ref{fact:503}. Then let $X = N(v) \cap B$ and $Y =N(v) \cap C$ so there must be a edge between $X$ and $Y$ (note that any edge between $X$ and $Y$ forms a triangle). To be more precise we have $|X| \geq (\delta - \epsilon)|B|$ and $|Y| \geq (\delta - \epsilon)|C|$, as follows
 
 \begin{align*}
 e(X,Y) &\geq (\delta - \epsilon)|X||Y|\\
 & \geq (\delta - \epsilon)  (\delta - \epsilon)|B|  (\delta - \epsilon)|C|\\
-& =  (\delta - \epsilon)^3 n^2.
+& =  (\delta - \epsilon)^3 m^2.
 \end{align*}
 
-Then we have at least $ (\delta - \epsilon)^3 n^2$ triangles for each $v$ then follows we have at least $(1-2\epsilon) (\delta-\epsilon)^3 n^3$ triangles in $G$. 
+Then we have at least $ (\delta - \epsilon)^3 m^2$ triangles for each $v$ then follows we have at least $(1-2\epsilon) (\delta-\epsilon)^3 m^3$ triangles in $G$. 
 
 \begin{figure}[H]
      \centering
@@ -1047,14 +1051,14 @@ Then we have at least $ (\delta - \epsilon)^3 n^2$ triangles for each $v$ then f
 \end{proof}
 
 \begin{theorem}
-(The Szemerédi Regularity Lemma, 1975). Let $\epsilon > 0$, and let $m \in  \mathbb{N}$. There exists a constant $M=M(m, \epsilon)$ such that the following holds.\\
-For any graph $G$, there exists a partition $V(G) = A_0 \cup ... \cup A_k$ of the vertex set into $m\leq k \leq M$ parts, such that
+(The Szemerédi Regularity Lemma, 1975). Let $\epsilon > 0$, and let $k_0(\epsilon) \in  \mathbb{N}$ such that the following holds.\\
+For any graph $G$, there exists a partition $V(G) = V_1 \cup ... \cup V_k$ of the vertex set into $1/ \epsilon \leq k \leq k_0 (\epsilon)$ parts, such that
 
-$|A_1| = ... =|A_k|$,
+$|V_1| = ... =|V_k| \pm 1$
 
-$|A_0| \leq \epsilon |V(G)|$,
+%$|A_0| \leq \epsilon |V(G)|$,
 
-all but $\epsilon k^2$ of the pairs $(A_i, A_j)$ are $\epsilon$-regular. 
+all but $\epsilon k^2$ of the pairs $(V_i, V_j)$ are $\epsilon$-regular. 
 \end{theorem}
 
 Note the lemma holds for all graphs, but it is useful only for graphs with large $n$ and with a minimum density. Indeed, if $|V(G)| < M(m, \epsilon)$ then each part has at most one vertex and if $e(G) = on^2$ (see as a sparse graph) then $G$ is well-approximated by the empty graph, in both the lemma is vacuous and not so useful.  
@@ -1127,7 +1131,49 @@ we can apply the Turán's Theorem \ref{theorem:turan1941} that implies $K_{\chi 
 
 \subsection{The Triangle Removal Lemma}
 
+\begin{theorem} \label{lemma:triangleremoval}
+(Triangle Removal Lemma). For all $\alpha > 0$ exists $\beta > 0$ such that let $G$ be a graph with $\leq \beta n^3$ triangles, then it is possible to remove all triangles removing at most $\alpha n^2$ edges. 
+\end{theorem}
+
+\begin{proof}
+The first, second and third steps of the method are, in general, the same for classical problems,
+
+1. Apply SzRL with $\epsilon$ enough small and we have the partitions $\{V_1, ... , V_k\}$.
+
+2. Remove edges inside the partitions, between irregular pairs and sparse pairs obtaining $G'$ with at most $\alpha n^2$ edges removed.
+
+3. Define $R$ with $V(R) = [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\epsilon$-regular.
+
+Now we have two cases, in the first one we have a triangle in $R$. Note if $\beta n^3 < 1$ the result is trivial, then we assume $\beta \geq 1/n^3$ and the partitions that forms the triangle (assume $\{V_1, V_2, V_3\}$ for simplicity) has size $n/k \geq 1/(\beta ^{1/3} k) \geq m$.
+
+Applying the Embedding Lemma \ref{lemma:embeddinglemma} we have that the quantity of triangles in $G'$ is at least $\delta ^3 /2 (n/k)^3 > \beta n^3$ if we choose $\beta$ such that $\delta ^3 / (2k^3) > \beta$.
+
+We conclude that if $\alpha n^2$ edges are removed and the graph still has triangles the triangles quantity is more than $\beta n^3$.
+
+In the second case there is no triangle in $R$ and this implies there is no triangle in $G'$ because the edges inside the pairs $\{V_1, ... , V_k\}$ were removed then the only possible triangles are formed between the pairs, finishing the proof.
+\end{proof}
+
+
 \subsection{Roth's Theorem}
+
+\begin{theorem} Roth's Theorem.
+(Roth, 1954). If $A \subset \mathbb{N} $ has positive upper density, then $A$ contains an arithmetic progression of length three. 
+\end{theorem}
+
+\begin{proof}
+Choose $\delta > 0$ with $|A \cap [n]| > \delta n$, with $n$ sufficiently large. Let $V(G) = X\cup Y \cup Z$, where $X, Y$ and $Z$ are disjoint and $X,Y,Z \subset [n]$ and let,
+
+\begin{align*}
+E(G) &= \{\{x,y\}\colon x \in X, y \in Y,\text{ and } y = x + a, a \in A\} \\
+& \cup \{\{y,z\} \colon y \in Y, z \in Z, \text{ and } z = y + b, b \in A\}\\
+& \cup \{\{x,z\} \colon x \in X, z \in Z, \text{ and } z = x +2c, c\in A\}
+\end{align*}
+
+Note if $A$ has no $3$-AP, then all the triangles in $G$ correspond to triples $\{a,a,a\}$ and there exist $n|A\cup [n]| \leq n^2$ such triangles. Suppose we have no $3$-AP in A.
+ 
+ Then we can apply the triangle removal lemma \ref{lemma:triangleremoval} to $G$ for n sufficiently large, which means we can destroy all triangles in $G$ by removing at most $\alpha n^2$ edges. But these triangle triples $\{a,a,a\}$ are edge-disjoint and we have more than $\alpha n^2 $ such triangles which is a contraction, finishing the proof.
+ 
+\end{proof}
 
 
 \chapter{Conclusion}
