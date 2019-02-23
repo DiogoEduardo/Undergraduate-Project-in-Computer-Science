@@ -176,13 +176,27 @@
 \begin{document}
 %\linenumbers
 
-%\title{Extremal and Probabilistic Combinatorics}
+\title{Extremal and Probabilistic Combinatorics}
 
+      \begin{figure}[h!]%
+        \centering%
+        \includegraphics[scale=0.2]{Figuras/logo.png}%
+      \end{figure}%     
 \begin{center}
-{\bf Extremal and Probabilistic Combinatorics}\\
+Universidade Federal do ABC\\
+
 \vspace{2cm}
+
+{
+\fontsize{18pt}{\baselineskip}\selectfont \bf
+Extremal and Probabilistic Combinatorics
+}
+
+\vspace{2cm}
+
 Diogo Eduardo Lima Alves\\
-\vspace{3cm}
+
+\vspace{2cm}
 
 PROJETO DE GRADUAÇÃO EM COMPUTAÇÃO PRESENTED\\
 TO\\
@@ -193,10 +207,79 @@ FOR\\
 OBTAINING TITLE\\
 OF\\
 BACHAREL EM CIÊNCIA DA COMPUTAÇÃO\\
-\vspace{4cm}
+\vspace{2cm}
 Advisor: Prof. Dr. Guilherme Oliveira Mota\\
 \vfill
-Santo André, Agosto de 2018
+Santo André - SP\\
+Maio de 2019
+\end{center}
+
+\newpage
+\begin{center}
+Diogo Eduardo Lima Alves
+\end{center}
+   \begin{center}
+        \vspace*{4 cm}
+        \textbf{\Large{Extremal and Probabilistic Combinatorics}}\\
+        \vspace*{5cm}
+    \end{center}
+
+    \begin{flushright}
+{\bf Graduation Project} presented to\\ 
+Graduation Program in Computer Science\\ 
+(Concentration area: Graph Theory),\\ 
+as partial requirement to obtain the title\\ 
+of Bachelor in Computer Science.
+    \end{flushright}
+
+\vspace{3cm}
+\begin{center}
+Advisor: Prof. Dr. Guilherme Oliveira Mota\\
+\vfill
+Santo André - SP\\
+Maio de 2019
+\end{center}
+
+\pagebreak
+
+\begin{center}
+Diogo Eduardo Lima Alves
+\end{center}
+    
+   \begin{center}
+        \vspace*{2 cm}
+        \textbf{\Large{Extremal and Probabilistic Combinatorics}}\\
+        \vspace*{2.5cm}
+    \end{center}
+
+
+    \begin{flushright}
+{\bf Graduation Project} presented to\\ 
+Graduation Program in Computer Science\\ 
+(Concentration area: Graph Theory),\\ 
+as partial requirement to obtain the title\\ 
+of Bachelor in Computer Science.
+    \end{flushright}
+    
+    \vspace{2.5 cm}
+    \begin{center}
+    \rule{10.0 cm}{0.02 cm}\\
+    Prof. Dr. Guilherme Oliveira Mota\\
+    Advisor\\
+    
+    \vspace{1.0 cm}
+    \rule{10.0 cm}{0.02 cm}\\
+    Prof. Dr. Fulano 1\\
+    Guest 1\\
+    
+    \vspace{1.0 cm}
+    \rule{10.0 cm}{0.02 cm}\\
+    Prof. Dr. Fulano 2\\
+    Guest 2\\
+   
+   \vfill
+Santo André - SP\\
+Maio de 2019
 \end{center}
 
 \tableofcontents
@@ -258,8 +341,8 @@ The $K_5$ can be constructed without a monochromatic triangle as Figure \ref{fig
      \label{fig:K5}
 \end{figure}
 
-\begin{theorem}\label{thm:RamseyTheorem} 
-(Ramsey's Theorem). Let $r \geq 1$ be an integer. Every colouring $c\colon \dbinom{\mathbb{N}}{2}$ $\rightarrow$ $[r]$ of the pairs in $\mathbb{N}$ contains an infinite monochromatic subset of pairs.
+\begin{theorem}[{Ramsey's Theorem \cite{Ra29}}]\label{thm:RamseyTheorem}
+Let $r \geq 1$ be an integer. Every colouring $c\colon \dbinom{\mathbb{N}}{2}$ $\rightarrow$ $[r]$ of the pairs in $\mathbb{N}$ contains an infinite monochromatic subset of pairs.
 \end{theorem}
 
 In order to prove this theorem, it is needed only the pigeonhole principle as it follows:
@@ -272,8 +355,8 @@ Given a colouring $c\colon\dbinom{\mathbb{N}}{2}$ $\rightarrow$ $[r]$, being $i$
 
 \section{Schur's Theorem}
 
-\begin{theorem}\label{thm:Schur'sTheorem}
-(Schur's Theorem, 1916). Considering any colouring $c\colon \mathbb{N} \rightarrow [r]$, it implies a monochromatic $x,y,z$ with the property $x+y=z$.
+\begin{theorem}[{Schur's Theorem \cite{Sc16}}]\label{thm:Schur'sTheorem} %Schur, 1916
+ Considering any colouring $c\colon \mathbb{N} \rightarrow [r]$, it implies a monochromatic $x,y,z$ with the property $x+y=z$.
 \end{theorem}
 \begin{proof}
   For a vertex colouring  given as $c\colon \mathbb{N} \rightarrow [r]$ define a edge colouring $c'\colon \binom{\mathbb{N}}{2} \rightarrow [r]$ as $c'(\{a,b\}) \coloneqq c(|a-b|)$. By Theorem~\ref{thm:RamseyTheorem}, there exists a monochromatic triangle with three vertices, say $\{x,y,z\}$, with $x<y<z$.\\
@@ -287,8 +370,8 @@ From that, $c(|y-x|) = c(|z-x|) = c(|z-y|)$, and $(z-y)+(y-x)=(z-x)$ forms a mon
 
 \section{Finite Ramsey's Theorem}
 
-\begin{theorem}\label{thm:ErdosandS}
-(Erd\H{o}s and Szekeres, 1935; Erd\H{o}s, 1947).\\
+\begin{theorem}[{Erd\H{o}s and Szekeres' Theorem \cite{ersz35, Er47}}]\label{thm:ErdosandS}
+%(Erd\H{o}s and Szekeres, 1935; Erd\H{o}s, 1947).\\
 $$(\sqrt{2})^k \ll R(k) \ll 4^k.$$
 \end{theorem}
 \begin{proof} We start by proving the upper bound. Considering every $k, \ell \in \mathbb{N}$ we assume:\\
@@ -328,7 +411,8 @@ Since the expected value for $X$ is less than $1$, then there must exist a colou
 
 \section{Van der Waerden's Theorem}
 
-\begin{theorem} (Van der Waerden, 1927). For every $\mathbb{N}$ colouring with any $r$ colours it contains arbitrarily long monochromatic arithmetic progressions. 
+\begin{theorem}[{Van der Waerden's Theorem \cite{Van27}}] %(Van der Waerden, 1927).
+ For every $\mathbb{N}$ colouring with any $r$ colours it contains arbitrarily long monochromatic arithmetic progressions. 
 \end{theorem}
 
 \begin{proof}To prove this theorem we need the following definition,
@@ -381,8 +465,9 @@ In this chapter, the problems and theorems extend previous chapter. Instead of w
 In this section we study prohibited subgraphs to answer questions of the following form: 
 \begin{center}``What is the maximum number of edges in a tringle-free graph?''\end{center}
 As we see in the next theorem the complete bipartite graph has $\frac{n^{2}}{4}$ edges and no triangles.\\
-\begin{theorem}
-(Mantel, 1907). If G is a triangle-free graph on $n$ vertices, then 
+
+\begin{theorem}[{Mantel's Theorem \cite{Ma07}}]
+If G is a triangle-free graph on $n$ vertices, then 
 $$e(G) \leq \left\lceil \frac{n}{2} \right\rceil \left\lfloor \frac{n}{2} \right\rfloor .$$
 \end{theorem}
 \begin{proof}
@@ -402,7 +487,8 @@ Turán generalized its result in 1941. We will need following definitions:
 $t_r(n)$ is the number of edges in the Turán's graph, then $e(T_r(n)) = t_r(n)$ and it is called Turán's number.
 \end{definition}
 
-\begin{theorem} \label{theorem:turan1941}(Turán, 1941). $ex(n, k_{r+1}) = t_r(n)$ and $T_r(n)$ is the only extremal graph.
+\begin{theorem}[{Turán's Theorem \cite{Tu41}}] \label{theorem:turan1941}%(Turán, 1941).
+ $ex(n, k_{r+1}) = t_r(n)$ and $T_r(n)$ is the only extremal graph.
 \end{theorem}
 
 \begin{proof}
@@ -439,7 +525,7 @@ The last line comes from the fact $t_r(n) - t_r(n-r) = \binom{r}{2} + (r-1)(n-r)
 Then the proof is finished.
 \end{proof}
 
-\begin{theorem}\label{theorem:erdos1970} (Erd\H{o}s, 1970). There is an $ r$-partite graph $H$ with $V(H) = V(G)$, with $d_H(v) \geq d_G(v)$ for every $v \in V(G)$.\\
+\begin{theorem}[{Erd\H{o}s \cite{Er70}}]\label{theorem:erdos1970} There is an $ r$-partite graph $H$ with $V(H) = V(G)$, with $d_H(v) \geq d_G(v)$ for every $v \in V(G)$.\\
 \end{theorem}
 
 \begin{proof}
@@ -450,8 +536,8 @@ Being $w\in V(G)$ a vertex of maximal degree in $G$, note that $H=G[N(w)]$ must 
 This theorem is related to Theorem \ref{theorem:turan1941}. In fact Theorem \ref{theorem:erdos1970} is stronger than Theorem \ref{theorem:turan1941} and we can see this relation as follows: $$e(G) \leq e(H) \leq e(T_r(n)).$$
 \section{Forbidden Bipartite Subgraphs}
 In this section we study what the consequences when small bipartite graphs are forbidden and starts with Jensen's inequality for convex functions because its importance for a next Erd\H{o}s' result in Theorem \ref{theorem: Erdos,1938}.
-\begin{proposition}\label{prep:jensen}
-(Jensen's Inequality). If $0\leq \lambda_i \leq 1, \sum_{i=1}^n \lambda_i = 1$ and $f$ is convex, then:
+\begin{proposition}[{Jensen's Inequality \cite{Je06}}]\label{prep:jensen}
+ If $0\leq \lambda_i \leq 1, \sum_{i=1}^n \lambda_i = 1$ and $f$ is convex, then:
 
 $$
 f \left( \sum_{i=1}^n \lambda_i x_i\right) \leq \sum_{i=1}^n \lambda_i f (x_i).
@@ -463,8 +549,7 @@ As showed in previous chapter, thus Theorem \ref{theorem:turan1941}:
 $$ ex(n,K_{r+1}) = e(T_{r,n}) \approx \left( 1-\frac{1}{r}\right) \binom{n}{2} .$$
 Erd\H{o}s proved that the extremal number is much smaller for the $4$-cycle graph.
  
-\begin{theorem} \label{theorem: Erdos,1938}
-(Erd\H{o}s, 1938).
+\begin{theorem}[{Erd\H{o}s \cite{Er38}}] \label{theorem: Erdos,1938}
 
 $$\text{ex}(n,C_4) = O(n^{3/2}).$$
 \end{theorem}
@@ -487,23 +572,24 @@ $$ \frac{n}{2}\left(\frac{2e(G)}{n} - 1\right)^2 \leq \binom{n}{2},$$
 we obtain $e(G) = O(n^{3/2})$ finishing the proof.
 \end{proof}
 
-Let $A = \{a_1,...,a_t\} \subset [n]$ be such that $a_ia_j \neq a_ka_l$ unless $\{i,j\} = \{k,l\}$. How big can be $A$ with these properties?
-To show a easy lower bound it is necessary only a example that fits the problem, for this problem we can use the number of primes in $[n]$ which is $\pi (n)$. But is it close to the maximum possible size?
+%Let $A = \{a_1,...,a_t\} \subset [n]$ be such that $a_ia_j \neq a_ka_l$ unless $\{i,j\} = \{k,l\}$. How big can be $A$ with these properties?
+%To show a easy lower bound it is necessary only a example that fits the problem, for this problem we can use the number of primes in $[n]$ which is $\pi (n)$. But is it close to the maximum possible size?
 
-Erdos used theorem \ref{theorem: Erdos,1938} to answer this question.
+%Erdos used theorem \ref{theorem: Erdos,1938} to answer this question.
 
-\begin{corollary}(Erd\H{o}s, 1938). Let $A\subseteq [n]$ be a multiplicative Sidon set. Then,
-$$ |A| \leq \pi(n) + O(n^{3/4}). $$
+%\begin{corollary}(Erd\H{o}s, 1938). Let $A\subseteq [n]$ be a multiplicative Sidon set. Then,
+%$$ |A| \leq \pi(n) + O(n^{3/4}). $$
 
-\end{corollary}
-The next result is very similar to theorem \ref{theorem: Erdos,1938}. In fact, it is a generalization of Erd\H{o}s' result, but instead counting cherries we count generalized cherries.
-\begin{theorem}(Kovari-Sós-Turán, 1954). If $s \leq t$, then
+%\end{corollary}
+%The next result is very similar to theorem \ref{theorem: Erdos,1938}. In fact, it is a generalization of Erd\H{o}s' result, but instead counting cherries we count generalized cherries.
+\begin{theorem}[{Kovari-Sós-Turán \cite{KoSoTu54}}]
+If $s \leq t$, then
 $$ ex(K(s,t)) = O (n^{2 - 1/s}). $$
 \end{theorem}
 
 \begin{proof}
 
-At this proof we do a double counting on generalized cherries, a generalized cherry is a vertex with a fixed number of neighbors as you can see at figure \ref{fig:generalizedcherry}
+At this proof we do a double counting on generalized cherries, a generalized cherry is a vertex with a fixed number of neighbors as you can see at Figure \ref{fig:generalizedcherry}:
 
 \begin{figure}[!htb]
      \centering
@@ -536,25 +622,25 @@ c(s) \frac{e(G)^s}{n^{s-1}} &\leq \# K_{1,s} \leq (t-1) \binom{n}{s}\\
 Where $c(s,t)= \sqrt[s]{\frac{1}{c(s)}\frac{e(t-1)}{s^s}}$ . Using again the fact $\binom{n}{m} \leq \left(\frac{en}{m}\right)^m$ we have what we want to show and the proof is finished.
 \end{proof}
 
-\section{The Erd\H{o}s-Stone Theorem}
-This theorem is extremely important for graph theory and can be called as the fundamental theorem of graph theory such its importance. To prove it we need the following definition.
-\begin{definition} The Chromatic Number:
-$$\chi(G) = \text{ min}\{r: \exists c : V(G) \rightarrow [r] \text{ such that } c(u) \neq c(v) \text{ for every } uv \in E(G)\}$$ 
-\end{definition}
+%\section{The Erd\H{o}s-Stone Theorem}
+%This theorem is extremely important for graph theory and can be called as the fundamental theorem of graph theory such its importance. To prove it we need the following definition.
+%\begin{definition} The Chromatic Number:
+%$$\chi(G) = \text{ min}\{r: \exists c : V(G) \rightarrow [r] \text{ such that } c(u) \neq c(v) \text{ for every } uv \in E(G)\}$$ 
+%\end{definition}
 
-Note $\chi(G)$ is related to $r$-partite graphs, a graph $G$ is $r$-partite if and only if $\chi(G) \leq r$.
+%Note $\chi(G)$ is related to $r$-partite graphs, a graph $G$ is $r$-partite if and only if $\chi(G) \leq r$.
 
 
-\begin{theorem}
-(Erd\H{o}s and Stone, 1946). Let H be an arbitrary graph. Then
-$$ ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$ 
-\end{theorem}
+%\begin{theorem}
+%(Erd\H{o}s and Stone, 1946). Let H be an arbitrary graph. Then
+%$$ ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$ 
+%\end{theorem}
 
-\begin{proof}
+%\begin{proof}
 
-Here will be the proof.
+%Here will be the proof.
 
-\end{proof}
+%\end{proof}
 
 \chapter{Random Graphs}
 \section{The Probabilistic Method}
@@ -575,7 +661,7 @@ and let $G$ be the graph with vertex set $[n]$ and edge set $\{vw \in \binom{[n]
 Intuitively we can guess there exists a really small chance that this event occurs and the intuition in this case is true, let's see this probability below,
 $$\mathbb{P}(G(n,p)=H) = p^{e(H)}(1-p)^{\binom{n}{2}-e(H)}.$$
 
-\begin{theorem}(Erd\H{o}s, 1959) There exist graphs whose girth and chromatic number are both arbitrarily large.
+\begin{theorem}[{Erd\H{o}s \cite{Er59}}] There exist graphs whose girth and chromatic number are both arbitrarily large.
 \end{theorem}
 
 For this theorem will be presented two different proofs, the second one is a little smaller.
@@ -596,7 +682,7 @@ $\alpha(G) =$ max$\{|A|: A$ is a independent set$\}$.
 \begin{definition}\label{def:chromaticnumber}
 $\chi(G)$ is the minimum number of colors used in a proper coloring of G.
 \end{definition}
-Assuming $\chi(G(n,p)) = r$ we have a $\{V_1,V_2,...,V_r\}$ partition of $V(G(n,p))$ on $r$ independent sets illustrated at figure \ref{fig:r-partition}
+Assuming $\chi(G(n,p)) = r$ we have a $\{V_1,V_2,...,V_r\}$ partition of $V(G(n,p))$ on $r$ independent sets illustrated at Figure \ref{fig:r-partition}
 
 \begin{figure}[!htb]
      \centering
@@ -622,7 +708,7 @@ $X_m = \big|\{S\in V(G(n,p))\colon \text{$S$ is a independent set with exactly $
 and follows $m = \frac{n}{k}$. 
 
 \begin{align*}
-\mathbb{E}[X_m]&=\sum_{\substack{S \in V(G) \\ |S| = m}} \mathbb{P}(S\text{ is independent })\\
+\mathbb{E}[X_m]&=\sum_{\substack{S \in V(G) \\ |S| = m}} \mathbb{P}(S\text{ is independent})\\
 &=(1-p)^{\binom{m}{2}} \binom{n}{m}
 \end{align*}
 since we know that $\left(\frac{n}{m}\right)^m \leq \binom{n}{m} \leq \left(\frac{en}{m}\right)^m$ and $1-x \leq e^{-x}$ replacing in the equation above,
@@ -728,7 +814,7 @@ Realize that the key point in both proofs was the fact we could choose the most 
 
 At this section we will see the value of $p$ that implies a specific property be or not present in the random graph $G_{n,p}$. Being more specific we shall prove the threshold for the property ``containing a triangle'' in $G_{n,p}$.  We will need the Chebychev inequality presented below.
 
-\begin{theorem}(Chebychev's inequality).\\
+\begin{theorem}[{Chebyshev's Inequality \cite{Ch67}}]
 $$\mathbb{P}(|X-\mu| \geq a) \leq \sigma^2/a^2.$$
 \end{theorem} 
 
@@ -785,7 +871,7 @@ Monotone Increasing. Let $\mathcal{A}$ be a collection of graphs on $n$ vertices
 ``$G$ contains a triangle'' is monotone increasing because it is impossible to destroy a triangle adding edges and ``$G$ is planar'' is monotone decreasing because the more edges $G$ has more difficult to be planar.
 \end{example}
 
-\begin{theorem} (FKG inequality).
+\begin{theorem} [{FKG Inequality \cite{FKG71}}]
  Let $\mathcal{A}$ and $\mathcal{B}$ be monotone increasing and let $\mathcal{C}$ be monotone decreasing, then:
 
 $$ \mathbb{P}((G_{n,p} \in \mathcal{A}) \wedge (G_{n,p} \in \mathcal{B})) \geq \mathbb{P}(G_{n,p} \in \mathcal{A})\mathbb{P}(G_{n,p} \in \mathcal{B}),$$
@@ -839,8 +925,8 @@ Define $\mu = \sum_j \mathbb{P}(B_j)$ denoting the expected number of bad events
 $$ \Delta = \sum_{\substack{i\sim j\\ (i,j) \in [N]^2}} \mathbb{P}(B_i \wedge B_j), $$
 where the sum is over ordered pairs $(i,j)$ such that $A_i$ and $A_j$ intersect. Follows the Janson inequalities.
 
-\begin{theorem}
-(Janson, 1987). Let $A_1,...,A_m \subset [n]$ and let $B_1,...,B_m$ be the events defined above. Then
+\begin{theorem}[{Janson's Inequality \cite{Ja87}}]
+Let $A_1,...,A_m \subset [n]$ and let $B_1,...,B_m$ be the events defined above. Then
 
 $$ \mathbb{P}\left(\bigwedge_{j=1}^m \overline{B_j}\right) \leq e^{-\mu + \Delta/2}. $$
 
@@ -972,7 +1058,7 @@ Using the maximum one we have $p \geq \frac{(1 + \epsilon) \log n}{n}$  and by M
 
 \end{proof}
 \chapter{Regularity}
-In this chapter will be presented the Szemerédi's Regularity Lemma which is a really powerful tool in Combinatorics,  perhaps the most one. It give us a method to approximate any arbitrary graph to a random graph which means any arbitrary graph can be transformed in order to share useful properties with random graphs and to illustrate the huge importance of it see the example below,
+In this chapter will be presented the Szemerédi's Regularity Lemma which is a really powerful tool in Combinatorics,  perhaps the most one. It give us a method to approximate any arbitrary graph to a random graph which means any arbitrary graph can be transformed in order to share useful properties with random graphs and to illustrate the huge importance of it see the example below.
 
 \begin{example}
 With at least how many edges can we say a graph $G$ has a triangle?
@@ -1050,8 +1136,7 @@ Then we have at least $ (\delta - \epsilon)^3 m^2$ triangles for each $v$ then f
 
 \end{proof}
 
-\begin{theorem}
-(The Szemerédi Regularity Lemma, 1975). Let $\epsilon > 0$, and let $k_0(\epsilon) \in  \mathbb{N}$ such that the following holds.\\
+\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]. Let $\epsilon > 0$, and let $k_0(\epsilon) \in  \mathbb{N}$ such that the following holds.\\
 For any graph $G$, there exists a partition $V(G) = V_1 \cup ... \cup V_k$ of the vertex set into $1/ \epsilon \leq k \leq k_0 (\epsilon)$ parts, such that
 
 $|V_1| = ... =|V_k| \pm 1$
@@ -1077,8 +1162,7 @@ Applying the SzRL, in general, has more convincing power of its use than the def
 5. Apply the Embedding Lemma to find a copy of the desired subgraph $H$ in $G$.
 \subsection{Erd\H{o}s-Stone Theorem}
 
-\begin{theorem}
-(Erd\H{o}s and Stone, 1946). Let H be an arbitrary graph. Then
+\begin{theorem}[{Erd\H{o}s and Stone \cite{ErSt46}}] Let H be an arbitrary graph. Then
 $$ ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$ 
 \end{theorem}
 
@@ -1156,8 +1240,7 @@ In the second case there is no triangle in $R$ and this implies there is no tria
 
 \subsection{Roth's Theorem}
 
-\begin{theorem} Roth's Theorem.
-(Roth, 1954). If $A \subset \mathbb{N} $ has positive upper density, then $A$ contains an arithmetic progression of length three. 
+\begin{theorem}[{Roth's Theorem \cite{Ro53}}] If $A \subset \mathbb{N}$ has positive upper density, then $A$ contains an arithmetic progression of length three. 
 \end{theorem}
 
 \begin{proof}
@@ -1206,6 +1289,10 @@ Defense&April & 2019 \\
 \caption{Schedule.}
 \label{tab:schedule}
 \end{table}
+
+%BIBLIOGRAFIA
+\bibliographystyle{amsplain_yk}
+\bibliography{minhabib}
 
 \end{document}
 
