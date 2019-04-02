@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: PGC.aux
+The style file: amsrn.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: minhabib.bib
+Repeated entry---line 1131 of file minhabib.bib
+ : @incollection {RuSz76
+ :                      ,
+I'm skipping whatever remains of this entry
+You've used 20 entries,
+            1497 wiz_defined-function locations,
+            588 strings with 5349 characters,
+and the built_in function-call counts, 16659 in all, are:
+= -- 731
+> -- 1431
+< -- 19
++ -- 227
+- -- 1363
+* -- 1665
+:= -- 3396
+add.period$ -- 0
+call.type$ -- 20
+change.case$ -- 88
+chr.to.int$ -- 57
+cite$ -- 20
+duplicate$ -- 1031
+empty$ -- 524
+format.name$ -- 56
+if$ -- 1787
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 501
+newline$ -- 233
+num.names$ -- 40
+pop$ -- 896
+preamble$ -- 1
+purify$ -- 68
+quote$ -- 0
+skip$ -- 298
+stack$ -- 0
+substring$ -- 308
+swap$ -- 782
+text.length$ -- 167
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 160
+warning$ -- 0
+while$ -- 244
+width$ -- 0
+write$ -- 546
+(There was 1 error message)

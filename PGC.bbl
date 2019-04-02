@@ -1,0 +1,237 @@
+% \bib, bibdiv, biblist are defined by the amsrefs package.
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{Er59}{article}{
+      author={Erd\H{o}s, P.},
+       title={Graph theory and probability},
+        date={1959},
+        ISSN={0008-414X},
+     journal={Canad. J. Math.},
+      volume={11},
+       pages={34\ndash 38},
+         url={https://doi.org/10.4153/CJM-1959-003-9},
+      review={\MR{0102081}},
+}
+
+\bib{Er70}{article}{
+      author={Erd\H{o}s, P\'{a}l},
+       title={On the graph theorem of {T}ur\'{a}n},
+        date={1970},
+        ISSN={0025-519X},
+     journal={Mat. Lapok},
+      volume={21},
+       pages={249\ndash 251 (1971)},
+      review={\MR{0307975}},
+}
+
+\bib{Er47}{article}{
+      author={Erd{\"o}s, P.},
+       title={Some remarks on the theory of graphs},
+        date={1947},
+        ISSN={0002-9904},
+     journal={Bull. Amer. Math. Soc.},
+      volume={53},
+       pages={292\ndash 294},
+      review={\MR{MR0019911 (8,479d)}},
+}
+
+\bib{ErSt46}{article}{
+      author={Erd{\"o}s, P.},
+      author={Stone, A.~H.},
+       title={On the structure of linear graphs},
+        date={1946},
+        ISSN={0002-9904},
+     journal={Bull. Amer. Math. Soc.},
+      volume={52},
+       pages={1087\ndash 1091},
+      review={\MR{0018807 (8,333b)}},
+}
+
+\bib{ersz35}{article}{
+      author={Erd{\"o}s, P.},
+      author={Szekeres, G.},
+       title={A combinatorial problem in geometry},
+        date={1935},
+        ISSN={0010-437X},
+     journal={Compositio Math.},
+      volume={2},
+       pages={463\ndash 470},
+      review={\MR{MR1556929}},
+}
+
+\bib{Er38}{article}{
+      author={Erd\"{o}s, Paul},
+       title={On the {D}ensity of {S}ome {S}equences of {N}umbers: {III}},
+        date={1938},
+     journal={J. London Math. Soc.},
+      volume={13},
+      number={2},
+       pages={119\ndash 127},
+         url={https://doi.org/10.1112/jlms/s1-13.2.119},
+      review={\MR{1574138}},
+}
+
+\bib{FKG71}{article}{
+      author={Fortuin, C.~M.},
+      author={Kasteleyn, P.~W.},
+      author={Ginibre, J.},
+       title={Correlation inequalities on some partially ordered sets},
+        date={1971},
+        ISSN={0010-3616},
+     journal={Comm. Math. Phys.},
+      volume={22},
+       pages={89\ndash 103},
+         url={http://projecteuclid.org/euclid.cmp/1103857443},
+      review={\MR{0309498}},
+}
+
+\bib{Ja87}{article}{
+      author={Janson, Svante},
+       title={Poisson convergence and {P}oisson processes with applications to
+  random graphs},
+        date={1987},
+        ISSN={0304-4149},
+     journal={Stochastic Process. Appl.},
+      volume={26},
+      number={1},
+       pages={1\ndash 30},
+         url={https://doi.org/10.1016/0304-4149(87)90048-2},
+      review={\MR{917244}},
+}
+
+\bib{Je06}{article}{
+      author={Jensen, J. L. W.~V.},
+       title={Sur les fonctions convexes et les in\'{e}galit\'{e}s entre les
+  valeurs moyennes},
+        date={1906},
+        ISSN={0001-5962},
+     journal={Acta Math.},
+      volume={30},
+      number={1},
+       pages={175\ndash 193},
+         url={https://doi.org/10.1007/BF02418571},
+      review={\MR{1555027}},
+}
+
+\bib{KoSoTu54}{article}{
+      author={K\"{o}vari, T.},
+      author={S\'{o}s, V.~T.},
+      author={Tur\'{a}n, P.},
+       title={On a problem of {K}. {Z}arankiewicz},
+        date={1954},
+     journal={Colloquium Math.},
+      volume={3},
+       pages={50\ndash 57},
+         url={https://doi.org/10.4064/cm-3-1-50-57},
+      review={\MR{0065617}},
+}
+
+\bib{Ma07}{article}{
+      author={Mantel, W.},
+       title={Problem 28},
+        date={1907},
+     journal={Wiskundige Opgaven},
+      number={10},
+       pages={60\ndash 61},
+}
+
+\bib{RoRo11}{book}{
+      author={Morris, R.},
+      author={Oliveira, R.~I.},
+       title={Extremal and probabilistic combinatorics},
+        date={2011},
+  url={http://w3.impa.br/~rob/Extremal_and_probabilistic_combinatorics.pdf},
+}
+
+\bib{Ra29}{article}{
+      author={Ramsey, F.~P.},
+       title={On a {P}roblem of {F}ormal {L}ogic},
+        date={1929},
+        ISSN={0024-6115},
+     journal={Proc. London Math. Soc. (2)},
+      volume={30},
+      number={4},
+       pages={264\ndash 286},
+         url={https://doi.org/10.1112/plms/s2-30.1.264},
+      review={\MR{1576401}},
+}
+
+\bib{Ro53}{article}{
+      author={Roth, K.~F.},
+       title={On certain sets of integers},
+        date={1953},
+        ISSN={0024-6107},
+     journal={J. London Math. Soc.},
+      volume={28},
+       pages={104\ndash 109},
+         url={https://doi.org/10.1112/jlms/s1-28.1.104},
+      review={\MR{0051853}},
+}
+
+\bib{RuSz76}{article}{
+      author={Ruzsa, I.~Z.},
+      author={Szemer\'edi, E.},
+       title={Triple systems with no six points carrying three triangles},
+        date={1976},
+     journal={Coll. Math. Soc. J. Bolyai 18},
+       pages={939\ndash 945},
+}
+
+\bib{Sc16}{article}{
+      author={Schur, I.},
+       title={\text{{\"U}ber die {K}ongruenz $x^m+y^m\equiv z^m \mod\varrho$}},
+        date={1916},
+     journal={Jber.\ Deutsch.\ Math.-Verein},
+      volume={25},
+       pages={114\ndash 117},
+}
+
+\bib{Sz75}{article}{
+      author={Szemer\'{e}di, E.},
+       title={On sets of integers containing no {$k$} elements in arithmetic
+  progression},
+        date={1975},
+        ISSN={0065-1036},
+     journal={Acta Arith.},
+      volume={27},
+       pages={199\ndash 245},
+         url={https://doi.org/10.4064/aa-27-1-199-245},
+        note={Collection of articles in memory of Juri\u{\i} Vladimirovi\v{c}
+  Linnik},
+      review={\MR{0369312}},
+}
+
+\bib{Ch67}{article}{
+      author={Tchebichef, P.},
+       title={Des valeurs moyennes},
+        date={1867},
+     journal={Mathématiques Pures et Appliquées},
+      number={12},
+       pages={177–184},
+}
+
+\bib{Tu41}{article}{
+      author={Turán, Paul},
+       title={On an extremal problem in graph theory},
+        date={1941},
+     journal={Matematikai és Fizikai Lapok},
+      volume={48},
+       pages={436\ndash 452},
+}
+
+\bib{Van27}{article}{
+      author={van~der Waerden, Bartel~L.},
+       title={Der {M}ultiplizit\"{a}tsbegriff der algebraischen {G}eometrie},
+        date={1927},
+        ISSN={0025-5831},
+     journal={Math. Ann.},
+      volume={97},
+      number={1},
+       pages={756\ndash 774},
+         url={https://doi.org/10.1007/BF01447893},
+      review={\MR{1512387}},
+}
+
+\end{biblist}
+\end{bibdiv}
