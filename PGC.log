@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.4.14)  15 APR 2019 01:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.4.14)  22 APR 2019 20:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,15 +1013,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 25.
+Package hyperref Info: Option `colorlinks' set `true' on input line 26.
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/bookmark.sty
-Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/bkm-pdftex.def
-File: bkm-pdftex.def 2016/05/17 v1.26 bookmark driver for pdfTeX (HO)
-\BKM@id=\count122
-))
 (/usr/share/texlive/texmf-dist/tex/latex/amsrefs/amsrefs.sty
 Package: amsrefs 2013/03/07 v2.14
 
@@ -1042,12 +1035,12 @@ Package: textcmds 2012/08/02 v2.00
 (/usr/share/texlive/texmf-dist/tex/latex/amsrefs/mathscinet.sty
 Package: mathscinet 2002/04/17 v1.05
 )
-\c@bib=\count123
+\c@bib=\count122
 \@maxlabelwidth=\dimen129
-\c@bib@env=\count124
+\c@bib@env=\count123
 \bib@dbfile=\read1
-\alpha@suffix=\count125
-\series@index=\count126
+\alpha@suffix=\count124
+\series@index=\count125
 )
 (/usr/share/texlive/texmf-dist/tex/latex/doi/doi.sty
 Package: doi 2007/07/24 handle doi numbers
@@ -1067,7 +1060,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/04/23 3.9r Babel common definitions
-\babel@savecnt=\count127
+\babel@savecnt=\count126
 \U@D=\dimen130
 )
 \l@canadian = a dialect from \language\l@american 
@@ -1076,9 +1069,9 @@ File: babel.def 2016/04/23 3.9r Babel common definitions
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count128
-\Gm@cntv=\count129
-\c@Gm@tempcnt=\count130
+\Gm@cnth=\count127
+\Gm@cntv=\count128
+\c@Gm@tempcnt=\count129
 \Gm@bindingoffset=\dimen131
 \Gm@wd@mp=\dimen132
 \Gm@odd@mp=\dimen133
@@ -1095,10 +1088,10 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@outerparindent=\dimen139
 \enit@toks=\toks34
 \enit@inbox=\box30
-\enitdp@description=\count131
+\enitdp@description=\count130
 )
 \symMnSyC=\mathgroup10
-\c@theorem=\count132
+\c@theorem=\count131
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/centernot.sty
 Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
@@ -1108,7 +1101,7 @@ Package: datetime 2015/03/20 v2.60 Date Time Package
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count133
+\etb@tempcnta=\count132
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fmtcount.sty
 Package: fmtcount 2015/05/05 v3.01
@@ -1124,7 +1117,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks35
 \XKV@tempa@toks=\toks36
 )
-\XKV@depth=\count134
+\XKV@depth=\count133
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcprefix.sty
@@ -1132,86 +1125,90 @@ Package: fcprefix 2012/09/28
 
 (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcnumparser.sty
 Package: fcnumparser 2012/09/28
-\fc@digit@counter=\count135
+\fc@digit@counter=\count134
 ))
-\c@padzeroesN=\count136
-\fc@tmpcatcode=\count137
+\c@padzeroesN=\count135
+\fc@tmpcatcode=\count136
 
 (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def
 File: fc-english.def 2013/08/17
 )
-\@DT@modctr=\count138
-\@ordinalctr=\count139
-\@orgargctr=\count140
-\@strctr=\count141
-\@tmpstrctr=\count142
-\@DT@loopN=\count143
-\@DT@X=\count144
+\@DT@modctr=\count137
+\@ordinalctr=\count138
+\@orgargctr=\count139
+\@strctr=\count140
+\@tmpstrctr=\count141
+\@DT@loopN=\count142
+\@DT@X=\count143
 )
 (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime-defaults.sty
 Package: datetime-defaults 2013/09/10
 )
-\@day=\count145
-\@month=\count146
-\@year=\count147
-\c@HOUR=\count148
-\c@HOURXII=\count149
-\c@MINUTE=\count150
-\c@TOHOUR=\count151
-\c@TOMINUTE=\count152
-\c@SECOND=\count153
-\currenthour=\count154
-\currentminute=\count155
-\currentsecond=\count156
+\@day=\count144
+\@month=\count145
+\@year=\count146
+\c@HOUR=\count147
+\c@HOURXII=\count148
+\c@MINUTE=\count149
+\c@TOHOUR=\count150
+\c@TOMINUTE=\count151
+\c@SECOND=\count152
+\currenthour=\count153
+\currentminute=\count154
+\currentsecond=\count155
 Package datetime Info: No datetime.cfg file found, using default settings on in
 put line 308.
-\@dtctr=\count157
-\dayofyear=\count158
-\dayofweek=\count159
+\@dtctr=\count156
+\dayofyear=\count157
+\dayofweek=\count158
 LaTeX Info: Redefining \today on input line 736.
 \dt@a=\toks37
 \dt@b=\toks38
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count160
+\linenopenalty=\count159
 \output=\toks39
-\linenoprevgraf=\count161
+\linenoprevgraf=\count160
 \linenumbersep=\dimen140
 \linenumberwidth=\dimen141
-\c@linenumber=\count162
-\c@pagewiselinenumber=\count163
-\c@LN@truepage=\count164
-\c@internallinenumber=\count165
-\c@internallinenumbers=\count166
+\c@linenumber=\count161
+\c@pagewiselinenumber=\count162
+\c@LN@truepage=\count163
+\c@internallinenumber=\count164
+\c@internallinenumbers=\count165
 \quotelinenumbersep=\dimen142
 \bframerule=\dimen143
 \bframesep=\dimen144
 \bframebox=\box31
 LaTeX Info: Redefining \\ on input line 3056.
-) (./PGC.aux)
+)
+
+LaTeX Warning: Unused global option(s):
+    [bibliography=totocnumbered].
+
+(./PGC.aux)
 \openout1 = `PGC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 180.
-LaTeX Font Info:    ... okay on input line 180.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 180.
-
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 184.
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 180.
+LaTeX Info: Redefining \microtypecontext on input line 184.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1229,16 +1226,16 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count167
+\scratchcounter=\count166
 \scratchdimen=\dimen145
 \scratchbox=\box32
-\nofMPsegments=\count168
-\nofMParguments=\count169
+\nofMPsegments=\count167
+\nofMParguments=\count168
 \everyMPshowfont=\toks40
-\MPscratchCnt=\count170
+\MPscratchCnt=\count169
 \MPscratchDim=\dimen146
-\MPnumerator=\count171
-\makeMPintoPDFobject=\count172
+\MPnumerator=\count170
+\makeMPintoPDFobject=\count171
 \everyMPtoPDFconversion=\toks41
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1258,7 +1255,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring ON on input line 180.
+Package hyperref Info: Link coloring ON on input line 184.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1266,15 +1263,19 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count173
+\c@section@level=\count172
 )
-LaTeX Info: Redefining \ref on input line 180.
-LaTeX Info: Redefining \pageref on input line 180.
-LaTeX Info: Redefining \nameref on input line 180.
+LaTeX Info: Redefining \ref on input line 184.
+LaTeX Info: Redefining \pageref on input line 184.
+LaTeX Info: Redefining \nameref on input line 184.
 
-(./PGC.brf)
-\tf@brf=\write3
-\openout3 = `PGC.brf'.
+(./PGC.out) (./PGC.out)
+\@outlinefile=\write3
+\openout3 = `PGC.out'.
+
+ (./PGC.brf)
+\tf@brf=\write4
+\openout4 = `PGC.brf'.
 
 
 *geometry* driver: auto-detecting
@@ -1311,18 +1312,16 @@ LaTeX Info: Redefining \nameref on input line 180.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Figuras/logo.png, id=4, 506.1309pt x 517.6941pt>
+<Figuras/logo.png, id=96, 506.1309pt x 517.6941pt>
 File: Figuras/logo.png Graphic file (type png)
  <use Figuras/logo.png>
-Package pdftex.def Info: Figuras/logo.png used on input line 187.
+Package pdftex.def Info: Figuras/logo.png used on input line 191.
 (pdftex.def)             Requested size: 101.22438pt x 103.53697pt.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./Figuras/logo.png>]
-[2] [3] [4
-
-] (./PGC.toc
+[2] (./PGC.toc
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 4.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1369,316 +1368,316 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 4.
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ))
-\tf@toc=\write4
-\openout4 = `PGC.toc'.
+\tf@toc=\write5
+\openout5 = `PGC.toc'.
+
+ [3
+
+] [4
+
+] (./PGC.lof)
+\tf@lof=\write6
+\openout6 = `PGC.lof'.
 
  [5] [6
 
-] (./PGC.lof)
-\tf@lof=\write5
-\openout5 = `PGC.lof'.
-
- [7] [8
-
 ]
 Chapter 1.
-[9] [10]
+[7] [8]
 Chapter 2.
-<Figuras/K5-sem-triangulo.jpg, id=127, 247.8861pt x 171.7617pt>
+<Figuras/K5-sem-triangulo.jpg, id=187, 247.8861pt x 171.7617pt>
 File: Figuras/K5-sem-triangulo.jpg Graphic file (type jpg)
 
 <use Figuras/K5-sem-triangulo.jpg>
-Package pdftex.def Info: Figuras/K5-sem-triangulo.jpg used on input line 343.
+Package pdftex.def Info: Figuras/K5-sem-triangulo.jpg used on input line 304.
 (pdftex.def)             Requested size: 247.88547pt x 171.76128pt.
 
 Underfull \vbox (badness 2626) has occurred while \output is active []
 
- [11
+ [9
 
 ]
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.372 G
+l.333 G
        iven a colouring $c\colon\dbinom{\mathbb{N}}{2}$ $\rightarrow$ $[r]$,...
  <./Figuras/K5-sem-triangulo.jpg>]
 
 Package amsrefs Warning: Use of \cites is recommended instead of \cite 
-(amsrefs)                for multiple cites 'ersz35, Er47' on input line 383.
+(amsrefs)                for multiple cites 'ersz35, Er47' on input line 344.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
-
- []
-
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
-[14] <Figuras/Van-der-Waerden-Blocks.jpg, id=173, 248.127pt x 93.7101pt>
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+
+ []
+
+[12] <Figuras/Van-der-Waerden-Blocks.jpg, id=231, 248.127pt x 93.7101pt>
 File: Figuras/Van-der-Waerden-Blocks.jpg Graphic file (type jpg)
 
 <use Figuras/Van-der-Waerden-Blocks.jpg>
 Package pdftex.def Info: Figuras/Van-der-Waerden-Blocks.jpg used on input line 
-464.
+426.
 (pdftex.def)             Requested size: 446.62822pt x 168.67804pt.
 
-Overfull \hbox (5.61049pt too wide) in paragraph at lines 464--465
+Overfull \hbox (5.61049pt too wide) in paragraph at lines 426--427
  [][] 
  []
 
 
 Underfull \vbox (badness 7238) has occurred while \output is active []
 
- [15]
-[16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2
+ [13]
+[14pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.474 \chapter
+l.436 \chapter
               {Extremal Graph Theory} <./Figuras/Van-der-Waerden-Blocks.jpg>]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 482--483
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
 
  []
 
-[17
+[15
 
-] <Figuras/Kr+1-livre-prova-turan.jpg, id=193, 247.8861pt x 143.3355pt>
+] <Figuras/Kr+1-livre-prova-turan.jpg, id=252, 247.8861pt x 143.3355pt>
 File: Figuras/Kr+1-livre-prova-turan.jpg Graphic file (type jpg)
 
 <use Figuras/Kr+1-livre-prova-turan.jpg>
 Package pdftex.def Info: Figuras/Kr+1-livre-prova-turan.jpg used on input line 
-519.
+481.
 (pdftex.def)             Requested size: 247.88547pt x 143.33513pt.
- [18pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [16pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.533 
+l.495 
        <./Figuras/Kr+1-livre-prova-turan.jpg>]
-<Figuras/t(n)-and-t(n-r).jpg, id=203, 247.8861pt x 209.3421pt>
+<Figuras/t(n)-and-t(n-r).jpg, id=262, 247.8861pt x 209.3421pt>
 File: Figuras/t(n)-and-t(n-r).jpg Graphic file (type jpg)
 
 <use Figuras/t(n)-and-t(n-r).jpg>
-Package pdftex.def Info: Figuras/t(n)-and-t(n-r).jpg used on input line 536.
+Package pdftex.def Info: Figuras/t(n)-and-t(n-r).jpg used on input line 498.
 (pdftex.def)             Requested size: 247.88547pt x 209.34158pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 543--544
+Underfull \hbox (badness 10000) in paragraph at lines 505--506
 
  []
 
-[19pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.3.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.551 ...llows: $$e(G) \leq e(H) \leq e(T_r(n)).$$
+l.513 ...llows: $$e(G) \leq e(H) \leq e(T_r(n)).$$
                                                    <./Figuras/t(n)-and-t(n-r).j
-pg>] [20] <Figuras/cherry-and-star.png, id=232, 330.23375pt x 97.36375pt>
+pg>] [18] <Figuras/cherry-and-star.png, id=290, 330.23375pt x 97.36375pt>
 File: Figuras/cherry-and-star.png Graphic file (type png)
 
 <use Figuras/cherry-and-star.png>
-Package pdftex.def Info: Figuras/cherry-and-star.png used on input line 611.
+Package pdftex.def Info: Figuras/cherry-and-star.png used on input line 573.
 (pdftex.def)             Requested size: 330.23293pt x 97.3635pt.
- [21pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [19pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.630 
-       <./Figuras/cherry-and-star.png>] [22]
+l.592 
+       <./Figuras/cherry-and-star.png>] [20]
 Chapter 4.
-[23
+[21
 
-] <Figuras/r-partion.jpg, id=258, 247.8861pt x 240.9pt>
+] <Figuras/r-partion.jpg, id=318, 247.8861pt x 240.9pt>
 File: Figuras/r-partion.jpg Graphic file (type jpg)
 
 <use Figuras/r-partion.jpg>
-Package pdftex.def Info: Figuras/r-partion.jpg used on input line 706.
+Package pdftex.def Info: Figuras/r-partion.jpg used on input line 668.
 (pdftex.def)             Requested size: 247.88547pt x 240.8994pt.
 
-Overfull \hbox (19.9971pt too wide) in paragraph at lines 721--726
+Overfull \hbox (19.9971pt too wide) in paragraph at lines 683--688
 \T1/lmr/m/n/12 (-20) where $\OML/lmm/m/it/12 X[] \U/matha/m/n/12 ^^P []t\OML/lm
 m/m/it/12 S \U/matha/m/n/12 P \OML/lmm/m/it/12 V\U/matha/m/n/12 p\OML/lmm/m/it/
 12 G\U/matha/m/n/12 p\OML/lmm/m/it/12 n; p\U/matha/m/n/12 qq [] [] []u[]$\T1/lm
 r/m/n/12 (-20) ,
  []
 
-[24pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.727 \begin{align*}
-                     <./Figuras/r-partion.jpg>] [25]
+l.689 \begin{align*}
+                     <./Figuras/r-partion.jpg>] [23]
 Underfull \vbox (badness 3568) has occurred while \output is active []
 
- [26]
-Underfull \hbox (badness 10000) in paragraph at lines 806--811
+ [24]
+Underfull \hbox (badness 10000) in paragraph at lines 768--773
 
  []
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 837--839
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 799--801
 
  []
 
-LaTeX Font Info:    Try loading font information for U+bbm on input line 858.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 828.
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [28] [29] [30]
-Underfull \hbox (badness 10000) in paragraph at lines 930--931
+) [26] [27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 900--901
 
  []
 
-[31] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1051--1052
+[29] [30] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 1027--1028
 
  []
 
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 1064--1067
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1043
 
  []
 
-[35] [36
+[33] [34
 
 ]
 Chapter 5.
-[37] [38] <Figuras/embedding-lemma.jpg, id=348, 247.8861pt x 240.9pt>
+[35] [36] <Figuras/embedding-lemma.jpg, id=406, 247.8861pt x 240.9pt>
 File: Figuras/embedding-lemma.jpg Graphic file (type jpg)
 
 <use Figuras/embedding-lemma.jpg>
-Package pdftex.def Info: Figuras/embedding-lemma.jpg used on input line 1144.
+Package pdftex.def Info: Figuras/embedding-lemma.jpg used on input line 1120.
 (pdftex.def)             Requested size: 247.88547pt x 240.8994pt.
- [39pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
-1}) has been already used, duplicate ignored
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1131
+.
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1131.
+
+
+[37pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1165 
+l.1144 
         <./Figuras/embedding-lemma.jpg>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 1175.
+(hyperref)                removing `\H' on input line 1154.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1188--1190
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1191--1192
+Underfull \hbox (badness 10000) in paragraph at lines 1167--1169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1193--1194
+Underfull \hbox (badness 10000) in paragraph at lines 1170--1171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1195--1196
+Underfull \hbox (badness 10000) in paragraph at lines 1172--1173
 
  []
 
-<Figuras/graph-G-and-G'.jpg, id=358, 294.3798pt x 171.039pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1174--1175
+
+ []
+
+<Figuras/graph-G-and-G'.jpg, id=417, 294.3798pt x 171.039pt>
 File: Figuras/graph-G-and-G'.jpg Graphic file (type jpg)
 
 <use Figuras/graph-G-and-G'.jpg>
-Package pdftex.def Info: Figuras/graph-G-and-G'.jpg used on input line 1203.
+Package pdftex.def Info: Figuras/graph-G-and-G'.jpg used on input line 1182.
 (pdftex.def)             Requested size: 441.5686pt x 256.55786pt.
 
-Overfull \hbox (0.55087pt too wide) in paragraph at lines 1203--1204
+Overfull \hbox (0.55087pt too wide) in paragraph at lines 1182--1183
  [][] 
  []
 
-
-Underfull \vbox (badness 5817) has occurred while \output is active []
-
- [40]
-<Figuras/graph-G'-and-R.jpg, id=366, 294.3798pt x 171.039pt>
+[38] <Figuras/graph-G'-and-R.jpg, id=426, 294.3798pt x 171.039pt>
 File: Figuras/graph-G'-and-R.jpg Graphic file (type jpg)
 
 <use Figuras/graph-G'-and-R.jpg>
-Package pdftex.def Info: Figuras/graph-G'-and-R.jpg used on input line 1212.
+Package pdftex.def Info: Figuras/graph-G'-and-R.jpg used on input line 1191.
 (pdftex.def)             Requested size: 441.5686pt x 256.55786pt.
 
-Overfull \hbox (0.55087pt too wide) in paragraph at lines 1212--1213
+Overfull \hbox (0.55087pt too wide) in paragraph at lines 1191--1192
  [][] 
  []
 
 
 Underfull \vbox (badness 1189) has occurred while \output is active []
 
- [41pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [39pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1218 ...\frac{G'}{\left(\frac{n}{k}\right)^2}.$$
+l.1197 ...\frac{G'}{\left(\frac{n}{k}\right)^2}.$$
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.5.3}) has been already used, duplic
 ate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1218 ...\frac{G'}{\left(\frac{n}{k}\right)^2}.$$
+l.1197 ...\frac{G'}{\left(\frac{n}{k}\right)^2}.$$
                                                    <./Figuras/graph-G-and-G'.jp
-g> <./Figuras/graph-G'-and-R.jpg>] [42]
+g> <./Figuras/graph-G'-and-R.jpg>] [40]
 
-LaTeX Warning: Reference `lemma:triangleremoval' on page 43 undefined on input 
-line 1268.
+LaTeX Warning: Reference `lemma:triangleremoval' on page 41 undefined on input 
+line 1247.
 
-[43] [44
+[41] [42
 
 ]
 Chapter 6.
-[45] [46
-
-]
-Chapter 7.
-(./PGC.bbl [47pdfTeX warning (ext4): destination with the same identifier (name
-{table.7.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.3 \begin
-          {biblist}] [48
+(./PGC.bbl [43] [44
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 15.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 15.
- [49])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1305.
- [50]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1305.
+ [45])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1263.
+ [46]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1263.
  (./PGC.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1305.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1305.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1263.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1263.
+
+Package rerunfilecheck Info: File `PGC.out' has not changed.
+(rerunfilecheck)             Checksum: DD5CCEDBF16D9757F5AF406F0600FA53;1480.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1305.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1263.
  ) 
 Here is how much of TeX's memory you used:
- 14165 strings out of 493013
- 205026 string characters out of 6135682
- 361317 words of memory out of 5000000
- 17018 multiletter control sequences out of 15000+600000
- 110186 words of font info for 192 fonts, out of 8000000 for 9000
+ 13937 strings out of 493013
+ 201692 string characters out of 6135682
+ 357353 words of memory out of 5000000
+ 16793 multiletter control sequences out of 15000+600000
+ 110182 words of font info for 192 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,13n,58p,1004b,722s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,14n,58p,1004b,722s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc} </home/diogo/.texlive2016/texmf-var/fo
@@ -1698,10 +1697,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PGC.pdf (50 pages, 1814443 bytes).
+Output written on PGC.pdf (46 pages, 1813374 bytes).
 PDF statistics:
- 674 PDF objects out of 1000 (max. 8388607)
- 582 compressed objects within 6 object streams
- 167 named destinations out of 1000 (max. 500000)
- 25331 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 650 PDF objects out of 1000 (max. 8388607)
+ 562 compressed objects within 6 object streams
+ 161 named destinations out of 1000 (max. 500000)
+ 25323 words of extra memory for PDF output out of 29859 (max. 10000000)
 

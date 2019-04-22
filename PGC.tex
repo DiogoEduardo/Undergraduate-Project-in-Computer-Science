@@ -1,4 +1,5 @@
-\documentclass[12pt,twoside,a4paper]{book}
+\documentclass[12pt,twoside,a4paper,bibliography=totocnumbered]{book}
+
 
 
 \usepackage[utf8]{inputenc}
@@ -24,7 +25,7 @@
     urlcolor={blue!60!black},
 }
 
-\usepackage{bookmark}
+%\usepackage{bookmark}
 
 \usepackage[abbrev,msc-links,backrefs]{amsrefs}
 \usepackage{doi}
@@ -156,6 +157,9 @@
 \def\ex{\mathop{\text{\rm ex}}\nolimits}
 
 
+
+
+
 \usepackage{datetime}
 \usepackage{lineno}
 \newcommand*\patchAmsMathEnvironmentForLineno[1]{%
@@ -202,7 +206,7 @@ Diogo Eduardo Lima Alves\\
 
 \vspace{2cm}
 
-GRADUATION PROJECT IN COMPUTER SCIENCE PRESENTED\\
+UNDERGRADUATE PROJECT IN COMPUTER SCIENCE PRESENTED\\
 TO\\
 CENTER OF MATHEMATICS, COMPUTATION AND COGNITION\\
 OF\\
@@ -210,7 +214,7 @@ FEDERAL UNIVERSITY OF ABC\\
 FOR\\
 OBTAINING TITLE\\
 OF\\
-COMPUTER SCIENCE BACHELOR\\
+COMPUTER SCIENCE HONOURS BACHELOR\\
 \vspace{2cm}
 Advisor: Prof. Dr. Guilherme Oliveira Mota\\
 \vfill
@@ -229,11 +233,11 @@ Diogo Eduardo Lima Alves
     \end{center}
 
     \begin{flushright}
-{\bf Graduation Project} presented to\\ 
-Graduation Program in Computer Science\\ 
+{\bf Undergraduate Project} presented to\\ 
+Undergraduate Program in Computer Science\\ 
 (Concentration area: Graph Theory),\\ 
 as partial requirement to obtain the title\\ 
-of Bachelor in Computer Science.
+of Honours Bachelor in Computer Science.
     \end{flushright}
 
 \vspace{3cm}
@@ -243,49 +247,6 @@ Advisor: Prof. Dr. Guilherme Oliveira Mota\\
 Santo André - SP\\
 May 2019
 \end{center}
-
-\pagebreak
-
-\begin{center}
-Diogo Eduardo Lima Alves
-\end{center}
-    
-   \begin{center}
-        \vspace*{2 cm}
-        \textbf{\Large{Extremal and Probabilistic Combinatorics}}\\
-        \vspace*{2.5cm}
-    \end{center}
-
-
-    \begin{flushright}
-{\bf Graduation Project} presented to\\ 
-Graduation Program in Computer Science\\ 
-(Concentration area: Graph Theory),\\ 
-as partial requirement to obtain the title\\ 
-of Bachelor in Computer Science.
-    \end{flushright}
-    
-    \vspace{2.5 cm}
-    \begin{center}
-    \rule{10.0 cm}{0.02 cm}\\
-    Prof. Dr. Guilherme Oliveira Mota\\
-    Advisor\\
-    
-    \vspace{1.0 cm}
-    \rule{10.0 cm}{0.02 cm}\\
-    Prof. Dr. Fulano 1\\
-    Guest 1\\
-    
-    \vspace{1.0 cm}
-    \rule{10.0 cm}{0.02 cm}\\
-    Prof. Dr. Fulano 2\\
-    Guest 2\\
-   
-   \vfill
-Santo André - SP\\
-May 2019
-\end{center}
-
 \tableofcontents
 \listoffigures
 %\listoftables
@@ -303,7 +264,7 @@ Ramsey Theory, roughly speaking, is the study of finding order in chaos and stud
 
 On the other hand Extremal Graph Theory studies graphs' possible sizes at the same time they hold some property, which can involve bounds on the number of edges and vertices, since this property, in general, is the absence of a specific subgraph.
 
-The Probabilistic Method is a very useful tool, because it is flexible and it is used to prove the existence of a structure with certain properties. We define a probability space and pick randomly a element of this space then we show this element has the desired properties with a positive probability.
+The Probabilistic Method is a very useful tool, because it is flexible and it is used to prove the existence of a structure with certain properties. We define a probability space and pick randomly a element of this space then we show this element has the desired properties with positive probability.
 
 Finally the regularity lemma is discussed, one of the most important tools in Combinatorics, informally it is about acquired from any graph a real good approximation with random-like subgraphs which give us a huge flexibility to prove many statements.
 
@@ -359,24 +320,24 @@ For any positive integer and any colouring $c\colon \mathbb{N} \rightarrow [r]$,
 \begin{proof}
   For a vertex colouring  given as $c\colon \mathbb{N} \rightarrow [r]$ define a edge colouring $c'\colon \binom{\mathbb{N}}{2} \rightarrow [r]$ as $c'(\{a,b\}) \coloneqq c(|a-b|)$. By Theorem~\ref{thm:RamseyTheorem}, there exists a monochromatic triangle with three vertices, say $\{x,y,z\}$, with $x<y<z$.\\
 Using the definition of $c'$  we have
-$$c'({x,y}) = i = c(|y-x|)$$
-$$c'({x,z})=  i = c(|z-x|)$$
-$$c'({y,z}) = i = c(|z-y|)$$
+$$c'(\{x,y\}) = i = c(|y-x|)$$
+$$c'(\{x,z\})=  i = c(|z-x|)$$
+$$c'(\{y,z\}) = i = c(|z-y|).$$
 
-From that, $c(|y-x|) = c(|z-x|) = c(|z-y|)$, and $(z-y)+(y-x)=(z-x)$ this implies that there are $x,y,z$ such that $x+y=z$ and $c(x) = c(y) = c(z)$., as required.\\
+From that, $c(|y-x|) = c(|z-x|) = c(|z-y|)$, and $(z-y)+(y-x)=(z-x)$ this implies that there are $x,y,z$ such that $x+y=z$ and $c(x) = c(y) = c(z)$, as required.\\
 \end{proof}
 
 \section{Finite Ramsey's Theorem}
 In order to prove the next theorem we need the following definitions.
 \begin{definition}
-Given a colouring $c\colon\dbinom{\mathbb{N}}{2}$ $\rightarrow$ $[r]$, being $i$ a colour and  $v$ a vertex $\in \mathbb{N}$, define $N_i(v) =\{ w: c(vw)=i\}$ , and it can be read as the colour $i$ neighbourhood of $v$.
+Given a colouring $c\colon\dbinom{\mathbb{N}}{2}$ $\rightarrow$ $[r]$, being $i$ a colour and  $v$ a vertex $\in \mathbb{N}$, define $N_i(v) =\{ w: c(\{v,w\})=i\}$ , and it can be read as the colour $i$ neighbourhood of $v$.
 \end{definition}
 
 \begin{definition}
-We define symbols $\ll$ and $\gg$ to denote asymptotically diference between quantities, when $ a \ll b$, the value of $a$ is asymptotically less than $b$ and when $ b \gg a$ the  value of $b$ is asymptotically more than $a$.  
+If $a \ll b$, then $a$ is asymptotically smaller than $b$, and if $b \gg a$, then $b$ is asymptotically larger than $a$.  
 \end{definition}
 \begin{definition}
-We define symbol $\approx$ to denote approximation between values, when $ a \approx b$, the value of $a$ is approximated the same value of $b$.  
+We define symbol $\approx$ to denote approximation between values, when $ a \approx b$,  we have that $a$ is asymptotically equals to $b$.  
 \end{definition}
 
 
@@ -393,8 +354,10 @@ Choose $n \geq R(k-1,\ell) + R(k, \ell-1)$ and pick any vertex $v$ from $[n]$. C
 
 By induction hypothesis:
 $$R(k,\ell) \leq \binom{k+\ell - 2}{k - 1}.$$
+
 This implies that:
 $$R(k-1,\ell)\leq \binom{k+\ell -3}{k-2},$$ and $$R(k,\ell-1)\leq \binom{k+\ell-3}{\ell-1}.$$
+
 Since $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$, we have
 
 $$R(k,\ell)\leq \binom{k-1+\ell}{k-1} + \binom{k+\ell-1}{\ell-1} = \binom{k+ \ell -2}{k-1}.$$
@@ -408,10 +371,10 @@ R(k) &\leq \binom{2k -2}{k-1}\\
 
 Finishing the upper bound proof.\\
 
-It is hard to find colourings whose subgraphs are not big and not monochromatic this is counter-intuitive but is really hard to construct this type of graph. However, in 1947, Erd\H{o}s made a important contribution for combinatorics showing a simple proof of an exponential lower bound on $R(k)$.
+It is not simple showing colourings whose subgraphs are not big and not monochromatic this is counter-intuitive but is really hard to construct this type of graph. However, in 1947, Erd\H{o}s made a important contribution for combinatorics showing a simple proof of an exponential lower bound on $R(k)$.
 
-Now we proceed by proving the lower bound. Consider the random coloring $c\colon \binom{n}{2} \rightarrow \{$red, blue$\}$, with probability $p$ = $1/2$ for  $c(ij) =$ red in each $ij \in$ $e(K_n)$.\\ 
-Define X as the number of monochromatic cliques in $K_n$. The expected value for $X$ is $\binom{n}{k}$ times the probability that a given clique is monochromatic, then:
+Now we proceed by proving the lower bound. Consider the random coloring $c\colon \binom{n}{2} \rightarrow \{$red, blue$\}$, with probability $p$ = $1/2$ for  $c(\{i,j\}) =$ red in each $\{i,j\} \in$ $E(K_n)$.\\ 
+Define X as the number of monochromatic cliques in $K_n$. The expected value for $X$ is $\binom{n}{k}$ times the probability that a given clique is monochromatic, by the fact $\left(\frac{n}{m}\right)^m \leq \binom{n}{m} \leq \left(\frac{en}{m}\right)^m$, then:
 $$\binom{n}{k}\frac{1}{2} ^{\binom{k}{2}-1} \leq 2 \left( \frac{en}{k} \left( \frac{1}{\sqrt{2}} \right)^{k-1} \right)^{k} \ll 1.$$ 
 This holds if: 
 \begin{align*}
@@ -434,12 +397,11 @@ Since the expected value for $X$ is less than $1$, then there must exist a colou
 \begin{definition}
 $W(r,k) = \min \{n \colon \text{ for each } c \text{ with } [n] \rightarrow \{1,...,r\}$ there exists a monochromatic arithmetic  progression of length $k \}$.
 \end{definition}
-
 We claim that $W(r,k)$ exists and we prove it by double induction on the number of arithmetic progressions, so assume that $W(r, k-1)$ exists. Note that if $k \leq 2$ the result is trivial.
 
 First denote the arithmetic progression $\{a, a + d, a +2d, ..., a+(k-1)d\}$ by AP$(a,d,k)$ such that it has common difference  $d$ and length $k$.
 
-We say arithmetic progressions (AP) of length $k$ are $\textit{focused at}$ $z$ if for every $i,j \in [r]$ we have
+We say arithmetic progressions (AP) of length $k$ are $\textit{focused at}$ $z$ if for every $\{i,j\} \in [r]$ we have
 $$ a_i +  (k-1)d_i = a_j  + (k-1) d_j = z .$$
 
 Furthermore, the AP is $\textit{colour-focused}$ if it is monochromatic.
@@ -486,7 +448,7 @@ If G is a triangle-free graph on $n$ vertices, then
 $$e(G) \leq \left\lceil \frac{n}{2} \right\rceil \left\lfloor \frac{n}{2} \right\rfloor .$$
 \end{theorem}
 \begin{proof}
-This proof follows by induction on $n$. Let $G'$ be the graph obtained from $G$ by removing two vertices $u,v \in G$ such that $\{u,v\}\in e(G)$. Note that if $G$ is triangle-free, then $G'$ is also triangle-free because it is not possible to form a triangle by removing an edge and there are at most $n-1$ edges incident to $u$ or $v$, then:
+This proof follows by induction on $n$. Let $G'$ be the graph obtained from $G$ by removing two vertices $u,v \in G$ such that $\{u,v\}\in E(G)$. Note that if $G$ is triangle-free, then $G'$ is also triangle-free because it is not possible to form a triangle by removing an edge and there are at most $n-1$ edges incident to $u$ or $v$, then:
 \begin{align*}
 e(G') &\leq \left(\left\lfloor \frac{n}{2} \right\rfloor -1\right)\left(\left\lceil \frac{n}{2} \right\rceil -1\right) \\
 &= \left\lfloor \frac{n}{2} \right\rfloor \left\lceil \frac{n}{2} \right\rceil - n +1.
@@ -664,9 +626,9 @@ This method is very powerful and has incredible simple applications, when this m
 It is necessary to introduce the Erd\H{o}s-Rényi random graph model $G(n,p)$. $G(n,p)$ is a probability distribution on graphs, more informally, it is a edge distribution on $n$ vertices with probability $p$ and with the existence of edges being independent events.
 
 \begin{definition}\label{def:randomgraph}
-The (Erd\H{o}s-Rényi) random graph $G(n,p)$ is the graph on $n$ vertices obtained by choosing each edge independently and uniformily at random with probability $p$. In other words, we assume that we have a probability space $\Omega$ and independent random variables $I_{vw}$ for each $vw \in \binom{[n]}{2}$, such that
+The (Erd\H{o}s-Rényi) random graph $G(n,p)$ is the graph on $n$ vertices obtained by choosing each edge independently and uniformily at random with probability $p$. In other words, we assume that we have a probability space $\Omega$ and independent random variables $I_{vw}$ for each $\{v,w\} \in \binom{[n]}{2}$, such that
 $$\mathbb{P}(I_{vw} = 1) = 1 - \mathbb{P}(I_{vw} = 0),$$ 
-and let $G$ be the graph with vertex set $[n]$ and edge set $\{vw \in \binom{[n]}{2}: I_{vw} = 1\}$. 
+and let $G$ be the graph with vertex set $[n]$ and edge set $\{\{v,w\} \in \binom{[n]}{2}: I_{vw} = 1\}$. 
 
 \end{definition}
 
@@ -690,7 +652,7 @@ $\chi(G)$ is the minimum number of colors used in a proper coloring of G.
 Assuming $\chi(G(n,p)) = r$ we have a $\{V_1,V_2,...,V_r\}$ partition of $V(G(n,p))$ on $r$ independent sets illustrated at Figure \ref{fig:r-partition}
 
 
-\begin{theorem}\label{erdoss} [{Erd\H{o}s \cite{Er59}}] There exist graphs whose girth and chromatic number are arbitrarily large.
+\begin{theorem}\label{erdoss}[{Erd\H{o}s \cite{Er59}}] There exist graphs whose girth and chromatic number are arbitrarily large.
 \end{theorem}
 
 \begin{proof} 1.
@@ -759,7 +721,7 @@ Since the proof for $\chi(G) \geq k$ is finished we will prove $g(G(n,p))\geq k$
 $$ g(G(n,p)) \leq k \iff X_k \geq 1,$$
 
 
-where $X_k = \#  C_k$ in $G(n,p)$,
+where $X_k = |C_k \colon C_k \subset G(n,p)|$,
 
 $$\mathbb{E}[X_k] = \sum_{C_k \subset K_n} \mathbb{P}(C_k \subset G(n,p) ) \leq n^kp^k,$$
 Now we need to limit our short cycles by $\sqrt{n}$ in order to show with high probability we will have few short cycles so we can destroy them,
@@ -778,22 +740,22 @@ We have,
 $$ |V(G)| = \sum_{i=1}^{\chi(G)} |S_i| \leq \chi(G)\max|S_i| \leq \chi(G) \alpha (G) .$$
 
 Note that if $\alpha(G) \leq |G|/k$, then $\chi(G) \geq $k. \\
-Let $\epsilon > 0$ be sufficiently small ($\epsilon < 1/k$) and $p = n^{\epsilon - 1}$. As we have already introduced to $G(n,p)$ in definition \ref{def:randomgraph} let $G = G(n,p) -$\{one vertex of each cycle $C_{\ell} \text{ with } l\leq k\}$.
+Let $\varepsilon > 0$ be sufficiently small ($\varepsilon < 1/k$) and $p = n^{\varepsilon - 1}$. As we have already introduced to $G(n,p)$ in definition \ref{def:randomgraph} let $G = G(n,p) -$\{one vertex of each cycle $C_{\ell} \text{ with } \ell\leq k\}$.
 
 Now we need two claims to reach the result. We claim that, with high probability, $G$ has at most $n/2$ cycles of length $\leq k$ and has no independent set  of size $n/2k$ then, consequently $\chi(G) \geq k$ and $girth(G) \geq k$.
 
 First claim. $V(G) > n/2$ . First of all we need some variables to count the cycles,
-$$X_l = \# C_l \subset G(n,p)$$
-$$X = \# \text{ short cycles } = \sum_{l=3}^k X_l$$
+$$X_{\ell} =  |C_{\ell} : C_{\ell} \subset G(n,p)|$$
+$$X = \text{quantity of short cycles } = \sum_{{\ell}=3}^k X_{\ell}$$
 \begin{align*}
-\mathbb{E}[X] &= \sum_{l=3}^k \mathbb{E}[X_l] \\
-	       &= \sum_{l=3}^k \sum_{C_l \in K_n} \mathbb{P}(C_l \subset G(n,p))\\
-	       &\leq \sum_{l=3}^k n^l p^l \\
-	       &= \sum_{l=3}^k n^{\epsilon l}, p= n^{\epsilon - 1}\\
-	       &\leq 2n^{\epsilon k} \\
+\mathbb{E}[X] &= \sum_{{\ell}=3}^k \mathbb{E}[X_{\ell}] \\
+	       &= \sum_{{\ell}=3}^k \sum_{C_{\ell} \in K_n} \mathbb{P}(C_{\ell} \subset G(n,p))\\
+	       &\leq \sum_{{\ell}=3}^k n^{\ell} p^{\ell} \\
+	       &= \sum_{{\ell}=3}^k n^{\varepsilon {\ell}}, p= n^{\varepsilon - 1}\\
+	       &\leq 2n^{\varepsilon k} \\
 	       &= o(n).
 \end{align*}
-Note that since we are removing a vertex of each cycle $V(G) \geq n-X$. Now we show the general case for this important inequality for the probabilistic method. The Markov's inequality holds for any random variable which takes non-negative values and for $a>0$,
+Note that since we are removing a vertex of each cycle $V(G) \geq n-X$. Now we show the general case for this useful inequality for the probabilistic method. The Markov's inequality holds for any random variable which takes non-negative values and for $a>0$,
 
 $$\mathbb{P}(X>a) \leq \frac{\mathbb{E}(X)}{a}.$$
 
@@ -808,17 +770,17 @@ Then, we proved that, with high probability, the graph do not have more than $n/
 \\
 Second claim. $\alpha(G) \leq \alpha (G(n,p)) < n/2k$.\\
 We need to count the independent sets
-$$Y_l = \# \text{ independents sets with length $l$. }$$
+$$Y_{\ell} = \text{quantity of independents sets with length ${\ell}$. }$$
 
 \begin{align*}
-\mathbb{E}[Y_l] &= \sum_{\substack{|S| = l \\ e(S) = 0 }} (1-p)^{\binom{l}{2}}\\
-	       &= (1-p)^{\binom{l}{2} \binom{n}{l}} \\
-	       &\leq \left(\frac{en}{l}\right)^l e^{-p\binom{l}{2}}\\
-	       &\rightarrow 0  \text{ if } l = n/2k.
+\mathbb{E}[Y_{\ell}] &= \sum_{\substack{|S| = {\ell} \\ e(S) = 0 }} (1-p)^{\binom{{\ell}}{2}}\\
+	       &= (1-p)^{\binom{{\ell}}{2} \binom{n}{{\ell}}} \\
+	       &\leq \left(\frac{en}{{\ell}}\right)^{\ell} e^{-p\binom{{\ell}}{2}}\\
+	       &\rightarrow 0  \text{, if } \ell = n/2k.
 \end{align*}
 Thus we have
 
-$$\frac{\mathbb{E}[|\{C_l \subset G : l\leq k \}|]}{n/2} + \mathbb{E} [|\{ S:|S| \geq n/2k, e(S) = 0\}|] \rightarrow 0$$
+$$\frac{\mathbb{E}[|\{C_{\ell} \subset G : {\ell}\leq k \}|]}{n/2} + \mathbb{E} [|\{ S:|S| \geq n/2k, e(S) = 0\}|] \rightarrow 0$$
 as $n \rightarrow \infty $. So $G$ has the desired properties with high probability and the proof is finished.
 \end{proof}
 
@@ -826,7 +788,7 @@ Realize that the key point in both proofs was the fact we could choose the most 
 
 \section{Subgraphs of the Random Graph}
 
-In this section we will see the value of $p$ that implies that a specific subgraph be or not contained in the random graph $G_{n,p}$. Being more specific we shall prove the threshold for the property ``containing a triangle'' in $G_{n,p}$.  We will need the Chebychev inequality presented below.
+In this section we will see the value of $p$ that implies that a specific subgraph be or not contained in the random graph $G(n,p)$. Being more specific we shall prove the threshold for the property ``containing a triangle'' in $G(n,p)$.  We will need the Chebychev inequality presented below.
 
 \begin{theorem}[{Chebyshev's Inequality \cite{Ch67}}]
 $$\mathbb{P}(|X-\mu| \geq a) \leq \sigma^2/a^2.$$
@@ -838,14 +800,22 @@ $$\mathbb{P}(X=0) \leq \mathbb{P}(|X-\mu | \geq \mu) \leq \sigma^2/\mu^2,$$
 which gives us an upper bound for $\mathbb{P}(X=0)$. We shall use it to prove the following result.\\
 
 \begin{theorem}
-$$ \mathbb{P}(G_{n,p}\text{ contains a triangle}) \rightarrow \big\{ 0 \text{ if } p \ll 1/n, 1 \text{ if } p \gg 1/n $$
+Let $G=G(n,p)$ be a random graph.
+Then,
+$$
+\mathbb{P}(G\text{ contains a triangle}) \rightarrow 
+\begin{cases}
+		0, &\text{if $p\ll n^{-1/n}$},\\
+		1, &\text{if $p\gg n^{-1/n}$}\,.
+\end{cases}
+$$
 \end{theorem}
 
 \begin{proof}
 In the first part we need the random variable and  Markov's inequality as follows,
-$$ X = \text{ the number of triangles in } G_{n,p}.$$
+$$ X = \text{ the quantity of triangles in } G(n,p).$$
 \begin{align*}
-\mathbb{P}(G_{n,p}\text{ contains a triangle }) &\leq \mathbb{E}(X)\\
+\mathbb{P}(G(n,p)\text{ contains a triangle }) &\leq \mathbb{E}(X)\\
 & \leq \binom{n}{3}p^3 \\
 & \ll 1,
 \end{align*}
@@ -866,7 +836,7 @@ Var(X) &= \sum_{u,v} \left(\mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\r
 \end{align*}
 %$$ \sum_{|u \cap v| = 1}\mathbb{P}(u \wedge v)   = n^5p^5$$
 and using Chebychev's inequality,
-$$\mathbb{P}(G_{n,p} \text{ contains no triangles}) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \leq \frac{n^4p^5 + n^3p^3 }{n^6p^6} \ll 1,$$
+$$\mathbb{P}(G(n,p) \text{ contains no triangles}) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \leq \frac{n^4p^5 + n^3p^3 }{n^6p^6} \ll 1,$$
 for $p \gg 1/n$, finishing the proof.
  \end{proof}
 
@@ -888,16 +858,16 @@ Monotone Increasing. Let $\mathcal{A}$ be a collection of graphs on $n$ vertices
 \begin{theorem} [{FKG Inequality \cite{FKG71}}]
  Let $\mathcal{A}$ and $\mathcal{B}$ be monotone increasing and let $\mathcal{C}$ be monotone decreasing, then:
 
-$$ \mathbb{P}((G_{n,p} \in \mathcal{A}) \wedge (G_{n,p} \in \mathcal{B})) \geq \mathbb{P}(G_{n,p} \in \mathcal{A})\mathbb{P}(G_{n,p} \in \mathcal{B}),$$
+$$ \mathbb{P}((G(n,p) \in \mathcal{A}) \wedge (G(n,p) \in \mathcal{B})) \geq \mathbb{P}(G(n,p) \in \mathcal{A})\mathbb{P}(G(n,p) \in \mathcal{B}),$$
 and
-$$ \mathbb{P}((G_{n,p} \in \mathcal{A}) \wedge (G_{n,p} \in \mathcal{C})) \leq \mathbb{P}(G_{n,p} \in \mathcal{A})\mathbb{P}(G_{n,p} \in \mathcal{C}).$$
+$$ \mathbb{P}((G(n,p) \in \mathcal{A}) \wedge (G(n,p) \in \mathcal{C})) \leq \mathbb{P}(G(n,p) \in \mathcal{A})\mathbb{P}(G(n,p) \in \mathcal{C}).$$
 \end{theorem}
 
 FKG inequality presented follows the theorem we want to prove.
 \begin{theorem} \label{theo:FKG}
 Let $c$ be a constant and $p = \frac{c}{n}$. Then
 
-$$ \limsup_{n \rightarrow \infty}\mathbb{P}(G_{n,p}\text{ contains a triangle }) = 1 - e^{\frac{-c^3}{6}}.$$
+$$ \limsup_{n \rightarrow \infty}\mathbb{P}(G(n,p)\text{ contains a triangle }) = 1 - e^{\frac{-c^3}{6}}.$$
 \end{theorem}
 \begin{proof}
 
@@ -905,13 +875,13 @@ We start using FKG inequality to prove the upper bound.\\
 Let $X$ be a triple in $[n]$ and $B_X$ be the event that this triple forms a triangle in $G_n,p$. Note that the events $\overline{B_X}$ are monotone decreasing and have probability $(1-p)^3$.
 
 \begin{align*}
-\mathbb{P}(G_{n,p} \text{ has no triangles }) &= \mathbb{P}\left( \bigwedge_{X \in \binom{[n]}{3}} \overline{B_X}\right) \\
+\mathbb{P}(G(n,p) \text{ has no triangles }) &= \mathbb{P}\left( \bigwedge_{X \in \binom{[n]}{3}} \overline{B_X}\right) \\
 & \geq \prod_{X \in \binom{[n]}{3}} \mathbb{P}(\overline{B_X})\\
 & \geq (1-p^3)^{\binom{n}{3}}\\
 & \rightarrow e^{-\mathbb{E}[X]}\\
 & = e^{-c^3/6},
 \end{align*}
-as $n \rightarrow \infty$ finishing the upper bound proof. For the lower bound proof we shall use same definition of $X$ and $B_X$ used before. Thus we have a set of $\binom{n}{3}$ events $B_X$ of the form $A_X \subset E(G_{n,p}) \subset \binom{n}{2}$.
+as $n \rightarrow \infty$ finishing the upper bound proof. For the lower bound proof we shall use same definition of $X$ and $B_X$ used before. Thus we have a set of $\binom{n}{3}$ events $B_X$ of the form $A_X \subset E(G(n,p)) \subset \binom{n}{2}$.
 Note that 
 $$\mu = \sum_X \mathbb{P} (B_X) = p^3\binom {n}{3},$$
 and
@@ -921,7 +891,7 @@ Then using the Janson's inequality
 
 $$ \mathbb{P}\left(\bigwedge_{j=1}^m \overline{B_j}\right) \leq e^{-\mu + \Delta/2}, $$
 which we shall prove next we have the following 
-$$ \mathbb{P}(G_{n,p}\text{ has no triangles }) \leq e^{-\mu + \Delta/2} \rightarrow e^{-c^3/6}$$
+$$ \mathbb{P}(G(n,p)\text{ has no triangles }) \leq e^{-\mu + \Delta/2} \rightarrow e^{-c^3/6}$$
 as $n \rightarrow \infty$, finishing the proof.
 \end{proof}
 
@@ -977,12 +947,12 @@ Since the claim is proved, note that, from $\mathbb{P}(A\cap B) = \mathbb{P}(A)\
 \begin{align*}
 \mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) &= \prod_{j=1}^m \mathbb{P}\left( \overline{B_j} | \bigwedge_{i = 1}^{j-1} \overline{B_i}\right)\\
 & = \prod_{j=1}^m \left( 1 - \mathbb{P}\left(B_j | \bigwedge_{i = 1}^{j-1} \overline{B_i}\right)\right)\\
-& \leq exp\left(- \sum_{j=1}^m \mathbb{P}(B_j | \bigwedge_{i=1}^{j-1} \overline{B_i}\right),
+& \leq \exp\left(- \sum_{j=1}^m \mathbb{P}(B_j | \bigwedge_{i=1}^{j-1} \overline{B_i}\right),
 \end{align*}
 using the claim we just proved,
 \begin{align*}
-\mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) &\leq  exp\left(- \sum_{j=1}^m \mathbb{P}(B_j) + \sum_{i \sim j, i< j} \mathbb{P}(B_i \wedge B_j)\right)\\
-& = exp( - \mu + \Delta /2).
+\mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) &\leq  \exp\left(- \sum_{j=1}^m \mathbb{P}(B_j) + \sum_{i \sim j, i< j} \mathbb{P}(B_i \wedge B_j)\right)\\
+& = \exp( - \mu + \Delta /2).
 \end{align*}
 
 Then we finish the proof of the first inequality. Now we proceed with the proof of the second inequality, with $\Delta \geq \mu$.
@@ -1017,19 +987,25 @@ Now maximizing $q = \mu / \Delta \leq 1$ we have
 \end{proof}
 
 \section{Connectedness}
-At this section we will answer the question ``For which $p$ is $G_{n,p}$ likely to be connected?'' Observe this property is monotone, because it is not possible to disconnect a graph by adding edges. The following theorem gives a threshold for this property.
+At this section we will answer the question ``For which $p$ is $G(n,p)$ likely to be connected?'' Observe this property is monotone, because it is not possible to disconnect a graph by adding edges. The following theorem gives a threshold for this property.
 
 \begin{theorem}
-For every $\epsilon > 0$,
+For every $\varepsilon > 0$,
 
-$$\mathbb{P}(G_{n,p}\text{ is connected}) \rightarrow \Bigg	 \{ 0\text{ if }p \leq \frac{(1 - \epsilon) \log n}{n} , 1 \text{ if } p \geq \frac{(1 + \epsilon) \log n}{n}$$
+$$
+\mathbb{P}(G(n,p)\text{ is connected}) \rightarrow 
+\begin{cases}
+		0, &\text{ if }p \leq \frac{(1 - \varepsilon) \log n}{n},\\
+		1, &\text{ if }p \geq \frac{(1 + \varepsilon) \log n}{n}\,.
+\end{cases}
+$$
 
-as $n \rightarrow \infty$.
+As $n \rightarrow \infty$.
 \end{theorem}
 \begin{proof}
-We start proving what happens when $p \leq \frac{(1 - \epsilon) \log n}{n}$. In order to have a connected $G\colon G \in G_{n,p}$ we need to avoid isolated vertices. Let $X=X(G)$ denote the number of isolated vertices in $G$ and let $p\leq((1-\epsilon) \log n) /n$. Then using the fact $1-x > e^{-x-x^2}$,
+We start proving what happens when $p \leq \frac{(1 - \varepsilon) \log n}{n}$. In order to have a connected $G\colon G \in G(n,p)$ we need to avoid isolated vertices. Let $X=X(G)$ denote the number of isolated vertices in $G$ and let $p\leq((1-\varepsilon) \log n) /n$. Then using the fact $1-x > e^{-x-x^2}$,
 
-$$ \mathbb{E}[X(G)] = n(1-p)^{n-1} > ne^{-pn-p^2n} \gg n^{\epsilon/2},$$
+$$ \mathbb{E}[X(G)] = n(1-p)^{n-1} > ne^{-pn-p^2n} \gg n^{\varepsilon/2},$$
 for sufficiently large $n$. Now we can bound the variance of $X(G)$ as below,
 
 \begin{align*}
@@ -1059,13 +1035,13 @@ To prove the second part, we define the random variable $Y_k(G)$, which counts t
 & = \left( \frac{en}{k} e^{-p(n-k)} \right)^k.
 \end{align*}
 Note that if $G$ is not connected, there must exist a component of size at most $ n/2$ then $1 \leq k \leq n/2$. Since the function $\left( \frac{en}{k} e^{-p(n-k)} \right)$ is convex the highest value of it occurs in one of its extremal points thus we have
-$$\mathbb{E}[Y_k (G)] \leq (max\{ene^{-p(n-1)}, 2ee^{-pn/2}\})^k .$$
+$$\mathbb{E}[Y_k (G)] \leq (\max\{ene^{-p(n-1)}, 2ee^{-pn/2}\})^k .$$
 
 Note that, \\
-for $ene^{-p(n-1)}$ and $p \geq \frac{(1 + \epsilon) \log n}{n}$ we have $\mathbb{E}[Y_k (G)] \rightarrow 0$\\
+for $ene^{-p(n-1)}$ and $p \geq \frac{(1 + \varepsilon) \log n}{n}$ we have $\mathbb{E}[Y_k (G)] \rightarrow 0$\\
 and for $2ee^{-pn/2}$ and $p \geq 4/n$ we have $\mathbb{E}[Y_k (G)] \rightarrow 0$\\
 
-Using the maximum one we have $p \geq \frac{(1 + \epsilon) \log n}{n}$  and by Markov's inequality
+Using the maximum one we have $p \geq \frac{(1 + \varepsilon) \log n}{n}$  and by Markov's inequality
 
  $$\mathbb{P}(Y_k \geq 1) \leq \mathbb{E}[Y_k] \rightarrow 0,$$
  which implies $\mathbb{P}(\text{G is connected}) \rightarrow 1$, finishing the proof.
@@ -1098,7 +1074,7 @@ $$ \left| \frac{e(X,Y)}{|X||Y|} - \frac{e(A,B)}{|A||B|} \right| \leq \varepsilon
 \end{definition}
 
 
-A property shared between random graphs and $\epsilon$-regular pairs is that most vertices have roughly the same number of neighbours.
+A property shared between random graphs and $\varepsilon$-regular pairs is that most vertices have roughly the same number of neighbours.
 
 \begin{fact}\label{fact:503}
 Let $(A,B)$ be an $\varepsilon$-regular pair of density at least $\delta$ in a graph $G$. Then only $2 \varepsilon |A| $ vertices of $A$ have a degree out of the interval $(\delta - \varepsilon)|B| \leq d(v): v \in A \leq (\delta + \varepsilon)|B|$ in $G[A,B].$
@@ -1117,18 +1093,18 @@ which corresponds to average degree of $v \in X$, confirming the claimed result.
 Now we prove the embedding lemma which is what makes the regularity so useful to solve problems. It says that for the purpose of finding small subgraphs in graph $G$, dense $\varepsilon$-regular pairs can be treated as complete bipartite graphs.
 
 %\begin{definition}
-%$\mathcal{G}(H,m,\epsilon,\delta)$ denotes the family of graphs $G$ such that $V(G) = V(H(m))$, $G\subset H(m)$, and $G[A_i,A_j]$ is $\epsilon$-regular and has density at least $\delta$ whenever $ij \in E(H)$.
+%$\mathcal{G}(H,m,\varepsilon,\delta)$ denotes the family of graphs $G$ such that $V(G) = V(H(m))$, $G\subset H(m)$, and $G[A_i,A_j]$ is $\varepsilon$-regular and has density at least $\delta$ whenever $ij \in E(H)$.
 %\end{definition}
 
 \begin{lemma}\label{lemma:embeddinglemma}
-%The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\epsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\epsilon,\delta)$, then $H \subset G$.
+%The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\varepsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\varepsilon,\delta)$, then $H \subset G$.
 
 
 (The Embedding Lemma). Let $H$ be a graph, and let $\varepsilon >0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and $G$ $\varepsilon$-partitioned in $\{V_1, ..., V_k\}$, then if there exist a partition $\{V_1, ..., V_H\}$ with all pairs being $\varepsilon$-regular and $\delta$-dense, then $H \subset G$. 
 \end{lemma} 
 
 \begin{proof}
-Here we only give the proof for $H=K_3$. Let %$G \in \mathcal{G}(H, m,\epsilon,\delta)$ and let
+Here we only give the proof for $H=K_3$. Let %$G \in \mathcal{G}(H, m,\varepsilon,\delta)$ and let
  $A$, $B$ and $C$ be $\varepsilon$-regular and at least $\delta$-dense partitions of $G$, with $|A|=|B|=|C|=m$ as in Figure \ref{fig:embeddinglemma}. Note that if we do not consider the sets of vertices $\{w\in A \colon d_B(w) < (\delta - \varepsilon)|B| \}$  and $\{u\in A \colon d_C(u) < (\delta - \varepsilon)|C| \}$ then we have $(1-2\varepsilon)|A|$ vertices in $A$ such that $N(v) \cap B \geq \varepsilon |B|$ and $N(v) \cap C \geq \varepsilon |C|$ by Fact \ref{fact:503}. Then let $X = N(v) \cap B$ and $Y =N(v) \cap C$ so there must be a edge between $X$ and $Y$ (note that any edge between $X$ and $Y$ forms a triangle). To be more precise we have $|X| \geq (\delta - \varepsilon)|B|$ and $|Y| \geq (\delta - \varepsilon)|C|$, as follows
 
 \begin{align*}
@@ -1150,24 +1126,27 @@ Then we have at least $ (\delta - \varepsilon)^3 m^2$ triangles for each $v$ the
 
 \begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]. Let $\varepsilon > 0$, and let $k_0(\varepsilon) \in  \mathbb{N}$ such that the following holds.\\
 For any graph $G$, there exists a partition $V(G) = \{V_1 \cup ... \cup V_k\}$ of the vertex set into $1/ \varepsilon \leq k \leq k_0 (\varepsilon)$ parts, such that
+\begin{itemize}
 
-$|V_1| = ... =|V_k| \pm 1$ and
+	\item $|V_1| = ... =|V_k| \pm 1$ and
 
-%$|A_0| \leq \epsilon |V(G)|$,
+%$|A_0| \leq \varepsilon |V(G)|$,
 
-all but $\varepsilon k^2$ of the pairs $(V_i, V_j)$ are $\varepsilon$-regular. 
+	\item all but $\varepsilon k^2$ of the pairs $(V_i, V_j)$ are $\varepsilon$-regular. 
+
+\end{itemize}
 \end{theorem}
 
-Note the lemma holds for all graphs, but it is useful only for graphs with large $n$ and with a minimum density.% Indeed, if $|V(G)| < M(m, \epsilon)$ then each part has at most one vertex and if $e(G) = o(n^2)$ then $G$ is well-approximated by the empty graph, in both the lemma is vacuous and not so useful.  
+Note the lemma holds for all graphs, but it is useful only for graphs with large $n$ and with a minimum density.% Indeed, if $|V(G)| < M(m, \varepsilon)$ then each part has at most one vertex and if $e(G) = o(n^2)$ then $G$ is well-approximated by the empty graph, in both the lemma is vacuous and not so useful.  
 
 \section{Applications}
 Applying the regularity lemma, in general, has more convincing power of its use than the definitions or the proof of the lemma, then in this section we will show some classical applications. In order to apply the lemma we need to follow a standard process as can be seen below.
 
 1. Apply the Szemerédi Regularity Lemma in order to acquire a partition $ \{ A_0, ... A_k \} $ as defined in the lemma.
 
-2. Remove a few edges (edges inside the partitions, between irregular pairs and sparse pairs). There at most $O(\epsilon n^2)$ such edges.
+2. Remove a few edges (edges inside the partitions, between irregular pairs and sparse pairs). There at most $O(\varepsilon n^2)$ such edges.
 
-3. Define a graph $R$ such that $V(R) \rightarrow [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\epsilon$-regular.
+3. Define a graph $R$ such that $V(R) \rightarrow [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular.
 
 4. Apply a classical result from Graph Theory (e.g. Turán's Theorem) to R.
 
@@ -1188,13 +1167,13 @@ Assume $e(G) \geq (1 - 1/(\chi(H) - 1) + \delta)\binom{n}{2}$ and follow the ste
 2. Remove edges inside the parts, between irregular pairs and sparse pairs obtaining $G'$ as in Figure \ref{fig:graph-G-and-G'}.
 Note that\\
 
-|edges inside the parts| $\leq k\binom{n/k}{2} \leq k(n/k)^2 \leq \epsilon n^2$ (recall $1/\epsilon \leq k$).\\
+|edges inside the parts| $\leq k\binom{n/k}{2} \leq k(n/k)^2 \leq \varepsilon n^2$ (recall $1/\varepsilon \leq k$).\\
 
-|edges between not $\epsilon$-regular pairs| $\leq \epsilon k^2 (n/k)^2 = \epsilon n^2$.\\
+|edges between not $\varepsilon$-regular pairs| $\leq \varepsilon k^2 (n/k)^2 = \varepsilon n^2$.\\
 
 |edges between not $\delta$-dense pairs| $\leq \binom{k}{2}(\delta/4) (n/k)^2 \leq (\delta /4)n^2$.\\ 
 
-Thus we have removed at most $(2\epsilon + \delta/4)n^2$, therefore 
+Thus we have removed at most $(2\varepsilon + \delta/4)n^2$, therefore 
 
 $$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{2 \delta}{3}\right) \binom{n}{2}.$$
 
@@ -1205,7 +1184,7 @@ $$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{2 \delta}{3}\right) \bin
      \label{fig:graph-G-and-G'}
 \end{figure}
 
-3. Define $R$ with $V(R) = [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\epsilon$-regular as in Figure \ref{fig:graph-G'-and-R}
+3. Define $R$ with $V(R) = [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular as in Figure \ref{fig:graph-G'-and-R}
 
 \begin{figure}[H]
      \centering
@@ -1233,11 +1212,11 @@ For all $\alpha > 0$ exists $\beta > 0$ such that let $G$ be a graph with $\leq 
 \begin{proof}
 The first, second and third steps of the method are, in general, the same for classical problems,
 
-1. Apply SzRL with $\epsilon$ enough small and we have the partitions $\{V_1, ... , V_k\}$.
+1. Apply SzRL with $\varepsilon$ enough small and we have the partitions $\{V_1, ... , V_k\}$.
 
 2. Remove edges inside the partitions, between irregular pairs and sparse pairs obtaining $G'$ with at most $\alpha n^2$ edges removed.
 
-3. Define $R$ with $V(R) = [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\epsilon$-regular.
+3. Define $R$ with $V(R) = [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular.
 
 Now we have two cases, in the first one we have a triangle in $R$. Note if $\beta n^3 < 1$ the result is trivial, then we assume $\beta \geq 1/n^3$ and the partitions that forms the triangle (assume $\{V_1, V_2, V_3\}$ for simplicity) has size $n/k \geq 1/(\beta ^{1/3} k) \geq m$.
 
@@ -1272,34 +1251,13 @@ Note if $A$ has no $3$-AP, then all the triangles in $G$ correspond to triples $
 \chapter{Conclusion}
 Essential classical results and methods in Extremal Combinatorics were presented in this project, although it is not a complete cover of literature it gives us a good background of this fruitful area of study and makes easier to expand knowledge and results throughout the whole area of Extremal Combinatorics. We focus our efforts in the methods and results we consider most important and useful for who is interested in continuing studying the area in postgraduate courses and contributing for the area expansion in the future.
 
-It were used as a base text and initial point of study the Robert Morris and Roberto Imbuziero book \cite{RoRo11} which cover more topics of study and is much more simplified and	 summarized. Completing the gaps and trying to make a self-contained text with detailed explanations for initial students of the area was a great effort by itself.
+We use as base text and initial point of study the Robert Morris and Roberto Imbuziero book \cite{RoRo11} which cover more topics of study and is much more simplified and	 summarized. Completing the gaps and trying to make a self-contained text with detailed explanations for initial students of the area was a great effort by itself.
 
-\chapter{Schedule}
 
-\begin{table}[h]
-\centering
 
-\begin{tabular}{|r|lr|}
-\hline
-Task & Month&Year \\ 
-\hline                               
-Chapter 1& September & 2018 \\
-Chapter 2 &October & 2018 \\
-Chapter 3&November & 2018 \\
- &December & 2018 \\
-Chapter 4&January & 2019 \\
-Chapter 5&February & 2019 \\
-Conclusion&March & 2019 \\
-Defense&April & 2019 \\
- &May & 2019   \\ 
-\hline
-\end{tabular}
-\caption{Schedule.}
-\label{tab:schedule}
-\end{table}
 
 %BIBLIOGRAFIA
-\bibliographystyle{amsplain_yk}
+\bibliographystyle{amsplain}
 \bibliography{minhabib}
 
 \end{document}
