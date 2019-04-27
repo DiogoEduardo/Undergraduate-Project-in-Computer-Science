@@ -401,7 +401,7 @@ We claim that $W(r,k)$ exists and we prove it by double induction on the number 
 
 First denote the arithmetic progression $\{a, a + d, a +2d, ..., a+(k-1)d\}$ by AP$(a,d,k)$ such that it has common difference  $d$ and length $k$.
 
-We say arithmetic progressions (AP) of length $k$ are $\textit{focused at}$ $z$ if for every $\{i,j\} \in [r]$ we have
+We say arithmetic progressions (AP) of length $k$ are $\textit{focused at}$ $z$ if for every $\{i\}$, $\{j\} \in [r]$ we have
 $$ a_i +  (k-1)d_i = a_j  + (k-1) d_j = z .$$
 
 Furthermore, the AP is $\textit{colour-focused}$ if it is monochromatic.
@@ -417,18 +417,17 @@ Partition $[N]$ into blocks of length $2n$, in each block we have a monochromati
 Note that the $r$-colouring of $[N]$ induces $r^{2n}$ different ways of colouring the blocks and by definition of $N$ there exists an arithmetic progression $\{B(x), B(x+y), ... , B(x+(k-2)y)\}$ of blocks, such that these blocks are coloured identically.
 
 Let $A_j = AP(a_j, d_j, k-1)$ for $1 \leq j \leq s-1$ be the $s-1$ colour-focused APs in $B(x)$, let $z$ be their focus, and observe that the following $s$ APs of length $k-1$ are colour-focused at $z+ 2yn(k-1) \colon$
-
 $$ A'_j \coloneqq AP(a_j, d_j + 2yn, k-1) , $$
 for $1 \leq j \leq s-1$, and AP$(z, 2yn, k-1)$ as in Figure \ref{fig:VanderWaerdenBlocks}. Then the claim is proved.
 
 \begin{figure}[H]
      \centering
-     \includegraphics[scale=1.8]{Figuras/Van-der-Waerden-Blocks.jpg}
+     \includegraphics[scale=0.38]{Figuras/Van-der-Waerden-Blocks.png}
      \caption{s APs in the $W(r^{2n},k-1)$ blocks.}
      \label{fig:VanderWaerdenBlocks}
 \end{figure}
 
-The theorem follows from the claim by setting $s=r$ because if we have $s$  APs $\textit{colour-focused at}$ $z$ there is no other different colour to use in $z$, by the fact every AP has length $k-1$  independently of the colour we choose for $z$ we will have an AP of length $k$.
+The theorem follows from the claim by setting $s=r$ because if we have $s$  APs $\textit{colour-focused}$ at $z+2yn(k-1)$ and there is no other different colour to use in $z+2yn(k-1)$, by the fact every AP has length $k-1$  independently of the colour we choose for $z$ we will have an AP of length $k$.
 \end{proof}
 
 
@@ -522,7 +521,7 @@ $$
 
 \end{proposition}
 
-As showed in previous chapter, thus Theorem \ref{theorem:turan1941}:
+As showed in previous section, thus Theorem \ref{theorem:turan1941}:
 $$ \ex (n,K_{r+1}) = e(T_{r,n}) \approx \left( 1-\frac{1}{r}\right) \binom{n}{2} .$$
 Erd\H{o}s proved that the extremal number is much smaller for the $4$-cycle graph.
  
@@ -561,7 +560,7 @@ we obtain $e(G) = O(n^{3/2})$ finishing the proof.
 The next result is very similar to theorem \ref{theorem: Erdos,1938}. In fact, it is a generalization of Erd\H{o}s' result, but instead counting cherries we count stars.
 \begin{theorem}[{Kovari-Sós-Turán \cite{KoSoTu54}}]
 If $s \leq t$, then
-$$ \ex(K(s,t)) = O (n^{2 - 1/s}). $$
+$$ \ex(n, K(s,t)) = O (n^{2 - 1/s}). $$
 \end{theorem}
 
 \begin{proof}
@@ -576,27 +575,28 @@ For this proof we do a simple double counting on stars, which are graphs with on
 \end{figure}
 
 $K_{1,s}$ is the star we need to count. Note we can count it by taking all possible sets of $s$ neighbors of each vertex, as follows,
-$$ \# K_{1,s} = \sum_{v \in V(G)} \binom{d(v)}{s} .$$
+$$ |\{K_{1,s}\colon K_{1,s} \subseteq G\}| = \sum_{v \in V(G)} \binom{d(v)}{s} .$$
 
 Now we use the fact $\left(\frac{n}{m}\right)^m \leq \binom{n}{m} \leq \left(\frac{en}{m}\right)^m$ and Jensen's Inequality \ref{prep:jensen} to acquire the following inequality,
 
 \begin{align*} 
-\sum_{v \in V(G)} \binom{d(v)}{s} & \geq \sum_{v \in V(G)}\frac{d(v)^s}{s^s}\\ 
+\sum_{v \in V(G)} \binom{d(v)}{s} & \geq n\binom{\sum_{v \in V(G)} d(v)/n}{s}\\ 
 & \geq \frac{1}{s^s} n \left( \frac{\sum_{v \in V(G)} d(v)}{n} \right) ^s \\
 & = \frac{1}{s^s} n \left( \frac{ 2 e(G)}{n} \right) ^s \\
-& \geq c(s) \frac{e(G)^s}{n^{s-1}},
+& = c(s) \frac{e(G)^s}{n^{s-1}},
 \end{align*}
 where $c(s) = \left(2/s\right)^s$.
 We already have a lower bound for $K_{1,s}$ that depends of the number of edges, now let's construct a upper bound counting the maximum number of generalized cherries.
-As $K(s,t)$ is the complete bipartite graph with two partitions whose sizes are $|s|$ and $|t|$ we know the maximum number of $K_{1,s}$ is $t\binom{n}{s}$ but since we want the maximum number of edges without a $K_{s,t}$ we have,
+As $K(s,t)$ is the complete bipartite graph with two partitions whose sizes are $|s|$ and $|t|$ we know the maximum number of $K_{1,s}$ is $t\binom{n}{s}$ but since we want the maximum number of edges in $G$ without a $K_{s,t}$ we have,
 
 \begin{align*}
-c(s) \frac{e(G)^s}{n^{s-1}} &\leq \# K_{1,s} \leq (t-1) \binom{n}{s}\\
-		       & \Rightarrow e(G)^s \leq \frac{1}{c(s)}\frac{e(t-1)}{s^s}n^{2s-1}\\
+c(s) \frac{e(G)^s}{n^{s-1}} &\leq |\{K_{1,s}\colon K_{1,s} \subseteq G\}|\\
+&\leq (t-1) \binom{n}{s}\\
+		       & \Rightarrow e(G)^s \leq \frac{1}{c(s)}\frac{e^s(t-1)}{s^s}n^{2s-1}\\
 		       &\Rightarrow e(G) \leq c(s,t) n^{2-1/s}\\
 		       &\Rightarrow e(G) = O(n^{2-1/s}),
 \end{align*}
-Where $c(s,t)= \sqrt[s]{\frac{1}{c(s)}\frac{e(t-1)}{s^s}}$ . Using again the fact $\binom{n}{m} \leq \left(\frac{en}{m}\right)^m$ we have what we want to show and the proof is finished.
+Where $c(s,t)= \sqrt[s]{\frac{1}{c(s)}\frac{e^s(t-1)}{s^s}}$ . Using again the fact $\binom{n}{m} \leq \left(\frac{en}{m}\right)^m$ we have what we want to show and the proof is finished.
 \end{proof}
 
 %\section{The Erd\H{o}s-Stone Theorem}
@@ -621,7 +621,7 @@ Where $c(s,t)= \sqrt[s]{\frac{1}{c(s)}\frac{e(t-1)}{s^s}}$ . Using again the fac
 
 \chapter{Random Graphs}
 \section{The Probabilistic Method}
-This method is very powerful and has incredible simple applications, when this method begun to being used it created many shocking proofs, but not all applications of the method are so simple or easy to understand. A central fact for the simpler version of the probabilistic method is ``a object with property $ A$ exists $\iff  \mathbb{P}(\text{object has property }A)>0$''.
+This method has incredible simple applications, when this method begun to being used it created many shocking proofs, but not all applications of the method are so simple or easy to understand. A central fact for the simpler version of the probabilistic method is ``a object with property $ A$ exists $\iff  \mathbb{P}(\text{object has property }A)>0$''.
 
 It is necessary to introduce the Erd\H{o}s-Rényi random graph model $G(n,p)$. $G(n,p)$ is a probability distribution on graphs, more informally, it is a edge distribution on $n$ vertices with probability $p$ and with the existence of edges being independent events.
 
@@ -683,8 +683,8 @@ Then,
 $$\alpha(G(n,p)) < m \iff X_m=0 ,$$
 where 
 %$X_m = \{|[A]|: S \in A$ if $S$ is a independent set with at least $m$ elements in $G(n,p)\}$,
-$X_m = \big|\{S\in V(G(n,p))\colon \text{$S$ is a independent set with exactly $m$ vertices in $G(n,p)$}\}\big|$,
-and follows $m = \frac{n}{k}$. 
+$X_m = \big|\{S\in V(G(n,p))\colon \text{$S$ is an independent set with exactly $m$ vertices in $G(n,p)$}\}\big|$,
+and let $m = \frac{n}{k}$. 
 
 \begin{align*}
 \mathbb{E}[X_m]&=\sum_{\substack{S \in V(G) \\ |S| = m}} \mathbb{P}(S\text{ is independent})\\
@@ -694,12 +694,12 @@ Since  $\left(\frac{n}{m}\right)^m \leq \binom{n}{m} \leq \left(\frac{en}{m}\rig
 \begin{align*}
 \mathbb{E}[X_m] &\leq \left(\frac{en}{m}\right)^m  e^{(-pm^2)} \\
 &= \left(\frac{en}{m} e^{(-pm)}\right)^m\\
-&\leq \left(\frac{en}{m} e^{(-pm)}\right)^m \\
+%&\leq \left(\frac{en}{m} e^{(-pm)}\right)^m \\
 &= \left(\frac{en}{m}\frac{1}{e^{(pm)}}\right)^m  \\
 &\ll 1 ,
 \end{align*}
 
-where in the last inequality we use the fact that $e^{pm} \gg n$. Recalling that $m =\frac{n}{k}$ and isolating $p$ we have
+Note that we need $e^{pm} \gg n$ and recall that $m =\frac{n}{k}$ then isolating $p$ we have
 
 $$ pn/k \gg \log n \Rightarrow p \gg \frac{k\log n}{n},$$
  
@@ -731,7 +731,7 @@ then getting together with our previous result,
 
 $$\frac{k\log k}{n} \ll p \leq n^{-1 + \frac{1}{2k}}.$$
 
-We can remove a vertex of each cycle with length $<k$, so we have $g(G) \geq k$. Note that removing a cycle's vertex doesn't make $\alpha(G)$ bigger and consequently doesn't make $\chi(G)$ smaller, maintaining all our previous calculations valid.
+We can remove a vertex of each cycle with length $<k$, so we have $g(G) \geq k$. Note that removing a cycle's vertex does not make $\alpha(G)$ bigger and consequently doesn't make $\chi(G)$ smaller, maintaining all our previous calculations valid.
 \end{proof}
 
 \begin{proof}2.
@@ -740,7 +740,7 @@ We have,
 $$ |V(G)| = \sum_{i=1}^{\chi(G)} |S_i| \leq \chi(G)\max|S_i| \leq \chi(G) \alpha (G) .$$
 
 Note that if $\alpha(G) \leq |G|/k$, then $\chi(G) \geq $k. \\
-Let $\varepsilon > 0$ be sufficiently small ($\varepsilon < 1/k$) and $p = n^{\varepsilon - 1}$. As we have already introduced to $G(n,p)$ in definition \ref{def:randomgraph} let $G = G(n,p) -$\{one vertex of each cycle $C_{\ell} \text{ with } \ell\leq k\}$.
+Let $\varepsilon > 0$ be sufficiently small ($\varepsilon < 1/k$) and $p = n^{\varepsilon - 1}$. As we have already introduced to $G(n,p)$ in definition \ref{def:randomgraph} let $G = G(n,p) $.% $-$\{one vertex of each cycle $C_{\ell} \text{ with } \ell\leq k\}$.
 
 Now we need two claims to reach the result. We claim that, with high probability, $G$ has at most $n/2$ cycles of length $\leq k$ and has no independent set  of size $n/2k$ then, consequently $\chi(G) \geq k$ and $girth(G) \geq k$.
 
@@ -751,7 +751,7 @@ $$X = \text{quantity of short cycles } = \sum_{{\ell}=3}^k X_{\ell}$$
 \mathbb{E}[X] &= \sum_{{\ell}=3}^k \mathbb{E}[X_{\ell}] \\
 	       &= \sum_{{\ell}=3}^k \sum_{C_{\ell} \in K_n} \mathbb{P}(C_{\ell} \subset G(n,p))\\
 	       &\leq \sum_{{\ell}=3}^k n^{\ell} p^{\ell} \\
-	       &= \sum_{{\ell}=3}^k n^{\varepsilon {\ell}}, p= n^{\varepsilon - 1}\\
+	       &= \sum_{{\ell}=3}^k n^{\varepsilon {\ell}}\text{, with } p= n^{\varepsilon - 1}\\
 	       &\leq 2n^{\varepsilon k} \\
 	       &= o(n).
 \end{align*}
@@ -788,7 +788,7 @@ Realize that the key point in both proofs was the fact we could choose the most 
 
 \section{Subgraphs of the Random Graph}
 
-In this section we will see the value of $p$ that implies that a specific subgraph be or not contained in the random graph $G(n,p)$. Being more specific we shall prove the threshold for the property ``containing a triangle'' in $G(n,p)$.  We will need the Chebychev inequality presented below.
+In this section we will manipulate $p$ in order to have a specific subgraph contained in $G$. Being more specific we shall prove the threshold for the property ``containing a triangle'' in $G$.  We will need the Chebychev inequality presented below.
 
 \begin{theorem}[{Chebyshev's Inequality \cite{Ch67}}]
 $$\mathbb{P}(|X-\mu| \geq a) \leq \sigma^2/a^2.$$
@@ -810,12 +810,18 @@ $$
 \end{cases}
 $$
 \end{theorem}
+Meningite falam q o publico eh mto melhor em pegar e tal
+21:12
+
+Meningite falam q o publico eh mto melhor em pegar e tal
+21:12
+
 
 \begin{proof}
 In the first part we need the random variable and  Markov's inequality as follows,
-$$ X = \text{ the quantity of triangles in } G(n,p).$$
+$$ X = \text{ the quantity of triangles in } G.$$
 \begin{align*}
-\mathbb{P}(G(n,p)\text{ contains a triangle }) &\leq \mathbb{E}(X)\\
+\mathbb{P}(G\text{ contains a triangle }) &\leq \mathbb{E}(X)\\
 & \leq \binom{n}{3}p^3 \\
 & \ll 1,
 \end{align*}
@@ -836,7 +842,7 @@ Var(X) &= \sum_{u,v} \left(\mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\r
 \end{align*}
 %$$ \sum_{|u \cap v| = 1}\mathbb{P}(u \wedge v)   = n^5p^5$$
 and using Chebychev's inequality,
-$$\mathbb{P}(G(n,p) \text{ contains no triangles}) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \leq \frac{n^4p^5 + n^3p^3 }{n^6p^6} \ll 1,$$
+$$\mathbb{P}(G \text{ contains no triangles}) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \leq \frac{n^4p^5 + n^3p^3 }{n^6p^6} \ll 1,$$
 for $p \gg 1/n$, finishing the proof.
  \end{proof}
 
@@ -1059,7 +1065,8 @@ $$ e(G) > \frac{n^2}{4} \Rightarrow G \text{ has a triangle. }$$
 For random graphs:
 $$ e(G) \gg n \Rightarrow G\text{ has a triangle w.h.p. } $$
 
-As we can see random graphs, in general, give better bounds (considering the w.h.p.) and it shows the importance of this lemma.
+As we can see random graphs give us different type of information based on probability.
+
 \end{example}
 
 \section{The Regularity Lemma}
@@ -1100,7 +1107,7 @@ Now we prove the embedding lemma which is what makes the regularity so useful to
 %The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\varepsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\varepsilon,\delta)$, then $H \subset G$.
 
 
-(The Embedding Lemma). Let $H$ be a graph, and let $\varepsilon >0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and $G$ $\varepsilon$-partitioned in $\{V_1, ..., V_k\}$, then if there exist a partition $\{V_1, ..., V_H\}$ with all pairs being $\varepsilon$-regular and $\delta$-dense, then $H \subset G$. 
+(The Embedding Lemma). Let $H$ be a graph, and let $\varepsilon >0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and $G$ $\varepsilon$-parts $\{V_1, ..., V_k\}$, then if there exist a partition $\{V_1, ..., V_H\}$ with all pairs being $\varepsilon$-regular and $\delta$-dense, then $H \subset G$. 
 \end{lemma} 
 
 \begin{proof}
@@ -1124,16 +1131,15 @@ Then we have at least $ (\delta - \varepsilon)^3 m^2$ triangles for each $v$ the
 
 \end{proof}
 
-\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]. Let $\varepsilon > 0$, and let $k_0(\varepsilon) \in  \mathbb{N}$ such that the following holds.\\
-For any graph $G$, there exists a partition $V(G) = \{V_1 \cup ... \cup V_k\}$ of the vertex set into $1/ \varepsilon \leq k \leq k_0 (\varepsilon)$ parts, such that
+\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]. Let $\varepsilon > 0$, and let $m \in  \mathbb{N}$. There exists a constant $M=M(m,\varepsilon)$ such that the following holds.\\
+For any graph $G$, there exists a partition $V(G) = \{V_0 \cup ... \cup V_k\}$ of the vertex set into $m \leq k \leq M$ parts, such that
 \begin{itemize}
 
-	\item $|V_1| = ... =|V_k| \pm 1$ and
-
+	\item $|V_1| = ... =|V_k| \pm 1$,
+	
+	\item $|A_0| \leq \varepsilon|V(G)|$,
 %$|A_0| \leq \varepsilon |V(G)|$,
-
 	\item all but $\varepsilon k^2$ of the pairs $(V_i, V_j)$ are $\varepsilon$-regular. 
-
 \end{itemize}
 \end{theorem}
 
@@ -1146,7 +1152,7 @@ Applying the regularity lemma, in general, has more convincing power of its use 
 
 2. Remove a few edges (edges inside the partitions, between irregular pairs and sparse pairs). There at most $O(\varepsilon n^2)$ such edges.
 
-3. Define a graph $R$ such that $V(R) \rightarrow [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular.
+3. Define a graph $R$ such that $V(R) \rightarrow [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular.
 
 4. Apply a classical result from Graph Theory (e.g. Turán's Theorem) to R.
 
@@ -1184,7 +1190,7 @@ $$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{2 \delta}{3}\right) \bin
      \label{fig:graph-G-and-G'}
 \end{figure}
 
-3. Define $R$ with $V(R) = [k]$ and $ij \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular as in Figure \ref{fig:graph-G'-and-R}
+3. Define $R$ with $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular as in Figure \ref{fig:graph-G'-and-R}
 
 \begin{figure}[H]
      \centering
@@ -1205,7 +1211,7 @@ we can apply the Turán's Theorem \ref{theorem:turan1941} that implies $K_{\chi 
 \end{proof}
 
 \subsection{The Triangle Removal Lemma}
-\begin{theorem}[{Triangle Removal Lemma \cite{RuSz76}}]
+\begin{theorem}\label{lemma:triangleremoval}[{Triangle Removal Lemma \cite{RuSz76}}]
 For all $\alpha > 0$ exists $\beta > 0$ such that let $G$ be a graph with $\leq \beta n^3$ triangles, then it is possible to remove all triangles removing at most $\alpha n^2$ edges. 
 \end{theorem}
 
@@ -1244,7 +1250,7 @@ E(G) &= \{\{x,y\}\colon x \in X, y \in Y,\text{ and } y = x + a, a \in A\} \\
 
 Note if $A$ has no $3$-AP, then all the triangles in $G$ correspond to triples $\{a,a,a\}$ and there exist $n|A\cup [n]| \leq n^2$ such triangles. Suppose we have no $3$-AP in A.
  
- Then we can apply the triangle removal lemma \ref{lemma:triangleremoval} to $G$ for n sufficiently large, which means we can destroy all triangles in $G$ by removing at most $\alpha n^2$ edges. But these triangle triples $\{a,a,a\}$ are edge-disjoint and we have more than $\alpha n^2 $ such triangles which is a contraction, finishing the proof.
+ Then we can apply the Triangle Removal Lemma \ref{lemma:triangleremoval} to $G$ for n sufficiently large, which means we can destroy all triangles in $G$ by removing at most $\alpha n^2$ edges. But these triangle triples $\{a,a,a\}$ are edge-disjoint and we have more than $\alpha n^2 $ such triangles which is a contraction, finishing the proof.
  
 \end{proof}
 
