@@ -10,14 +10,14 @@
 \contentsline {section}{\numberline {3.2}Forbidden Bipartite Subgraphs}{18}{section.3.2}
 \contentsline {chapter}{\numberline {4}Random Graphs}{21}{chapter.4}
 \contentsline {section}{\numberline {4.1}The Probabilistic Method}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}Subgraphs of the Random Graph}{26}{section.4.2}
+\contentsline {section}{\numberline {4.2}Subgraphs of the Random Graph}{25}{section.4.2}
 \contentsline {section}{\numberline {4.3}The Janson and FKG Inequalities}{27}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}The FKG Inequality}{27}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Janson's Inequality}{29}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Janson's Inequality}{28}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4}Connectedness}{31}{section.4.4}
 \contentsline {chapter}{\numberline {5}Regularity}{35}{chapter.5}
 \contentsline {section}{\numberline {5.1}The Regularity Lemma}{35}{section.5.1}
-\contentsline {section}{\numberline {5.2}Applications}{38}{section.5.2}
+\contentsline {section}{\numberline {5.2}Applications}{37}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Erd\H {o}s-Stone Theorem}{38}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}The Triangle Removal Lemma}{40}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Roth's Theorem}{40}{subsection.5.2.3}

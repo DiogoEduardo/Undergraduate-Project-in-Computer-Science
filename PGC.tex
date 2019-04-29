@@ -361,6 +361,7 @@ $$R(k-1,\ell)\leq \binom{k+\ell -3}{k-2},$$ and $$R(k,\ell-1)\leq \binom{k+\ell-
 Since $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$, we have
 
 $$R(k,\ell)\leq \binom{k-1+\ell}{k-1} + \binom{k+\ell-1}{\ell-1} = \binom{k+ \ell -2}{k-1}.$$
+
 Confirming our induction hypothesis. Now let $k = \ell$ and using Stirling's approximation for $\binom{2n}{n} \approx (2^{2n}/\sqrt{\pi n})$, assuming $n$ is sufficiently large follows:
 
 \begin{align*}
@@ -523,6 +524,7 @@ $$
 
 As showed in previous section, thus Theorem \ref{theorem:turan1941}:
 $$ \ex (n,K_{r+1}) = e(T_{r,n}) \approx \left( 1-\frac{1}{r}\right) \binom{n}{2} .$$
+
 Erd\H{o}s proved that the extremal number is much smaller for the $4$-cycle graph.
  
 \begin{theorem}[{Erd\H{o}s \cite{Er38}}] \label{theorem: Erdos,1938}
@@ -534,6 +536,7 @@ $$\ex(n,C_4) = O(n^{3/2}).$$
 A $C_4$ is formed by two `cherries' in the same pair of vertices. Counting these triples (x,\{y,z\}) of distinct vertices in $G$ such that $xy, xz \in E(G)$ and using Proposition \ref{prep:jensen} with $\lambda_i = 1/n$ we obtain the following very useful inequality,
 
 $$ \sum_{i=1}^n \frac{1}{n} f\left(x_i\right) \geq f\left(\sum_{i=1}^n \frac{1}{n} x_i\right).$$
+
 Applying it we have,
 $$ \frac{\sum_{i=1}^n \binom{x_i}{2}}{n} \geq \binom{\frac{\sum_{i=1}^n x_i}{n}}{2} ,$$
 replacing $x_i$ and assuming $\sum_{v \in V(G)} d(v) = 2e(G),$
@@ -543,6 +546,7 @@ replacing $x_i$ and assuming $\sum_{v \in V(G)} d(v) = 2e(G),$
 &= n\frac{\frac{2e(G)}{n}\left( \frac{2e(G)}{n}-1\right)}{2} \\
 &\geq \frac{n}{2} \left( \frac{2e(G)}{n} - 1 \right)^2.
 \end{align*}
+
 Since the maximum number of such triples in a $C_4$-free graph is at most $\binom{n}{2}$ because we can have only one cherry for each pair of vertices,
 $$ \frac{n}{2}\left(\frac{2e(G)}{n} - 1\right)^2 \leq \binom{n}{2},$$
 we obtain $e(G) = O(n^{3/2})$ finishing the proof.
@@ -596,7 +600,7 @@ c(s) \frac{e(G)^s}{n^{s-1}} &\leq |\{K_{1,s}\colon K_{1,s} \subseteq G\}|\\
 		       &\Rightarrow e(G) \leq c(s,t) n^{2-1/s}\\
 		       &\Rightarrow e(G) = O(n^{2-1/s}),
 \end{align*}
-Where $c(s,t)= \sqrt[s]{\frac{1}{c(s)}\frac{e^s(t-1)}{s^s}}$ . Using again the fact $\binom{n}{m} \leq \left(\frac{en}{m}\right)^m$ we have what we want to show and the proof is finished.
+where $c(s,t)= \sqrt[s]{\frac{1}{c(s)}\frac{e^s(t-1)}{s^s}}$ . Using again the fact $\binom{n}{m} \leq \left(\frac{en}{m}\right)^m$ we have what we want to show and the proof is finished.
 \end{proof}
 
 %\section{The Erd\H{o}s-Stone Theorem}
@@ -673,37 +677,34 @@ Assuming $\chi(G(n,p)) = r$ we have a partition $\{V_1,V_2,...,V_r\}$ of $V(G(n,
 Then, $\alpha (G(n,p)) \geq \frac{n}{r}$ and since $\chi(G)=r$,
 
 $$\chi(G(n,p)) \geq \frac{n}{\alpha(G(n,p))},$$
-
 and we want to show that
 
 $$\chi(G(n,p)) \geq \frac{n}{\alpha(G(n,p))} \geq k ,$$
-
-Then,
+then,
 
 $$\alpha(G(n,p)) < m \iff X_m=0 ,$$
 where 
 %$X_m = \{|[A]|: S \in A$ if $S$ is a independent set with at least $m$ elements in $G(n,p)\}$,
 $X_m = \big|\{S\in V(G(n,p))\colon \text{$S$ is an independent set with exactly $m$ vertices in $G(n,p)$}\}\big|$,
 and let $m = \frac{n}{k}$. 
-
 \begin{align*}
 \mathbb{E}[X_m]&=\sum_{\substack{S \in V(G) \\ |S| = m}} \mathbb{P}(S\text{ is independent})\\
 &=(1-p)^{\binom{m}{2}} \binom{n}{m}.
 \end{align*}
+
 Since  $\left(\frac{n}{m}\right)^m \leq \binom{n}{m} \leq \left(\frac{en}{m}\right)^m$ and $1-x \leq e^{-x}$, we obtain that
 \begin{align*}
 \mathbb{E}[X_m] &\leq \left(\frac{en}{m}\right)^m  e^{(-pm^2)} \\
 &= \left(\frac{en}{m} e^{(-pm)}\right)^m\\
 %&\leq \left(\frac{en}{m} e^{(-pm)}\right)^m \\
 &= \left(\frac{en}{m}\frac{1}{e^{(pm)}}\right)^m  \\
-&\ll 1 ,
+&\ll 1.
 \end{align*}
 
 Note that we need $e^{pm} \gg n$ and recall that $m =\frac{n}{k}$ then isolating $p$ we have
 
 $$ pn/k \gg \log n \Rightarrow p \gg \frac{k\log n}{n},$$
- 
- By Markov's inequality,
+by Markov's inequality,
  
  $$ \mathbb{P}(X_m \geq 1) \leq \mathbb{E}[X_m] ,$$
  
@@ -719,11 +720,10 @@ and if $p \gg \frac{k \log n}{n}$ we have,
 Since the proof for $\chi(G) \geq k$ is finished we will prove $g(G(n,p))\geq k$,
 
 $$ g(G(n,p)) \leq k \iff X_k \geq 1,$$
-
-
 where $X_k = |C_k \colon C_k \subset G(n,p)|$,
 
-$$\mathbb{E}[X_k] = \sum_{C_k \subset K_n} \mathbb{P}(C_k \subset G(n,p) ) \leq n^kp^k,$$
+$$\mathbb{E}[X_k] = \sum_{C_k \subset K_n} \mathbb{P}(C_k \subset G(n,p) ) \leq n^kp^k.$$
+
 Now we need to limit our short cycles by $\sqrt{n}$ in order to show with high probability we will have few short cycles so we can destroy them,
 
 $$n^kp^k \leq \sqrt{n} \text{ if } p \leq n^{-1 + \frac{1}{2k}},$$
@@ -739,8 +739,7 @@ We have,
 
 $$ |V(G)| = \sum_{i=1}^{\chi(G)} |S_i| \leq \chi(G)\max|S_i| \leq \chi(G) \alpha (G) .$$
 
-Note that if $\alpha(G) \leq |G|/k$, then $\chi(G) \geq $k. \\
-Let $\varepsilon > 0$ be sufficiently small ($\varepsilon < 1/k$) and $p = n^{\varepsilon - 1}$. As we have already introduced to $G(n,p)$ in definition \ref{def:randomgraph} let $G = G(n,p) $.% $-$\{one vertex of each cycle $C_{\ell} \text{ with } \ell\leq k\}$.
+Note that if $\alpha(G) \leq |G|/k$, then $\chi(G) \geq $k. Let $\varepsilon > 0$ be sufficiently small ($\varepsilon < 1/k$) and $p = n^{\varepsilon - 1}$. As we have already introduced to $G(n,p)$ in definition \ref{def:randomgraph} let $G = G(n,p) $.% $-$\{one vertex of each cycle $C_{\ell} \text{ with } \ell\leq k\}$.
 
 Now we need two claims to reach the result. We claim that, with high probability, $G$ has at most $n/2$ cycles of length $\leq k$ and has no independent set  of size $n/2k$ then, consequently $\chi(G) \geq k$ and $girth(G) \geq k$.
 
@@ -755,6 +754,7 @@ $$X = \text{quantity of short cycles } = \sum_{{\ell}=3}^k X_{\ell}$$
 	       &\leq 2n^{\varepsilon k} \\
 	       &= o(n).
 \end{align*}
+
 Note that since we are removing a vertex of each cycle $V(G) \geq n-X$. Now we show the general case for this useful inequality for the probabilistic method. The Markov's inequality holds for any random variable which takes non-negative values and for $a>0$,
 
 $$\mathbb{P}(X>a) \leq \frac{\mathbb{E}(X)}{a}.$$
@@ -764,21 +764,21 @@ Using it and replacing $\mathbb{E}[X]$ by its upper bound we have,
 \begin{align*}
 \mathbb{P}(X\geq n/2) &\leq \frac{\mathbb{E}[X]}{n/2}\\
 		& = o(n)/n\\
-		& = o(1)
+		& = o(1).
 \end{align*}
-Then, we proved that, with high probability, the graph do not have more than $n/2 -1$ cycles with length at most $k$ and consequently we have $|V(G)| > n/2$ .\\
-\\
-Second claim. $\alpha(G) \leq \alpha (G(n,p)) < n/2k$.\\
-We need to count the independent sets
+
+Then, we proved that, with high probability, the graph do not have more than $n/2 -1$ cycles with length at most $k$ and consequently we have $|V(G)| > n/2$ .
+
+Second claim. $\alpha(G) \leq \alpha (G(n,p)) < n/2k$. We need to count the independent sets
 $$Y_{\ell} = \text{quantity of independents sets with length ${\ell}$. }$$
 
 \begin{align*}
 \mathbb{E}[Y_{\ell}] &= \sum_{\substack{|S| = {\ell} \\ e(S) = 0 }} (1-p)^{\binom{{\ell}}{2}}\\
 	       &= (1-p)^{\binom{{\ell}}{2} \binom{n}{{\ell}}} \\
 	       &\leq \left(\frac{en}{{\ell}}\right)^{\ell} e^{-p\binom{{\ell}}{2}}\\
-	       &\rightarrow 0  \text{, if } \ell = n/2k.
+	       &\rightarrow 0,
 \end{align*}
-Thus we have
+if $\ell = n/2k$. Thus we have
 
 $$\frac{\mathbb{E}[|\{C_{\ell} \subset G : {\ell}\leq k \}|]}{n/2} + \mathbb{E} [|\{ S:|S| \geq n/2k, e(S) = 0\}|] \rightarrow 0$$
 as $n \rightarrow \infty $. So $G$ has the desired properties with high probability and the proof is finished.
@@ -810,18 +810,12 @@ $$
 \end{cases}
 $$
 \end{theorem}
-Meningite falam q o publico eh mto melhor em pegar e tal
-21:12
-
-Meningite falam q o publico eh mto melhor em pegar e tal
-21:12
-
 
 \begin{proof}
 In the first part we need the random variable and  Markov's inequality as follows,
 $$ X = \text{ the quantity of triangles in } G.$$
 \begin{align*}
-\mathbb{P}(G\text{ contains a triangle }) &\leq \mathbb{E}(X)\\
+\mathbb{P}(G\text{ contains a triangle}) &\leq \mathbb{E}(X)\\
 & \leq \binom{n}{3}p^3 \\
 & \ll 1,
 \end{align*}
@@ -858,7 +852,7 @@ Monotone Increasing. Let $\mathcal{A}$ be a collection of graphs on $n$ vertices
 \end{definition}
 
 \begin{example}
-``$G$ contains a triangle'' is monotone increasing because it is impossible to destroy a triangle adding edges and ``$G$ is planar'' is monotone decreasing because the more edges $G$ has more difficult to be planar.
+``$G$ contains a triangle'' is monotone increasing because it is impossible to destroy a triangle adding edges.
 \end{example}
 
 \begin{theorem} [{FKG Inequality \cite{FKG71}}]
@@ -903,7 +897,7 @@ as $n \rightarrow \infty$, finishing the proof.
 
 \subsection{Janson's Inequality}
 
-In this subsection we shall use Janson's inequalities to prove the bound given by the FKG inequality is sharp under certain circumstances.\\
+In this subsection we shall use Janson's inequalities to prove the bound given by the FKG inequality is sharp under certain circumstances.
 
 Let $A_1, ... , A_m$ be subsets of $[N]$ and $Y$ be a set in $[N]$ whose elements are chosen independently, with $\mathbb{P}(j \in Y) = p$ for each $j$ and $N=\binom{n}{2}$. 
 
@@ -927,7 +921,6 @@ $$ \mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) \leq e^{-\mu ^2 /2\
 By FKG inequality we have,
 
 $$ \mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) \geq \prod_j (1-\mathbb{P}(B_j)) \approx e^{-\mu}, $$
-
 if $\mathbb{P}(B_j) \ll 1$ for each $j$, so the Janson inequalities are close to being sharp.We shall prove the first inequality.
 
 \begin{proof}
@@ -974,7 +967,8 @@ with
  \mathbb{E} [\mu(T)] &= \sum^m_{j=1} \mathbb{P}(j\in T) \mathbb{P} (B_j)\\
 & = q\mu .
  \end{align*}
- and we have
+
+And we have
  $$ \mathbb{E}[\Delta(T)] = q^2\Delta.$$
  
  Then,
@@ -993,7 +987,7 @@ Now maximizing $q = \mu / \Delta \leq 1$ we have
 \end{proof}
 
 \section{Connectedness}
-At this section we will answer the question ``For which $p$ is $G(n,p)$ likely to be connected?'' Observe this property is monotone, because it is not possible to disconnect a graph by adding edges. The following theorem gives a threshold for this property.
+At this section we will answer the question ``For which $p$ is $G(n,p)$ likely to be connected?'' Observe this property is monotone increasing, because it is not possible to disconnect a graph by adding edges. The following theorem gives a threshold for this property.
 
 \begin{theorem}
 For every $\varepsilon > 0$,
@@ -1002,11 +996,10 @@ $$
 \mathbb{P}(G(n,p)\text{ is connected}) \rightarrow 
 \begin{cases}
 		0, &\text{ if }p \leq \frac{(1 - \varepsilon) \log n}{n},\\
-		1, &\text{ if }p \geq \frac{(1 + \varepsilon) \log n}{n}\,.
+		1, &\text{ if }p \geq \frac{(1 + \varepsilon) \log n}{n}\,,
 \end{cases}
 $$
-
-As $n \rightarrow \infty$.
+as $n \rightarrow \infty$.
 \end{theorem}
 \begin{proof}
 We start proving what happens when $p \leq \frac{(1 - \varepsilon) \log n}{n}$. In order to have a connected $G\colon G \in G(n,p)$ we need to avoid isolated vertices. Let $X=X(G)$ denote the number of isolated vertices in $G$ and let $p\leq((1-\varepsilon) \log n) /n$. Then using the fact $1-x > e^{-x-x^2}$,
@@ -1030,7 +1023,7 @@ Then we just showed $Var(X) \ll \mathbb{E}[X]^2$ and now we can use Chebychev  i
 
 $$\mathbb{P}(X=0) \leq \mathbb{P} (X-\mathbb{E}(X) \geq \mathbb{E}(X)) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \rightarrow 0.$$
 
-We can conclude $\mathbb{P}(G\text{ is connected}) \rightarrow 0$ as $n \rightarrow \infty$ finishing the prove of the first part.\\
+We can conclude $\mathbb{P}(G\text{ is connected}) \rightarrow 0$ as $n \rightarrow \infty$ finishing the prove of the first part.
 
 To prove the second part, we define the random variable $Y_k(G)$, which counts the number of components of size $k$ in $G$. Bounding the expected number we have
 
@@ -1040,12 +1033,13 @@ To prove the second part, we define the random variable $Y_k(G)$, which counts t
 &\leq \left( \frac{en}{k} \right) ^k e^{-pk(n-k)}\\
 & = \left( \frac{en}{k} e^{-p(n-k)} \right)^k.
 \end{align*}
+
 Note that if $G$ is not connected, there must exist a component of size at most $ n/2$ then $1 \leq k \leq n/2$. Since the function $\left( \frac{en}{k} e^{-p(n-k)} \right)$ is convex the highest value of it occurs in one of its extremal points thus we have
 $$\mathbb{E}[Y_k (G)] \leq (\max\{ene^{-p(n-1)}, 2ee^{-pn/2}\})^k .$$
 
 Note that, \\
 for $ene^{-p(n-1)}$ and $p \geq \frac{(1 + \varepsilon) \log n}{n}$ we have $\mathbb{E}[Y_k (G)] \rightarrow 0$\\
-and for $2ee^{-pn/2}$ and $p \geq 4/n$ we have $\mathbb{E}[Y_k (G)] \rightarrow 0$\\
+and for $2ee^{-pn/2}$ and $p \geq 4/n$ we have $\mathbb{E}[Y_k (G)] \rightarrow 0$.\\
 
 Using the maximum one we have $p \geq \frac{(1 + \varepsilon) \log n}{n}$  and by Markov's inequality
 
@@ -1074,9 +1068,7 @@ As we can see random graphs give us different type of information based on proba
 Informally, the lemma says that if you partition a given graph enough then the partition pairs look random-like. Before showing the formal form we need to define $\varepsilon$-regular and to show the properties that make it looks random-like.
 
 \begin{definition}
-Given a graph $G$ and disjoint sets $A$ and $B$ of vertices, we say that $(A,B)$ is $\varepsilon$-regular if
-$$\text{ for every } X \subset A \text{ and every } Y \subset B\text{ with } |X| \geq \varepsilon|A| \text{ and } |Y| \geq \varepsilon |B|,$$
-we have
+Given a graph $G$ and disjoint sets $A$ and $B$ of vertices, we say that $(A,B)$ is $\varepsilon$-regular if $\text{ for every } X \subset A \text{ and every } Y \subset B\text{ with } |X| \geq \varepsilon|A| \text{ and } |Y| \geq \varepsilon |B|$ we have
 $$ \left| \frac{e(X,Y)}{|X||Y|} - \frac{e(A,B)}{|A||B|} \right| \leq \varepsilon  .$$
 \end{definition}
 
@@ -1097,7 +1089,7 @@ $$ \frac{e(X,B)}{|X|} \geq (\delta - \varepsilon)|B|,$$
 which corresponds to average degree of $v \in X$, confirming the claimed result.
 \end{proof}
 
-Now we prove the embedding lemma which is what makes the regularity so useful to solve problems. It says that for the purpose of finding small subgraphs in graph $G$, dense $\varepsilon$-regular pairs can be treated as complete bipartite graphs.
+Now we prove the embedding lemma that makes the regularity useful to solve problems. It says that for the purpose of finding small subgraphs in graph $G$, dense $\varepsilon$-regular pairs can be treated as complete bipartite graphs.
 
 %\begin{definition}
 %$\mathcal{G}(H,m,\varepsilon,\delta)$ denotes the family of graphs $G$ such that $V(G) = V(H(m))$, $G\subset H(m)$, and $G[A_i,A_j]$ is $\varepsilon$-regular and has density at least $\delta$ whenever $ij \in E(H)$.
@@ -1107,7 +1099,7 @@ Now we prove the embedding lemma which is what makes the regularity so useful to
 %The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\varepsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\varepsilon,\delta)$, then $H \subset G$.
 
 
-(The Embedding Lemma). Let $H$ be a graph, and let $\varepsilon >0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and $G$ $\varepsilon$-parts $\{V_1, ..., V_k\}$, then if there exist a partition $\{V_1, ..., V_H\}$ with all pairs being $\varepsilon$-regular and $\delta$-dense, then $H \subset G$. 
+(The Embedding Lemma - simple version). Let $H$ be a graph, and let $\varepsilon >0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and there exist a partition $\{V_1, ..., V_H\}$ with all pairs being $\varepsilon$-regular and $\delta$-dense, then $H \subset G$. 
 \end{lemma} 
 
 \begin{proof}
@@ -1125,7 +1117,7 @@ Then we have at least $ (\delta - \varepsilon)^3 m^2$ triangles for each $v$ the
 \begin{figure}[H]
      \centering
      \includegraphics[scale=1]{Figuras/embedding-lemma.jpg}
-     \caption{Triangles in the $\varepsilon$-regular parts.}
+     \caption{Triangles in the $\varepsilon$-regular pairs.}
      \label{fig:embeddinglemma}
 \end{figure}
 
@@ -1135,7 +1127,7 @@ Then we have at least $ (\delta - \varepsilon)^3 m^2$ triangles for each $v$ the
 For any graph $G$, there exists a partition $V(G) = \{V_0 \cup ... \cup V_k\}$ of the vertex set into $m \leq k \leq M$ parts, such that
 \begin{itemize}
 
-	\item $|V_1| = ... =|V_k| \pm 1$,
+	\item $|V_1| = ... =|V_k|$,
 	
 	\item $|A_0| \leq \varepsilon|V(G)|$,
 %$|A_0| \leq \varepsilon |V(G)|$,
@@ -1160,7 +1152,7 @@ Applying the regularity lemma, in general, has more convincing power of its use 
 \subsection{Erd\H{o}s-Stone Theorem}
 
 \begin{theorem}[{Erd\H{o}s and Stone \cite{ErSt46}}] Let H be an arbitrary graph. Then
-$$ ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$ 
+$$ \ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$ 
 \end{theorem}
 
 \begin{proof}
@@ -1171,7 +1163,7 @@ Assume $e(G) \geq (1 - 1/(\chi(H) - 1) + \delta)\binom{n}{2}$ and follow the ste
 1. Apply regularity lemma with $\varepsilon$ sufficiently small and we have the partition $\{V_1, ... , V_k\}$.
 
 2. Remove edges inside the parts, between irregular pairs and sparse pairs obtaining $G'$ as in Figure \ref{fig:graph-G-and-G'}.
-Note that\\
+Note that
 
 |edges inside the parts| $\leq k\binom{n/k}{2} \leq k(n/k)^2 \leq \varepsilon n^2$ (recall $1/\varepsilon \leq k$).\\
 
@@ -1250,7 +1242,7 @@ E(G) &= \{\{x,y\}\colon x \in X, y \in Y,\text{ and } y = x + a, a \in A\} \\
 
 Note if $A$ has no $3$-AP, then all the triangles in $G$ correspond to triples $\{a,a,a\}$ and there exist $n|A\cup [n]| \leq n^2$ such triangles. Suppose we have no $3$-AP in A.
  
- Then we can apply the Triangle Removal Lemma \ref{lemma:triangleremoval} to $G$ for n sufficiently large, which means we can destroy all triangles in $G$ by removing at most $\alpha n^2$ edges. But these triangle triples $\{a,a,a\}$ are edge-disjoint and we have more than $\alpha n^2 $ such triangles which is a contraction, finishing the proof.
+ Then we can apply the Triangle Removal Lemma \ref{lemma:triangleremoval} to $G$ for n sufficiently large, which means we can destroy all triangles in $G$ by removing at most $\alpha n^2$ edges. But these triangle triples $\{a,a,a\}$ are edge-disjoint and we have more than $\alpha n^2 $ such triangles which is a contradiction, finishing the proof.
  
 \end{proof}
 
