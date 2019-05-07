@@ -1,0 +1,244 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{graphs,positioning}
+\usepackage{lmodern}
+
+\usepackage{amsmath,amssymb,amsthm}    
+\usepackage{mathabx}\changenotsign   
+\usepackage{mathrsfs} 
+\usepackage{dsfont} 
+\usepackage[babel]{microtype}
+\usepackage{xcolor}  	
+\usepackage[export]{adjustbox}
+
+\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc} 
+\usepackage{comment}
+\usepackage{bbm}
+
+\newtheorem{thm}[equation]{Teorema}
+\newtheorem{cor}[equation]{Corolário}
+\newtheorem{lem}[equation]{Lema}
+\newtheorem{prop}[equation]{Proposição}
+\newtheorem{conj}[equation]{Conjectura}
+
+
+\def\moverlay{\mathpalette\mov@rlay}
+\def\mov@rlay#1#2{\leavevmode\vtop{   \baselineskip\z@skip \lineskiplimit-\maxdimen
+		\ialign{\hfil$\m@th#1##$\hfil\cr#2\crcr}}}
+\newcommand{\charfusion}[3][\mathord]{
+	#1{\ifx#1\mathop\vphantom{#2}\fi
+		\mathpalette\mov@rlay{#2\cr#3}
+	}
+	\ifx#1\mathop\expandafter\displaylimits\fi}
+\makeatother
+
+\DeclareMathOperator{\dom}{{\rm dom}}
+
+\newcommand{\dcup}{\charfusion[\mathbin]{\cup}{\cdot}}
+\newcommand{\bigdcup}{\charfusion[\mathop]{\bigcup}{\cdot}}
+
+
+\def\ra{\longrightarrow}
+\def\dom{\text{\rm dom}}
+
+\def\R{\text{\textcolor{red}{\rm red}}}
+\def\B{\text{\textcolor{blue}{\rm blue}}}
+
+
+\def\mcarrow{\xrightarrow[{\raisebox{.5mm}[1mm][0mm]{$\scriptstyle \rm p$}}]{\raisebox{0.0mm}[0mm]{$\scriptstyle \rm mc$}}}
+\def\pmc#1{p^{\rm mc}_{#1}}
+
+\def\red{\text{\textcolor{red}{\rm red}}}
+\def\blue{\text{\textcolor{blue}{\rm blue}}}
+\def\green{\text{\textcolor{gree}{\rm green}}}
+
+\tikzset{onslide/.code args={#1#2}{%
+    \only<#1>{\pgfkeysalso{#2}}
+}}
+
+\newtheorem{teorema}             {Teorema}       
+\newtheorem{Afirmativa}[teorema] {Claim}         
+\newtheorem{lema}      [teorema] {Lema}         
+\newtheorem{corolario} [teorema] {Corolário}     
+\newtheorem{fato}      [teorema] {Fato}    
+\newtheorem{proposicao}      [teorema] {Proposição}                
+\newtheorem{conjectura}[teorema] {Conjectura}    
+\newtheorem{problema}  [teorema] {Problema}       
+\newtheorem{definicao}  [teorema] {Definição}       
+
+
+
+
+
+
+
+
+
+\title[Combinatória Extremal]{PGC \\ Combinatória Extremal}
+
+\author[Diogo Alves - UFABC]{\textbf{Diogo Eduardo Lima Alves}\\ \ \\ \ \\ \ \\ \ \\Universidade Federal do ABC - UFABC\\ \ \\ \ \\ 
+}
+
+\date{9 de maio de 2019}
+
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+
+\setbeamertemplate{part page}{
+        \begin{beamercolorbox}[sep=15pt,center,wd=\textwidth]{part title}
+            \usebeamerfont{part title}\insertpart\par
+        \end{beamercolorbox}
+}
+
+
+\begin{document}
+\maketitle
+
+\part{Combinatória Extremal}
+
+\frame{\partpage}
+
+\frame{
+	\frametitle{Combinatória Extremal}
+
+	\begin{itemize}
+	\item		\textbf{Combinatória Extremal}: Subtema da combinatória  que estuda quão grande ou pequena uma estrutura pode ser ao mesmo tempo que satisfaz certas condições.\vspace{0.2cm}
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Combinatória Extremal}
+
+	Exemplos:\vspace{0.2cm}
+	\begin{itemize}
+		\item Qual a maior quantidade de arestas que um grafo $G$ pode ter, sem que $G$ tenha um subgrafo $H$?\vspace{0.2cm}\pause
+		
+		\item Qual o tamanho do maior conjunto independente em um grafo? (NP-completo)
+					
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{\'Areas Abordadas}
+
+	\begin{itemize}
+	\item Teoria de Ramsey
+	\item Grafos Extremais
+	\item Grafos Aleat\'orios
+	\item Regularidade
+	\end{itemize}
+}
+
+\frame{
+	\frametitle{Teoria de Ramsey}
+	\begin{theorem}[{Schur's Theorem}]\label{thm:Schur'sTheorem} %Schur, 1916
+Para toda colorac\~ao $c\colon \mathbb{N} \rightarrow [r]$, existe $x,y,z$ tal que $x+y=z$ e $c(x) = c(y) = c(z)$.
+\end{theorem}
+}
+\frame{
+	\frametitle{Teoria de Ramsey}
+\begin{proof}
+  Para a colorac\~ao de vertices dada por $c\colon \mathbb{N} \rightarrow [r]$ defina uma colorac\~ao de arestas dada por $c'\colon \binom{\mathbb{N}}{2} \rightarrow [r]$ como $c'(\{a,b\}) \colon= c(|a-b|)$. Pelo Teorema de Ramsey sabemos que existe um tri\^angulo monocrom\'atico, assuma que $\{x,y,z\}$ forma o tri\^angulo, com $x<y<z$.\\
+Usando a definic\~ao de $c'$  temos:
+$$c'(\{x,y\}) = i = c(|y-x|)$$
+$$c'(\{x,z\}) =  i = c(|z-x|)$$
+$$c'(\{y,z\}) = i = c(|z-y|).$$
+
+Segue $c(|y-x|) = c(|z-x|) = c(|z-y|)$, e $(z-y)+(y-x)=(z-x)$ que implica $x,y,z$ tal que $x+y=z$ e $c(x) = c(y) = c(z)$, como requisitado.\\
+\end{proof}
+}
+
+\frame{
+	\frametitle{Grafos Extremais}
+		\begin{theorem}[{Erd\H{o}s}] \label{theorem: Erdos,1938}
+Para todo grafo $G$ com $n$ vertices
+$$ex(n,C_4) = O(n^{3/2}).$$
+\end{theorem}
+O $C_4$ \'e formado por duas `cerejas' no mesmo par de vertices. Contando essas triplas (x,\{y,z\}) em $G$ tal que $xy, xz \in E(G)$ e usando a inequac\~ao de Jensen com $\lambda_i = 1/n$ obtemos:
+	$$ \sum_{i=1}^n \frac{1}{n} f\left(x_i\right) \geq f		\left(\sum_{i=1}^n \frac{1}{n} x_i\right).$$
+}
+\frame{
+	\frametitle{Grafos Extremais}
+Aplicando ao nosso problema temos,
+$$ \frac{\sum_{i=1}^n \binom{x_i}{2}}{n} \geq \binom{\frac{\sum_{i=1}^n x_i}{n}}{2} ,$$
+Substituindo $x_i$ e lembrando que $\sum_{v \in V(G)} d(v) = 2e(G),$
+\begin{align*}
+\sum_{v \in V(G)} \binom{d(v)}{2} &\geq n \binom{\frac{2e(G)}{n}}{2}\\
+&= n\frac{\frac{2e(G)}{n}\left( \frac{2e(G)}{n}-1\right)}{2} \\
+&\geq \frac{n}{2} \left( \frac{2e(G)}{n} - 1 \right)^2.
+\end{align*}
+}
+\frame{
+	\frametitle{Grafos Extremais}
+Note que o n\'umero m\'aximo dessas triplas em um grafo $C_4$-livre \'e no m\'aximo $\binom{n}{2}$ porque podemos ter apenas uma cereja em cada par de vertices.
+$$ \frac{n}{2}\left(\frac{2e(G)}{n} - 1\right)^2 \leq \binom{n}{2},$$
+Temos $e(G) = O(n^{3/2})$ terminando a prova.
+}
+
+\frame{
+	\frametitle{Grafos Aleat\'orios}
+
+		\begin{theorem}[Chebyshev's Inequality]
+		$$\mathbb{P}(|X-\mu| \geq a) \leq \sigma^2/a^2.$$
+		\end{theorem}
+		Usando $a = \mu$, temos a seguinte inequac\~ao,
+
+		$$\mathbb{P}(X=0) \leq \mathbb{P}(|X-\mu | \geq \mu) 		\leq \sigma^2/\mu^2,$$
+		que nos d\'a um limitante superior para $\mathbb{P}(X=0)$.\\
+	
+}
+\frame{
+	\frametitle{Grafos Aleat\'orios}
+	\begin{theorem}
+		Seja $G=G(n,p)$ um grafo aleat\'orio.
+		Ent\~ao,
+		$$
+		\mathbb{P}(G\text{ conter um tri\^angulo}) \rightarrow 
+		\begin{cases}
+			0, &\text{if $p\ll 1/n$},\\
+			1, &\text{if $p\gg 1/n$}\,.
+		\end{cases}
+		$$
+	\end{theorem}
+	\begin{itemize}
+	\item Prova:
+	$$X = \text{ quantidade de tri\^angulos em }G$$
+	\begin{align*}
+	\mathbb{P}(G\text{ conter um tri\^angulo}) &\leq \mathbb{E}(X)\\
+	& \leq \binom{n}{3}p^3 \\
+	& \ll 1,
+\end{align*}
+	se $p \ll 1/n$.\begin{align*}
+\end{align*} 
+	\end{itemize}			
+}
+
+\frame{
+	\frametitle{Grafos Aleat\'orios}
+\begin{align*}
+Var(X) &= \mathbb{E}(X^2) - \mathbb{E}(X)^2\\
+& = \mathbb{E} \left( \sum_{(u, v)} \mathbbm{1}[u]\mathbbm{1}[v] \right) - \left( \sum_u \mathbb{P}(u) \right) ^2\\
+& = \sum_{u,v} \left(\mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right),
+\end{align*}
+usando a inequac\~ao de Chebychev,
+$$\mathbb{P}(G \text{ n\~ao conter tri\^angulos}) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \leq \frac{n^4p^5 + n^3p^3 }{n^6p^6} \ll 1,$$
+para $p \gg 1/n$, terminando a prova.
+}
+
+\frame{
+	\frametitle{Regularidade}
+}
+
+
+\frame{
+	\frametitle{Agradecimentos}
+	\begin{center}
+	Obrigado!
+	\end{center}
+}	
+\end{document}

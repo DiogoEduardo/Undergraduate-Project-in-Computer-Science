@@ -350,7 +350,7 @@ $$(\sqrt{2})^k \ll R(k) \ll 4^k.$$
 R(k,\ell ) \leq R(k-1,\ell )+R(k,\ell-1).
 \end{equation}
 
-Choose $n \geq R(k-1,\ell) + R(k, \ell-1)$ and pick any vertex $v$ from $[n]$. Clearly, $v$ has either at least $R(k-1,\ell)$ red neighbours, or at least $R(k,\ell-1)$ blue neighbours. Without loss of generality assume that $v$ has at least $R(k-1,\ell)$ red neighbours. By the upperbound we have on the red neighborhood of $v$ a red $K_{k-1}$ or a blue $K_{\ell}$, if it is a red $K_{\ell}$ we are done, and if it is a blue $K_{k-1}$ we can add $v$ to it, forming a blue $K_k$. We just proved we always have a $K_k$ red or a $K_{\ell}$ blue with such $n$ and it is a upperbound for \ref{eq:Ram}.
+Choose $n \geq R(k-1,\ell) + R(k, \ell-1)$ and pick any vertex $v$ from $[n]$. Clearly, $v$ has either at least $R(k-1,\ell)$ red neighbours, or at least $R(k,\ell-1)$ blue neighbours. Without loss of generality assume that $v$ has at least $R(k-1,\ell)$ red neighbours. By the upperbound we have on the red neighborhood of $v$ a red $K_{k-1}$ or a blue $K_{\ell}$, if it is a blue $K_{\ell}$ we are done, and if it is a red $K_{k-1}$ we can add $v$ to it, forming a red $K_k$. We just proved we always have a $K_k$ red or a $K_{\ell}$ blue with such $n$ and it is a upperbound for \ref{eq:Ram}.
 
 By induction hypothesis:
 $$R(k,\ell) \leq \binom{k+\ell - 2}{k - 1}.$$
@@ -686,7 +686,7 @@ $$\alpha(G(n,p)) < m \iff X_m=0 ,$$
 where 
 %$X_m = \{|[A]|: S \in A$ if $S$ is a independent set with at least $m$ elements in $G(n,p)\}$,
 $X_m = \big|\{S\in V(G(n,p))\colon \text{$S$ is an independent set with exactly $m$ vertices in $G(n,p)$}\}\big|$,
-and let $m = \frac{n}{k}$. 
+and follows $m = \frac{n}{k}$. 
 \begin{align*}
 \mathbb{E}[X_m]&=\sum_{\substack{S \in V(G) \\ |S| = m}} \mathbb{P}(S\text{ is independent})\\
 &=(1-p)^{\binom{m}{2}} \binom{n}{m}.
@@ -805,8 +805,8 @@ Then,
 $$
 \mathbb{P}(G\text{ contains a triangle}) \rightarrow 
 \begin{cases}
-		0, &\text{if $p\ll n^{-1/n}$},\\
-		1, &\text{if $p\gg n^{-1/n}$}\,.
+		0, &\text{if $p\ll 1/n$},\\
+		1, &\text{if $p\gg 1/n$}\,.
 \end{cases}
 $$
 \end{theorem}
