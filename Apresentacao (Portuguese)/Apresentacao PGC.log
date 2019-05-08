@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.4.14)  7 MAY 2019 12:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.4.14)  8 MAY 2019 15:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1859,7 +1859,16 @@ File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ] [15
 
 ]
+
+LaTeX Warning: Citation `Sz75' on page 16 undefined on input line 258.
+
 [16
+
+] [17
+
+] [18
+
+] [19
 
 ]
 \tf@nav=\write7
@@ -1871,26 +1880,29 @@ File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 \tf@snm=\write9
 \openout9 = `"Apresentacao PGC.snm"'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 244.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 244.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 293.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 293.
  (./Apresentacao PGC.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 244.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 244.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 293.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 293.
 Package rerunfilecheck Info: File `"Apresentacao PGC".out' has not changed.
 (rerunfilecheck)             Checksum: 8230917069642DD88CB1CC453F188D36;57.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 25349 strings out of 493013
- 490499 string characters out of 6135682
- 601598 words of memory out of 5000000
- 28212 multiletter control sequences out of 15000+600000
- 50940 words of font info for 76 fonts, out of 8000000 for 9000
+ 25387 strings out of 493013
+ 491003 string characters out of 6135682
+ 602622 words of memory out of 5000000
+ 28227 multiletter control sequences out of 15000+600000
+ 54587 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,17n,64p,811b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,17n,64p,811b,769s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/diogo/.texlive2016/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk>{
 /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-rm.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
@@ -1905,10 +1917,10 @@ usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr
 re/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Apresentacao PGC.pdf" (16 pages, 211443 bytes).
+Output written on "Apresentacao PGC.pdf" (19 pages, 230534 bytes).
 PDF statistics:
- 533 PDF objects out of 1000 (max. 8388607)
- 482 compressed objects within 5 object streams
- 36 named destinations out of 1000 (max. 500000)
- 11345 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 620 PDF objects out of 1000 (max. 8388607)
+ 564 compressed objects within 6 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 11863 words of extra memory for PDF output out of 12000 (max. 10000000)
 

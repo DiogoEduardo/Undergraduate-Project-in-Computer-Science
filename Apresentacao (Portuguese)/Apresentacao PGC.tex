@@ -232,6 +232,55 @@ para $p \gg 1/n$, terminando a prova.
 
 \frame{
 	\frametitle{Regularidade}
+	\begin{definition}
+Given a graph $G$ and disjoint sets $A$ and $B$ of vertices, we say that $(A,B)$ is $\varepsilon$-regular if $\text{ for every } X \subset A \text{ and every } Y \subset B\text{ with } |X| \geq \varepsilon|A| \text{ and } |Y| \geq \varepsilon |B|$ we have
+$$ \left| \frac{e(X,Y)}{|X||Y|} - \frac{e(A,B)}{|A||B|} \right| \leq \varepsilon  .$$
+\end{definition}
+	
+	\begin{lemma}\label{lemma:embeddinglemma}
+(The Embedding Lemma - simple version). Let $H$ be a graph, and let $\varepsilon >0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and there exist a partition $\{V_1, ..., V_H\}$ with all pairs being $\varepsilon$-regular and $\delta$-dense, then $H \subset G$. 
+\end{lemma} 
+}
+
+\frame{
+	\frametitle{Regularidade}
+\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]. Let $\varepsilon > 0$, and let $m \in  \mathbb{N}$. There exists a constant $M=M(m,\varepsilon)$ such that the following holds.\\
+For any graph $G$, there exists a partition $V(G) = \{V_0 \cup ... \cup V_k\}$ of the vertex set into $m \leq k \leq M$ parts, such that
+\begin{itemize}
+
+	\item $|V_1| = ... =|V_k|$,
+	
+	\item $|V_0| \leq \varepsilon|V(G)|$,
+%$|A_0| \leq \varepsilon |V(G)|$,
+	\item all but $\varepsilon k^2$ of the pairs $(V_i, V_j)$ are $\varepsilon$-regular. 
+\end{itemize}
+\end{theorem}
+}
+\frame{
+\begin{theorem}[{Triangle Removal Lemma}]
+For all $\alpha > 0$ exists $\beta > 0$ such that if $G$ is a graph with $\leq \beta n^3$ triangles, then it is possible to remove all triangles removing at most $\alpha n^2$ edges. 
+\end{theorem}
+
+	\frametitle{Regularidade}
+The first, second and third steps of the method are, in general, the same for classical problems,
+
+1. Apply SzRL with $\varepsilon$ enough small and we have the partitions $\{V_1, ... , V_k\}$.
+
+2. Remove edges inside the partitions, between irregular pairs and sparse pairs obtaining $G'$ with at most $\alpha n^2$ edges removed.
+
+3. Define $R$ with $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular.
+}
+
+\frame{
+	\frametitle{Regularidade}
+	
+Now we have two cases, in the first one we have a triangle in $R$. Note if $\beta n^3 < 1$ the result is trivial, then we assume $\beta \geq 1/n^3$ and the partitions that forms the triangle (assume $\{V_1, V_2, V_3\}$ for simplicity) has size $n/k \geq 1/(\beta ^{1/3} k) \geq m$.
+
+Applying the Embedding Lemma we have that the quantity of triangles in $G'$ is at least $\delta ^3 /2 (n/k)^3 > \beta n^3$ if we choose $\beta$ such that $\delta ^3 / (2k^3) > \beta$.
+
+We conclude that if $\alpha n^2$ edges are removed and the graph still has triangles the triangles quantity is more than $\beta n^3$.
+
+In the second case there is no triangle in $R$ and this implies there is no triangle in $G'$ because the edges inside the pairs $\{V_1, ... , V_k\}$ were removed then the only possible triangles are formed between the pairs, finishing the proof.
 }
 
 

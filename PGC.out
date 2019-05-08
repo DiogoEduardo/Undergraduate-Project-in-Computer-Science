@@ -1,23 +1,24 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
 \BOOKMARK [0][-]{chapter.2}{Ramsey Theory}{}% 2
-\BOOKMARK [1][-]{section.2.1}{Infinite Ramsey's Theorem}{chapter.2}% 3
-\BOOKMARK [1][-]{section.2.2}{Schur's Theorem}{chapter.2}% 4
-\BOOKMARK [1][-]{section.2.3}{Finite Ramsey's Theorem}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.4}{Van der Waerden's Theorem}{chapter.2}% 6
-\BOOKMARK [0][-]{chapter.3}{Extremal Graph Theory}{}% 7
-\BOOKMARK [1][-]{section.3.1}{Tur\341n's Theorem}{chapter.3}% 8
-\BOOKMARK [1][-]{section.3.2}{Forbidden Bipartite Subgraphs}{chapter.3}% 9
-\BOOKMARK [0][-]{chapter.4}{Random Graphs}{}% 10
-\BOOKMARK [1][-]{section.4.1}{The Probabilistic Method}{chapter.4}% 11
-\BOOKMARK [1][-]{section.4.2}{Subgraphs of the Random Graph}{chapter.4}% 12
-\BOOKMARK [1][-]{section.4.3}{The Janson and FKG Inequalities}{chapter.4}% 13
-\BOOKMARK [2][-]{subsection.4.3.1}{The FKG Inequality}{section.4.3}% 14
-\BOOKMARK [2][-]{subsection.4.3.2}{Janson's Inequality}{section.4.3}% 15
-\BOOKMARK [1][-]{section.4.4}{Connectedness}{chapter.4}% 16
-\BOOKMARK [0][-]{chapter.5}{Regularity}{}% 17
-\BOOKMARK [1][-]{section.5.1}{The Regularity Lemma}{chapter.5}% 18
-\BOOKMARK [1][-]{section.5.2}{Applications}{chapter.5}% 19
-\BOOKMARK [2][-]{subsection.5.2.1}{Erdos-Stone Theorem}{section.5.2}% 20
-\BOOKMARK [2][-]{subsection.5.2.2}{The Triangle Removal Lemma}{section.5.2}% 21
-\BOOKMARK [2][-]{subsection.5.2.3}{Roth's Theorem}{section.5.2}% 22
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 23
+\BOOKMARK [1][-]{section.2.1}{Essential Definitions}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Infinite Ramsey's Theorem}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Schur's Theorem}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.4}{Finite Ramsey's Theorem}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.5}{Van der Waerden's Theorem}{chapter.2}% 7
+\BOOKMARK [0][-]{chapter.3}{Extremal Graph Theory}{}% 8
+\BOOKMARK [1][-]{section.3.1}{Tur\341n's Theorem}{chapter.3}% 9
+\BOOKMARK [1][-]{section.3.2}{Forbidden Bipartite Subgraphs}{chapter.3}% 10
+\BOOKMARK [0][-]{chapter.4}{Random Graphs}{}% 11
+\BOOKMARK [1][-]{section.4.1}{The Probabilistic Method}{chapter.4}% 12
+\BOOKMARK [1][-]{section.4.2}{Subgraphs of the Random Graph}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.3}{The Janson and FKG Inequalities}{chapter.4}% 14
+\BOOKMARK [2][-]{subsection.4.3.1}{The FKG Inequality}{section.4.3}% 15
+\BOOKMARK [2][-]{subsection.4.3.2}{Janson's Inequality}{section.4.3}% 16
+\BOOKMARK [1][-]{section.4.4}{Connectedness}{chapter.4}% 17
+\BOOKMARK [0][-]{chapter.5}{Regularity}{}% 18
+\BOOKMARK [1][-]{section.5.1}{The Regularity Lemma}{chapter.5}% 19
+\BOOKMARK [1][-]{section.5.2}{Applications}{chapter.5}% 20
+\BOOKMARK [2][-]{subsection.5.2.1}{Erdos-Stone Theorem}{section.5.2}% 21
+\BOOKMARK [2][-]{subsection.5.2.2}{The Triangle Removal Lemma}{section.5.2}% 22
+\BOOKMARK [2][-]{subsection.5.2.3}{Roth's Theorem}{section.5.2}% 23
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 24
