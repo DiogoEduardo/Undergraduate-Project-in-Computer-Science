@@ -247,14 +247,16 @@ Advisor: Prof. Dr. Guilherme Oliveira Mota\\
 Santo André - SP\\
 May 2019
 \end{center}
+
 \tableofcontents
+
 \listoffigures
 %\listoftables
 
 \chapter{Introduction}
 Computer Science was truly fundamental for the fast development of science in the last century, also being fundamental to its validation and communication. It is really hard to think about actual science without the use of computers or strong science communities connected and accessible by the internet. Computer Science is also essential for business. All multinational companies are also software companies since the way of production, operating and delivering products are managed by softwares and these aspects are determinants for the success level of any company in the world. It is also common that one of the most valuable assets of a company can be connected to data, software and algorithms. In this scenario, graphs are also very interesting due its importance to Computer Science.
 
-Graphs are one of the most flexible structures, impacting the study of Algebra, Probability and Combinatorics. They can be used for modeling many real scenarios in a very easy understandable graphical scheme and its properties can be explored to obtain many useful information what explains its huge importance for many knowledge areas not directly connected to Computer Science or Mathematics.   
+Graphs are one of the most flexible structures, impacting the study of Algebra, Probability and Combinatorics. They can be used for modeling many real scenarios in a very understandable graphical scheme and its properties can be explored to obtain many useful information what explains its huge importance for many knowledge areas not directly connected to Computer Science or Mathematics.   
 
 This project focus on classical results of Extremal Combinatorics and Graph Theory. It has detailed ideas and explanations about theorems and concepts developed through a large period of time which have already been intensively studied.
 
@@ -266,7 +268,7 @@ Ramsey Theory, roughly speaking, is the study of finding order in chaos and stud
 
 The Probabilistic Method is a very useful tool, because it is flexible and it is used to prove the existence of a structure with certain properties. We define a probability space and pick randomly an element of this space then we show this element has the desired properties with positive probability.
 
-Finally the regularity lemma is discussed, one of the most important tools in Combinatorics, informally it is about acquired from any graph a real good approximation with random-like subgraphs which gives us a huge flexibility to prove many statements.
+Finally the regularity lemma is discussed, one of the most important tools in Combinatorics, informally it is about acquiring from any graph a good approximation with random-like subgraphs which gives us a huge flexibility to prove many statements.
 
 %\chapter{Justification}
 %ME INTERESSEI PELO TEMA, APENAS!
@@ -281,39 +283,80 @@ Finally the regularity lemma is discussed, one of the most important tools in Co
 
 %Almost all the doubts and problems about proofs, explanations and structure over the entire text construction was supported by the projects' advisor, the professor Dr. Guilherme Oliveira Mota.
 
+\chapter{Preliminaries}
+In this chapter we introduce concepts and state the basic notation to be used in the next chapters.
 
+\section{Numbers and Sets}
+We use $\mathbb{N} = \{1,2,...\}$ to denote the set of positive integers, and $[n]=\{1,...,n\}$ denotes the set of all positive integers from $1$ to $n$. 
+
+For a set $S$, we use $|S|$ to denote the number of elements of $S$. We state $\binom{S}{k}$ as the set of all subsets of $S$ with size $k$ and use $\{x_1,...,x_k\}$ to detone an element in $\binom{S}{k}$. For $|S| = n$ and $0 \leq k \leq n$ the number of elements in $\binom{S}{k}$ is the binomial coefficient
+$$ \left| \binom{S}{k} \right| = \binom{n}{k} = \frac{n!}{k!(n-k)!}.$$
+
+For a graph $G$ an indenpendent set $I$ is a subgraph of $V(G)$, $I \subseteq V(G)$, such that for every $\{u\}$ and $\{v\}$ in $I$ the edge $\{u,v\}$ is not in $E(G)$.
+ 
+\section{Asymptotics}
+We write $f(n) = o(g(n))$ if and only if, for all $\varepsilon > 0$, there exist $n_0$ such that if $n \geq n_0$, then $f(n) < \varepsilon g(n)$. We can write sometimes $f(n) \ll g(n)$ instead of $f(n) = o(g(n))$.
+
+We have $f(n) \approx g(n)$ if $f(n)/g(n) \rightarrow 1$ as $n \rightarrow \infty$.
+
+\section{Graphs}
+A graph $G = (V(G), E(G))$ or simply $G = (V, E)$ is a pair formed by the set of vertices $V(G) = [n]$, with $|V(G)|=n$ and the set of edges, $E(G) \subseteq \binom{V(G)}{2}$, is formed by pairs of vertices. We can represent an edge $e = \{u,v\}$ as simply $uv$ and a vertex $\{v\}$ as simply $v$. And we use $e(G) = |E(G)|$ and $v(G) = |V(G)|$.
+
+A $s$-clique, $K_s = (V(K_s),E(K_s))$, is a pair formed by the set of vertices $V(K_s) =  [s]$ and the set of edges $E(K_s) = \binom{V(K_s)}{2}$.
+
+A vertex colouring with $r$ colours in a graph $G$ is a function $c\colon V(G) \rightarrow \{1,...,r\}$ and it can also be denoted as a $r$-colouring of the vertices of $G$. We denote the colour $i$ of a vertex $v$ as $c(v)=i$. If we have a graph $Z$ such that $c(z)=i$ for every $z$ in $V(Z)$ we call it monochromatic or monochromatic in colour $i$.
+
+
+An edge colouring with $r$ colours in a graph $G$ is a function $c\colon \binom{V(G)}{2} \rightarrow \{1,...,r\}$ and it can also be denoted as a $r$-colouring of the edges of $G$. We denote the colour $i$ of an edge $\{u,v\}$ as $c(\{u,v\})=i$. If we have a graph $W$ such that $c(\{u,v\})=i$ for every $\{u,v\}$ in $E(W)$ we call it monochromatic or monochromatic in colour $i$.
+
+Let $G$ and $H$ be graphs such that $V(H) \subseteq V(G)$ and $V(G)= [n]$. We define $\ex(n,H) = \max\{e(G): E(H)\text{ is not in }E(G)\}$. If $H$ is not in $G$ we call $G$ a $H$-free graph.
+
+\section{Adjacent and Incident}
+Given an edge $e =\{u,v\}$ in a graph $G$ we call $u$ and $v$ neighbours or adjacents and we can denonte $e =\{u,v\}$ as $u$ is neighbour of $v$ or $u$ is adjacent to $v$. We also say the edge $\{u,v\}$ is incident to $u$ and $v$.
+
+The degree of a vertex $v$ in a graph $G$, denoted by $d_G(v)$, we also write simply $d(v)$, is the quantity of neighbours of $v$. The set of neighbours of $v$ is called neighbourhood and is denoted by $N_G(v)$ or simply $N(v)$.
+
+The minimum degree of a graph $G$ is denoted by $\delta(G)$ and is defined as
+$$\delta(G) = \min\{d(v) \colon v \in V (G)\}.$$
+
+The maximum degree of a graph $G$ is denoted by $\Delta(G)$ and is defined as 
+$$ \Delta(G) = \max\{d(v) \colon v \in V(G)\} $$
+
+\section{Probability}
+In this text, we call by probability space a non-empty finite set $\Omega$ and we write a function $\mathbb{P}\colon \Omega \rightarrow [0,1]$ that relates a probability $\mathbb{P}(\omega)$ to each $\omega$ in $\Omega$. In any, case the probabilities are assumed to satisfy
+$$ \sum_{\omega \in \Omega} \mathbb{P}(\omega) = 1.$$
+
+Subsets $E \subseteq \Omega$ are called events, and we write $\mathbb{P}(E) = \sum_{\omega \in E}\mathbb{P}(\omega)$. The Inclusion-Exclusion principle shows that, for all $E_1, E_2 \subseteq \Omega$
+
+$$ \mathbb{P}(E_1 \cup E_2) = \mathbb{P}(E_1) + \mathbb{P}(E_2) - \mathbb{P}(E_1 \cap E_2) \leq \mathbb{P}(E_1) + \mathbb{P}(E_2).$$
+
+A mapping $X\colon \Omega \rightarrow \mathbb{R}$ is called a random variable and the expected value of $X$ is given by
+
+$$ \mathbb{E}[X] = \sum_{\omega \in \Omega}X(\omega)\mathbb{P}(\omega) .$$
+
+The variance of $X$ is Var$(X) = \mathbb{E}(X^2) - \mathbb{E}(X)^2$. We usually write $X > t$ and $X = x$ to denote the events $\{\omega 
+\in \Omega \colon X(\omega) > t\}$ and $\{\omega \in \Omega \colon X(\omega) = x\}$, respectively. In the text we usually omit the probability space information and focus on events and ramdom variables. 
+
+A sequence of events $E_1,...,E_m \subseteq \Omega$ is independent if for every $M \subseteq [m]$ and $M \neq \emptyset$,
+
+$$ \mathbb{P}\left( \bigwedge_{i \in M}E_i \right) = \prod_{i \in M} \mathbb{P}(E_i).$$
 
 \chapter{Ramsey Theory}
 
 Ramsey's Theory is especially philosophical among the components of the Extremal Combinatorics. Ramsey's Theory is connected with the purpose of finding order in chaos, that is, it is motivated by the thought that complete chaos is impossible to achieve, then we can prove statements about any graph, independent of its particular characteristics.
-\section{Essential Definitions}
-We will need the following essential definitions throughout the text
-\begin{definition}
-$[r]$
-\end{definition}
-\begin{definition}
-A colouring
-\end{definition}
-\begin{definition}
-Graph is a pair (V,G)
-\end{definition}
-
-\begin{definition}
-A $s$-clique, $K_s$, in a graph $G = (V, E)$ is a subset of the vertices, $K_s \subset V(G)$, such that $\binom{V(K_s)}{2} = E(K_s)$ and $|V(K_s)| = s$.
-\end{definition}
 
 \section{Infinite Ramsey's Theorem}
 Consider the following question:
 ``Given a group of 6 people, are there 3 people that are mutual friends or 3 people that are mutual strangers?''
 
-In order to answer this question think about a group of six people, say they are Richard, Maria, Bete, Jack, Paul and Steven. It is possible to suppose without loss of generality that Richard has at least three friends: Maria, Bete and Jack. If any two of these three are friends with each other, then they form a group of three mutual friends with Richard, otherwise Maria, Bete and Jack form a group of three mutual strangers to themselves. 
+In order to answer this question think about a group of six people, call them Richard, Maria, Bete, Jack, Paul and Steven. It is possible to suppose without loss of generality that Richard has at least three friends: Maria, Bete and Jack. If any two of these three are friends with each other, then they form a group of three mutual friends with Richard, otherwise Maria, Bete and Jack form a group of three mutual strangers to themselves. 
 
-Replacing people by vertices and a friendship by colours (blue for being friends and red otherwise) we realize that a graph $G$ with $6$ vertices always have a triangle with all edges in the same colour (we call it monochromatic) independently of the edge colouring, but what about with $5$ vertices?
+Replacing people by vertices and a friendship by colours (blue for being friends and red otherwise) we realize that a graph $G$ with $6$ vertices always have a monochromatic triangle independently of the edge colouring, but what about with $5$ vertices?
 
 The graph $K_5$ can be constructed without a monochromatic triangle as show in Figure \ref{fig:K5}. The following definition will permit us to discuss it in terms of the Ramsey Numbers.
 
 \begin{definition}\label{def:RamseyNumbers} 
-The Ramsey Number $R(s,t)$ is the minimum $n$ such that any $2$-colouring on $K_n$ induces a complete subgraph $K_s$ whose edges are monochromatic in colour $1$ or a complete subgraph $K_t$ whose edges are monochromatic in colour $2$.
+The Ramsey Number $R(s,t)$ is the minimum $n$ such that any $2$-colouring on $\binom{K_n}{2}$ induces a complete subgraph $K_s$ whose edges are monochromatic in colour $1$ or a complete subgraph $K_t$ whose edges are monochromatic in colour $2$.
 \end{definition}
 
 Then using the Definition \ref{def:RamseyNumbers} we have $R(3,3) = 6$.
@@ -345,72 +388,67 @@ For any positive integer and any colouring $c\colon \mathbb{N} \rightarrow [r]$,
 \begin{proof}
   For a vertex colouring given as $c\colon \mathbb{N} \rightarrow [r]$ define an edge colouring $c'\colon \binom{\mathbb{N}}{2} \rightarrow [r]$ as $c'(\{a,b\}) \coloneqq c(|a-b|)$. By Theorem~\ref{thm:RamseyTheorem}, there exists a monochromatic triangle with three vertices, say $\{x,y,z\}$, with $x<y<z$.\\
 Using the definition of $c'$  we have
-$$c'(\{x,y\}) = i = c(|y-x|)$$
-$$c'(\{x,z\})=  i = c(|z-x|)$$
-$$c'(\{y,z\}) = i = c(|z-y|).$$
+$$c'(\{x,y\}) = i = c(y-x)$$
+$$c'(\{x,z\})=  i = c(z-x)$$
+$$c'(\{y,z\}) = i = c(z-y).$$
 
-From that, $c(|y-x|) = c(|z-x|) = c(|z-y|)$, and $(z-y)+(y-x)=(z-x)$ this implies that there are $a,b,c$ such that $a+b=c$ and $c(a) = c(b) = c(c)$, as required.\\
+From that, $c(y-x) = c(z-x) = c(z-y)$, and $(z-y)+(y-x)=(z-x)$ this implies that there are $a,b,c$ such that $a+b=c$ and $c(a) = c(b) = c(c)$, as required.\\
 \end{proof}
 
 \section{Finite Ramsey's Theorem}
-In order to prove the next theorem we need the following definitions.
+In order to prove the next theorem we need the following definition.
 \begin{definition}
-Given a colouring $c\colon\dbinom{\mathbb{N}}{2}$ $\rightarrow$ $[r]$, being $i$ a colour and  $v$ a vertex $\in \mathbb{N}$, define $N_i(v) =\{ w: c(\{v,w\})=i\}$ , and it can be read as the colour $i$ neighbourhood of $v$.
+We define $N_i(v) =\{ w: c(\{v,w\})=i\}$ , and it is denoted as the colour $i$ neighbourhood of $v$.
 \end{definition}
-
-\begin{definition}
-If $a \ll b$, then $a$ is asymptotically smaller than $b$, and if $b \gg a$, then $b$ is asymptotically larger than $a$.  
-\end{definition}
-\begin{definition}
-We define symbol $\approx$ to denote approximation between values, when $ a \approx b$,  we have that $a$ is asymptotically equals to $b$.  
-\end{definition}
-
 
 \begin{theorem}[{Erd\H{o}s and Szekeres' Theorem \cite{ersz35, Er47}}]\label{thm:ErdosandS}
 %(Erd\H{o}s and Szekeres, 1935; Erd\H{o}s, 1947).\\
-$$(\sqrt{2})^k \ll R(k,k) \ll 4^k.$$
+$$(\sqrt{2})^k < R(k,k) < 4^k.$$
 \end{theorem}
 \begin{proof} We start by proving the upper bound. Considering every $k, \ell \in \mathbb{N}$ we want to prove
 \begin{equation}\label{eq:Ram}
 R(k,\ell ) \leq R(k-1,\ell )+R(k,\ell-1).
 \end{equation}
 
-Choose $n \geq R(k-1,\ell) + R(k, \ell-1)$ and pick any vertex $v$ from $[n]$. Clearly, $v$ has either at least $R(k-1,\ell)$ red neighbours, or at least $R(k,\ell-1)$ blue neighbours. Without loss of generality assume that $v$ has at least $R(k-1,\ell)$ red neighbours. Then, we have on the red neighborhood of $v$ a red $K_{k-1}$ or a blue $K_{\ell}$, if it is a red $K_{k-1}$ we can add $v$ to it, forming a red $K_k$. We just proved we always have a $K_k$ red or a $K_{\ell}$ blue with such $n$ and it confirms the upperbound in \ref{eq:Ram}.
+Choose $n \geq R(k-1,\ell) + R(k, \ell-1)$ and pick any vertex $v$ from $[n]$. Then, $v$ has either at least $R(k-1,\ell)$ red neighbours, or at least $R(k,\ell-1)$ blue neighbours. Without loss of generality assume that $v$ has at least $R(k-1,\ell)$ red neighbours. Then, we have on the red neighborhood of $v$ a red $K_{k-1}$ or a blue $K_{\ell}$, if it is a red $K_{k-1}$ we can add $v$ to it, forming a red $K_k$. We just proved we always have a $K_k$ red or a $K_{\ell}$ blue with such $n$ and it confirms the upperbound in \ref{eq:Ram}.
 
 Now we want to prove by induction on $R(k,\ell)$ that
 $$R(k,\ell) \leq \binom{k+\ell - 2}{k - 1}.$$
 
-Then by induction hypothesis
+Note that for $k = \ell = 2$ it works well. Then by induction hypothesis
 $$R(k-1,\ell)\leq \binom{k+\ell -3}{k-2},$$ and $$R(k,\ell-1)\leq \binom{k+\ell-3}{k-1}.$$
 
 Since $\binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}$, we have
 
 $$R(k,\ell)\leq \binom{k+\ell-3}{k-2} + \binom{k+\ell-3}{k-1} = \binom{k+ \ell -2}{k-1}.$$
 
-Confirming our induction hypothesis. Now let $k = \ell$ and using Stirling's approximation for $\binom{2n}{n} \approx (2^{2n}/\sqrt{\pi n})$, assuming $n$ is sufficiently large follows:
+Confirming our induction hypothesis. Now let $k = \ell$ and using Stirling's approximation  $\binom{2n}{n} \approx (2^{2n}/\sqrt{\pi n})$, assuming $n$ is sufficiently large follows:
 
 \begin{align*}
-R(k) &\leq \binom{2k -2}{k-1}\\
+R(k,k) &\leq \binom{2k -2}{k-1}\\
 & \approx \frac{2^{2k-2}}{\sqrt{\pi (k-1)}}\\
-& \ll 4^k.
+& < 4^k.
 \end{align*}
 
-Finishing the upper bound proof.\\
+Finishing the upper bound proof.
 
-It is not simple showing colourings whose subgraphs are not big and not monochromatic this is counter-intuitive but is really hard to construct this type of graph. However, in 1947, Erd\H{o}s made a important contribution for combinatorics showing a simple proof of an exponential lower bound on $R(k)$.
+It is not simple showing colourings whose subgraphs are not big and not monochromatic this is counter-intuitive but is really hard to construct this type of graph. However, in 1947, Erd\H{o}s made a important contribution for combinatorics showing a simple proof of an exponential lower bound on $R(k,k)$.
 
-Now we proceed by proving the lower bound. Consider a random colouring $c\colon \binom{n}{2} \rightarrow \{$red, blue$\}$, with probability $p$ = $1/2$ of having $c(\{i,j\}) =$ red for each $\{i,j\} \in$ $E(K_n)$.\\
+Now we proceed by proving the lower bound. Consider a random colouring $c\colon \binom{n}{2} \rightarrow \{$red, blue$\}$, with probability $p$ = $1/2$ of having $c(\{i,j\}) =$ red for each $\{i,j\}$ in $E(K_n)$.
 
-We define X as the number of monochromatic $k$-cliques in $K_n$. The expected value for $X$ is $\binom{n}{k}$ times the probability that a given $k$-clique is monochromatic, by the fact $\left(\frac{n}{m}\right)^m \leq \binom{n}{m} \leq \left(\frac{en}{m}\right)^m$, then:
-$$\binom{n}{k}\frac{1}{2} ^{\binom{k}{2}-1} \leq 2 \left( \frac{en}{k} \left( \frac{1}{\sqrt{2}} \right)^{k-1} \right)^{k} \ll 1.$$ 
-This holds if: 
+We define $X$ as the number of monochromatic $k$-cliques in $K_n$. The expected value for $X$ is $\binom{n}{k}$ times the probability that a given $k$-clique is monochromatic, then follows 
 \begin{align*}
-n &<\frac{1}{e\sqrt{2}}k2^{k/2} \\
-& = \frac{k(\sqrt{2})^{k}}{e\sqrt{2}}\\
-& \gg (\sqrt{2})^k.
+\mathbb{E}[X] &= \binom{n}{k}2^{1-\binom{k}{2}}\\ 
+&= \frac{n!}{k!(n-k)!}2^{1-\frac{k(k-1)}{2}}\\ 
+&< \frac{n^k 2^{1 +k/2}}{k!2^{k^2/2}},
 \end{align*}
-
-Since the expected value for $X$ is less than $1$, then there must exist a colouring in which $X=0$, thus the proof is finished.
+since $n!/(n-k)! < n^k$. Now we show that for $n = (\sqrt{2})^k$
+\begin{align*}
+\binom{2^{k/2}}{k}2^{1-\binom{k}{2}}&< \frac{(2^{k/2})^k 2^{1+k/2}}{k! 2^{k^2/2}}\\ 
+&= \frac{2^{1+k/2}}{k!}\\ 
+&< 1,
+\end{align*}
+since $2^{1+k/2} < k!$ for $k>2$ the expected value for $X$ is less than $1$, then there must exist a colouring in which $X=0$, thus $R(k,k) > (\sqrt{2})^k$ finishing the proof.
 \end{proof}
 
 \section{Van der Waerden's Theorem}
@@ -491,7 +529,7 @@ $t_r(n)$ is the number of edges in $T_r(n)$. Note that $e(T_r(n)) = t_r(n)$.
 \end{definition}
 
 \begin{theorem}[{Turán's Theorem \cite{Tu41}}] \label{theorem:turan1941}%(Turán, 1941).
- $\ex(n, k_{r+1}) = t_r(n)$ and $T_r(n)$ is the only extremal graph.
+If $G$ is a graph with $n$ vertices, then $$\ex(n, k_{r+1}) = t_r(n).$$
 \end{theorem}
 
 \begin{proof}
@@ -500,7 +538,7 @@ This proof follows by induction on $n$. Note $d(v) \approx n-(n/r)$ with $v \in 
 $$ t_r(n) \approx \frac{n}{2}\left(n-\frac{n}{r}\right) \approx \left(1-\frac{1}{r}\right) \binom{n}{2}.$$
 
 
- Let $e(G)$ be maximum and $G$ be a $K_{r+1}$-free graph. Construct a graph $G'$ by removing a $K_r$ from $G$ as shown in Figure \ref{fig:G'andKr}. Note that each vertex in $G'$ could be neighbour of at most $r-1$ vertices in $K_r$, otherwise $G$ would have a $K_{r+1}$, then we have $(r-1)(n-r)$ vertices between $G'$ and $K_r$.
+ Let $e(G)$ be maximum while $G$ is a $K_{r+1}$-free graph. Construct a graph $G'$ by removing a $K_r$ from $G$ as shown in Figure \ref{fig:G'andKr}. Note that each vertex in $G'$ could be neighbour of at most $r-1$ vertices in $K_r$, otherwise $G$ would have a $K_{r+1}$, then we have $(r-1)(n-r)$ vertices between $G'$ and $K_r$.
  
  \begin{figure}[H]
      \centering
@@ -532,7 +570,7 @@ Then the proof is finished.
 \end{theorem}
 
 \begin{proof}
-The proof follows by induction on $r$. Let $G$ be a $ K_{r+1}$-free graph on $n$ vertices and let $w$ be a vertex of maximum degree in $G$. For every vertex $v \in V(G)\setminus N(w)$ we remove the edges incident to $v$ and add an edge between $v$ and each neighbor of $w$, this operation is called `Zykov symmetrization'. Clearly, no vertex degree has decreased because at this point $d(v) = \Delta(G)$ for every $v \in V(G)\setminus N(w)$ and the graph is still $K_{r+1}$-free because $N(w)$ has not changed and the $G\setminus N(w)$ now is a independent set.
+The proof follows by induction on $r$. Let $G$ be a $ K_{r+1}$-free graph on $n$ vertices and let $w$ be a vertex of maximum degree in $G$. For every vertex $v \in V(G)\setminus N(w)$ we remove the edges incident to $v$ and add an edge between $v$ and each neighbor of $w$, this operation is called `Zykov symmetrization'. Clearly, no vertex degree has decreased because at this point $d(v) = \Delta(G)$ for every $v \in V(G)\setminus N(w)$ and the graph is still $K_{r+1}$-free because $N(w)$ has not changed and the $G\setminus N(w)$ now is an independent set.
 
 Being $w\in V(G)$ a vertex of maximal degree in $G$, note that $H=G[N(w)]$ must be $K_r$-free by our graph choice (otherwise $G$ would not be $K_{r+1}$-free). By the induction hypothesis, exists a $(r-1)$-partite graph $H_1$ on $N(w)$ with $d_{H_1}(v) \geq d_{H}(v)$ for every $v \in N(w)$. Let $G_1$ be the graph obtained from $G$ by performing Zykov symmetrization at vertex $w$. Now replace $H$ by $H_1$ and we acquire $G_1$ which is the required $r$-partite graph, note it is valid because in any step the degrees have decreased.
 \end{proof}
@@ -553,8 +591,7 @@ $$ \ex (n,K_{r+1}) = e(T_{r,n}) \approx \left( 1-\frac{1}{r}\right) \binom{n}{2}
 
 Erd\H{o}s proved that the extremal number is much smaller for the $4$-cycle graph.
  
-\begin{theorem}[{Erd\H{o}s \cite{Er38}}] \label{theorem: Erdos,1938}
-
+\begin{theorem}[{Erd\H{o}s \cite{Er38}}] \label{theorem: Erdos,1938} Let $G$ be a graph with $n$ vertices, then
 $$\ex(n,C_4) = O(n^{3/2}).$$
 \end{theorem}
 
@@ -589,13 +626,13 @@ we obtain $e(G) = O(n^{3/2})$ finishing the proof.
 %\end{corollary}
 The next result is very similar to theorem \ref{theorem: Erdos,1938}. In fact, it is a generalization of Erd\H{o}s' result, but instead counting cherries we count stars.
 \begin{theorem}[{Kovari-Sós-Turán \cite{KoSoTu54}}]
-If $s \leq t$, then
+If $G$ is a graph with $n$ vertices and $s \leq t$, then
 $$ \ex(n, K(s,t)) = O (n^{2 - 1/s}). $$
 \end{theorem}
 
 \begin{proof}
 
-For this proof we do a simple double counting on stars, which are graphs with one central vertex with a fixed number of neighbors as you can see at Figure \ref{fig:generalizedcherry}:
+For this proof we do a simple double counting on stars, which are graphs with one central vertex with a fixed number of neighbours as you can see at Figure \ref{fig:generalizedcherry}:
 
 \begin{figure}[!htb]
      \centering
@@ -604,7 +641,7 @@ For this proof we do a simple double counting on stars, which are graphs with on
      \label{fig:generalizedcherry}
 \end{figure}
 
-$K_{1,s}$ is the star we need to count. Note we can count it by taking all possible sets of $s$ neighbors of each vertex, as follows,
+$K_{1,s}$ is the star we need to count. Note we can count it by taking all possible sets of $s$ neighbours of each vertex, as follows,
 $$ |\{K_{1,s}\colon K_{1,s} \subseteq G\}| = \sum_{v \in V(G)} \binom{d(v)}{s} .$$
 
 Now we use the fact $\left(\frac{n}{m}\right)^m \leq \binom{n}{m} \leq \left(\frac{en}{m}\right)^m$ and Jensen's Inequality \ref{prep:jensen} to acquire the following inequality,
@@ -653,7 +690,7 @@ where $c(s,t)= \sqrt[s]{\frac{1}{c(s)}\frac{e^s(t-1)}{s^s}}$ . Using again the f
 \section{The Probabilistic Method}
 This method has incredible simple applications, when this method begun to being used it created many shocking proofs, but not all applications of the method are so simple or easy to understand. A central fact for the simpler version of the probabilistic method is ``a object with property $ A$ exists $\iff  \mathbb{P}(\text{object has property }A)>0$''.
 
-It is necessary to introduce the Erd\H{o}s-Rényi random graph model $G(n,p)$. $G(n,p)$ is a probability distribution on graphs, more informally, it is a edge distribution on $n$ vertices with probability $p$ and with the existence of edges being independent events.
+It is necessary to introduce the Erd\H{o}s-Rényi random graph model $G(n,p)$. $G(n,p)$ is a probability distribution on graphs, more informally, it is an edge distribution on $n$ vertices with probability $p$ and with the existence of edges being independent events.
 
 \begin{definition}\label{def:randomgraph}
 The (Erd\H{o}s-Rényi) random graph $G(n,p)$ is the graph on $n$ vertices obtained by choosing each edge independently and uniformily at random with probability $p$. In other words, we assume that we have a probability space $\Omega$ and independent random variables $I_{vw}$ for each $\{v,w\} \in \binom{[n]}{2}$, such that
@@ -674,7 +711,7 @@ The next theorem \ref{erdoss} introduces the method and it is presented two diff
 $g(G)$ is the girth of $G$ which is the length of the shortest cycle in $G$. 
 \end{definition}
 \begin{definition}\label{def:independencenumber}
-$\alpha(G) = \max\{|A|: A$ is a independent set$\}$.
+$\alpha(G) = \max\{|A|: A$ is an independent set$\}$.
 \end{definition}
 \begin{definition}\label{def:chromaticnumber}
 $\chi(G)$ is the minimum number of colours used in a proper colouring of G.
@@ -746,9 +783,9 @@ and if $p \gg \frac{k \log n}{n}$ we have,
 Since the proof for $\chi(G) \geq k$ is finished we will prove $g(G(n,p))\geq k$,
 
 $$ g(G(n,p)) \leq k \iff X_k \geq 1,$$
-where $X_k = |C_k \colon C_k \subset G(n,p)|$,
+where $X_k = |C_k \colon C_k \subseteq G(n,p)|$,
 
-$$\mathbb{E}[X_k] = \sum_{C_k \subset K_n} \mathbb{P}(C_k \subset G(n,p) ) \leq n^kp^k.$$
+$$\mathbb{E}[X_k] = \sum_{C_k \subseteq K_n} \mathbb{P}(C_k \subseteq G(n,p) ) \leq n^kp^k.$$
 
 Now we need to limit our short cycles by $\sqrt{n}$ in order to show with high probability we will have few short cycles so we can destroy them,
 
@@ -757,7 +794,7 @@ then getting together with our previous result,
 
 $$\frac{k\log k}{n} \ll p \leq n^{-1 + \frac{1}{2k}}.$$
 
-We can remove a vertex of each cycle with length $<k$, so we have $g(G) \geq k$. Note that removing a cycle's vertex does not make $\alpha(G)$ bigger and consequently doesn't make $\chi(G)$ smaller, maintaining all our previous calculations valid.
+We can remove a vertex of each cycle with length $<k$, so we have $g(G) \geq k$. Note that removing a cycle's vertex does not make $\alpha(G)$ bigger and consequently does not make $\chi(G)$ smaller, maintaining all our previous calculations valid.
 \end{proof}
 
 \begin{proof}2.
@@ -770,11 +807,11 @@ Note that if $\alpha(G) \leq |G|/k$, then $\chi(G) \geq $k. Let $\varepsilon > 0
 Now we need two claims to reach the result. We claim that, with high probability, $G$ has at most $n/2$ cycles of length $\leq k$ and has no independent set  of size $n/2k$ then, consequently $\chi(G) \geq k$ and $girth(G) \geq k$.
 
 First claim. $V(G) > n/2$ . First of all we need some variables to count the cycles,
-$$X_{\ell} =  |C_{\ell} : C_{\ell} \subset G(n,p)|$$
+$$X_{\ell} =  |C_{\ell} : C_{\ell} \subseteq G(n,p)|$$
 $$X = \text{quantity of short cycles } = \sum_{{\ell}=3}^k X_{\ell}$$
 \begin{align*}
 \mathbb{E}[X] &= \sum_{{\ell}=3}^k \mathbb{E}[X_{\ell}] \\
-	       &= \sum_{{\ell}=3}^k \sum_{C_{\ell} \in K_n} \mathbb{P}(C_{\ell} \subset G(n,p))\\
+	       &= \sum_{{\ell}=3}^k \sum_{C_{\ell} \in K_n} \mathbb{P}(C_{\ell} \subseteq G(n,p))\\
 	       &\leq \sum_{{\ell}=3}^k n^{\ell} p^{\ell} \\
 	       &= \sum_{{\ell}=3}^k n^{\varepsilon {\ell}}\text{, with } p= n^{\varepsilon - 1}\\
 	       &\leq 2n^{\varepsilon k} \\
@@ -806,7 +843,7 @@ $$Y_{\ell} = \text{quantity of independents sets with length ${\ell}$. }$$
 \end{align*}
 if $\ell = n/2k$. Thus we have
 
-$$\frac{\mathbb{E}[|\{C_{\ell} \subset G : {\ell}\leq k \}|]}{n/2} + \mathbb{E} [|\{ S:|S| \geq n/2k, e(S) = 0\}|] \rightarrow 0$$
+$$\frac{\mathbb{E}[|\{C_{\ell} \subseteq G : {\ell}\leq k \}|]}{n/2} + \mathbb{E} [|\{ S:|S| \geq n/2k, e(S) = 0\}|] \rightarrow 0$$
 as $n \rightarrow \infty $. So $G$ has the desired properties with high probability and the proof is finished.
 \end{proof}
 
@@ -874,7 +911,7 @@ In this section we focus on the occurrence of  bad events, asking questions as t
 In this subsection we shall use FKG inequality to acquire an upper bound for Theorem \ref{theo:FKG}, but first we introduce some concepts and present the FKG inequality.
 
 \begin{definition}
-Monotone Increasing. Let $\mathcal{A}$ be a collection of graphs on $n$ vertices, $\mathcal{A}$ is monotone increasing if $G \in \mathcal{A}$ and $e(G) \subset e(H)$ implies $H \in \mathcal{A}$, so if $G \in \mathcal{A}$ this means adding edges doesn't make $G$ loose the characteristics that makes it be in $\mathcal{A}$ and it is called monotone decreasing otherwise.     
+Monotone Increasing. Let $\mathcal{A}$ be a collection of graphs on $n$ vertices, $\mathcal{A}$ is monotone increasing if $G \in \mathcal{A}$ and $e(G) \subseteq e(H)$ implies $H \in \mathcal{A}$, so if $G \in \mathcal{A}$ this means adding edges does not make $G$ loose the characteristics that makes it be in $\mathcal{A}$ and it is called monotone decreasing otherwise.     
 \end{definition}
 
 \begin{example}
@@ -907,7 +944,7 @@ Let $X$ be a triple in $[n]$ and $B_X$ be the event that this triple forms a tri
 & \rightarrow e^{-\mathbb{E}[X]}\\
 & = e^{-c^3/6},
 \end{align*}
-as $n \rightarrow \infty$ finishing the upper bound proof. For the lower bound proof we shall use same definition of $X$ and $B_X$ used before. Thus we have a set of $\binom{n}{3}$ events $B_X$ of the form $A_X \subset E(G(n,p)) \subset \binom{n}{2}$.
+as $n \rightarrow \infty$ finishing the upper bound proof. For the lower bound proof we shall use same definition of $X$ and $B_X$ used before. Thus we have a set of $\binom{n}{3}$ events $B_X$ of the form $A_X \subseteq E(G(n,p)) \subseteq \binom{n}{2}$.
 Note that 
 $$\mu = \sum_X \mathbb{P} (B_X) = p^3\binom {n}{3},$$
 and
@@ -927,7 +964,7 @@ In this subsection we shall use Janson's inequalities to prove the bound given b
 
 Let $A_1, ... , A_m$ be subsets of $[N]$ and $Y$ be a set in $[N]$ whose elements are chosen independently, with $\mathbb{P}(j \in Y) = p$ for each $j$ and $N=\binom{n}{2}$. 
 
-$$ B_j = \{A_j \colon A_j \subset Y\},$$
+$$ B_j = \{A_j \colon A_j \subseteq Y\},$$
 note that the events are monotone increasing and that $B_i$ and $B_j$ are independent $\iff A_i \cap A_j \neq \emptyset$. 
 
 Define $\mu = \sum_j \mathbb{P}(B_j)$ denoting the expected number of bad events and let
@@ -936,7 +973,7 @@ $$ \Delta = \sum_{\substack{i\sim j\\ (i,j) \in [N]^2}} \mathbb{P}(B_i \wedge B_
 where the sum is over ordered pairs $(i,j)$ such that $A_i$ and $A_j$ intersect. Follows the Janson inequalities.
 
 \begin{theorem}[{Janson's Inequality \cite{Ja87}}]
-Let $A_1,...,A_m \subset [n]$ and let $B_1,...,B_m$ be the events defined above. Then
+Let $A_1,...,A_m \subseteq [n]$ and let $B_1,...,B_m$ be the events defined above. Then
 
 $$ \mathbb{P}\left(\bigwedge_{j=1}^m \overline{B_j}\right) \leq e^{-\mu + \Delta/2}. $$
 
@@ -1001,7 +1038,7 @@ And we have
  $$\mathbb{E}[\mu(T) - \Delta(T)/2] = q\mu - q^2 \Delta/2,$$
  which by the fact $\mathbb{E}[X] \geq a \Rightarrow \mathbb{P}(X\geq a) > 0$,
  $$\Rightarrow \mathbb{P}(\mu(T) - \Delta(T)/2 \geq q\mu - q^2 \Delta / 2) > 0$$
- $$\Rightarrow \exists T \subset \binom{n}{2}\text{ such that } \mu(T) - \Delta(T)/2 \geq q\mu - q^2 \Delta / 2 .$$
+ $$\Rightarrow \exists T \subseteq \binom{n}{2}\text{ such that } \mu(T) - \Delta(T)/2 \geq q\mu - q^2 \Delta / 2 .$$
  
 Now maximizing $q = \mu / \Delta \leq 1$ we have
 
@@ -1054,7 +1091,7 @@ We can conclude $\mathbb{P}(G\text{ is connected}) \rightarrow 0$ as $n \rightar
 To prove the second part, we define the random variable $Y_k(G)$, which counts the number of components of size $k$ in $G$. Bounding the expected number we have
 
 \begin{align*}
-\mathbb{E}[Y_k (G)]  & \leq \sum_{\substack{S\subset V(G) \\ |S| = k}} \mathbb{P}(S\text{ is a component})\\
+\mathbb{E}[Y_k (G)]  & \leq \sum_{\substack{S\subseteq V(G) \\ |S| = k}} \mathbb{P}(S\text{ is a component})\\
 &\leq \binom{n}{k}(1-p)^{k(n-k)}\\
 &\leq \left( \frac{en}{k} \right) ^k e^{-pk(n-k)}\\
 & = \left( \frac{en}{k} e^{-p(n-k)} \right)^k.
@@ -1094,7 +1131,7 @@ As we can see random graphs give us different type of information based on proba
 Informally, the lemma says that if you partition a given graph enough then the partition pairs look random-like. Before showing the formal form we need to define $\varepsilon$-regular and to show the properties that make it looks random-like.
 
 \begin{definition}
-Given a graph $G$ and disjoint sets $A$ and $B$ of vertices, we say that $(A,B)$ is $\varepsilon$-regular if $\text{ for every } X \subset A \text{ and every } Y \subset B\text{ with } |X| \geq \varepsilon|A| \text{ and } |Y| \geq \varepsilon |B|$ we have
+Given a graph $G$ and disjoint sets $A$ and $B$ of vertices, we say that $(A,B)$ is $\varepsilon$-regular if $\text{ for every } X \subseteq A \text{ and every } Y \subseteq B\text{ with } |X| \geq \varepsilon|A| \text{ and } |Y| \geq \varepsilon |B|$ we have
 $$ \left| \frac{e(X,Y)}{|X||Y|} - \frac{e(A,B)}{|A||B|} \right| \leq \varepsilon  .$$
 \end{definition}
 
@@ -1125,12 +1162,12 @@ Now we prove the embedding lemma that makes the regularity useful to solve probl
 %The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\varepsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\varepsilon,\delta)$, then $H \subset G$.
 
 
-(The Embedding Lemma - simple version). Let $H$ be a graph, and let $\varepsilon >0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and there exist a partition $\{V_1, ..., V_H\}$ with all pairs being $\varepsilon$-regular and $\delta$-dense, then $H \subset G$. 
+(The Embedding Lemma - simple version). Let $H$ be a graph, and let $\varepsilon >0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and there exist a partition $\{V_1, ..., V_H\}$ with all pairs being $\varepsilon$-regular and $\delta$-dense, then $H \subseteq G$. 
 \end{lemma} 
 
 \begin{proof}
 Here we only give the proof for $H=K_3$. Let %$G \in \mathcal{G}(H, m,\varepsilon,\delta)$ and let
- $A$, $B$ and $C$ be $\varepsilon$-regular and at least $\delta$-dense partitions of $G$, with $|A|=|B|=|C|=m$ as in Figure \ref{fig:embeddinglemma}. Note that if we do not consider the sets of vertices $\{w\in A \colon d_B(w) < (\delta - \varepsilon)|B| \}$  and $\{u\in A \colon d_C(u) < (\delta - \varepsilon)|C| \}$ then we have $(1-2\varepsilon)|A|$ vertices in $A$ such that $N(v) \cap B \geq \varepsilon |B|$ and $N(v) \cap C \geq \varepsilon |C|$ by Fact \ref{fact:503}. Then let $X = N(v) \cap B$ and $Y =N(v) \cap C$ so there must be a edge between $X$ and $Y$ (note that any edge between $X$ and $Y$ forms a triangle). To be more precise we have $|X| \geq (\delta - \varepsilon)|B|$ and $|Y| \geq (\delta - \varepsilon)|C|$, as follows
+ $A$, $B$ and $C$ be $\varepsilon$-regular and at least $\delta$-dense partitions of $G$, with $|A|=|B|=|C|=m$ as in Figure \ref{fig:embeddinglemma}. Note that if we do not consider the sets of vertices $\{w\in A \colon d_B(w) < (\delta - \varepsilon)|B| \}$  and $\{u\in A \colon d_C(u) < (\delta - \varepsilon)|C| \}$ then we have $(1-2\varepsilon)|A|$ vertices in $A$ such that $N(v) \cap B \geq \varepsilon |B|$ and $N(v) \cap C \geq \varepsilon |C|$ by Fact \ref{fact:503}. Then let $X = N(v) \cap B$ and $Y =N(v) \cap C$ so there must be an edge between $X$ and $Y$ (note that any edge between $X$ and $Y$ forms a triangle). To be more precise we have $|X| \geq (\delta - \varepsilon)|B|$ and $|Y| \geq (\delta - \varepsilon)|C|$, as follows
 
 \begin{align*}
 e(X,Y) &\geq (\delta - \varepsilon)|X||Y|\\
@@ -1222,9 +1259,9 @@ $$e(R) \geq \frac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
 
 4. Thus,
 $$e(R) > \frac{\left(1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{2}\right) \binom{n}{2}}{\left(\frac{n}{k}\right)^2} \approx \left( 1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{2}\right) \binom{k}{2}> t_r(k),$$
-we can apply the Turán's Theorem \ref{theorem:turan1941} that implies $K_{\chi (H)} \subset R$.
+we can apply the Turán's Theorem \ref{theorem:turan1941} that implies $K_{\chi (H)} \subseteq R$.
 
-5. Now applying the Embedding Lemma \ref{lemma:embeddinglemma} with $n$ large enough follows that $H \subset G$ as required.
+5. Now applying the Embedding Lemma \ref{lemma:embeddinglemma} with $n$ large enough follows that $H \subseteq G$ as required.
 
 \end{proof}
 
@@ -1254,11 +1291,11 @@ In the second case there is no triangle in $R$ and this implies there is no tria
 
 \subsection{Roth's Theorem}
 
-\begin{theorem}[{Roth's Theorem \cite{Ro53}}] If $A \subset \mathbb{N}$ has positive upper density, then $A$ contains an arithmetic progression of length three. 
+\begin{theorem}[{Roth's Theorem \cite{Ro53}}] If $A \subseteq \mathbb{N}$ has positive upper density, then $A$ contains an arithmetic progression of length three. 
 \end{theorem}
 
 \begin{proof}
-Choose $\delta > 0$ with $|A \cap [n]| > \delta n$, with $n$ sufficiently large. Let $V(G) = X\cup Y \cup Z$, where $X, Y$ and $Z$ are disjoint and $X,Y,Z \subset [n]$ and let,
+Choose $\delta > 0$ with $|A \cap [n]| > \delta n$, with $n$ sufficiently large. Let $V(G) = X\cup Y \cup Z$, where $X, Y$ and $Z$ are disjoint and $X,Y,Z \subseteq [n]$ and let,
 
 \begin{align*}
 E(G) &= \{\{x,y\}\colon x \in X, y \in Y,\text{ and } y = x + a, a \in A\} \\
