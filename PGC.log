@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.4.14)  10 MAY 2019 20:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.4.14)  11 MAY 2019 19:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1402,12 +1402,12 @@ re.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.401 W
+l.403 W
        e define $N_i(v) =\{ w: c(\{v,w\})=i\}$ , and it is denoted as the co...
  <./Figuras/K5-sem-triangulo.jpg>]
 
 Package amsrefs Warning: Use of \cites is recommended instead of \cite 
-(amsrefs)                for multiple cites 'ersz35, Er47' on input line 404.
+(amsrefs)                for multiple cites 'ersz35, Er47' on input line 406.
 
 [15] [16]
 <Figuras/Van-der-Waerden-Blocks.png, id=279, 1242.89343pt x 364.36125pt>
@@ -1415,10 +1415,10 @@ File: Figuras/Van-der-Waerden-Blocks.png Graphic file (type png)
 
 <use Figuras/Van-der-Waerden-Blocks.png>
 Package pdftex.def Info: Figuras/Van-der-Waerden-Blocks.png used on input line 
-490.
+492.
 (pdftex.def)             Requested size: 472.30441pt x 138.45871pt.
 
-Overfull \hbox (31.28668pt too wide) in paragraph at lines 490--491
+Overfull \hbox (31.28668pt too wide) in paragraph at lines 492--493
  [][] 
  []
 
@@ -1427,11 +1427,11 @@ Overfull \hbox (31.28668pt too wide) in paragraph at lines 490--491
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.496 \end{proof}
+l.498 \end{proof}
                   <./Figuras/Van-der-Waerden-Blocks.png>] [18]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 508--509
+Underfull \hbox (badness 10000) in paragraph at lines 510--511
 
  []
 
@@ -1442,23 +1442,23 @@ File: Figuras/Kr+1-livre-prova-turan.jpg Graphic file (type jpg)
 
 <use Figuras/Kr+1-livre-prova-turan.jpg>
 Package pdftex.def Info: Figuras/Kr+1-livre-prova-turan.jpg used on input line 
-545.
+547.
 (pdftex.def)             Requested size: 247.88547pt x 143.33513pt.
  [20pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.559 
+l.561 
        <./Figuras/Kr+1-livre-prova-turan.jpg>]
 <Figuras/t(n)-and-t(n-r).jpg, id=311, 247.8861pt x 209.3421pt>
 File: Figuras/t(n)-and-t(n-r).jpg Graphic file (type jpg)
 
 <use Figuras/t(n)-and-t(n-r).jpg>
-Package pdftex.def Info: Figuras/t(n)-and-t(n-r).jpg used on input line 562.
+Package pdftex.def Info: Figuras/t(n)-and-t(n-r).jpg used on input line 564.
 (pdftex.def)             Requested size: 247.88547pt x 209.34158pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
+Underfull \hbox (badness 10000) in paragraph at lines 571--572
 
  []
 
@@ -1467,20 +1467,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 569--570
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.577 ...llows: $$e(G) \leq e(H) \leq e(T_r(n)).$$
+l.579 ...llows: $$e(G) \leq e(H) \leq e(T_r(n)).$$
                                                    <./Figuras/t(n)-and-t(n-r).j
 pg>] [22] <Figuras/cherry-and-star.png, id=338, 296.60812pt x 94.10156pt>
 File: Figuras/cherry-and-star.png Graphic file (type png)
 
 <use Figuras/cherry-and-star.png>
-Package pdftex.def Info: Figuras/cherry-and-star.png used on input line 639.
+Package pdftex.def Info: Figuras/cherry-and-star.png used on input line 641.
 (pdftex.def)             Requested size: 296.60739pt x 94.10132pt.
  [23pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.658 
+l.660 
        <./Figuras/cherry-and-star.png>] [24]
 Chapter 5.
 [25
@@ -1489,10 +1489,10 @@ Chapter 5.
 File: Figuras/r-partion.jpg Graphic file (type jpg)
 
 <use Figuras/r-partion.jpg>
-Package pdftex.def Info: Figuras/r-partion.jpg used on input line 735.
+Package pdftex.def Info: Figuras/r-partion.jpg used on input line 737.
 (pdftex.def)             Requested size: 247.88547pt x 240.8994pt.
 
-Overfull \hbox (26.52509pt too wide) in paragraph at lines 748--753
+Overfull \hbox (26.52509pt too wide) in paragraph at lines 750--755
 \T1/lmr/m/n/12 (-20) where $\OML/lmm/m/it/12 X[] \U/matha/m/n/12 ^^P []t\OML/lm
 m/m/it/12 S \U/matha/m/n/12 P \OML/lmm/m/it/12 V\U/matha/m/n/12 p\OML/lmm/m/it/
 12 G\U/matha/m/n/12 p\OML/lmm/m/it/12 n; p\U/matha/m/n/12 qq [] [] []u[]$\T1/lm
@@ -1504,18 +1504,18 @@ r/m/n/12 (-20) ,
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.756 \end{align*}
+l.758 \end{align*}
                    <./Figuras/r-partion.jpg>] [27] [28] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 862--864
+Underfull \hbox (badness 10000) in paragraph at lines 863--865
 
  []
 
-LaTeX Font Info:    Try loading font information for U+bbm on input line 891.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 892.
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [30] [31] [32]
 [33] [34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1103--1106
+Underfull \hbox (badness 10000) in paragraph at lines 1104--1107
 
  []
 
@@ -1527,41 +1527,41 @@ Chapter 6.
 File: Figuras/embedding-lemma.jpg Graphic file (type jpg)
 
 <use Figuras/embedding-lemma.jpg>
-Package pdftex.def Info: Figuras/embedding-lemma.jpg used on input line 1182.
+Package pdftex.def Info: Figuras/embedding-lemma.jpg used on input line 1183.
 (pdftex.def)             Requested size: 247.88547pt x 240.8994pt.
  [40]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1193
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1194
 .
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1193.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1194.
 
  [41pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1208 2
+l.1209 2
         . Remove a few edges (edges inside the partitions, between irregular...
  <./Figuras/embedding-lemma.jpg>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 1215.
+(hyperref)                removing `\H' on input line 1216.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1231--1232
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1233--1234
+Underfull \hbox (badness 10000) in paragraph at lines 1232--1233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1235--1236
+Underfull \hbox (badness 10000) in paragraph at lines 1234--1235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1236--1237
 
  []
 
@@ -1569,10 +1569,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 1235--1236
 File: Figuras/graph-G-and-G'.jpg Graphic file (type jpg)
 
 <use Figuras/graph-G-and-G'.jpg>
-Package pdftex.def Info: Figuras/graph-G-and-G'.jpg used on input line 1243.
+Package pdftex.def Info: Figuras/graph-G-and-G'.jpg used on input line 1244.
 (pdftex.def)             Requested size: 441.5686pt x 256.55786pt.
 
-Overfull \hbox (0.55087pt too wide) in paragraph at lines 1243--1244
+Overfull \hbox (0.55087pt too wide) in paragraph at lines 1244--1245
  [][] 
  []
 
@@ -1584,10 +1584,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: Figuras/graph-G'-and-R.jpg Graphic file (type jpg)
 
 <use Figuras/graph-G'-and-R.jpg>
-Package pdftex.def Info: Figuras/graph-G'-and-R.jpg used on input line 1252.
+Package pdftex.def Info: Figuras/graph-G'-and-R.jpg used on input line 1253.
 (pdftex.def)             Requested size: 441.5686pt x 256.55786pt.
 
-Overfull \hbox (0.55087pt too wide) in paragraph at lines 1252--1253
+Overfull \hbox (0.55087pt too wide) in paragraph at lines 1253--1254
  [][] 
  []
 
@@ -1599,14 +1599,14 @@ Underfull \vbox (badness 1189) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1258 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
+l.1259 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.6.3}) has been already used, duplic
 ate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1258 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
+l.1259 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
                                                    <./Figuras/graph-G-and-G'.jp
 g> <./Figuras/graph-G'-and-R.jpg>] [44] [45] [46
 
@@ -1620,16 +1620,16 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 15.
  [49])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1324.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1325.
  [50]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1324.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1325.
  (./PGC.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1324.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1324.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1325.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1325.
 
 Package rerunfilecheck Info: File `PGC.out' has not changed.
 (rerunfilecheck)             Checksum: 5259CFE0CD332EEB32FDAAD1B8BE5D1F;1829.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1324.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1325.
  ) 
 Here is how much of TeX's memory you used:
  13959 strings out of 493013
@@ -1658,7 +1658,7 @@ sr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PGC.pdf (50 pages, 1748699 bytes).
+Output written on PGC.pdf (50 pages, 1748816 bytes).
 PDF statistics:
  701 PDF objects out of 1000 (max. 8388607)
  607 compressed objects within 7 object streams
