@@ -302,6 +302,10 @@ A graph $G = (V(G), E(G))$ or simply $G = (V, E)$ is a pair formed by the set of
 
 A complete graph, $K_s$, is a pair formed by the set of vertices $V(K_s) =  [s]$ and the set of edges $E(K_s) = \binom{V(K_s)}{2}$. A $s$-clique is the set of vertices of $K_s$.
 
+The graph $K_{s,t} = (V,E)$ is a graph whose $V$ can be partitioned in two sets $\{V_1,V_2\}$ such that $V_1$ and $V_2$ are independent sets with $|V_1| = s$, $|V_2| = t$ and $E(G) = \{uv: u \in V_1 \text{ and } v \in V_2\}$
+
+The graph $C_{\ell} = (V,E)$ which, we call a {\it cycle} of length $\ell$, is a graph with $V =\{v_1,v_2, \ldots, v_{\ell}\}$ and $E=\{v_1v_2,v_2v_3,\ldots, v_{\ell-1}v_{\ell},v_{\ell}v_1\}$
+
 A {\it vertex colouring} with $r$ colours in a graph $G$ is a function $c\colon V(G) \rightarrow \{1,\ldots,r\}$ and it can also be denoted as a $r$-colouring of the vertices of $G$. If we have a graph $G$ such that $c(v)=i$ for every $v$ in $V(G)$ we call it monochromatic or monochromatic in colour $i$.
 
 
@@ -310,9 +314,9 @@ An {\it edge colouring} with $r$ colours in a graph $G$ is a function $c\colon \
 A {\it proper} $k$-colouring of a graph $G=(V,E)$ is a mapping $c\colon E(G) \rightarrow \{1,2,
 \ldots,k\}$ such that for every $v$ in $V$ and for every $e =\{vu_i\}$ in $E \text{ then we have } c(vu_i) \neq c(vu_j)$.
 
-A graph $H$ is a subgraph of a graph $G$ if every vertex in $H$ is a vertex in $G$ and every edge in $H$ is an edge in $G$ and we denote this relation by $H \subseteq G$. $H$ is an induced subgraph of $G$ if for all pair of vertices $x$ and $y$ of $H$, $xy$ is an edge in $H$ if and only if $xy$ is an edge in $G$ and we denote this relation by $G[H]$.
+A graph $H$ is a subgraph of a graph $G$ if every vertex in $H$ is a vertex in $G$ and every edge in $H$ is an edge in $G$ and we denote this relation by $H \subseteq G$. $H$ is an induced subgraph of $G$ if for all pair of vertices $x$ and $y$ of $H$, $xy$ is an edge in $H$ if and only if $xy$ is an edge in $G$ and we denote this relation by $G[H]$. If $H \nsubseteq G$ we call $G$ an $H$-free graph.
 
-Let $G$ and $H$ be graphs such that $V(H) \subseteq V(G)$ and $V(G)= [n]$. We define $$\ex(n,H) = \max\{e(G)\colon\text{ $G$ contains no copy of $H$}\}.$$ If $H$ is not in $G$ we call $G$ an $H$-free graph.
+Let $G$ and $H$ be graphs such that $V(H) \subseteq V(G)$ and $V(G)= [n]$. We define $$\ex(n,H) = \max\{e(G)\colon\text{ $G$ contains no copy of $H$}\}.$$ 
 
 For a graph $G$ an indenpendent set $I$ is a subset of vertices of $G$ such that for every $\{u\}$ and $\{v\}$ in $I$ the edge $\{u,v\}$ is not in $E(G)$.
 
@@ -504,11 +508,11 @@ In this section we study forbidden subgraphs and first we shall answer the follo
 Note that the complete bipartite graph with $\frac{n}{2}$ vertices in each part has $\frac{n^{2}}{4}$ edges and no triangles. The next theorem states that this number of edges is the maximum possible in a triangle-free graph.\\
 
 \begin{theorem}[{Mantel's Theorem \cite{Ma07}}]\label{the:mantel}
-If $G$ is a triangle-free graph with sufficiently large $n$ vertices, then 
+If $G$ is a triangle-free graph with $n$ vertices, then 
 $$e(G) \leq \left\lceil \frac{n}{2} \right\rceil \left\lfloor \frac{n}{2} \right\rfloor .$$
 \end{theorem}
 \begin{proof}
-The proof follows by induction on $n$. Let $G'$ be the graph obtained from $G$ by removing two vertices $u,v \in G$ such that $\{u,v\}\in E(G)$. Note that if $G$ is triangle-free, then $G'$ is also triangle-free because it is not possible to form a triangle by removing an edge and there are at most $n-1$ edges incident to $u$ or $v$, then
+The proof follows by induction on $n$. Assume $n \geq 4$ and let $G'$ be the graph obtained from $G$ by removing two vertices $u,v \in G$ such that $\{u,v\}\in E(G)$. Note that if $G$ is triangle-free, then $G'$ is also triangle-free because it is not possible to form a triangle by removing an edge and there are at most $n-1$ edges incident to $u$ or $v$, then
 \begin{align*}
 e(G') &\leq \left(\left\lfloor \frac{n}{2} \right\rfloor -1\right)\left(\left\lceil \frac{n}{2} \right\rceil -1\right) \\
 &= \left\lfloor \frac{n}{2} \right\rfloor \left\lceil \frac{n}{2} \right\rceil - n +1.
@@ -525,7 +529,8 @@ $t_r(n)$ is the number of edges in $T_r(n)$.
 \end{definition}
 
 \begin{theorem}[{Turán's Theorem \cite{Tu41}}] \label{theorem:turan1941}%(Turán, 1941).
-For any graph, we have $$\ex(n, K_{r+1}) = t_r(n).$$
+Let $G$ be a graph with $n$ vertices, such that $G$ is $K_{r+1}$-free, then
+$$ e(G) \leq t_r(n) $$
 \end{theorem}
 
 \begin{proof}
@@ -619,8 +624,8 @@ we obtain $e(G) = O(n^{3/2})$ finishing the proof.
 %\end{corollary}
 The next result is very similar to Theorem \ref{theorem: Erdos,1938}. In fact, it is a generalization of Erd\H{o}s' result, but instead counting cherries we count stars.
 \begin{theorem}[{Kovari-Sós-Turán \cite{KoSoTu54}}]
-If $G$ is a graph with $n$ vertices and $s \leq t$, then
-$$ \ex(n, K(s,t)) = O (n^{2 - 1/s}). $$
+If $G$ is a $K_{s,t}$-free graph with $n$ vertices and $s \leq t$, then
+$$ e(G) = O (n^{2 - 1/s}). $$
 \end{theorem}
 
 \begin{proof}
@@ -838,7 +843,8 @@ Realize that the key point in both proofs was the fact we could choose the most 
 
 In this section we will manipulate $p$ in order to have a specific subgraph contained in $G$. Being more specific we shall prove the threshold for the property ``containing a triangle'' in $G$.  We will need the Chebychev inequality presented below.
 
-\begin{theorem}[{Chebyshev's Inequality \cite{Ch67}}]
+\begin{theorem}[{Chebyshev's Inequality \cite{Ch67}}] Let  $X$ be a random variable having finite mean $\mu$ and finite variance  $\sigma^2$. Let $a$ be a strictly positive real number. Then, the following inequality holds
+
 $$\mathbb{P}(|X-\mu| \geq a) \leq \sigma^2/a^2.$$
 \end{theorem} 
 
