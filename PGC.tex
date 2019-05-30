@@ -587,10 +587,10 @@ $$
 \end{proposition}
 As showed in previous section, thus Theorem \ref{theorem:turan1941}
 $$ \ex (n,K_{r+1}) = e(T_{r,n}) \approx \left( 1-\frac{1}{r}\right) \binom{n}{2} .$$
-Erd\H{o}s proved that the extremal number of $C-4$ is much smaller then the one of complete graphs.
+Erd\H{o}s proved that the extremal number of $C_4$ is much smaller then the one of complete graphs.
  
-\begin{theorem}[{Erd\H{o}s \cite{Er38}}] \label{theorem: Erdos,1938} Let $G$ be a graph with $n$ vertices, then
-$$\ex(n,C_4) = O(n^{3/2}).$$
+\begin{theorem}[{Erd\H{o}s \cite{Er38}}] \label{theorem: Erdos,1938} Let $G$ be a graph with $n$ vertices and $C_4$-free, then
+$$e(G) = O(n^{3/2}).$$
 \end{theorem}
 
 \begin{proof}
@@ -772,43 +772,42 @@ By Markov's inequality,
 
 Now we turn our attention to the girth of $G(n,p)$.
 
-$$ g(G(n,p)) \leq k \iff Y_k \geq 1,$$
-where $Y_k = |C_k \colon C_k \subseteq G(n,p)|$,
+$$ g(G(n,p)) \leq k \iff \sum_{\ell = 3}^k Y_{\ell} \geq 1,$$
+where $Y_{\ell} = |C_{\ell} \colon C_{\ell} \subseteq G(n,p)|$,
 
-$$\mathbb{E}[Y_k] = \sum_{C_k \subseteq K_n} \mathbb{P}(C_k \subseteq G(n,p) ) \leq n^kp^k.$$
+$$\mathbb{E}[Y_{\ell}] = \sum_{C_{\ell} \subseteq K_n} \mathbb{P}(C_{\ell} \subseteq G(n,p) ) \leq n^{\ell}p^{\ell}.$$
 
-Now we need to limit our short cycles by $\sqrt{n}$ in order to show with high probability we will have few short cycles so we can destroy them,
+Then $\sum_{\ell = 3}^k Y_{\ell} \leq kn^kp^k$. Now we need to limit our short cycles by $\sqrt{n}$ in order to show with high probability we will have few short cycles so we can destroy them,
 
-$$n^kp^k \leq \sqrt{n} \text{ if } p \leq n^{-1 + \frac{1}{2k}},$$
-then getting together with our previous result,
+$$kn^kp^k \ll \sqrt{n} \text{ if } p \ll \frac{n^{\frac{1}{2k}}}{nk^{1/k}},$$
+which implies $\sum_{\ell = 3}^k Y_{\ell} \ll \sqrt{n}$ then with $p$ as follows
 
-$$\frac{k\log k}{n} \ll p \leq n^{-1 + \frac{1}{2k}}.$$
+$$\frac{k\log k}{n} \ll p \ll \frac{n^{\frac{1}{2k}}}{nk^{1/k}},$$
 
-We can remove a vertex of each cycle with length $<k$, so we have $g(G) \geq k$. Note that removing a cycle's vertex does not make $\alpha(G)$ bigger and consequently does not make $\chi(G)$ smaller, maintaining all our previous calculations valid.
+we can remove a vertex of each cycle with length $<k$, so we have $g(G(n,p)) \geq k$. Note that removing a cycle's vertex does not make $\alpha(G(n,p))$ bigger and consequently does not make $\chi(G(n,p))$ smaller, maintaining all our previous calculations valid.
 \end{proof}
 
-\begin{proof}2.
-We have,
+\begin{proof}2. Let $G = G(n,p)$ and $\chi(G) = r$, being $\{S_1, \ldots, S_{r}\}$ the partition of $V(G)$ in $r$ independent sets.
 
 $$ |V(G)| = \sum_{i=1}^{\chi(G)} |S_i| \leq \chi(G)\max|S_i| \leq \chi(G) \alpha (G) .$$
 
-Note that if $\alpha(G) \leq |G|/k$, then $\chi(G) \geq $k. Let $\varepsilon > 0$ be sufficiently small ($\varepsilon < 1/k$) and $p = n^{\varepsilon - 1}$. As we have already introduced to $G(n,p)$ in definition \ref{def:randomgraph} let $G = G(n,p) $.% $-$\{one vertex of each cycle $C_{\ell} \text{ with } \ell\leq k\}$.
+Note that if $\alpha(G) \leq |G|/k$, then $\chi(G) \geq $k. Let $\varepsilon > 0$ be sufficiently small ($\varepsilon < 1/k$) and $p = n^{\varepsilon - 1}$.% $-$\{one vertex of each cycle $C_{\ell} \text{ with } \ell\leq k\}$.
 
-Now we need two claims to reach the result. We claim that, with high probability, $G$ has at most $n/2$ cycles of length $\leq k$ and has no independent set  of size $n/2k$ then, consequently $\chi(G) \geq k$ and $girth(G) \geq k$.
+Now we need two claims to reach the result. We claim that, with high probability, $G$ has at most $n/2$ cycles of length $\leq k$ and has no independent set  of size $n/2k$ then, consequently $\chi(G) \geq k$ and $g(G) \geq k$.
 
 First claim. $V(G) > n/2$ . First of all we need some variables to count the cycles,
-$$X_{\ell} =  |C_{\ell} \colon C_{\ell} \subseteq G(n,p)|$$
-$$X = \text{quantity of short cycles } = \sum_{{\ell}=3}^k X_{\ell}$$
+$$X_{\ell} =  |C_{\ell} \colon C_{\ell} \subseteq G|$$
+$$X = \text{number of short cycles in $G$} = \sum_{{\ell}=3}^k X_{\ell}$$
 \begin{align*}
 \mathbb{E}[X] &= \sum_{{\ell}=3}^k \mathbb{E}[X_{\ell}] \\
-	       &= \sum_{{\ell}=3}^k \sum_{C_{\ell} \subseteq K_n} \mathbb{P}(C_{\ell} \subseteq G(n,p))\\
+	       &= \sum_{{\ell}=3}^k \sum_{C_{\ell} \subseteq K_n} \mathbb{P}(C_{\ell} \subseteq G)\\
 	       &\leq \sum_{{\ell}=3}^k n^{\ell} p^{\ell} \\
 	       &= \sum_{{\ell}=3}^k n^{\varepsilon {\ell}}\text{, with } p= n^{\varepsilon - 1}\\
 	       &\leq 2n^{\varepsilon k} \\
 	       &= o(n).
 \end{align*}
 
-Note that since we are removing a vertex of each cycle $V(G) \geq n-X$. Now we show the general case for this useful inequality for the probabilistic method. The Markov's inequality holds for any random variable which takes non-negative values and for $a>0$,
+Now we remove a vertex of each cycle, let $G'$ be the graph by removing the vertices of $G$, note that $V(G') \geq n-X$. Now we show the general case for this useful inequality for the probabilistic method. The Markov's inequality holds for any random variable which takes non-negative values and for $a>0$,
 
 $$\mathbb{P}(X>a) \leq \frac{\mathbb{E}(X)}{a}.$$
 
@@ -820,28 +819,37 @@ Using it and replacing $\mathbb{E}[X]$ by its upper bound we have,
 		& = o(1).
 \end{align*}
 
-Then, we proved that, with high probability, the graph do not have more than $n/2 -1$ cycles with length at most $k$ and consequently we have $|V(G)| > n/2$ .
+Then, we proved that, with high probability, the graph do not have more than $n/2 -1$ cycles with length at most $k$ and consequently we have $|V(G')| > n/2$ .
 
-Second claim. $\alpha(G) \leq \alpha (G(n,p)) < n/2k$. We need to count the independent sets
-$$Y_{\ell} = \text{quantity of independents sets with length ${\ell}$. }$$
+Second claim. $\alpha(G') \leq \alpha(G) < n/2k$. We need to count the independent sets of $G$. Let $Y_{\ell} = \text{the number of independent sets with length ${\ell}$.}$ and note that for $\ell = \frac{n}{2k}$ we have
 
 \begin{align*}
-\mathbb{E}[Y_{\ell}] &= \sum_{\substack{|S| = {\ell} \\ e(S) = 0 }} (1-p)^{\binom{{\ell}}{2}}\\
+\mathbb{E}[Y_{\ell}] &= \sum_{\substack{S\colon|S| = {\ell}}} (1-p)^{\binom{{\ell}}{2}}\\
 	       &= (1-p)^{\binom{{\ell}}{2} \binom{n}{{\ell}}} \\
 	       &\leq \left(\frac{en}{{\ell}}\right)^{\ell} e^{-p\binom{{\ell}}{2}}\\
-	       &\rightarrow 0,
+	       &=o(1).
 \end{align*}
-if $\ell = n/2k$. Thus we have
+Thus,
 
-$$\frac{\mathbb{E}[|\{C_{\ell} \subseteq G \colon {\ell}\leq k \}|]}{n/2} + \mathbb{E} [|\{ S \colon |S| \geq n/2k, e(S) = 0\}|] \rightarrow 0$$
-as $n \rightarrow \infty $. So $G$ has the desired properties with high probability and the proof is finished.
+$$\frac{\mathbb{E}[|\{C_{\ell} \subseteq G' \colon {\ell}\leq k \}|]}{n/2} + \mathbb{E} [|\{ S \colon |S| \geq n/2k \text{ and } e(S) = 0\}|] \rightarrow 0$$
+as $n \rightarrow \infty $. So $G'$ has the desired properties with high probability and the proof is finished.
 \end{proof}
 
 Realize that the key point in both proofs was the fact we could choose the most comfortable probability distribution, what gives us a huge flexibility to construct proofs.
 
 \section{Subgraphs of the Random Graph}
 
-In this section we will manipulate $p$ in order to have a specific subgraph contained in $G$. Being more specific we shall prove the threshold for the property ``containing a triangle'' in $G$.  We will need the Chebychev inequality presented below.
+In this section we will manipulate $p$ in order to have a specific subgraph contained in $G$. 
+
+\begin{definition}
+A function $p^* = p^*(n)$ is a treshold for a monotone increasing property $\mathcal{P}$ in the random graph $G(n,p)$ if
+$$\lim_{n \rightarrow \infty} \mathbb{P}(G(n,p)\in \mathcal{P}) =  \begin{cases}
+		0, &\text{if $p/p^*\rightarrow 0$},\\
+		1, &\text{if $p/p^*\rightarrow \infty$}\,.
+\end{cases}$$ 
+\end{definition}
+
+We shall prove the threshold for the property ``containing a triangle'' in $G$.  We will need the Chebychev inequality presented below.
 
 \begin{theorem}[{Chebyshev's Inequality \cite{Ch67}}] Let  $X$ be a random variable having finite mean $\mu$ and finite variance  $\sigma^2$. Let $a$ be a strictly positive real number. Then, the following inequality holds
 
@@ -866,8 +874,8 @@ $$
 \end{theorem}
 
 \begin{proof}
-In the first part we need the random variable and  Markov's inequality as follows,
-$$ X = \text{ the quantity of triangles in } G.$$
+In the first part we need a random variable $X$ and  Markov's inequality as follows,
+$$ X = \text{ the number of triangles in } G.$$
 \begin{align*}
 \mathbb{P}(G\text{ contains a triangle}) &\leq \mathbb{E}(X)\\
 & \leq \binom{n}{3}p^3 \\
@@ -880,7 +888,7 @@ Var(X) &= \mathbb{E}(X^2) - \mathbb{E}(X)^2\\
 & = \mathbb{E} \left( \sum_{(u, v)} \mathbbm{1}[u]\mathbbm{1}[v] \right) - \left( \sum_u \mathbb{P}(u) \right) ^2\\
 & = \sum_{u,v} \left(\mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right),
 \end{align*}
-where $v$ and $u$ denote the events that specific triangle occurs and the $\mathbbm{1}$ denotes the indicator function, assuming value $1$ if the event occurs and $0$ otherwise. Note that the pairs $u,v$ which are independent appear in both terms as follows
+where $v$ and $u$ denote the events that a triangle occurs and the $\mathbbm{1}$ denotes the indicator function, assuming value $1$ if the event occurs and $0$ otherwise. Note that $u$ and $v$ are independent and appear in both terms as follows
 
 \begin{align*}
 Var(X) &= \sum_{u,v} \left(\mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right)\\
@@ -902,11 +910,15 @@ In this section we focus on the occurrence of  bad events, asking questions as t
 In this subsection we shall use FKG inequality to acquire an upper bound for Theorem \ref{theo:FKG}, but first we introduce some concepts and present the FKG inequality.
 
 \begin{definition}
-Monotone Increasing. Let $\mathcal{A}$ be a collection of graphs on $n$ vertices, $\mathcal{A}$ is monotone increasing if $G \in \mathcal{A}$ and $e(G) \subseteq e(H)$ implies $H \in \mathcal{A}$, so if $G \in \mathcal{A}$ this means adding edges does not make $G$ loose the characteristics that makes it be in $\mathcal{A}$ and it is called monotone decreasing otherwise.     
+Monotone Increasing. Let $\mathcal{A}$ be a collection of graphs on $n$ vertices, $\mathcal{A}$ is monotone increasing if for every $G \in \mathcal{A}$ and any $H$ such that $E(G) \subseteq E(H)$ and $V(G) = E(G)$ we have $H \in \mathcal{A}$. Then if $G \in \mathcal{A}$ this means that adding edges does not make $G$ loose the characteristics that makes it be in $\mathcal{A}$.     
+\end{definition}
+
+\begin{definition}
+Monotone Decreasing. Let $\mathcal{A}$ be a collection of graphs on $n$ vertices, $\mathcal{A}$ is monotone decreasing if for every $G \in \mathcal{A}$ and any $H$ such that $E(H) \subseteq E(G)$ and $V(G) = E(G)$ we have $H \in \mathcal{A}$. Then if $G \in \mathcal{A}$ this means that removing edges does not make $G$ loose the characteristics that makes it be in $\mathcal{A}$.     
 \end{definition}
 
 \begin{example}
-``$G$ contains a triangle'' is monotone increasing because it is impossible to destroy a triangle adding edges.
+``$G$ contains a triangle'' is monotone increasing because it is impossible to destroy a triangle by adding edges.
 \end{example}
 
 \begin{theorem} [{FKG Inequality \cite{FKG71}}]
@@ -917,7 +929,8 @@ and
 $$ \mathbb{P}((G(n,p) \in \mathcal{A}) \wedge (G(n,p) \in \mathcal{C})) \leq \mathbb{P}(G(n,p) \in \mathcal{A})\mathbb{P}(G(n,p) \in \mathcal{C}).$$
 \end{theorem}
 
-FKG inequality presented follows the theorem we want to prove.
+Now we can prove the following theorem.
+
 \begin{theorem} \label{theo:FKG}
 Let $c$ be a constant and $p = \frac{c}{n}$. Then
 
@@ -925,17 +938,18 @@ $$ \limsup_{n \rightarrow \infty}\mathbb{P}(G(n,p)\text{ contains a triangle }) 
 \end{theorem}
 \begin{proof}
 
-We start using FKG inequality to prove the upper bound.\\
-Let $X$ be a triple in $[n]$ and $B_X$ be the event that this triple forms a triangle in $G_n,p$. Note that the events $\overline{B_X}$ are monotone decreasing and have probability $(1-p)^3$.
+We start by using FKG inequality.
+
+Let $X$ be a triple in $[n]$ and $B_X$ be the event that this triple forms a triangle in $G_{n,p}$. Note that the events $\overline{B_X}$ are monotone decreasing and have probability $(1-p)^3$.
 
 \begin{align*}
 \mathbb{P}(G(n,p) \text{ has no triangles }) &= \mathbb{P}\left( \bigwedge_{X \in \binom{[n]}{3}} \overline{B_X}\right) \\
 & \geq \prod_{X \in \binom{[n]}{3}} \mathbb{P}(\overline{B_X})\\
 & \geq (1-p^3)^{\binom{n}{3}}\\
-& \rightarrow e^{-\mathbb{E}[X]}\\
+& \rightarrow e^{-\mathbb{E}[X]}, \text{as $n \rightarrow \infty$}\\
 & = e^{-c^3/6},
 \end{align*}
-as $n \rightarrow \infty$ finishing the upper bound proof. For the lower bound proof we shall use same definition of $X$ and $B_X$ used before. Thus we have a set of $\binom{n}{3}$ events $B_X$ of the form $A_X \subseteq E(G(n,p)) \subseteq \binom{n}{2}$.
+finishing the upper bound proof. For the lower bound proof we shall use same definition of $X$ and $B_X$ used before. Thus we have a set of $\binom{n}{3}$ events $B_X$ of the form $A_X \subseteq E(G(n,p)) \subseteq \binom{n}{2}$.
 Note that 
 $$\mu = \sum_X \mathbb{P} (B_X) = p^3\binom {n}{3},$$
 and
@@ -944,7 +958,7 @@ $$\Delta = \sum_{X\sim Y} \mathbb{P}(B_X \wedge B_Y) = O(n^4 p^5) \ll 1.$$
 Then using the Janson's inequality 
 
 $$ \mathbb{P}\left(\bigwedge_{j=1}^m \overline{B_j}\right) \leq e^{-\mu + \Delta/2}, $$
-which we shall prove next we have the following 
+then
 $$ \mathbb{P}(G(n,p)\text{ has no triangles }) \leq e^{-\mu + \Delta/2} \rightarrow e^{-c^3/6}$$
 as $n \rightarrow \infty$, finishing the proof.
 \end{proof}
@@ -956,7 +970,7 @@ In this subsection we shall use Janson's inequalities to prove the bound given b
 Let $A_1, \ldots , A_m$ be subsets of $[N]$ and $Y$ be a set in $[N]$ whose elements are chosen independently, with $\mathbb{P}(j \in Y) = p$ for each $j$ and $N=\binom{n}{2}$. 
 
 $$ B_j = \{A_j \colon A_j \subseteq Y\},$$
-note that the events are monotone increasing and that $B_i$ and $B_j$ are independent $\iff A_i \cap A_j \neq \emptyset$. 
+note that the events are monotone increasing and that $B_i$ and $B_j$ are independent if and only if $A_i \cap A_j \neq \emptyset$. 
 
 Define $\mu = \sum_j \mathbb{P}(B_j)$ denoting the expected number of bad events and let
 
@@ -972,10 +986,10 @@ And if $\Delta \geq \mu$, then
 
 $$ \mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) \leq e^{-\mu ^2 /2\Delta}.$$
 \end{theorem}
-By FKG inequality we have,
+Note that from FKG inequality we have,
 
 $$ \mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) \geq \prod_j (1-\mathbb{P}(B_j)) \approx e^{-\mu}, $$
-if $\mathbb{P}(B_j) \ll 1$ for each $j$, so the Janson inequalities are close to being sharp.We shall prove the first inequality.
+if $\mathbb{P}(B_j) \ll 1$ for each $j$, so the Janson inequalities are close to being sharp. We shall prove the first inequality.
 
 \begin{proof}
 We claim that, for each $j \in [m]$,
@@ -995,14 +1009,14 @@ $$ I = \{ i \in [j-1]\colon i \sim j \},$$
 & \geq \mathbb{P}(B_j) - \sum_{i \sim j, i < j}\mathbb{P}(B_j) \mathbb{P}(B_i | B_j).
 \end{align*}
 
-Since the claim is proved, note that, from $\mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B|A)$ we have,
+Since the claim is proved. Note that, from $\mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B|A)$ we have,
 
 \begin{align*}
 \mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) &= \prod_{j=1}^m \mathbb{P}\left( \overline{B_j} | \bigwedge_{i = 1}^{j-1} \overline{B_i}\right)\\
 & = \prod_{j=1}^m \left( 1 - \mathbb{P}\left(B_j | \bigwedge_{i = 1}^{j-1} \overline{B_i}\right)\right)\\
-& \leq \exp\left(- \sum_{j=1}^m \mathbb{P}(B_j | \bigwedge_{i=1}^{j-1} \overline{B_i}\right),
+& \leq \exp\left(- \sum_{j=1}^m \mathbb{P}(B_j | \bigwedge_{i=1}^{j-1} \overline{B_i}\right).
 \end{align*}
-using the claim we just proved,
+Using the claim we just proved,
 \begin{align*}
 \mathbb{P}\left( \bigwedge_{j=1}^m \overline{B_j} \right) &\leq  \exp\left(- \sum_{j=1}^m \mathbb{P}(B_j) + \sum_{i \sim j, i< j} \mathbb{P}(B_i \wedge B_j)\right)\\
 & = \exp( - \mu + \Delta /2).
@@ -1041,7 +1055,7 @@ Now maximizing $q = \mu / \Delta \leq 1$ we have
 \end{proof}
 
 \section{Connectedness}
-At this section we will answer the question ``For which $p$ is $G(n,p)$ likely to be connected?'' Observe this property is monotone increasing, because it is not possible to disconnect a graph by adding edges. The following theorem gives a threshold for this property.
+In this section we will answer the question ``For which $p$ is $G(n,p)$ likely to be connected?'' Observe this property is monotone increasing, because it is not possible to disconnect a graph by adding edges. The following theorem gives a threshold for this property.
 
 \begin{theorem}[\cite{ReEr60}]
 For every $\varepsilon > 0$,
@@ -1056,7 +1070,7 @@ $$
 as $n \rightarrow \infty$.
 \end{theorem}
 \begin{proof}
-We start proving what happens when $p \leq \frac{(1 - \varepsilon) \log n}{n}$. In order to have a connected $G\colon G \in G(n,p)$ we need to avoid isolated vertices. Let $X=X(G)$ denote the number of isolated vertices in $G$ and let $p\leq((1-\varepsilon) \log n) /n$. Then using the fact $1-x > e^{-x-x^2}$,
+We start proving what happens when $p \leq \frac{(1 - \varepsilon) \log n}{n}$. In order to have a connected $G \in G(n,p)$ we need to avoid isolated vertices. Let $X=X(G)$ denote the number of isolated vertices in $G$ and let $p\leq((1-\varepsilon) \log n) /n$. Then using the fact $1-x > e^{-x-x^2}$,
 
 $$ \mathbb{E}[X(G)] = n(1-p)^{n-1} > ne^{-pn-p^2n} \gg n^{\varepsilon/2},$$
 for sufficiently large $n$. Now we can bound the variance of $X(G)$ as below,
@@ -1098,10 +1112,10 @@ Using the maximum one we have $p \geq \frac{(1 + \varepsilon) \log n}{n}$  and b
 
 \end{proof}
 \chapter{Regularity}
-In this chapter we present the Szemerédi's Regularity Lemma which is a really powerful tool in Combinatorics. It gives us a method to approximate any arbitrary graph to a random graph, which means any arbitrary graph can be transformed in order to share useful properties with random graphs.
+In this chapter we present the Szemerédi's Regularity Lemma, which is a really powerful tool in Combinatorics. It gives us a method to ``approximate'' any arbitrary graph to a random graph, which means any arbitrary graph can share useful properties with random graphs.
 
 \begin{example}
-With at least how many edges can we say a graph $G$ has a triangle?
+What is the minimum number of edges that ensure a graph $G$ contains a triangle?
 
 For arbitrary graphs,
 $$ e(G) > \frac{n^2}{4} \Rightarrow G \text{ has a triangle. }$$
@@ -1109,16 +1123,16 @@ $$ e(G) > \frac{n^2}{4} \Rightarrow G \text{ has a triangle. }$$
 For random graphs,
 $$ e(G) \gg n \Rightarrow G\text{ has a triangle w.h.p. } $$
 
-As we can see random graphs give us different type of bounds based on probability.
+As we can see random graphs give us different type of bounds based on probability and regularity lemma enables us to apply random graph techniques to any graph.
 
 \end{example}
 
 \section{The Regularity Lemma}
 
-Informally, the lemma says that if you partition a given graph enough then the partition pairs look random-like. Before showing the formal form we need to define $\varepsilon$-regular and to show the properties that make it looks random-like.
+Informally, the lemma states that if you partition a given graph enough then the partition pairs look random-like. Before showing the formal form we need to define $\varepsilon$-regular pairs and to show the properties that make it looks random-like.
 
 \begin{definition}
-Given a graph $G$ and disjoint sets $A$ and $B$ of vertices, we say that $(A,B)$ is $\varepsilon$-regular if $\text{ for every } X \subseteq A \text{ and every } Y \subseteq B\text{ with } |X| \geq \varepsilon|A| \text{ and } |Y| \geq \varepsilon |B|$ we have
+Given a graph $G$ and disjoint sets $A$ and $B$ of vertices, we say that $(A,B)$ is $\varepsilon$-\emph{regular} if $\text{ for every } X \subseteq A \text{ and every } Y \subseteq B\text{ with } |X| \geq \varepsilon|A| \text{ and } |Y| \geq \varepsilon |B|$ we have
 $$ \left| \frac{e(X,Y)}{|X||Y|} - \frac{e(A,B)}{|A||B|} \right| \leq \varepsilon  .$$
 \end{definition}
 
@@ -1126,20 +1140,20 @@ $$ \left| \frac{e(X,Y)}{|X||Y|} - \frac{e(A,B)}{|A||B|} \right| \leq \varepsilon
 A property shared between random graphs and $\varepsilon$-regular pairs is that most vertices have roughly the same number of neighbours.
 
 \begin{fact}\label{fact:503}
-Let $(A,B)$ be an $\varepsilon$-regular pair of density at least $\delta$ in a graph $G$. Then only $2 \varepsilon |A| $ vertices of $A$ have a degree out of the interval $(\delta - \varepsilon)|B| \leq d(v) \colon v \in A \leq (\delta + \varepsilon)|B|$ in $G[A,B].$
+Let $(A,B)$ be an $\varepsilon$-regular pair of density at least $\delta$ in a graph $G$. Then for at most $2 \varepsilon |A| $ vertices $v$ of $A$ we have $$||N_G(v) \cap B| - \delta|B|| > \varepsilon |B|$$
 \end{fact}
 \begin{proof}
-Let $X = \{v \in A \colon | N_G(v) \cap B | < (\delta-\varepsilon)|B|\}$ and let $Y=B$. Then note that the density of the pair $(X,Y)$ is at most  $\delta - \varepsilon -1$, which implies $|X| < \varepsilon |A|$, otherwise it would contradict the definition of $\varepsilon$-regular pairs. By symmetry, the same holds for $Z = \{ v \in V(A) \colon |N_G(v) \cap B| > (\delta+\varepsilon)|B|\}$. Then we have at most $2 \varepsilon |A| $ vertices of $A$ that do not have roughly the same number of neighbours.
+Let $X = \{v \in A \colon | N_G(v) \cap B | < (\delta-\varepsilon)|B|\}$ and let $Y=B$. Then note that the density of the pair $(X,Y)$ is at most  $\delta - \varepsilon$, which implies $|X| < \varepsilon |A|$, otherwise it would contradict the definition of $\varepsilon$-regular pairs. By symmetry, the same holds for $Z = \{ v \in V(A) \colon |N_G(v) \cap B| > (\delta+\varepsilon)|B|\}$. Then we have at most $2 \varepsilon |A| $ vertices of $A$ that do not have roughly the same number of neighbours.
 
-Alternatively, we could have noticed that from the definition of $\varepsilon$-regular pairs, with $|X| \geq \varepsilon|A|, |Y|\geq \varepsilon|A|$ and $e(A,B)/|A||B| \geq \delta $, we have
+%Alternatively, we could have noticed that from the definition of $\varepsilon$-regular pairs, with $|X| \geq \varepsilon|A|, |Y|\geq \varepsilon|A|$ and $e(A,B)/|A||B| \geq \delta $, we have
 
-$$ \frac{e(X,Y)}{|X||Y|} \geq \frac{e(A,B)}{|A||B|} - \varepsilon \geq \delta - \varepsilon,$$
-let $Y = B$ then
-$$ \frac{e(X,B)}{|X|} \geq (\delta - \varepsilon)|B|,$$
-which corresponds to average degree of $v \in X$, confirming the claimed result.
+%$$ \frac{e(X,Y)}{|X||Y|} \geq \frac{e(A,B)}{|A||B|} - \varepsilon \geq \delta - \varepsilon,$$
+%let $Y = B$ then
+%$$ \frac{e(X,B)}{|X|} \geq (\delta - \varepsilon)|B|,$$
+%which corresponds to average degree of $v \in X$, confirming the claimed result.
 \end{proof}
 
-Now we prove the embedding lemma that makes the regularity useful to solve problems. It says that for the purpose of finding small subgraphs in graph $G$, dense $\varepsilon$-regular pairs can be treated as complete bipartite graphs.
+Now we prove the embedding lemma that makes the regularity useful to solve problems. It states that for the purpose of finding small subgraphs in a graph $G$, dense $\varepsilon$-regular pairs can be treated as complete bipartite graphs.
 
 %\begin{definition}
 %$\mathcal{G}(H,m,\varepsilon,\delta)$ denotes the family of graphs $G$ such that $V(G) = V(H(m))$, $G\subset H(m)$, and $G[A_i,A_j]$ is $\varepsilon$-regular and has density at least $\delta$ whenever $ij \in E(H)$.
@@ -1149,12 +1163,12 @@ Now we prove the embedding lemma that makes the regularity useful to solve probl
 %The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\varepsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\varepsilon,\delta)$, then $H \subset G$.
 
 
-(The Embedding Lemma - simple version). Let $H$ be a graph, and let $\varepsilon >0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and there exist a partition $\{V_1, \ldots, V_H\}$ with all pairs being $\varepsilon$-regular and $\delta$-dense, then $H \subseteq G$. 
+(The Embedding Lemma - simple version). Let $H$ and $G$ be graphs, let $\varepsilon > 0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$. Then if there exists a partition of $G$ in $\{V_1, \ldots, V_{V(H)}\}$ with $V_i = m $ and all pairs $(V_i,V_j)$ being $\varepsilon$-regular and $\delta$-dense, then $H \subseteq G$. 
 \end{lemma} 
 
 \begin{proof}
 Here we only give the proof for $H=K_3$. Let %$G \in \mathcal{G}(H, m,\varepsilon,\delta)$ and let
- $A$, $B$ and $C$ be $\varepsilon$-regular and at least $\delta$-dense partitions of $G$, with $|A|=|B|=|C|=m$ as in Figure \ref{fig:embeddinglemma}. Note that if we do not consider the sets of vertices $\{w\in A \colon d_B(w) < (\delta - \varepsilon)|B| \}$  and $\{u\in A \colon d_C(u) < (\delta - \varepsilon)|C| \}$ then we have $(1-2\varepsilon)|A|$ vertices in $A$ such that $N(v) \cap B \geq \varepsilon |B|$ and $N(v) \cap C \geq \varepsilon |C|$ by Fact \ref{fact:503}. Then let $X = N(v) \cap B$ and $Y =N(v) \cap C$ so there must be an edge between $X$ and $Y$ (note that any edge between $X$ and $Y$ forms a triangle). To be more precise we have $|X| \geq (\delta - \varepsilon)|B|$ and $|Y| \geq (\delta - \varepsilon)|C|$, as follows
+ $A$, $B$ and $C$ be $\varepsilon$-regular and at least $\delta$-dense pairs of $G$, with $|A|=|B|=|C|=m$. Note that if we do not consider the sets of vertices $\{w\in A \colon d_B(w) < (\delta - \varepsilon)|B| \}$  and $\{u\in A \colon d_C(u) < (\delta - \varepsilon)|C| \}$ then we have at least $(1-2\varepsilon)|A|$ vertices in $A$ such that $|N(v) \cap B| \geq \varepsilon |B|$ and $|N(v) \cap C| \geq \varepsilon |C|$ by Fact \ref{fact:503}. Then let $X = N(v) \cap B$ and $Y =N(v) \cap C$ so there must be an edge between $X$ and $Y$ (note that any edge between $X$ and $Y$ forms a triangle). To be more precise we have $|X| \geq (\delta - \varepsilon)|B|$ and $|Y| \geq (\delta - \varepsilon)|C|$, as follows
 
 \begin{align*}
 e(X,Y) &\geq (\delta - \varepsilon)|X||Y|\\
@@ -1162,7 +1176,7 @@ e(X,Y) &\geq (\delta - \varepsilon)|X||Y|\\
 & =  (\delta - \varepsilon)^3 m^2.
 \end{align*}
 
-Then we have at least $ (\delta - \varepsilon)^3 m^2$ triangles for each $v$ then follows we have at least $(1-2\varepsilon) (\delta-\varepsilon)^3 m^3$ triangles in $G$. 
+Then we have at least $ (\delta - \varepsilon)^3 m^2$ triangles for each $v$. Therefore, we have at least $(1-2\varepsilon) (\delta-\varepsilon)^3 m^3$ triangles in $G$. 
 
 \begin{figure}[H]
      \centering
@@ -1173,30 +1187,31 @@ Then we have at least $ (\delta - \varepsilon)^3 m^2$ triangles for each $v$ the
 
 \end{proof}
 
-\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]. Let $\varepsilon > 0$, and let $m \in  \mathbb{N}$. There exists a constant $M=M(m,\varepsilon)$ such that the following holds.\\
-For any graph $G$, there exists a partition $V(G) = \{V_0 \cup \ldots \cup V_k\}$ of the vertex set into $m \leq k \leq M$ parts, such that
+\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]For every $\varepsilon > 0$, and let $m \in  \mathbb{N}$. There exists a constant $M=M(\varepsilon)$ such that the following holds.\\
+For any graph $G$, there exists a partition $V(G) = \{V_1 \cup \ldots \cup V_k\}$ of the vertex set into $m \leq k \leq M$ parts, such that
 \begin{itemize}
 
-	\item $|V_1| = \ldots =|V_k|$,
+	\item $k \leq M$,
+	\item $||V_i|-|V_j|| \leq 1$ for all $i,j$,
 	
-	\item $|V_0| \leq \varepsilon|V(G)|$,
+	\item $|V_i| \leq \varepsilon|V(G)|$ for every $i$,
 %$|A_0| \leq \varepsilon |V(G)|$,
 	\item all but $\varepsilon k^2$ of the pairs $(V_i, V_j)$ are $\varepsilon$-regular. 
 \end{itemize}
 \end{theorem}
 
-Note the lemma holds for all graphs, but it is useful only for graphs with large $n$ and with a minimum density.% Indeed, if $|V(G)| < M(m, \varepsilon)$ then each part has at most one vertex and if $e(G) = o(n^2)$ then $G$ is well-approximated by the empty graph, in both the lemma is vacuous and not so useful.  
+Note the lemma holds for all graphs, but it is useful only for graphs with large $n$ and with a minimum density or it becomes trivial because can be approximated by empty graphs.% Indeed, if $|V(G)| < M(m, \varepsilon)$ then each part has at most one vertex and if $e(G) = o(n^2)$ then $G$ is well-approximated by the empty graph, in both the lemma is vacuous and not so useful.  
 
 \section{Applications}
-Applying the regularity lemma, in general, has more convincing power of its use than the definitions or the proof of the lemma, then in this section we will show some classical applications. In order to apply the lemma we need to follow a standard process as can be seen below.
+Applying the regularity lemma, in general, makes its use easier to understand than the definitions or the proof of the lemma, then in this section we will show some classical applications. In order to apply the lemma we use the following strategy.
 
-1. Apply the Szemerédi Regularity Lemma in order to acquire a partition $ \{ A_0, \ldots A_k \} $ as defined in the lemma.
+1. Apply the Szemerédi Regularity Lemma in order to get a partition $ \{ A_1, \ldots A_k \} $ as defined in the lemma.
 
 2. Remove a few edges (edges inside the partitions, between irregular pairs and sparse pairs). There exist at most $O(\varepsilon n^2)$ such edges.
 
-3. Define a graph $R$ such that $V(R) \rightarrow [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular.
+3. Define a graph $R$ such that $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is $\delta$-dense and $\varepsilon$-regular.
 
-4. Apply a classical result from Graph Theory (e.g. Turán's Theorem) to R.
+4. Apply some result (e.g. Turán's Theorem) to $R$.
 
 5. Apply the Embedding Lemma to find a copy of the desired subgraph $H$ in $G$.
 \subsection{Erd\H{o}s-Stone Theorem}
@@ -1232,7 +1247,7 @@ $$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{2 \delta}{3}\right) \bin
      \label{fig:graph-G-and-G'}
 \end{figure}
 
-3. Define $R$ with $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular as in Figure \ref{fig:graph-G'-and-R}
+3. Define $R$ with $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is $\delta$-dense and $\varepsilon$-regular as in Figure \ref{fig:graph-G'-and-R}
 
 \begin{figure}[H]
      \centering
