@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.4.14)  30 MAY 2019 02:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.4.14)  1 JUN 2019 03:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1532,66 +1532,66 @@ Chapter 6.
 File: Figuras/embedding-lemma.jpg Graphic file (type jpg)
 
 <use Figuras/embedding-lemma.jpg>
-Package pdftex.def Info: Figuras/embedding-lemma.jpg used on input line 1183.
+Package pdftex.def Info: Figuras/embedding-lemma.jpg used on input line 1181.
 (pdftex.def)             Requested size: 247.88547pt x 240.8994pt.
  [40]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1194
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1192
 .
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1194.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1192.
 
  [41pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1211 
+l.1209 
         <./Figuras/embedding-lemma.jpg>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 1217.
+(hyperref)                removing `\H' on input line 1215.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1229--1230
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1231--1232
+
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 1233--1234
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1235--1236
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1237--1238
-
- []
-
-<Figuras/graph-G-and-G'.jpg, id=466, 294.3798pt x 171.039pt>
+<Figuras/graph-G-and-G'.jpg, id=467, 294.3798pt x 171.039pt>
 File: Figuras/graph-G-and-G'.jpg Graphic file (type jpg)
 
 <use Figuras/graph-G-and-G'.jpg>
-Package pdftex.def Info: Figuras/graph-G-and-G'.jpg used on input line 1245.
+Package pdftex.def Info: Figuras/graph-G-and-G'.jpg used on input line 1241.
 (pdftex.def)             Requested size: 441.5686pt x 256.55786pt.
 
-Overfull \hbox (0.55087pt too wide) in paragraph at lines 1245--1246
+Overfull \hbox (0.55087pt too wide) in paragraph at lines 1241--1242
  [][] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 6625) has occurred while \output is active []
 
  [42]
-<Figuras/graph-G'-and-R.jpg, id=474, 294.3798pt x 171.039pt>
+<Figuras/graph-G'-and-R.jpg, id=475, 294.3798pt x 171.039pt>
 File: Figuras/graph-G'-and-R.jpg Graphic file (type jpg)
 
 <use Figuras/graph-G'-and-R.jpg>
-Package pdftex.def Info: Figuras/graph-G'-and-R.jpg used on input line 1254.
+Package pdftex.def Info: Figuras/graph-G'-and-R.jpg used on input line 1250.
 (pdftex.def)             Requested size: 441.5686pt x 256.55786pt.
 
-Overfull \hbox (0.55087pt too wide) in paragraph at lines 1254--1255
+Overfull \hbox (0.55087pt too wide) in paragraph at lines 1250--1251
  [][] 
  []
 
@@ -1603,14 +1603,14 @@ Underfull \vbox (badness 1189) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1260 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
+l.1256 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.6.3}) has been already used, duplic
 ate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1260 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
+l.1256 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
                                                    <./Figuras/graph-G-and-G'.jp
 g> <./Figuras/graph-G'-and-R.jpg>] [44] [45] [46
 
@@ -1624,23 +1624,23 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 15.
  [49])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1326.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1322.
  [50]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1326.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1322.
  (./PGC.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1326.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1326.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1322.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1322.
 
 Package rerunfilecheck Info: File `PGC.out' has not changed.
 (rerunfilecheck)             Checksum: F74F1E94319D3A0DDE9945314C95EFB5;1821.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1326.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1322.
  ) 
 Here is how much of TeX's memory you used:
- 13983 strings out of 493013
- 202163 string characters out of 6135682
- 357443 words of memory out of 5000000
- 16801 multiletter control sequences out of 15000+600000
- 111367 words of font info for 205 fonts, out of 8000000 for 9000
+ 13986 strings out of 493013
+ 202199 string characters out of 6135682
+ 358522 words of memory out of 5000000
+ 16802 multiletter control sequences out of 15000+600000
+ 111496 words of font info for 206 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,14n,58p,1258b,746s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
@@ -1662,10 +1662,10 @@ sr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PGC.pdf (50 pages, 1756658 bytes).
+Output written on PGC.pdf (50 pages, 1757000 bytes).
 PDF statistics:
- 705 PDF objects out of 1000 (max. 8388607)
- 611 compressed objects within 7 object streams
+ 706 PDF objects out of 1000 (max. 8388607)
+ 612 compressed objects within 7 object streams
  173 named destinations out of 1000 (max. 500000)
  25371 words of extra memory for PDF output out of 29859 (max. 10000000)
 

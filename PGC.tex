@@ -1144,9 +1144,7 @@ Let $(A,B)$ be an $\varepsilon$-regular pair of density at least $\delta$ in a g
 \end{fact}
 \begin{proof}
 Let $X = \{v \in A \colon | N_G(v) \cap B | < (\delta-\varepsilon)|B|\}$ and let $Y=B$. Then note that the density of the pair $(X,Y)$ is at most  $\delta - \varepsilon$, which implies $|X| < \varepsilon |A|$, otherwise it would contradict the definition of $\varepsilon$-regular pairs. By symmetry, the same holds for $Z = \{ v \in V(A) \colon |N_G(v) \cap B| > (\delta+\varepsilon)|B|\}$. Then we have at most $2 \varepsilon |A| $ vertices of $A$ that do not have roughly the same number of neighbours.
-
 %Alternatively, we could have noticed that from the definition of $\varepsilon$-regular pairs, with $|X| \geq \varepsilon|A|, |Y|\geq \varepsilon|A|$ and $e(A,B)/|A||B| \geq \delta $, we have
-
 %$$ \frac{e(X,Y)}{|X||Y|} \geq \frac{e(A,B)}{|A||B|} - \varepsilon \geq \delta - \varepsilon,$$
 %let $Y = B$ then
 %$$ \frac{e(X,B)}{|X|} \geq (\delta - \varepsilon)|B|,$$
@@ -1187,7 +1185,7 @@ Then we have at least $ (\delta - \varepsilon)^3 m^2$ triangles for each $v$. Th
 
 \end{proof}
 
-\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]For every $\varepsilon > 0$, and let $m \in  \mathbb{N}$. There exists a constant $M=M(\varepsilon)$ such that the following holds.\\
+\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]\label{theorem:Sz}For every $\varepsilon > 0$, and let $m \in  \mathbb{N}$. There exists a constant $M=M(\varepsilon)$ such that the following holds.\\
 For any graph $G$, there exists a partition $V(G) = \{V_1 \cup \ldots \cup V_k\}$ of the vertex set into $m \leq k \leq M$ parts, such that
 \begin{itemize}
 
@@ -1203,11 +1201,11 @@ For any graph $G$, there exists a partition $V(G) = \{V_1 \cup \ldots \cup V_k\}
 Note the lemma holds for all graphs, but it is useful only for graphs with large $n$ and with a minimum density or it becomes trivial because can be approximated by empty graphs.% Indeed, if $|V(G)| < M(m, \varepsilon)$ then each part has at most one vertex and if $e(G) = o(n^2)$ then $G$ is well-approximated by the empty graph, in both the lemma is vacuous and not so useful.  
 
 \section{Applications}
-Applying the regularity lemma, in general, makes its use easier to understand than the definitions or the proof of the lemma, then in this section we will show some classical applications. In order to apply the lemma we use the following strategy.
+Applying the Regularity Lemma, in general, makes its use easier to understand than the definitions or the proof of the lemma, then in this section we will show some classical applications. In order to apply the lemma we use the following strategy.
 
 1. Apply the Szemerédi Regularity Lemma in order to get a partition $ \{ A_1, \ldots A_k \} $ as defined in the lemma.
 
-2. Remove a few edges (edges inside the partitions, between irregular pairs and sparse pairs). There exist at most $O(\varepsilon n^2)$ such edges.
+2. Remove a few edges (edges inside the parts, between irregular pairs and sparse pairs). There exist at most $O(\varepsilon n^2)$ such edges.
 
 3. Define a graph $R$ such that $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is $\delta$-dense and $\varepsilon$-regular.
 
@@ -1221,11 +1219,9 @@ $$ \ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$
 \end{theorem}
 
 \begin{proof}
+Let $\varepsilon \geq 1/k$ and $\delta \geq \varepsilon$. Let $G$ be a $H$-free graph and assume $e(G) \geq (1 - 1/(\chi(H) - 1) + \delta)\binom{n}{2}$ and follow the steps above.
 
-
-Assume $e(G) \geq (1 - 1/(\chi(H) - 1) + \delta)\binom{n}{2}$ and follow the steps above.
-
-1. Apply regularity lemma with $\varepsilon$ sufficiently small and we have the partition $\{V_1, \ldots , V_k\}$.
+1. Apply the Regularity Lemma \refeq{theorem:Sz} with $\varepsilon$ defined previously then we assume there exists $M$ such that $k \leq M$ and we have a partition $\{V_1, \ldots , V_k\}$ as stated in the theorem.
 
 2. Remove edges inside the parts, between irregular pairs and sparse pairs obtaining $G'$ as in Figure \ref{fig:graph-G-and-G'}.
 Note that
@@ -1234,16 +1230,16 @@ Note that
 
 |edges between not $\varepsilon$-regular pairs| $\leq \varepsilon k^2 (n/k)^2 = \varepsilon n^2$.\\
 
-|edges between not $\delta$-dense pairs| $\leq \binom{k}{2}(\delta/4) (n/k)^2 \leq (\delta /4)n^2$.\\ 
+|edges between not $\delta$-dense pairs| $< \binom{k}{2}\delta (n/k)^2 = \delta n^2$.\\ 
 
-Thus we have removed at most $(2\varepsilon + \delta/4)n^2$, therefore 
+Thus we removed $d$ edges such that $d < (2\varepsilon + \delta)n^2$ and let $c$ be a constant such that $\delta -d= \delta /c$, therefore 
 
-$$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{2 \delta}{3}\right) \binom{n}{2}.$$
+$$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{c}\right) \binom{n}{2}.$$
 
 \begin{figure}[H]
      \centering
      \includegraphics[scale=1.5]{Figuras/graph-G-and-G'.jpg}
-     \caption{Graphs G and G'.}
+     \caption{Graphs $G$ and $G'$.}
      \label{fig:graph-G-and-G'}
 \end{figure}
 
@@ -1252,36 +1248,36 @@ $$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{2 \delta}{3}\right) \bin
 \begin{figure}[H]
      \centering
      \includegraphics[scale=1.5]{Figuras/graph-G'-and-R.jpg}
-     \caption{Graphs G' and R.}
+     \caption{Graphs $G'$ and $R$.}
      \label{fig:graph-G'-and-R}
 \end{figure}
 
-Note 
+Note that
 $$e(R) \geq \frac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
 
 4. Thus,
-$$e(R) > \frac{\left(1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{2}\right) \binom{n}{2}}{\left(\frac{n}{k}\right)^2} \approx \left( 1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{2}\right) \binom{k}{2}> t_r(k),$$
+$$e(R) \geq \frac{\left(1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{c}\right) \binom{n}{2}}{\left(\frac{n}{k}\right)^2} > \left( 1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{c}\right) \binom{k}{2}> t_r(k),$$
 we can apply the Turán's Theorem \ref{theorem:turan1941} that implies $K_{\chi (H)} \subseteq R$.
 
-5. Now applying the Embedding Lemma \ref{lemma:embeddinglemma} with $n$ large enough follows that $H \subseteq G$ as required.
+5. Now applying the Embedding Lemma \ref{lemma:embeddinglemma} with our $\varepsilon$, $\delta$ and $n$ large enough follows that $H \subseteq G$ as required.
 
 \end{proof}
 
 \subsection{The Triangle Removal Lemma}
-\begin{theorem}\label{lemma:triangleremoval}[{Triangle Removal Lemma \cite{RuSz76}}]
-For all $\alpha > 0$ exists $\beta > 0$ such that if $G$ is a graph with $\leq \beta n^3$ triangles, then it is possible to remove all triangles removing at most $\alpha n^2$ edges. 
+\begin{theorem}\label{lemma:triangleremoval}\emph{[}{Triangle Removal Lemma \cite{RuSz76}}\emph{]}
+For all $\alpha > 0$ exists $\beta > 0$ such that if $G$ is a graph with at most $\beta n^3$ triangles, then it is possible to remove all triangles by removing at most $\alpha n^2$ edges. 
 \end{theorem}
 
 \begin{proof}
 The first, second and third steps of the method are, in general, the same for classical problems,
 
-1. Apply SzRL with $\varepsilon$ enough small and we have the partitions $\{V_1, \ldots , V_k\}$.
+1. Apply SzRL with $\varepsilon$ enough small and we have the partition $\{V_1, \ldots , V_k\}$.
 
-2. Remove edges inside the partitions, between irregular pairs and sparse pairs obtaining $G'$ with at most $\alpha n^2$ edges removed.
+2. Remove edges inside the parts, between irregular pairs and sparse pairs obtaining $G'$ with at most $\alpha n^2$ edges removed.
 
 3. Define $R$ with $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular.
 
-Now we have two cases, in the first one we have a triangle in $R$. Note if $\beta n^3 < 1$ the result is trivial, then we assume $\beta \geq 1/n^3$ and the partitions that forms the triangle (assume $\{V_1, V_2, V_3\}$ for simplicity) has size $n/k \geq 1/(\beta ^{1/3} k) \geq m$.
+Now we have two cases, in the first one we have a triangle in $R$. Note if $\beta n^3 < 1$ the result is trivial, then we assume $\beta \geq 1/n^3$ and the parts that forms the triangle (assume $\{V_1, V_2, V_3\}$ for simplicity) has size $n/k \geq 1/(\beta ^{1/3} k) \geq m$.
 
 Applying the Embedding Lemma \ref{lemma:embeddinglemma} we have that the quantity of triangles in $G'$ is at least $\delta ^3 /2 (n/k)^3 > \beta n^3$ if we choose $\beta$ such that $\delta ^3 / (2k^3) > \beta$.
 
