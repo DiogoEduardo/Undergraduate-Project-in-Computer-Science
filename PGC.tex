@@ -476,7 +476,7 @@ Being $s$ the number of colour-focused arithmetic progressions, if $s=1$ it is t
 
 We claim thar for all $s \leq r$, there exists $n$ such that whenever $[n]$ is $r$-coloured, there exists either a monochromatic arithmetic progression of length $k$, or $s$ colour-focused arithmetic progressions of length $k-1$.
 
-We will proceed by induction on $s$. Let $s > 1$ and suppose $n=W(r,k-1)$ is sufficient for $s-1$; we will prove that $N=2n W(r^{2n},k-1)$ is sufficient for $s$.
+We will proceed by induction on $s$. Let $s > 1$ and suppose $n=W(r,k-1)$ is sufficient for $s-1$ APs; we will prove that $N=2n W(r^{2n},k-1)$ is sufficient for $s$ APs.
 
 Partition $[N]$ into blocks of length $2n$, in each block we have a monochromatic arithmetic progression of length $k$ or $s-1$ $\textit{colour-focused}$ arithmetic progressions of length $k-1$. 
 
@@ -582,10 +582,9 @@ In this section we study what are the consequences when small bipartite graphs a
  If $0\leq \lambda_i \leq 1$, with $\sum_{i=1}^n \lambda_i = 1$ and $f$ is a convex function, then
 
 $$
-f \left( \sum_{i=1}^n \lambda_i x_i\right) \leq \sum_{i=1}^n \lambda_i f (x_i).
-$$
+f \left( \sum_{i=1}^n \lambda_i x_i\right) \leq \sum_{i=1}^n \lambda_i f (x_i).$$
 \end{proposition}
-As showed in previous section, thus Theorem \ref{theorem:turan1941}
+As showed in previous subsection, then Theorem \ref{theorem:turan1941} implies that
 $$ \ex (n,K_{r+1}) = e(T_{r,n}) \approx \left( 1-\frac{1}{r}\right) \binom{n}{2} .$$
 Erd\H{o}s proved that the extremal number of $C_4$ is much smaller then the one of complete graphs.
  
@@ -652,7 +651,7 @@ Now we use the fact $\left(\frac{n}{m}\right)^m \leq \binom{n}{m} \leq \left(\fr
 \end{align*}
 where $c(s) = \left(2/s\right)^s$.
 We already have a lower bound for $K_{1,s}$ that depends of the number of edges, now we construct an upper bound counting the maximum number of generalized cherries.
-As $K_{s,t}$ is the complete bipartite graph with two partitions whose sizes are $|s|$ and $|t|$ we know the maximum number of $K_{1,s}$ is $t\binom{n}{s}$ but since we want the maximum number of edges in $G$ without a $K_{s,t}$ we have,
+As $K_{s,t}$ is the complete bipartite graph with two partitions whose sizes are $|s|$ and $|t|$, we know the maximum number of $K_{1,s}$ is $t\binom{n}{s}$ but since we want the maximum number of edges in $G$ without a $K_{s,t}$ we have,
 
 \begin{align*}
 c(s) \frac{e(G)^s}{n^{s-1}} &\leq \max\{e(G')\colon G' \text{ is a } K_{s,t}\text{-free graph}\} \\
@@ -779,12 +778,12 @@ $$\mathbb{E}[Y_{\ell}] = \sum_{C_{\ell} \subseteq K_n} \mathbb{P}(C_{\ell} \subs
 
 Then $\sum_{\ell = 3}^k Y_{\ell} \leq kn^kp^k$. Now we need to limit our short cycles by $\sqrt{n}$ in order to show with high probability we will have few short cycles so we can destroy them,
 
-$$kn^kp^k \ll \sqrt{n} \text{ if } p \ll \frac{n^{\frac{1}{2k}}}{nk^{1/k}},$$
-which implies $\sum_{\ell = 3}^k Y_{\ell} \ll \sqrt{n}$ then with $p$ as follows
+$$kn^kp^k < \sqrt{n} \text{ if } p < \frac{n^{\frac{1}{2k}}}{nk^{1/k}},$$
+which implies $\sum_{\ell = 3}^k Y_{\ell} < \sqrt{n}$ then with $p$ as follows
 
-$$\frac{k\log k}{n} \ll p \ll \frac{n^{\frac{1}{2k}}}{nk^{1/k}},$$
+$$\frac{k\log k}{n} \ll p < \frac{n^{\frac{1}{2k}}}{nk^{1/k}}.$$
 
-we can remove a vertex of each cycle with length $<k$, so we have $g(G(n,p)) \geq k$. Note that removing a cycle's vertex does not make $\alpha(G(n,p))$ bigger and consequently does not make $\chi(G(n,p))$ smaller, maintaining all our previous calculations valid.
+Now we can remove a vertex of each cycle with length $<k$, so we have $g(G(n,p)) \geq k$. Note that removing a cycle's vertex does not make $\alpha(G(n,p))$ bigger and consequently does not make $\chi(G(n,p))$ smaller, maintaining all our previous calculations valid. We can assume we have a graph $G$ with $g(G) \geq k$ and $\chi(G) \geq k$ because we proved it with high probability.
 \end{proof}
 
 \begin{proof}2. Let $G = G(n,p)$ and $\chi(G) = r$, being $\{S_1, \ldots, S_{r}\}$ the partition of $V(G)$ in $r$ independent sets.
@@ -821,8 +820,7 @@ Using it and replacing $\mathbb{E}[X]$ by its upper bound we have,
 
 Then, we proved that, with high probability, the graph do not have more than $n/2 -1$ cycles with length at most $k$ and consequently we have $|V(G')| > n/2$ .
 
-Second claim. $\alpha(G') \leq \alpha(G) < n/2k$. We need to count the independent sets of $G$. Let $Y_{\ell} = \text{the number of independent sets with length ${\ell}$.}$ and note that for $\ell = \frac{n}{2k}$ we have
-
+Second claim. $\alpha(G') \leq \alpha(G) < n/2k$. We need to count the independent sets of $G$. Let $Y_{\ell} = \text{the number of independent sets with length ${\ell}$}$ and note that for $\ell = \frac{n}{2k}$ we have
 \begin{align*}
 \mathbb{E}[Y_{\ell}] &= \sum_{\substack{S\colon|S| = {\ell}}} (1-p)^{\binom{{\ell}}{2}}\\
 	       &= (1-p)^{\binom{{\ell}}{2} \binom{n}{{\ell}}} \\
@@ -949,10 +947,10 @@ Let $X$ be a triple in $[n]$ and $B_X$ be the event that this triple forms a tri
 & \rightarrow e^{-\mathbb{E}[X]}, \text{as $n \rightarrow \infty$}\\
 & = e^{-c^3/6},
 \end{align*}
-finishing the upper bound proof. For the lower bound proof we shall use same definition of $X$ and $B_X$ used before. Thus we have a set of $\binom{n}{3}$ events $B_X$ of the form $A_X \subseteq E(G(n,p)) \subseteq \binom{n}{2}$.
+finishing the upper bound proof. Thus we have a set of $\binom{n}{3}$ events $B_X$ such that $B_X \subseteq E(G(n,p)) \subseteq \binom{n}{2}$.
 Note that 
 $$\mu = \sum_X \mathbb{P} (B_X) = p^3\binom {n}{3},$$
-and
+and we define
 $$\Delta = \sum_{X\sim Y} \mathbb{P}(B_X \wedge B_Y) = O(n^4 p^5) \ll 1.$$
 
 Then using the Janson's inequality 
