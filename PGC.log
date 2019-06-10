@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.4.14)  3 JUN 2019 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2019.4.14)  10 JUN 2019 11:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1516,11 +1516,11 @@ r/m/n/12 (-20) ,
                                                   \fi \fi 
 l.751 \end{align*}
                    <./Figuras/r-partion.jpg>] [27] [28] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 859--861
+Underfull \hbox (badness 10000) in paragraph at lines 858--860
 
  []
 
-LaTeX Font Info:    Try loading font information for U+bbm on input line 888.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 887.
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [30] [31] [32]
@@ -1532,66 +1532,62 @@ Chapter 6.
 File: Figuras/embedding-lemma.jpg Graphic file (type jpg)
 
 <use Figuras/embedding-lemma.jpg>
-Package pdftex.def Info: Figuras/embedding-lemma.jpg used on input line 1179.
+Package pdftex.def Info: Figuras/embedding-lemma.jpg used on input line 1177.
 (pdftex.def)             Requested size: 247.88547pt x 240.8994pt.
  [40]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1190
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1187
 .
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1190.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1187.
 
  [41pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1207 
-        <./Figuras/embedding-lemma.jpg>]
+l.1205 3
+        . Define a graph $R$ such that $V(R) = [k]$ and $\{i,j\} \in E(R) $ ...
+ <./Figuras/embedding-lemma.jpg>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\H' on input line 1213.
+(hyperref)                removing `\H' on input line 1210.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1227--1228
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1229--1230
+Underfull \hbox (badness 10000) in paragraph at lines 1224--1225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1231--1232
+Underfull \hbox (badness 10000) in paragraph at lines 1226--1227
 
  []
 
-<Figuras/graph-G-and-G'.jpg, id=467, 294.3798pt x 171.039pt>
+<Figuras/graph-G-and-G'.jpg, id=468, 294.3798pt x 171.039pt>
 File: Figuras/graph-G-and-G'.jpg Graphic file (type jpg)
 
 <use Figuras/graph-G-and-G'.jpg>
-Package pdftex.def Info: Figuras/graph-G-and-G'.jpg used on input line 1239.
+Package pdftex.def Info: Figuras/graph-G-and-G'.jpg used on input line 1236.
 (pdftex.def)             Requested size: 441.5686pt x 256.55786pt.
 
-Overfull \hbox (0.55087pt too wide) in paragraph at lines 1239--1240
+Overfull \hbox (0.55087pt too wide) in paragraph at lines 1236--1237
  [][] 
  []
 
 
-Underfull \vbox (badness 6625) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42]
-<Figuras/graph-G'-and-R.jpg, id=475, 294.3798pt x 171.039pt>
+<Figuras/graph-G'-and-R.jpg, id=476, 294.3798pt x 171.039pt>
 File: Figuras/graph-G'-and-R.jpg Graphic file (type jpg)
 
 <use Figuras/graph-G'-and-R.jpg>
-Package pdftex.def Info: Figuras/graph-G'-and-R.jpg used on input line 1248.
+Package pdftex.def Info: Figuras/graph-G'-and-R.jpg used on input line 1245.
 (pdftex.def)             Requested size: 441.5686pt x 256.55786pt.
 
-Overfull \hbox (0.55087pt too wide) in paragraph at lines 1248--1249
+Overfull \hbox (0.55087pt too wide) in paragraph at lines 1245--1246
  [][] 
  []
 
@@ -1603,14 +1599,14 @@ Underfull \vbox (badness 1189) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1254 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
+l.1251 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.6.3}) has been already used, duplic
 ate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1254 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
+l.1251 ...ac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
                                                    <./Figuras/graph-G-and-G'.jp
 g> <./Figuras/graph-G'-and-R.jpg>] [44] [45] [46
 
@@ -1624,23 +1620,23 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 15.
  [49])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1320.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1315.
  [50]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1320.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1315.
  (./PGC.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1320.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1320.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1315.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1315.
 
 Package rerunfilecheck Info: File `PGC.out' has not changed.
 (rerunfilecheck)             Checksum: F74F1E94319D3A0DDE9945314C95EFB5;1821.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1320.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1315.
  ) 
 Here is how much of TeX's memory you used:
- 13986 strings out of 493013
- 202199 string characters out of 6135682
+ 13990 strings out of 493013
+ 202247 string characters out of 6135682
  357522 words of memory out of 5000000
  16802 multiletter control sequences out of 15000+600000
- 111496 words of font info for 206 fonts, out of 8000000 for 9000
+ 111792 words of font info for 208 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,14n,58p,1258b,746s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
@@ -1660,12 +1656,13 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha12.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha6.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PGC.pdf (50 pages, 1757136 bytes).
+/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on PGC.pdf (50 pages, 1760503 bytes).
 PDF statistics:
- 706 PDF objects out of 1000 (max. 8388607)
- 612 compressed objects within 7 object streams
+ 710 PDF objects out of 1000 (max. 8388607)
+ 615 compressed objects within 7 object streams
  173 named destinations out of 1000 (max. 500000)
  25371 words of extra memory for PDF output out of 29859 (max. 10000000)
 

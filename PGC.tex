@@ -298,52 +298,52 @@ We write $f(n) = o(g(n))$ if and only if, for all $\varepsilon > 0$, there exist
 We write $f(n) \approx g(n)$ if $f(n)/g(n) \rightarrow 1$ as $n \rightarrow \infty$.
 
 \section{Graphs}
-A graph $G = (V(G), E(G))$ or simply $G = (V, E)$ is a pair formed by the set of vertices $V(G) = [n]$, with $|V(G)|=n$ and the set of edges, $E(G) \subseteq \binom{V(G)}{2}$, is formed by pairs of vertices. We can represent an edge $e = \{u,v\}$ simply as $uv$ and we use $e(G) = |E(G)|$ and $v(G) = |V(G)|$.
+A \emph{graph} $G = (V(G), E(G))$ or simply $G = (V, E)$ is a pair formed by the set of vertices $V(G) = [n]$, with $|V(G)|=n$ and the set of edges, $E(G) \subseteq \binom{V(G)}{2}$, is formed by pairs of vertices. We can represent an \emph{edge} $e = \{u,v\}$ simply as $uv$ and we use $e(G) = |E(G)|$ and $v(G) = |V(G)|$.
 
-A complete graph, $K_s$, is a pair formed by the set of vertices $V(K_s) =  [s]$ and the set of edges $E(K_s) = \binom{V(K_s)}{2}$. A $s$-clique is the set of vertices of $K_s$.
+A \emph{complete graph}, $K_s$, is a pair formed by the set of vertices $V(K_s) =  [s]$ and the set of edges $E(K_s) = \binom{V(K_s)}{2}$. A \emph{$s$-clique} is the set of vertices of $K_s$.
+
+For a graph $G$ an \emph{indenpendent set} $I$ is a subset of vertices of $G$ such that for every $\{u\}$ and $\{v\}$ in $I$ the edge $\{u,v\}$ is not in $E(G)$.
 
 The graph $K_{s,t} = (V,E)$ is a graph whose $V$ can be partitioned in two sets $\{V_1,V_2\}$ such that $V_1$ and $V_2$ are independent sets with $|V_1| = s$, $|V_2| = t$ and $E(G) = \{uv: u \in V_1 \text{ and } v \in V_2\}$
 
-The graph $C_{\ell} = (V,E)$ which, we call a {\it cycle} of length $\ell$, is a graph with $V =\{v_1,v_2, \ldots, v_{\ell}\}$ and $E=\{v_1v_2,v_2v_3,\ldots, v_{\ell-1}v_{\ell},v_{\ell}v_1\}$
+The graph $C_{\ell} = (V,E)$ which, we call a \emph{cycle} of length $\ell$, is a graph with $V =\{v_1,v_2, \ldots, v_{\ell}\}$ and $E=\{v_1v_2,v_2v_3,\ldots, v_{\ell-1}v_{\ell},v_{\ell}v_1\}$
 
-A {\it vertex colouring} with $r$ colours in a graph $G$ is a function $c\colon V(G) \rightarrow \{1,\ldots,r\}$ and it can also be denoted as a $r$-colouring of the vertices of $G$. If we have a graph $G$ such that $c(v)=i$ for every $v$ in $V(G)$ we call it monochromatic or monochromatic in colour $i$.
+A \emph{ vertex colouring} with $r$ colours in a graph $G$ is a function $c\colon V(G) \rightarrow \{1,\ldots,r\}$ and it can also be denoted as an \emph{$r$-colouring} of the vertices of $G$. If we have a graph $G$ such that $c(v)=i$ for every $v$ in $V(G)$ we call it \emph{monochromatic} or \emph{monochromatic in colour $i$}.
 
 
 An {\it edge colouring} with $r$ colours in a graph $G$ is a function $c\colon \binom{V(G)}{2} \rightarrow \{1,\ldots,r\}$ and it can also be denoted as a $r$-colouring of the edges of $G$. We denote the colour $i$ of an edge $\{u,v\}$ as $c(\{u,v\})=i$. If we have a graph $G$ such that $c(\{u,v\})=i$ for every $\{u,v\}$ in $E(G)$ we call it monochromatic or monochromatic in colour $i$.
 
-A {\it proper} $k$-colouring of a graph $G=(V,E)$ is a mapping $c\colon E(G) \rightarrow \{1,2,
+A \emph{proper $k$-colouring} of a graph $G=(V,E)$ is a mapping $c\colon E(G) \rightarrow \{1,2,
 \ldots,k\}$ such that for every $v$ in $V$ and for every $e =\{vu_i\}$ in $E \text{ then we have } c(vu_i) \neq c(vu_j)$.
 
-A graph $H$ is a subgraph of a graph $G$ if every vertex in $H$ is a vertex in $G$ and every edge in $H$ is an edge in $G$ and we denote this relation by $H \subseteq G$. $H$ is an induced subgraph of $G$ if for all pair of vertices $x$ and $y$ of $H$, $xy$ is an edge in $H$ if and only if $xy$ is an edge in $G$ and we denote this relation by $G[H]$. If $H \nsubseteq G$ we call $G$ an $H$-free graph.
+A graph $H$ is a \emph{subgraph} of a graph $G$ if every vertex in $H$ is a vertex in $G$ and every edge in $H$ is an edge in $G$ and we denote this relation by $H \subseteq G$. $H$ is an \emph{induced subgraph} of $G$ if for all pair of vertices $x$ and $y$ of $H$, $xy$ is an edge in $H$ if and only if $xy$ is an edge in $G$ and we denote this relation by $G[H]$. If $H \nsubseteq G$ we call $G$ an \emph{$H$-free graph}.
 
 Let $G$ and $H$ be graphs such that $V(H) \subseteq V(G)$ and $V(G)= [n]$. We define $$\ex(n,H) = \max\{e(G)\colon\text{ $G$ contains no copy of $H$}\}.$$ 
-
-For a graph $G$ an indenpendent set $I$ is a subset of vertices of $G$ such that for every $\{u\}$ and $\{v\}$ in $I$ the edge $\{u,v\}$ is not in $E(G)$.
 
 \section{Neighbourhood}
 Given an edge $e =\{u,v\}$ in a graph $G$ we call $u$ and $v$ {\it neighbours} or {\it adjacents} and we can denonte $e =\{u,v\}$ as $u$ is neighbour of $v$ or $u$ is adjacent to $v$. We also say the edge $\{u,v\}$ is incident to $u$ and $v$.
 
-The degree of a vertex $v$ in a graph $G$, denoted by $d_G(v)$, we also write simply $d(v)$, is the quantity of neighbours of $v$. The set of neighbours of $v$ is called neighbourhood and is denoted by $N_G(v)$ or simply $N(v)$.
+The \emph{degree} of a vertex $v$ in a graph $G$, denoted by $d_G(v)$, we also write simply $d(v)$, is the quantity of neighbours of $v$. The set of neighbours of $v$ is called \emph{neighbourhood} and is denoted by $N_G(v)$ or simply $N(v)$.
 
-The minimum degree of a graph $G$ is denoted by $\delta(G)$ and is defined as
+The \emph{minimum degree} of a graph $G$ is denoted by $\delta(G)$ and is defined as
 $$\delta(G) = \min\{d(v) \colon v \in V (G)\}.$$
 
-The maximum degree of a graph $G$ is denoted by $\Delta(G)$ and is defined as 
+The \emph{maximum degree} of a graph $G$ is denoted by $\Delta(G)$ and is defined as 
 $$ \Delta(G) = \max\{d(v) \colon v \in V(G)\} $$
 
 \section{Probability}
-In this text, we call by probability space a non-empty finite set $\Omega$ and we write a function $\mathbb{P}\colon \Omega \rightarrow [0,1]$ that relates a probability $\mathbb{P}(\omega)$ to each $\omega$ in $\Omega$. In any case the probabilities are assumed to satisfy
+In this text, we call by \emph{probability space} a non-empty finite set $\Omega$ and we write a function $\mathbb{P}\colon \Omega \rightarrow [0,1]$ that relates a probability $\mathbb{P}(\omega)$ to each $\omega$ in $\Omega$. In any case the probabilities are assumed to satisfy
 $$ \sum_{\omega \in \Omega} \mathbb{P}(\omega) = 1.$$
 
-Subsets $E \subseteq \Omega$ are called events, and we write $\mathbb{P}(E) = \sum_{\omega \in E}\mathbb{P}(\omega)$. The Inclusion-Exclusion principle shows that, for all $E_1, E_2 \subseteq \Omega$ we have
+Subsets $E \subseteq \Omega$ are called \emph{events}, and we write $\mathbb{P}(E) = \sum_{\omega \in E}\mathbb{P}(\omega)$. The Inclusion-Exclusion principle shows that, for all $E_1, E_2 \subseteq \Omega$ we have
 
 $$ \mathbb{P}(E_1 \cup E_2) = \mathbb{P}(E_1) + \mathbb{P}(E_2) - \mathbb{P}(E_1 \cap E_2) \leq \mathbb{P}(E_1) + \mathbb{P}(E_2).$$
 
-A mapping $X\colon \Omega \rightarrow \mathbb{R}$ is called a random variable and the expected value of $X$ is given by
+A mapping $X\colon \Omega \rightarrow \mathbb{R}$ is called a \emph{random variable} and the \emph{expected value} of $X$ is given by
 
 $$ \mathbb{E}[X] = \sum_{\omega \in \Omega}X(\omega)\mathbb{P}(\omega) .$$
 
-The variance of $X$ is Var$(X) = \mathbb{E}(X^2) - \mathbb{E}(X)^2$. We usually write $X > t$ and $X = x$ to denote the events $\{\omega 
+The \emph{variance} of $X$ is Var$(X) = \mathbb{E}(X^2) - \mathbb{E}(X)^2$. We usually write $X > t$ and $X = x$ to denote the events $\{\omega 
 \in \Omega \colon X(\omega) > t\}$ and $\{\omega \in \Omega \colon X(\omega) = x\}$, respectively. In the text we usually omit the probability space information and focus on events and ramdom variables. 
 
 A sequence of events $E_1,\ldots,E_m \subseteq \Omega$ is independent if for every $M \subseteq [m]$ and $M \neq \emptyset$,
@@ -357,7 +357,7 @@ Ramsey's Theory is especially philosophical among the components of the Extremal
 \section{Infinite Ramsey's Theorem}
 Consider the following question ``Given a group of 6 people, are there 3 people that are mutual friends or 3 people that are mutual strangers?''
 
-In order to answer this question think about a group of six people, call them Richard, Maria, Bete, Jack, Paul and Steven. It is possible to suppose without loss of generality that Richard has at least three friends, Maria, Bete and Jack. If any two of these three are friends with each other, then they form a group of three mutual friends with Richard, otherwise Maria, Bete and Jack form a group of three mutual strangers to themselves. 
+In order to answer this question think about a group of six people, call them Richard, Maria, Bete, Jack, Paul and Steven. It is possible to suppose without loss of generality that Richard has at least three friends, we assume they are Maria, Bete and Jack. If any two of these three are friends with each other, then they form a group of three mutual friends with Richard, otherwise Maria, Bete and Jack form a group of three mutual strangers to themselves. 
 
 Replacing people by vertices and a friendship by colours (blue for being friends and red otherwise) we realize that a complete graph $K_6$, $2$-coloured, always have a monochromatic triangle independently of the edge colouring, but what about $5$ vertices?
 
@@ -787,7 +787,6 @@ Now we can remove a vertex of each cycle with length $<k$, so we have $g(G(n,p))
 \end{proof}
 
 \begin{proof}2. Let $G = G(n,p)$ and $\chi(G) = r$, being $\{S_1, \ldots, S_{r}\}$ the partition of $V(G)$ in $r$ independent sets.
-
 $$ |V(G)| = \sum_{i=1}^{\chi(G)} |S_i| \leq \chi(G)\max|S_i| \leq \chi(G) \alpha (G) .$$
 
 Note that if $\alpha(G) \leq |G|/k$, then $\chi(G) \geq $k. Let $\varepsilon > 0$ be sufficiently small ($\varepsilon < 1/k$) and $p = n^{\varepsilon - 1}$.% $-$\{one vertex of each cycle $C_{\ell} \text{ with } \ell\leq k\}$.
@@ -1159,13 +1158,12 @@ Now we prove the embedding lemma that makes the regularity useful to solve probl
 %The Embedding Lemma. Let $H$ be a graph, and let $\delta >0$. There exists $\varepsilon>0$ and $N \in \mathbb{N}$ such that if $n \geq N$ and $G \in \mathcal{G}(H,n,\varepsilon,\delta)$, then $H \subset G$.
 
 
-(The Embedding Lemma - simple version). Let $H$ and $G$ be graphs, let $\varepsilon > 0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$. Then if there exists a partition of $G$ in $\{V_1, \ldots, V_{V(H)}\}$ with $V_i = m $ and all pairs $(V_i,V_j)$ being $\varepsilon$-regular and $\delta$-dense, then $H \subseteq G$. 
+(The Embedding Lemma - simple version). Let $H$ and $G$ be graphs and $\delta > \varepsilon > 0$, then there exists $M \in \mathbb{N}$ such that if $m \geq M$ and there exists a partition of $G$ in $\{V_1, \ldots, V_{V(H)}\}$ with $|V_i| = \lceil m \rceil$ or $|V_i| = \lfloor m \rfloor$ for $1 \leq i \leq V(H)$ and all pairs $(V_i,V_j)$ being $\varepsilon$-regular and $\delta$-dense, then $H \subseteq G$. 
 \end{lemma} 
 
 \begin{proof}
 Here we only give the proof for $H=K_3$. Let %$G \in \mathcal{G}(H, m,\varepsilon,\delta)$ and let
  $A$, $B$ and $C$ be $\varepsilon$-regular and at least $\delta$-dense pairs of $G$, with $|A|=|B|=|C|=m$. Note that if we do not consider the sets of vertices $\{w\in A \colon d_B(w) < (\delta - \varepsilon)|B| \}$  and $\{u\in A \colon d_C(u) < (\delta - \varepsilon)|C| \}$ then we have at least $(1-2\varepsilon)|A|$ vertices in $A$ such that $|N(v) \cap B| \geq \varepsilon |B|$ and $|N(v) \cap C| \geq \varepsilon |C|$ by Fact \ref{fact:503}. Then let $X = N(v) \cap B$ and $Y =N(v) \cap C$ so there must be an edge between $X$ and $Y$ (note that any edge between $X$ and $Y$ forms a triangle). To be more precise we have $|X| \geq (\delta - \varepsilon)|B|$ and $|Y| \geq (\delta - \varepsilon)|C|$, as follows
-
 \begin{align*}
 e(X,Y) &\geq (\delta - \varepsilon)|X||Y|\\
 & \geq (\delta - \varepsilon)  (\delta - \varepsilon)|B|  (\delta - \varepsilon)|C|\\
@@ -1183,25 +1181,24 @@ Then we have at least $ (\delta - \varepsilon)^3 m^2$ triangles for each $v$. Th
 
 \end{proof}
 
-\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]\label{theorem:Sz}For every $\varepsilon > 0$, and let $m \in  \mathbb{N}$. There exists a constant $M=M(\varepsilon)$ such that the following holds.\\
-For any graph $G$, there exists a partition $V(G) = \{V_1 \cup \ldots \cup V_k\}$ of the vertex set into $m \leq k \leq M$ parts, such that
+\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]\label{theorem:Sz}For every $\varepsilon > 0$ there exists an integer $M=M(\varepsilon)$ such that the following holds: for any graph $G$, there exists a partition $V(G) = \{V_1 \cup \ldots \cup V_k\}$ of the vertex set into $k$ classes, such that
 \begin{itemize}
 
 	\item $k \leq M$,
 	\item $||V_i|-|V_j|| \leq 1$ for all $i,j$,
 	
-	\item $|V_i| \leq \varepsilon|V(G)|$ for every $i$,
+	\item $|V_i| \leq \lceil\varepsilon|V(G)|\rceil$ for every $i$,
 %$|A_0| \leq \varepsilon |V(G)|$,
 	\item all but $\varepsilon k^2$ of the pairs $(V_i, V_j)$ are $\varepsilon$-regular. 
 \end{itemize}
 \end{theorem}
 
-Note the lemma holds for all graphs, but it is useful only for graphs with large $n$ and with a minimum density or it becomes trivial because can be approximated by empty graphs.% Indeed, if $|V(G)| < M(m, \varepsilon)$ then each part has at most one vertex and if $e(G) = o(n^2)$ then $G$ is well-approximated by the empty graph, in both the lemma is vacuous and not so useful.  
+Note the lemma holds for all graphs, but it is useful only for graphs with large $n$ and with a minimum density or it becomes trivial because can be approximated by the empty graph.% Indeed, if $|V(G)| < M(m, \varepsilon)$ then each part has at most one vertex and if $e(G) = o(n^2)$ then $G$ is well-approximated by the empty graph, in both the lemma is vacuous and not so useful.  
 
 \section{Applications}
 Applying the Regularity Lemma, in general, makes its use easier to understand than the definitions or the proof of the lemma, then in this section we will show some classical applications. In order to apply the lemma we use the following strategy.
 
-1. Apply the Szemerédi Regularity Lemma in order to get a partition $ \{ A_1, \ldots A_k \} $ as defined in the lemma.
+1. Apply the Szemerédi Regularity Lemma in order to get a partition $ \{ A_1, \ldots ,A_k \} $ as defined in the lemma.
 
 2. Remove a few edges (edges inside the parts, between irregular pairs and sparse pairs). There exist at most $O(\varepsilon n^2)$ such edges.
 
@@ -1217,20 +1214,20 @@ $$ \ex(n,H) = \left(1-\frac{1}{\chi (H)-1} + o(1)\right) \binom{n}{2}.$$
 \end{theorem}
 
 \begin{proof}
-Let $\varepsilon \geq 1/k$ and $\delta \geq \varepsilon$. Let $G$ be a $H$-free graph and assume $e(G) \geq (1 - 1/(\chi(H) - 1) + \delta)\binom{n}{2}$ and follow the steps above.
+Let $\varepsilon = 1/k$ and $\delta \geq \varepsilon$. Let $G$ be a $H$-free graph and assume $e(G) \geq (1 - 1/(\chi(H) - 1) + \delta)\binom{n}{2}$ and follow the steps above.
 
 1. Apply the Regularity Lemma \refeq{theorem:Sz} with $\varepsilon$ defined previously then we assume there exists $M$ such that $k \leq M$ and we have a partition $\{V_1, \ldots , V_k\}$ as stated in the theorem.
 
 2. Remove edges inside the parts, between irregular pairs and sparse pairs obtaining $G'$ as in Figure \ref{fig:graph-G-and-G'}.
 Note that
 
-|edges inside the parts| $\leq k\binom{n/k}{2} \leq k(n/k)^2 \leq \varepsilon n^2$ (recall $1/\varepsilon \leq k$).\\
+|edges inside the parts| $\leq k\binom{n/k}{2} \leq k(n/k)^2 \leq \varepsilon n^2$ (recall $1/\varepsilon = k$).\\
 
 |edges between not $\varepsilon$-regular pairs| $\leq \varepsilon k^2 (n/k)^2 = \varepsilon n^2$.\\
 
-|edges between not $\delta$-dense pairs| $< \binom{k}{2}\delta (n/k)^2 = \delta n^2$.\\ 
+|edges between not $\delta$-dense pairs| $\leq \binom{k}{2}(\delta/4) (n/k)^2 = (\delta/4) n^2$ (sparse pairs with density at most $\delta/4$).
 
-Thus we removed $d$ edges such that $d < (2\varepsilon + \delta)n^2$ and let $c$ be a constant such that $\delta -d= \delta /c$, therefore 
+Thus we removed $d$ edges such that $d \leq (2\varepsilon + \delta/4)n^2$ and let $c$ be a constant such that $\delta \binom{n}{2} -d \geq \delta /c \binom{n}{2}$, therefore 
 
 $$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{c}\right) \binom{n}{2}.$$
 
@@ -1241,7 +1238,7 @@ $$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{c}\right) \binom
      \label{fig:graph-G-and-G'}
 \end{figure}
 
-3. Define $R$ with $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is $\delta$-dense and $\varepsilon$-regular as in Figure \ref{fig:graph-G'-and-R}
+3. Define $R$ with $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(V_i, V_j)$ is $\delta$-dense and $\varepsilon$-regular as in Figure \ref{fig:graph-G'-and-R}
 
 \begin{figure}[H]
      \centering
@@ -1253,11 +1250,11 @@ $$ e(G') \geq  \left( 1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{c}\right) \binom
 Note that
 $$e(R) \geq \frac{e(G')}{\left(\frac{n}{k}\right)^2}.$$
 
-4. Thus,
+4. Since we have
 $$e(R) \geq \frac{\left(1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{c}\right) \binom{n}{2}}{\left(\frac{n}{k}\right)^2} > \left( 1 - \frac{1}{\chi(H) - 1} + \frac{\delta}{c}\right) \binom{k}{2}> t_r(k),$$
 we can apply the Turán's Theorem \ref{theorem:turan1941} that implies $K_{\chi (H)} \subseteq R$.
 
-5. Now applying the Embedding Lemma \ref{lemma:embeddinglemma} with our $\varepsilon$, $\delta$ and $n$ large enough follows that $H \subseteq G$ as required.
+5. Now applying the Embedding Lemma \ref{lemma:embeddinglemma} with $n$ large enough follows that $H \subseteq G$ since $K_{\chi (H)} \subseteq R$, as required.
 
 \end{proof}
 
@@ -1267,13 +1264,13 @@ For all $\alpha > 0$ exists $\beta > 0$ such that if $G$ is a graph with at most
 \end{theorem}
 
 \begin{proof}
-The first, second and third steps of the method are, in general, the same for classical problems,
+The first, second and third steps of the method are, in general, the same for classical problems and we need $\varepsilon = 1/k$ and $\delta > \varepsilon$.
 
-1. Apply SzRL with $\varepsilon$ enough small and we have the partition $\{V_1, \ldots , V_k\}$.
+1. Apply SzRL, then we have the partition $\{V_1, \ldots , V_k\}$.
 
 2. Remove edges inside the parts, between irregular pairs and sparse pairs obtaining $G'$ with at most $\alpha n^2$ edges removed.
 
-3. Define $R$ with $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular.
+3. Define $R$ with $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is $\delta$-dense and $\varepsilon$-regular.
 
 Now we have two cases, in the first one we have a triangle in $R$. Note if $\beta n^3 < 1$ the result is trivial, then we assume $\beta \geq 1/n^3$ and the parts that forms the triangle (assume $\{V_1, V_2, V_3\}$ for simplicity) has size $n/k \geq 1/(\beta ^{1/3} k) \geq m$.
 
@@ -1287,22 +1284,20 @@ In the second case there is no triangle in $R$ and this implies there is no tria
 
 \subsection{Roth's Theorem}
 
-\begin{theorem}[{Roth's Theorem \cite{Ro53}}] If $A \subseteq \mathbb{N}$ has positive upper density, then $A$ contains an arithmetic progression of length three. 
+\begin{theorem}[{Roth's Theorem \cite{Ro53}}] For some $\delta >0$, there exists some $n_0$ such that with $n > n_0$ and if $A \subseteq [n]$, with $|A| \geq \delta n$, then $A$ contains an arithmetic progression of length three. 
 \end{theorem}
 
 \begin{proof}
-Choose $\delta > 0$ with $|A \cap [n]| > \delta n$, with $n$ sufficiently large. Let $V(G) = X\cup Y \cup Z$, where $X, Y$ and $Z$ are disjoint and $X,Y,Z \subseteq [n]$ and let,
-
+Let $|A \cap [n]| \geq \delta n$, with $n$ sufficiently large. Let $G$ be a graph such that $V(G) = X\cup Y \cup Z$, where $X, Y, Z = [3n]$ and
 \begin{align*}
 E(G) &= \{\{x,y\}\colon x \in X, y \in Y,\text{ and } y = x + a, a \in A\} \\
 & \cup \{\{y,z\} \colon y \in Y, z \in Z, \text{ and } z = y + b, b \in A\}\\
-& \cup \{\{x,z\} \colon x \in X, z \in Z, \text{ and } z = x +2c, c\in A\}
+& \cup \{\{x,z\} \colon x \in X, z \in Z, \text{ and } z = x +2c, c\in A\},
 \end{align*}
-
-Note if $A$ has no $3$-AP, then all the triangles in $G$ correspond to triples $\{a,a,a\}$ and there exist $n|A\cup [n]| \leq n^2$ such triangles. Suppose we have no $3$-AP in A.
+then for a triangle $\{x,y,z\}$ in $G$ we have $2c = a+b$ in $A$ and if $a \neq b \neq c$ this triangle corresponds to a $3$-AP in $A$.
+Note that if $A$ has no $3$-AP, then all the triangles in $G$ correspond to triples $\{a,a,a\}$ and there exists $n|A| \geq \delta n^2$ such triangles. Suppose we have no $3$-AP in $A$.
  
- Then we can apply the Triangle Removal Lemma \ref{lemma:triangleremoval} to $G$ for n sufficiently large, which means we can destroy all triangles in $G$ by removing at most $\alpha n^2$ edges. But these triangle triples $\{a,a,a\}$ are edge-disjoint and we have more than $\alpha n^2 $ such triangles which is a contradiction, finishing the proof.
- 
+Then we can apply the Triangle Removal Lemma \ref{lemma:triangleremoval} to $G$ for $n$ sufficiently large $\delta n^2 \leq \beta n^3 $, which means we can destroy all triangles in $G$ by removing at most $\alpha n^2$ edges. Let $\delta > \alpha$, since triangles $\{a,a,a\}$ are edge-disjoint and we have more than $\alpha n^2 $ such triangles which is a contradiction, finishing the proof.
 \end{proof}
 
 \chapter{Conclusion}
