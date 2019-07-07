@@ -17,7 +17,6 @@
 \usepackage[brazil]{babel}   
 \usepackage[utf8]{inputenc} 
 \usepackage{comment}
-\usepackage{bbm}
 
 \newtheorem{thm}[equation]{Teorema}
 \newtheorem{cor}[equation]{Corolário}
@@ -83,7 +82,7 @@
 \author[Diogo Alves - UFABC]{\textbf{Diogo Eduardo Lima Alves}\\ \ \\ \ \\ \ \\ \ \\Universidade Federal do ABC - UFABC\\ \ \\ \ \\ 
 }
 
-\date{9 de maio de 2019}
+\date{25 de junho de 2019}
 
 \usetheme{Madrid}
 \usecolortheme{beaver}
@@ -118,9 +117,30 @@
 	\begin{itemize}
 		\item Qual a maior quantidade de arestas que um grafo $G$ pode ter, sem que $G$ tenha um subgrafo $H$?\vspace{0.2cm}\pause
 		
-		\item Qual o tamanho do maior conjunto independente em um grafo? (NP-completo)
-					
+		\item Qual o tamanho do maior conjunto independente em um grafo? (NP-completo)					
 	\end{itemize}
+	
+}
+
+\frame{
+	\frametitle{Mantel}
+	
+	\begin{teorema}[{Mantel, 1907}]\label{the:mantel}
+Se $G$ \'e um grafo livre de tri\^angulos com $n$ v\'ertices, ent\~ao
+$$e(G) \leq \left\lceil \frac{n}{2} \right\rceil \left\lfloor \frac{n}{2} \right\rfloor .$$
+\end{teorema}
+}
+
+\frame{
+		\frametitle{Mantel}
+\begin{proof}
+A prova segue por indu\c{c}\~ao em $n$. Assuma que $n \geq 4$ e $G'$ \'e o grafo obtido de $G$ pela remo\c{c}\~ao de dois v\'ertices $u,v \in G$ tal que $\{u,v\}\in E(G)$. Note que se $G$ \'e tri\^angulo livre, ent\~ao $G'$ tamb\'em \'e tri\^angulo livre porque n\~ao \'e poss\'ivel formar um tri\^angulo removendo uma aresta. Note que existem no m\'aximo $n-1$ arestas incidentes com $u$ ou $v$, ent\~ao
+\begin{align*}
+e(G') &\leq \left(\left\lfloor \frac{n}{2} \right\rfloor -1\right)\left(\left\lceil \frac{n}{2} \right\rceil -1\right) \\
+&= \left\lfloor \frac{n}{2} \right\rfloor \left\lceil \frac{n}{2} \right\rceil - n +1.
+\end{align*}	
+Portanto, $e(G) \leq e(G') + n-1 = \left\lfloor \frac{n}{2} \right\rfloor \left\lceil \frac{n}{2} \right\rceil$. 
+\end{proof}
 }
 
 \frame{
@@ -136,56 +156,64 @@
 
 \frame{
 	\frametitle{Teoria de Ramsey}
-	\begin{theorem}[{Schur's Theorem}]\label{thm:Schur'sTheorem} %Schur, 1916
-Para toda colorac\~ao $c\colon \mathbb{N} \rightarrow [r]$, existe $x,y,z$ tal que $x+y=z$ e $c(x) = c(y) = c(z)$.
-\end{theorem}
+	\begin{teorema}[{Ramsey, 1929}]
+	Sejam $s, t \geq 2$. Existe um inteiro positivo $R = R(s, t)$ tal que toda a colora\c{c}\~ao de arestas de $K_R$, com as cores vermelho e azul, admite um subgrafo $K_s$ vermelho ou um
+subgrafo $K_t$ azul.
+\end{teorema}
+	\begin{teorema}[{Schur, 1916}]\label{thm:Schur'sTheorem} %Schur, 1916
+Para $r = 2$ existe $n \geq 3$ tal que para toda $r$-colora\c{c}\~ao $c\colon \{1, \ldots, n\} \rightarrow [r]$, existem $x,y,z$ tal que $x+y=z$ e $c(x) = c(y) = c(z)$.
+\end{teorema}
 }
 \frame{
 	\frametitle{Teoria de Ramsey}
 \begin{proof}
-  Para a colorac\~ao de vertices dada por $c\colon \mathbb{N} \rightarrow [r]$ defina uma colorac\~ao de arestas dada por $c'\colon \binom{\mathbb{N}}{2} \rightarrow [r]$ como $c'(\{a,b\}) \colon= c(|a-b|)$. Pelo Teorema de Ramsey sabemos que existe um tri\^angulo monocrom\'atico, assuma que $\{x,y,z\}$ forma o tri\^angulo, com $x<y<z$.\\
-Usando a definic\~ao de $c'$  temos:
+  Para toda colora\c{c}\~ao $c\colon [n] \rightarrow [r]$ defina uma colora\c{c}\~ao das arestas de $K_n$ dada por $c'\colon \binom{[n]}{2} \rightarrow [r]$ como $c'(\{a,b\}) \colon= c(|a-b|)$. Pelo Teorema de Ramsey, sabemos que existe um tri\^angulo monocrom\'atico em $K_n$. Assuma que $\{x,y,z\}$ forma um tri\^angulo monocrom\'atico, com $x<y<z$.\\
+Usando a definic\~ao de $c'$,  temos:
 $$c'(\{x,y\}) = i = c(|y-x|)$$
 $$c'(\{x,z\}) =  i = c(|z-x|)$$
 $$c'(\{y,z\}) = i = c(|z-y|).$$
 
-Segue $c(|y-x|) = c(|z-x|) = c(|z-y|)$, e $(z-y)+(y-x)=(z-x)$ que implica $x,y,z$ tal que $x+y=z$ e $c(x) = c(y) = c(z)$, como requisitado.\\
+Segue que $c(|y-x|) = c(|z-x|) = c(|z-y|)$, e $(z-y)+(y-x)=(z-x)$, logo existe $a+b=c$ com $c(a) = c(b) = c(c)$, como requisitado.\\
 \end{proof}
 }
 
 \frame{
 	\frametitle{Grafos Extremais}
-		\begin{theorem}[{Erd\H{o}s}] \label{theorem: Erdos,1938}
-Para todo grafo $G$ com $n$ vertices
-$$ex(n,C_4) = O(n^{3/2}).$$
-\end{theorem}
-O $C_4$ \'e formado por duas `cerejas' no mesmo par de vertices. Contando essas triplas (x,\{y,z\}) em $G$ tal que $xy, xz \in E(G)$ e usando a inequac\~ao de Jensen com $\lambda_i = 1/n$ obtemos:
+		\begin{teorema}[{Erd\H{o}s, 1938}] \label{theorem: Erdos,1938}
+
+Para todo grafo $G$ com $n$ v\'ertices e livre de $C_4$ temos,
+
+$$e(G) = O(n^{3/2}).$$
+\end{teorema}
+O $C_4$ \'e formado por duas `cerejas' no mesmo par de v\'ertices. Contando essas triplas (x,y,z) em $G$ tal que $xy, xz \in E(G)$. A Desigualdade de Jensen com $\lambda_i = 1/n$, fornece:
 	$$ \sum_{i=1}^n \frac{1}{n} f\left(x_i\right) \geq f		\left(\sum_{i=1}^n \frac{1}{n} x_i\right).$$
 }
+	
 \frame{
 	\frametitle{Grafos Extremais}
-Aplicando ao nosso problema temos,
+Aplicando essa desigualdade \`a nossa fun\c{c}\~ao temos,
 $$ \frac{\sum_{i=1}^n \binom{x_i}{2}}{n} \geq \binom{\frac{\sum_{i=1}^n x_i}{n}}{2} ,$$
-Substituindo $x_i$ e lembrando que $\sum_{v \in V(G)} d(v) = 2e(G),$
+Substituindo $x_i$ por $d(v)$ e lembrando que $\sum_{v \in V(G)} d(v) = 2e(G),$
 \begin{align*}
 \sum_{v \in V(G)} \binom{d(v)}{2} &\geq n \binom{\frac{2e(G)}{n}}{2}\\
 &= n\frac{\frac{2e(G)}{n}\left( \frac{2e(G)}{n}-1\right)}{2} \\
 &\geq \frac{n}{2} \left( \frac{2e(G)}{n} - 1 \right)^2.
 \end{align*}
 }
+
 \frame{
 	\frametitle{Grafos Extremais}
-Note que o n\'umero m\'aximo dessas triplas em um grafo $C_4$-livre \'e no m\'aximo $\binom{n}{2}$ porque podemos ter apenas uma cereja em cada par de vertices.
+Note que o n\'umero dessas triplas em um grafo $C_4$-livre \'e no m\'aximo $\binom{n}{2}$ porque podemos ter apenas uma cereja em cada par de v\'ertices.
 $$ \frac{n}{2}\left(\frac{2e(G)}{n} - 1\right)^2 \leq \binom{n}{2},$$
-Temos $e(G) = O(n^{3/2})$ terminando a prova.
+Portanto, $e(G) = O(n^{3/2})$, terminando a prova.
 }
 
 \frame{
 	\frametitle{Grafos Aleat\'orios}
 
-		\begin{theorem}[Chebyshev's Inequality]
-		$$\mathbb{P}(|X-\mu| \geq a) \leq \sigma^2/a^2.$$
-		\end{theorem}
+		\begin{teorema}[Desigualdade de Chebyshev] Seja $X$ uma vari\'avel aleat\'oria com valor esperado $\mu$ e vari\^ancia finita. Ent\~ao para todo $a > 0$,
+		$$\mathbb{P}(|X-\mu| 	\geq a) \leq \sigma^2/a^2.$$
+		\end{teorema}
 		Usando $a = \mu$, temos a seguinte inequac\~ao,
 
 		$$\mathbb{P}(X=0) \leq \mathbb{P}(|X-\mu | \geq \mu) 		\leq \sigma^2/\mu^2,$$
@@ -194,8 +222,8 @@ Temos $e(G) = O(n^{3/2})$ terminando a prova.
 }
 \frame{
 	\frametitle{Grafos Aleat\'orios}
-	\begin{theorem}
-		Seja $G=G(n,p)$ um grafo aleat\'orio.
+	\begin{teorema}
+		Seja $G=G(n,p)$ um grafo aleat\'orio (Bernoulli).
 		Ent\~ao,
 		$$
 		\mathbb{P}(G\text{ conter um tri\^angulo}) \rightarrow 
@@ -204,16 +232,19 @@ Temos $e(G) = O(n^{3/2})$ terminando a prova.
 			1, &\text{if $p\gg 1/n$}\,.
 		\end{cases}
 		$$
-	\end{theorem}
+	\end{teorema}
 	\begin{itemize}
 	\item Prova:
 	$$X = \text{ quantidade de tri\^angulos em }G$$
+Usando Markov,	
 	\begin{align*}
 	\mathbb{P}(G\text{ conter um tri\^angulo}) &\leq \mathbb{E}(X)\\
-	& \leq \binom{n}{3}p^3 \\
-	& \ll 1,
+	& = \binom{n}{3}p^3 \\
+	& \leq n^3p^3\\
+	& \ll 1 \text{, se $p \ll 1/n$.},
 \end{align*}
-	se $p \ll 1/n$.\begin{align*}
+	
+\begin{align*}
 \end{align*} 
 	\end{itemize}			
 }
@@ -222,65 +253,75 @@ Temos $e(G) = O(n^{3/2})$ terminando a prova.
 	\frametitle{Grafos Aleat\'orios}
 \begin{align*}
 Var(X) &= \mathbb{E}(X^2) - \mathbb{E}(X)^2\\
-& = \mathbb{E} \left( \sum_{(u, v)} \mathbbm{1}[u]\mathbbm{1}[v] \right) - \left( \sum_u \mathbb{P}(u) \right) ^2\\
-& = \sum_{u,v} \left(\mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right),
+& = \sum_{u,v} \left(\mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\right)\\
+& \leq (n^4p^5-n^6p^6) + (n^5p^6-n^6p^6) + (n^6p^6 -n^6p^6) + (n^3p^3-n^6p^6)\\
+& \leq n^4p^5 + n^3p^3,
 \end{align*}
-usando a inequac\~ao de Chebychev,
-$$\mathbb{P}(G \text{ n\~ao conter tri\^angulos}) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \leq \frac{n^4p^5 + n^3p^3 }{n^6p^6} \ll 1,$$
+usando a Desigualdade de Chebychev,
+$$\mathbb{P}(G \text{ n\~ao conter tri\^angulos}) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \leq \frac{n^4p^5 + n^3p^3 }{(n^6p^6/12^2)} \ll 1,$$
 para $p \gg 1/n$, terminando a prova.
 }
 
 \frame{
 	\frametitle{Regularidade}
-	\begin{definition}
-Given a graph $G$ and disjoint sets $A$ and $B$ of vertices, we say that $(A,B)$ is $\varepsilon$-regular if $\text{ for every } X \subset A \text{ and every } Y \subset B\text{ with } |X| \geq \varepsilon|A| \text{ and } |Y| \geq \varepsilon |B|$ we have
+	\begin{definicao}
+Seja um grafo $G$ e $A$, $B$ conjuntos disjuntos de v\'ertices, ent\~ao $(A,B)$ \'e $\varepsilon$-{\it regular} se$\text{ para todo } X \subset A \text{ e } Y \subset B\text{ com } |X| \geq \varepsilon|A| \text{ e } |Y| \geq \varepsilon |B|$ segue
 $$ \left| \frac{e(X,Y)}{|X||Y|} - \frac{e(A,B)}{|A||B|} \right| \leq \varepsilon  .$$
-\end{definition}
+\end{definicao}
 	
-	\begin{lemma}\label{lemma:embeddinglemma}
-(The Embedding Lemma - simple version). Let $H$ be a graph, and let $\varepsilon >0$. There exist $\delta >\varepsilon$ and $M \in \mathbb{N}$ such that if $m \geq M$ and there exist a partition $\{V_1, ..., V_H\}$ with all pairs being $\varepsilon$-regular and $\delta$-dense, then $H \subset G$. 
-\end{lemma} 
 }
 
 \frame{
 	\frametitle{Regularidade}
-\begin{theorem}[{The Szemerédi Regularity Lemma \cite{Sz75}}]. Let $\varepsilon > 0$, and let $m \in  \mathbb{N}$. There exists a constant $M=M(m,\varepsilon)$ such that the following holds.\\
-For any graph $G$, there exists a partition $V(G) = \{V_0 \cup ... \cup V_k\}$ of the vertex set into $m \leq k \leq M$ parts, such that
+\begin{teorema}[{Szemerédi - Lema da Regularidade, 1975}] Sejam $\varepsilon > 0$ e $m \in \mathbb{N}$. Existem constantes $M=M(m, \varepsilon)$ e $n_0 = n_0(m, \varepsilon)$, tais que, para qualquer grafo $G$ com pelo menos $n_0$ v\'ertices, existe uma parti\c{c}\~ao $V(G) = \{V_0 \cup ... \cup V_k\}$ do conjunto de v\'ertices em $k+1$ classes com $m \leq k \leq M$, onde temos:
 \begin{itemize}
-
-	\item $|V_1| = ... =|V_k|$,
+	\item $|V_0| \leq \varepsilon |V(G)|$,
 	
-	\item $|V_0| \leq \varepsilon|V(G)|$,
+	\item $|V_1| = \ldots = |V_k|$,
 %$|A_0| \leq \varepsilon |V(G)|$,
-	\item all but $\varepsilon k^2$ of the pairs $(V_i, V_j)$ are $\varepsilon$-regular. 
+	\item todos os pares s\~ao regulares com exce\c{c}\~ao de no m\'aximo $\varepsilon k^2$ pares. 
 \end{itemize}
-\end{theorem}
+\end{teorema}
 }
+
 \frame{
-\begin{theorem}[{Triangle Removal Lemma}]
-For all $\alpha > 0$ exists $\beta > 0$ such that if $G$ is a graph with $\leq \beta n^3$ triangles, then it is possible to remove all triangles removing at most $\alpha n^2$ edges. 
-\end{theorem}
+	\frametitle{Regularidade}
+
+\begin{lema}\label{lemma:embeddinglemma}
+(Lema de Imers\~ao - vers\~ao simplificada) Sejam $H$ e $G$ grafos e $\delta > \varepsilon >0$. Ent\~ao existe $M \in \mathbb{N}$ tal que se $m \geq M$ e existe uma parti\c{c}\~ao de $G$ em $\{V_1, \ldots, V_{V(H)}\}$ com $|V_i| = \lfloor m \rfloor$ ou $|V_i| = \lceil m \rceil$ para $1 \leq i \leq V(H)$ e todos os pares $(V_i,V_j)$ sendo $\varepsilon$-regulares e $\delta$-densos, ent\~ao $H \subset G$. 
+\end{lema}
+}
+
+\frame{
+\begin{teorema}[{Lema da Remo\c{c}\~ao de tri\^angulos}]
+Para todo $\alpha > 0$ existe $\beta > 0$ tal que se $G$ \'e um grafo com no m\'aximo $ \beta n^3$ tri\^angulos, ent\~ao \'e poss\'ivel remover todos os tri\^angulos removendo no m\'aximo $\alpha n^2$ arestas. 
+\end{teorema}
 
 	\frametitle{Regularidade}
-The first, second and third steps of the method are, in general, the same for classical problems,
+Seguindo a estrat\'egia abaixo os tr\^es primeiros passos s\~ao sempre os mesmos para problemas cl\'assicos.
 
-1. Apply SzRL with $\varepsilon$ enough small and we have the partitions $\{V_1, ... , V_k\}$.
+Prova:
 
-2. Remove edges inside the partitions, between irregular pairs and sparse pairs obtaining $G'$ with at most $\alpha n^2$ edges removed.
+1. Aplicar o Lema da Regularidade com $\varepsilon = 1/k$, $\delta > \varepsilon$ e $m =1/\varepsilon$ ent\~ao obtemos a parti\c{c}\~ao $\{V_0, ... , V_k\}$.
 
-3. Define $R$ with $V(R) = [k]$ and $\{i,j\} \in E(R) $ if  the pair $(A_i, A_j)$ is dense and $\varepsilon$-regular.
+2. Remover arestas  dentro das partes, entre pares irregulares e pares sparsos obtendo $G'$ com no m\'aximo $\alpha n^2$ arestas removidas.
+
+3. Defina $R$ com $V(R) = [k]$ e $\{i,j\} \in E(R) $ se o par $(A_i, A_j)$ \'e $\delta$-denso e $\varepsilon$-regular.
 }
 
 \frame{
 	\frametitle{Regularidade}
 	
-Now we have two cases, in the first one we have a triangle in $R$. Note if $\beta n^3 < 1$ the result is trivial, then we assume $\beta \geq 1/n^3$ and the partitions that forms the triangle (assume $\{V_1, V_2, V_3\}$ for simplicity) has size $n/k \geq 1/(\beta ^{1/3} k) \geq m$.
+H\'a dois casos, no primeiro temos um tri\^angulo em $R$. Note que se $\beta n^3 < 1$ o resultado \'e trivial, ent\~ao assuma que $\beta \geq 1/n^3$ e sobre as partes que formam o tri\^angulo assuma $\{V_1, V_2, V_3\}$  com tamanho $n/k \geq 1/(\beta ^{1/3} k) \geq m$.
 
-Applying the Embedding Lemma we have that the quantity of triangles in $G'$ is at least $\delta ^3 /2 (n/k)^3 > \beta n^3$ if we choose $\beta$ such that $\delta ^3 / (2k^3) > \beta$.
+Aplicando o Lema de Imers\~ao temos que a quantidade de tri\^angulos em $G'$ \'e no m\'inimo $\delta ^3 /2 (n/k)^3 > \beta n^3$ se escolhermos $\beta$ tal que $\delta ^3 / (2k^3) > \beta$.
 
-We conclude that if $\alpha n^2$ edges are removed and the graph still has triangles the triangles quantity is more than $\beta n^3$.
+Podemos concluir que se $\alpha n^2$ arestas s\~ao removidas e o grafo ainda tem tri\^angulos ent\~ao a quantidade de tri\^angulos \'e maior que $\beta n^3$.
 
-In the second case there is no triangle in $R$ and this implies there is no triangle in $G'$ because the edges inside the pairs $\{V_1, ... , V_k\}$ were removed then the only possible triangles are formed between the pairs, finishing the proof.
+}
+
+\frame{	\frametitle{Regularidade}
+No segundo caso n\~ao h\'a nenhum tri\^angulo em $R$ ent\~ao n\~ao temos nenhum tri\^angulo em $G'$ porque as arestas dentro das classes $\{V_1, ... , V_k\}$ foram removidas, encerrando a prova.
 }
 
 

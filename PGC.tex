@@ -214,7 +214,7 @@ FEDERAL UNIVERSITY OF ABC\\
 FOR\\
 OBTAINING TITLE\\
 OF\\
-COMPUTER SCIENCE BACHELOR\\
+BACHELOR OF COMPUTER SCIENCE\\
 \vspace{2cm}
 Advisor: Prof. Dr. Guilherme Oliveira Mota\\
 \vfill
@@ -236,8 +236,8 @@ Diogo Eduardo Lima Alves
 {\bf Undergraduate Project} presented to\\ 
 Undergraduate Program in Computer Science\\ 
 (Concentration area: Graph Theory),\\ 
-as partial requirement to obtain the title\\ 
-of Bachelor in Computer Science.
+as partial requirement to obtain the title:\\ 
+Bachelor of Computer Science.
     \end{flushright}
 
 \vspace{3cm}
@@ -256,11 +256,11 @@ May 2019
 \chapter{Introduction}
 Computer Science was truly fundamental for the fast development of science in the last century, also being fundamental to its validation and communication. It is really hard to think about actual science without the use of computers or strong science communities connected and accessible by the internet. Computer Science is also essential for business. All multinational companies are also software development companies since the way of production, operating and delivering products are managed by software and these aspects are determinants for the success level of any company in the world. It is also common that one of the most valuable assets of a company can be connected to data, software and algorithms. In this scenario, graphs are also very interesting due its importance to Computer Science.
 
-Graphs are one of the most flexible structures, impacting the study of Algebra, Probability and Combinatorics. They can be used for modeling many real scenarios in a very understandable graphical scheme and its properties can be explored to obtain many useful information what explains its huge importance for many knowledge areas not directly connected to Computer Science or Mathematics.   
+Graphs are one of the most flexible structures, impacting the study of Algebra, Probability and Combinatorics. They can be used for modelling many real scenarios in a very understandable graphical scheme and its properties can be explored to obtain many useful information what explains its huge importance for many knowledge areas not directly connected to Computer Science or Mathematics.   
 
 This project focus on classical results of Extremal Combinatorics and Graph Theory. It has detailed ideas and explanations about theorems and concepts developed through a large period of time which have already been intensively studied.
 
-Extremal Combinatorics is our central focus and it studies the maximum or minimum size a collection of mathematical objects may have while satisfying certain restrictions. Since we are particulary interested on graphs, we introduce Extremal Graph Theory. 
+Extremal Combinatorics is our central focus and it studies the maximum or minimum size a collection of mathematical objects may have while satisfying certain restrictions. Since we are particularly interested on graphs, we introduce Extremal Graph Theory. 
 
 Extremal Graph Theory studies graphs' possible sizes at the same time they hold some property, which can involve bounds on the number of edges and vertices, since this property, in general, is the absence of a specific subgraph.
 
@@ -302,7 +302,7 @@ A \emph{graph} $G = (V(G), E(G))$ or simply $G = (V, E)$ is a pair formed by the
 
 A \emph{complete graph}, $K_s$, is a pair formed by the set of vertices $V(K_s) =  [s]$ and the set of edges $E(K_s) = \binom{V(K_s)}{2}$. A \emph{$s$-clique} is the set of vertices of $K_s$.
 
-For a graph $G$ an \emph{indenpendent set} $I$ is a subset of vertices of $G$ such that for every $\{u\}$ and $\{v\}$ in $I$ the edge $\{u,v\}$ is not in $E(G)$.
+For a graph $G$ an \emph{independent set} $I$ is a subset of vertices of $G$ such that for every $\{u\}$ and $\{v\}$ in $I$ the edge $\{u,v\}$ is not in $E(G)$.
 
 The graph $K_{s,t} = (V,E)$ is a graph whose $V$ can be partitioned in two sets $\{V_1,V_2\}$ such that $V_1$ and $V_2$ are independent sets with $|V_1| = s$, $|V_2| = t$ and $E(G) = \{uv: u \in V_1 \text{ and } v \in V_2\}$
 
@@ -321,7 +321,7 @@ A graph $H$ is a \emph{subgraph} of a graph $G$ if every vertex in $H$ is a vert
 Let $G$ and $H$ be graphs such that $V(H) \subseteq V(G)$ and $V(G)= [n]$. We define $$\ex(n,H) = \max\{e(G)\colon\text{ $G$ contains no copy of $H$}\}.$$ 
 
 \section{Neighbourhood}
-Given an edge $e =\{u,v\}$ in a graph $G$ we call $u$ and $v$ {\it neighbours} or {\it adjacents} and we can denonte $e =\{u,v\}$ as $u$ is neighbour of $v$ or $u$ is adjacent to $v$. We also say the edge $\{u,v\}$ is incident to $u$ and $v$.
+Given an edge $e =\{u,v\}$ in a graph $G$ we call $u$ and $v$ {\it neighbours} or {\it adjacents} and we can denote $e =\{u,v\}$ as $u$ is neighbour of $v$ or $u$ is adjacent to $v$. We also say the edge $\{u,v\}$ is incident to $u$ and $v$.
 
 The \emph{degree} of a vertex $v$ in a graph $G$, denoted by $d_G(v)$, we also write simply $d(v)$, is the quantity of neighbours of $v$. The set of neighbours of $v$ is called \emph{neighbourhood} and is denoted by $N_G(v)$ or simply $N(v)$.
 
@@ -344,7 +344,7 @@ A mapping $X\colon \Omega \rightarrow \mathbb{R}$ is called a \emph{random varia
 $$ \mathbb{E}[X] = \sum_{\omega \in \Omega}X(\omega)\mathbb{P}(\omega) .$$
 
 The \emph{variance} of $X$ is Var$(X) = \mathbb{E}(X^2) - \mathbb{E}(X)^2$. We usually write $X > t$ and $X = x$ to denote the events $\{\omega 
-\in \Omega \colon X(\omega) > t\}$ and $\{\omega \in \Omega \colon X(\omega) = x\}$, respectively. In the text we usually omit the probability space information and focus on events and ramdom variables. 
+\in \Omega \colon X(\omega) > t\}$ and $\{\omega \in \Omega \colon X(\omega) = x\}$, respectively. In the text we usually omit the probability space information and focus on events and random variables. 
 
 A sequence of events $E_1,\ldots,E_m \subseteq \Omega$ is independent if for every $M \subseteq [m]$ and $M \neq \emptyset$,
 
@@ -400,7 +400,7 @@ $$(\sqrt{2})^k < R(k,k) < 4^k.$$
 R(k,\ell ) \leq R(k-1,\ell )+R(k,\ell-1).
 \end{equation}
 
-Choose $n \geq R(k-1,\ell) + R(k, \ell-1)$ and pick any vertex $v$ from $[n]$. Then, $v$ has either at least $R(k-1,\ell)$ red neighbours, or at least $R(k,\ell-1)$ blue neighbours. Without loss of generality assume that $v$ has at least $R(k-1,\ell)$ red neighbours. Then, we have on the red neighbourhood of $v$ a red $K_{k-1}$ or a blue $K_{\ell}$, if it is a red $K_{k-1}$ we can add $v$ to it, forming a red $K_k$. We just proved we always have a $K_k$ red or a $K_{\ell}$ blue with such $n$ and this confirms the upperbound in \eqref{eq:Ram}.
+Choose $n \geq R(k-1,\ell) + R(k, \ell-1)$ and pick any vertex $v$ from $[n]$. Then, $v$ has either at least $R(k-1,\ell)$ red neighbours, or at least $R(k,\ell-1)$ blue neighbours. Without loss of generality assume that $v$ has at least $R(k-1,\ell)$ red neighbours. Then, we have on the red neighbourhood of $v$ a red $K_{k-1}$ or a blue $K_{\ell}$, if it is a red $K_{k-1}$ we can add $v$ to it, forming a red $K_k$. We just proved we always have a $K_k$ red or a $K_{\ell}$ blue with such $n$ and this confirms the upper bound in \eqref{eq:Ram}.
 
 Now we want to prove by induction on $k+\ell$ that
 $$R(k,\ell) \leq \binom{k+\ell - 2}{k - 1}.$$
@@ -474,7 +474,7 @@ Furthermore, the AP is $\textit{colour-focused}$ if it is monochromatic.
 
 Being $s$ the number of colour-focused arithmetic progressions, if $s=1$ it is trivial because we just need $n \geq r+1$ to prove it holds.
 
-We claim thar for all $s \leq r$, there exists $n$ such that whenever $[n]$ is $r$-coloured, there exists either a monochromatic arithmetic progression of length $k$, or $s$ colour-focused arithmetic progressions of length $k-1$.
+We claim that for all $s \leq r$, there exists $n$ such that whenever $[n]$ is $r$-coloured, there exists either a monochromatic arithmetic progression of length $k$, or $s$ colour-focused arithmetic progressions of length $k-1$.
 
 We will proceed by induction on $s$. Let $s > 1$ and suppose $n=W(r,k-1)$ is sufficient for $s-1$ APs; we will prove that $N=2n W(r^{2n},k-1)$ is sufficient for $s$ APs.
 
@@ -499,7 +499,7 @@ The theorem follows from the claim by setting $s=r$ because if we have $s$  APs 
 
 
 \chapter{Extremal Graph Theory}
-In this chapter the problems and theorems are centered in extremal graphs. It embraces questions about the maximum or minimum size of a graph at the same time it satisfies certain properties.
+In this chapter the problems and theorems are centred in extremal graphs. It embraces questions about the maximum or minimum size of a graph at the same time it satisfies certain properties.
 
 \section{Turán's Theorem}
 In this section we study forbidden subgraphs and first we shall answer the following question. 
@@ -555,7 +555,7 @@ e(G) &\leq e(G') + (r-1)(n-r) + \binom{r}{2}\\
 &= t_r(n).
 \end{align*}
 
-The last equality follows from the fact that $t_r(n) - t_r(n-r) = \binom{r}{2} + (r-1)(n-r)$ as we can see in Figure \ref{fig:t(n)-and-t(n-r)} removing a vertex from each partition $\{1,\ldots,r\}$ we remove $\binom{r}{2}$ edges between the $r$ vertices removed and $(r-1)(n-r)$ edges  because every vertex in $T_r(n)$ is connected exactly with $r-1$ vertices of the $r$ removed vertices.   
+The last equality follows from the fact that $t_r(n) - t_r(n-r) = \binom{r}{2} + (r-1)(n-r)$ as we can see in Figure \ref{fig:t(n)-and-t(n-r)} removing a vertex from each part $\{1,\ldots,r\}$ we remove $\binom{r}{2}$ edges between the $r$ vertices removed and $(r-1)(n-r)$ edges  because every vertex in $T_r(n)$ is connected exactly with $r-1$ vertices of the $r$ removed vertices.   
 
  \begin{figure}[H]
      \centering
@@ -570,7 +570,7 @@ Then the proof is finished.
 \end{theorem}
 
 \begin{proof}
-The proof follows by induction on $r$. Let $w$ be a vertex of maximum degree in $G$. For every vertex $v \in V(G)\setminus N(w)$ we remove the edges incident to $v$ and add an edge between $v$ and each neighbor of $w$, this operation is called `Zykov symmetrization'. Clearly, no vertex degree has decreased because at this point $d(v) = \Delta(G)$ for every $v \in V(G)\setminus N(w)$ and the graph is still $K_{r+1}$-free because $N(w)$ has not changed and the $G\setminus N(w)$ now is an independent set.
+The proof follows by induction on $r$. Let $w$ be a vertex of maximum degree in $G$. For every vertex $v \in V(G)\setminus N(w)$ we remove the edges incident to $v$ and add an edge between $v$ and each neighbour of $w$, this operation is called `Zykov symmetrization'. Clearly, no vertex degree has decreased because at this point $d(v) = \Delta(G)$ for every $v \in V(G)\setminus N(w)$ and the graph is still $K_{r+1}$-free because $N(w)$ has not changed and the $G\setminus N(w)$ now is an independent set.
 
 Note that the graph $G_1=G[N(w)]$ must be $K_r$-free by our graph choice (otherwise $G$ would not be $K_{r+1}$-free). By the induction hypothesis, exists an $(r-1)$-partite graph $H_1$ in $N(w)$ with $d_{H_1}(v) \geq d_{G_1}(v)$ for every $v$ in $N(w)$. Let $H$ be the graph obtained from $G$ by performing Zykov symmetrization at vertex $w$. Note that $\{v: v \in H\setminus H_1\}$ is an independent set and with $H_1$ we acquire the required $r$-partite graph, note it is valid because in any step the degrees have decreased.
 \end{proof}
@@ -690,7 +690,7 @@ This method has really simple applications, but not all applications of the meth
 It is necessary to introduce the Erd\H{o}s-Rényi random graph model $G(n,p)$. $G(n,p)$ is a probability distribution on graphs, more informally, it is an edge distribution on $n$ vertices with probability $p$ and with the existence of edges being independent events.
 
 \begin{definition}\label{def:randomgraph}
-The (Erd\H{o}s-Rényi) random graph $G(n,p)$ or $G_{n,p}$ is the graph on $n$ vertices obtained by choosing each edge independently and uniformily at random with probability $p$. In other words, we assume that we have a probability space $\Omega$ and independent random variables $I_{vw}$ for each $\{v,w\} \in \binom{[n]}{2}$, such that
+The (Erd\H{o}s-Rényi) random graph $G(n,p)$ or $G_{n,p}$ is the graph on $n$ vertices obtained by choosing each edge independently and uniformly at random with probability $p$. In other words, we assume that we have a probability space $\Omega$ and independent random variables $I_{vw}$ for each $\{v,w\} \in \binom{[n]}{2}$, such that
 $$\mathbb{P}(I_{vw} = 1) = 1 - \mathbb{P}(I_{vw} = 0),$$ 
 and let $G$ be the graph with vertex set $[n]$ and edge set $\{\{v,w\} \in \binom{[n]}{2}\colon I_{vw} = 1\}$. 
 
@@ -839,14 +839,14 @@ Realize that the key point in both proofs was the fact we could choose the most 
 In this section we will manipulate $p$ in order to have a specific subgraph contained in $G$. 
 
 \begin{definition}
-A function $p^* = p^*(n)$ is a treshold for a monotone increasing property $\mathcal{P}$ in the random graph $G(n,p)$ if
+A function $p^* = p^*(n)$ is a threshold for a monotone increasing property $\mathcal{P}$ in the random graph $G(n,p)$ if
 $$\lim_{n \rightarrow \infty} \mathbb{P}(G(n,p)\in \mathcal{P}) =  \begin{cases}
 		0, &\text{if $p/p^*\rightarrow 0$},\\
 		1, &\text{if $p/p^*\rightarrow \infty$}\,.
 \end{cases}$$ 
 \end{definition}
 
-We shall prove the threshold for the property ``containing a triangle'' in $G$.  We will need the Chebychev inequality presented below.
+We shall prove the threshold for the property ``containing a triangle'' in $G$.  We will need the Chebyshev inequality presented below.
 
 \begin{theorem}[{Chebyshev's Inequality \cite{Ch67}}] Let  $X$ be a random variable having finite mean $\mu$ and finite variance  $\sigma^2$. Let $a$ be a strictly positive real number. Then, the following inequality holds
 
@@ -894,8 +894,8 @@ Var(X) &= \sum_{u,v} \left(\mathbb{P}(u \wedge v) - \mathbb{P}(u)\mathbb{P}(v)\r
 &\leq n^4 p^5 + n^3 p^3,
 \end{align*}
 %$$ \sum_{|u \cap v| = 1}\mathbb{P}(u \wedge v)   = n^5p^5$$
-and using Chebychev's inequality,
-$$\mathbb{P}(G \text{ contains no triangles}) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \leq \frac{n^4p^5 + n^3p^3 }{n^6p^6} \ll 1,$$
+and using Chebyshev's inequality,
+$$\mathbb{P}(G \text{ contains no triangles}) \leq \frac{Var(X)}{\mathbb{E}(X)^2} \leq \frac{n^4p^5 + n^3p^3 }{(n^6p^6/12^2)} \ll 1,$$
 for $p \gg 1/n$, finishing the proof.
  \end{proof}
 
@@ -1221,7 +1221,8 @@ Let $\varepsilon = 1/k$ and $\delta \geq \varepsilon$. Let $G$ be a $H$-free gra
 2. Remove edges inside the parts, between irregular pairs and sparse pairs obtaining $G'$ as in Figure \ref{fig:graph-G-and-G'}.
 Note that
 
-|edges inside the parts| $\leq k\binom{n/k}{2} \leq k(n/k)^2 \leq \varepsilon n^2$ (recall $1/\varepsilon = k$).\\
+|edges inside the parts| $\leq k\binom{n/k}{2} \leq k(n/k)^2 \leq \varepsilon n^2$ (r
+ecall $1/\varepsilon = k$).\\
 
 |edges between not $\varepsilon$-regular pairs| $\leq \varepsilon k^2 (n/k)^2 = \varepsilon n^2$.\\
 
